@@ -472,67 +472,6 @@
     .delay-3 { animation-delay: .3s; }
     .delay-4 { animation-delay: .4s; }
 
-    /* ── STRIPE MODAL ── */
-    .modal-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(26,23,20,.5); backdrop-filter: blur(4px);
-      z-index: 1000; align-items: center; justify-content: center;
-      padding: 1rem;
-    }
-    .modal-overlay.open { display: flex; }
-    .modal {
-      background: var(--c-surface);
-      border-radius: var(--r-xl); padding: 2.5rem;
-      max-width: 440px; width: 100%;
-      box-shadow: var(--shadow-lg);
-      animation: fadeUp .25s ease;
-    }
-    .modal-close {
-      float: right; background: none; border: none;
-      font-size: 20px; cursor: pointer; color: var(--c-ink-3);
-      line-height: 1; margin-top: -4px;
-    }
-    .modal-close:hover { color: var(--c-ink); }
-    .modal-icon { font-size: 32px; margin-bottom: 1rem; }
-    .modal-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px; font-weight: 400;
-      color: var(--c-ink); margin-bottom: .5rem;
-    }
-    .modal-sub { font-size: 14px; color: var(--c-ink-2); margin-bottom: 2rem; line-height: 1.6; }
-    .modal-price-row {
-      display: flex; align-items: baseline; gap: 8px;
-      margin-bottom: 1.5rem;
-    }
-    .modal-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px; color: var(--c-ink);
-    }
-    .modal-price-note { font-size: 13px; color: var(--c-ink-3); }
-    .modal-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
-    .modal-feature {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 14px; color: var(--c-ink-2);
-    }
-    .modal-check {
-      width: 18px; height: 18px; border-radius: 50%;
-      background: var(--c-green-l); border: 1px solid var(--c-green-b);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; margin-top: 1px;
-    }
-    .modal-check svg { width: 9px; height: 9px; stroke: var(--c-green); }
-    .modal-btn {
-      display: block; width: 100%;
-      padding: 14px; text-align: center;
-      background: var(--c-green); color: white;
-      border-radius: 999px; font-size: 15px; font-weight: 500;
-      text-decoration: none; transition: all .2s;
-      margin-bottom: .75rem; border: none;
-      cursor: pointer; font-family: inherit;
-    }
-    .modal-btn:hover { background: #2F5A3D; transform: translateY(-1px); }
-    .modal-guarantee { font-size: 12px; color: var(--c-ink-3); text-align: center; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 3.5rem; }
@@ -969,23 +908,6 @@
   </nav>
 </footer>
 
-<!-- ══ PAYMENT MODAL ══ -->
-<div class="modal-overlay" id="payment-modal" onclick="closeModal(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('payment-modal').classList.remove('open')">×</button>
-    <div class="modal-icon" id="modal-icon"></div>
-    <h3 class="modal-title" id="modal-title"></h3>
-    <p class="modal-sub" id="modal-sub"></p>
-    <div class="modal-price-row">
-      <div class="modal-price" id="modal-price"></div>
-      <div class="modal-price-note">one-time · instant access</div>
-    </div>
-    <div class="modal-features" id="modal-features"></div>
-    <a class="modal-btn" id="modal-cta" href="#" target="_blank">Unlock now via Stripe →</a>
-    <div class="modal-guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't resonate</div>
-  </div>
-</div>
-
 <script>
 /* ════════════════════════════════════════════
    STRIPE PAYMENT LINKS CONFIG
@@ -1277,52 +1199,7 @@ function renderApps() {
   `).join('');
 }
 
-/* ── PAYMENT MODAL ── */
-function openModal(appId) {
-  const app = APPS.find(a => a.id === appId);
-  if (!app) return;
-
-  // If it has its own page (e.g. the quiz), navigate there
-  if (app.page) { window.location.href = app.page; return; }
-
-  document.getElementById('modal-icon').textContent = app.emoji;
-  document.getElementById('modal-title').textContent = app.name;
-  document.getElementById('modal-sub').textContent = app.desc;
-  document.getElementById('modal-price').textContent = app.price;
-  document.getElementById('modal-features').innerHTML = app.features.map(f => `
-    <div class="modal-feature">
-      <div class="modal-check">
-        <svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="1.5,5 4,7.5 8.5,2.5"/>
-        </svg>
-      </div>
-      <span>${f}</span>
-    </div>
-  `).join('');
-
-  const cta = document.getElementById('modal-cta');
-  cta.href = app.stripeUrl && app.stripeUrl !== 'REPLACE_WITH_STRIPE_LINK'
-    ? app.stripeUrl
-    : '#';
-  cta.style.opacity = (app.stripeUrl && app.stripeUrl !== 'REPLACE_WITH_STRIPE_LINK') ? '1' : '.45';
-  cta.onclick = (app.stripeUrl === 'REPLACE_WITH_STRIPE_LINK' || !app.stripeUrl)
-    ? (e) => { e.preventDefault(); alert('Stripe Payment Link not yet configured for this app.'); }
-    : null;
-
-  document.getElementById('payment-modal').classList.add('open');
-}
-
-function closeModal(e) {
-  if (e.target === document.getElementById('payment-modal')) {
-    document.getElementById('payment-modal').classList.remove('open');
-  }
-}
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') document.getElementById('payment-modal').classList.remove('open');
-});
-
-apps.sort((a, b) => {
+APPS.sort((a, b) => {
   const rank = x => (x.status === 'live' ? (x.price === 'Free' ? 0 : 1) : 2);
   return rank(a) - rank(b);
 });

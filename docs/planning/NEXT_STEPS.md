@@ -16,6 +16,17 @@ _Last updated: 2026-08-31_
 - Site has not yet been verified as actually deployed anywhere from this
   repo — `_headers`/`_redirects` are present but no confirmed live Cloudflare
   Pages project is linked in this repo.
+- Completed a full bug sweep (see `SESSION_LOG.md` for details) — fixed a
+  critical bug that was silently breaking the entire homepage tools grid,
+  removed dead payment-modal code, and fixed a missing-`noopener` security
+  issue on 11 external/internal links. If this repo is already connected to
+  a live Cloudflare Pages deployment, **this fix should ship as soon as
+  possible** — the homepage tool/course grid has likely been invisible to
+  every visitor until now.
+- **Course build-out is next** — all three courses (`Confidence Blueprint`,
+  `Friendship Revival`, `Social Landing`) currently show a full 6-module
+  curriculum (18–21 lessons each) entirely marked "Coming soon." Actual
+  lesson content needs to be written. This is a large scope — see below.
 
 ## Open questions (need answers before more work should land)
 
