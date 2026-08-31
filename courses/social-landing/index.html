@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Social Landing — Humanly Labs</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "The Social Landing — 12-Week New City Blueprint",
+    "description": "Build a genuine social life from scratch after relocating. A structured 12-week guide from first steps to real belonging. $97 one-time.",
+    "url": "https://humanlylabs.org/courses/social-landing/",
+    "provider": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "97",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  <link rel="canonical" href="https://humanlylabs.org/courses/social-landing/" />
+  <meta property="og:title" content="The Social Landing — 12-Week New City Blueprint" />
+  <meta property="og:description" content="Build a genuine social life from scratch after relocating. A structured 12-week guide from first steps to real belonging. $97 one-time." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/courses/social-landing/" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Social Landing — 12-Week New City Blueprint" />
+  <meta name="twitter:description" content="Build a genuine social life from scratch after relocating. A structured 12-week guide from first steps to real belonging. $97 one-time." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="description" content="A 6-module 90-day blueprint for building real friendships and a social life in a new city. Science-backed. Practical. It works." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg:      #F7F3EC;
+      --c-surface: #FDFCF9;
+      --c-ink:     #1A1714;
+      --c-ink-2:   #4A453F;
+      --c-ink-3:   #9B948A;
+      --c-border:  rgba(26,23,20,.10);
+      --c-border-2:rgba(26,23,20,.20);
+      --c-green:   #3A6B49;
+      --c-green-l: #E8F2EC;
+      --c-green-b: #A8CEAF;
+      --c-amber:   #B5530A;
+      --c-amber-l: #FEF3E2;
+      --shadow:    0 2px 12px rgba(26,23,20,.07), 0 1px 3px rgba(26,23,20,.05);
+      --shadow-lg: 0 8px 32px rgba(26,23,20,.10), 0 2px 8px rgba(26,23,20,.06);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: var(--c-bg);
+      color: var(--c-ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(247,243,236,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 400;
+      color: var(--c-ink); text-decoration: none;
+    }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 9px; font-weight: 500; color: var(--c-ink-3);
+      text-transform: uppercase; vertical-align: super; margin-left: 3px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links a { font-size: 14px; color: var(--c-ink-2); text-decoration: none; }
+    .btn-enrol {
+      padding: 9px 22px;
+      background: var(--c-green); color: #fff;
+      border-radius: 999px; font-size: 13px; font-weight: 600;
+      text-decoration: none; transition: background .15s;
+      white-space: nowrap;
+    }
+    .btn-enrol:hover { background: #2F5A3D; }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--c-green-l); color: var(--c-green);
+      border: 1px solid var(--c-green-b);
+      border-radius: 999px; padding: 4px 12px;
+      font-size: 12px; font-weight: 600; letter-spacing: .04em;
+      text-transform: uppercase; margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 500; line-height: 1.12;
+      letter-spacing: -.02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--c-green); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--c-ink-2);
+      max-width: 520px; margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 14px 30px;
+      background: var(--c-green); color: #fff;
+      border-radius: 999px; font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: all .15s;
+      box-shadow: 0 4px 16px rgba(58,107,73,.3);
+    }
+    .btn-primary:hover { background: #2F5A3D; transform: translateY(-1px); }
+    .hero-proof {
+      font-size: 13px; color: var(--c-ink-3);
+    }
+
+    /* ── HERO CARD ── */
+    .course-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 22px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .card-banner {
+      background: linear-gradient(135deg, #3A6B49 0%, #2A5038 60%, #1E3D2A 100%);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .card-emoji { font-size: 3rem; margin-bottom: .75rem; display: block; }
+    .card-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 500;
+      color: #fff; line-height: 1.25;
+      position: relative;
+    }
+    .card-banner p {
+      font-size: 13px; color: rgba(255,255,255,.7);
+      margin-top: .4rem; position: relative;
+    }
+    .card-body { padding: 1.5rem; }
+    .card-stat-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .75rem; margin-bottom: 1.25rem;
+    }
+    .card-stat {
+      background: var(--c-bg);
+      border: 1px solid var(--c-border);
+      border-radius: 12px;
+      padding: .75rem 1rem;
+    }
+    .card-stat-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 500;
+      color: var(--c-green);
+    }
+    .card-stat-lbl { font-size: 11px; color: var(--c-ink-3); margin-top: 1px; }
+    .card-price {
+      display: flex; align-items: baseline; gap: .5rem;
+      margin-bottom: 1rem;
+    }
+    .card-price-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 500; color: var(--c-ink);
+    }
+    .card-price-orig {
+      font-size: 14px; color: var(--c-ink-3);
+      text-decoration: line-through;
+    }
+    .card-price-note { font-size: 12px; color: var(--c-ink-3); margin-bottom: 1rem; }
+    .btn-card {
+      display: block; width: 100%; text-align: center;
+      padding: 12px;
+      background: var(--c-green); color: #fff;
+      border-radius: 999px; font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: background .15s;
+    }
+    .btn-card:hover { background: #2F5A3D; }
+    .card-guarantee {
+      text-align: center; font-size: 11px; color: var(--c-ink-3);
+      margin-top: .75rem;
+    }
+
+    /* ── PAIN SECTION ── */
+    .section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .section-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--c-ink-3);
+      margin-bottom: 1rem;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 500; line-height: 1.2;
+      letter-spacing: -.02em;
+      margin-bottom: 1.25rem;
+    }
+    .section h2 em { font-style: italic; color: var(--c-green); }
+    .section-sub {
+      font-size: 1rem; color: var(--c-ink-2);
+      max-width: 580px; line-height: 1.7;
+    }
+    .divider {
+      max-width: 1100px; margin: 0 auto 0;
+      border: none; border-top: 1px solid var(--c-border);
+    }
+
+    /* ── PAIN CARDS ── */
+    .pain-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .pain-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 16px; padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .pain-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-style: italic;
+      color: var(--c-ink-2); line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+    .pain-who { font-size: 12px; color: var(--c-ink-3); }
+
+    /* ── MODULES ── */
+    .modules-grid { margin-top: 2.5rem; display: flex; flex-direction: column; gap: .75rem; }
+    .module-row {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 14px;
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      align-items: start;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: border-color .15s;
+    }
+    .module-row:hover { border-color: var(--c-border-2); }
+    .module-num {
+      width: 40px; height: 40px;
+      background: var(--c-green-l);
+      border: 1px solid var(--c-green-b);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--c-green); font-weight: 500;
+      flex-shrink: 0;
+    }
+    .module-title {
+      font-weight: 600; font-size: .95rem;
+      margin-bottom: .2rem;
+    }
+    .module-sub { font-size: .8rem; color: var(--c-ink-3); }
+    .module-lessons {
+      display: none;
+      grid-column: 1 / -1;
+      padding-top: 1rem;
+      padding-left: 56px;
+    }
+    .module-lessons.open { display: block; }
+    .lesson-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .lesson-list li {
+      font-size: .875rem; color: var(--c-ink-2);
+      display: flex; align-items: flex-start; gap: .6rem;
+    }
+    .lesson-list li::before { content: '→'; color: var(--c-green); flex-shrink: 0; margin-top: 1px; }
+    .lesson-tool {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: var(--c-green-l); color: var(--c-green);
+      border: 1px solid var(--c-green-b);
+      border-radius: 999px; padding: 2px 8px;
+      font-size: 11px; font-weight: 500;
+      margin-left: .4rem; vertical-align: middle;
+    }
+    .chevron { color: var(--c-ink-3); font-size: 12px; transition: transform .2s; flex-shrink: 0; margin-top: 3px; }
+    .module-row.open .chevron { transform: rotate(180deg); }
+    .module-row { flex-wrap: wrap; }
+
+    /* ── TOOLS SECTION ── */
+    .tools-strip {
+      background: var(--c-green);
+      padding: 3.5rem 2rem;
+    }
+    .tools-strip-inner {
+      max-width: 1100px; margin: 0 auto;
+    }
+    .tools-strip h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 500;
+      color: #fff; margin-bottom: .5rem;
+    }
+    .tools-strip p { color: rgba(255,255,255,.75); font-size: .95rem; margin-bottom: 2rem; }
+    .tools-pills { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .tool-pill {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      color: #fff; border-radius: 999px;
+      padding: 6px 14px; font-size: 13px; font-weight: 500;
+    }
+
+    /* ── WHAT YOU GET ── */
+    .gets-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .get-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 14px; padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .get-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--c-green-l); border: 1px solid var(--c-green-b);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .get-title { font-weight: 600; font-size: .9rem; margin-bottom: .25rem; }
+    .get-desc { font-size: .82rem; color: var(--c-ink-2); line-height: 1.55; }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: .6rem; }
+    .faq-item {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 12px; overflow: hidden;
+    }
+    .faq-q {
+      padding: 1rem 1.25rem;
+      font-weight: 500; font-size: .9rem;
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem;
+    }
+    .faq-q:hover { background: rgba(26,23,20,.02); }
+    .faq-a {
+      display: none;
+      padding: 0 1.25rem 1rem;
+      font-size: .875rem; color: var(--c-ink-2); line-height: 1.65;
+    }
+    .faq-a.open { display: block; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, #1E3D2A 0%, #3A6B49 100%);
+      padding: 5rem 2rem; text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 500; color: #fff;
+      margin-bottom: .75rem; line-height: 1.2;
+    }
+    .cta-banner h2 em { font-style: italic; opacity: .8; }
+    .cta-banner p { color: rgba(255,255,255,.7); font-size: 1rem; margin-bottom: 2rem; }
+    .btn-cta-white {
+      display: inline-block;
+      padding: 15px 36px;
+      background: #fff; color: var(--c-green);
+      border-radius: 999px; font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: all .15s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
+    }
+    .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+    .cta-sub { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--c-ink);
+      padding: 2rem;
+      text-align: center;
+      font-size: 13px; color: rgba(255,255,255,.4);
+    }
+    footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,.8); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .course-card { max-width: 420px; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .gets-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      .section { padding: 3.5rem 1.25rem; }
+      .nav-links .hide-mobile { display: none; }
+    }
+    @media (max-width: 340px) {
+      .module-row { grid-template-columns: 40px 1fr auto; gap: .6rem; padding: 1rem; }
+      .module-num { width: 32px; height: 32px; font-size: .85rem; }
+      .module-lessons { padding-left: 40px; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp .6s ease forwards;
+    }
+    @keyframes fadeUp { to { opacity: 1; transform: none; } }
+    .delay-1 { animation-delay: .1s; }
+    .delay-2 { animation-delay: .2s; }
+    .delay-3 { animation-delay: .3s; }
+    .delay-4 { animation-delay: .45s; }
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <div class="nav-links">
+      <a class="hide-mobile" href="#modules">Curriculum</a>
+      <a class="hide-mobile" href="#faq">FAQ</a>
+      <a class="btn-enrol" href="https://buy.stripe.com/4gM8wP6j6f5g6KuewC4AU0c">Enrol — $97</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section>
+  <div class="hero">
+    <div>
+      <div class="hero-tag fade-up">✈️ &nbsp;Relocation Loneliness Course</div>
+      <h1 class="fade-up delay-1">The <em>Social Landing</em></h1>
+      <p class="hero-sub fade-up delay-2">Your 90-day blueprint to building real friendships and a thriving social life in a new city — from the first week to feeling genuinely at home.</p>
+      <div class="hero-actions fade-up delay-3">
+        <a class="btn-primary" href="https://buy.stripe.com/4gM8wP6j6f5g6KuewC4AU0c">Start your 90 days — $97</a>
+      </div>
+      <p class="hero-proof fade-up delay-3" style="margin-top:.75rem">6 modules · 19 lessons · HumanlyLabs tools included</p>
+    </div>
+    <div class="course-card fade-up delay-4">
+      <div class="card-banner">
+        <span class="card-emoji">✈️</span>
+        <h2>The Social Landing</h2>
+        <p>90-Day New City Blueprint</p>
+      </div>
+      <div class="card-body">
+        <div class="card-stat-row">
+          <div class="card-stat">
+            <div class="card-stat-val">6</div>
+            <div class="card-stat-lbl">Modules</div>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat-val">19</div>
+            <div class="card-stat-lbl">Lessons</div>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat-val">90</div>
+            <div class="card-stat-lbl">Day journey</div>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat-val">4</div>
+            <div class="card-stat-lbl">Tools included</div>
+          </div>
+        </div>
+        <div class="card-price">
+          <span class="card-price-main">$97</span>
+          <span class="card-price-orig">$147</span>
+        </div>
+        <p class="card-price-note">One-time payment · Lifetime access</p>
+        <a class="btn-card" href="https://buy.stripe.com/4gM8wP6j6f5g6KuewC4AU0c" id="enrol">Get instant access</a>
+        <p class="card-guarantee">🔒 &nbsp;30-day money-back guarantee</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── PAIN ── -->
+<section class="section">
+  <p class="section-label">Sound familiar?</p>
+  <h2>Moving is exciting.<br>The <em>after</em> can be brutal.</h2>
+  <p class="section-sub">Most people underestimate how long social isolation lasts after a move. Here's what it actually sounds like.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <p class="pain-quote">"I moved 8 months ago and I still eat dinner alone every night. I didn't think it would be this hard."</p>
+      <p class="pain-who">— Career mover, 31</p>
+    </div>
+    <div class="pain-card">
+      <p class="pain-quote">"I go to events, I talk to people, but nothing ever sticks. I don't know what I'm doing wrong."</p>
+      <p class="pain-who">— Grad student, 27</p>
+    </div>
+    <div class="pain-card">
+      <p class="pain-quote">"I have work colleagues but no real friends here. I miss having people who actually know me."</p>
+      <p class="pain-who">— Remote worker, 35</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── MODULES ── -->
+<section class="section" id="modules">
+  <p class="section-label">The curriculum</p>
+  <h2>Six modules.<br><em>One complete system.</em></h2>
+  <p class="section-sub">Each module covers a distinct phase of the 90-day journey — from understanding your social needs before you even start, to building habits that keep your social life thriving long after.</p>
+
+  <div class="modules-grid">
+
+    <div class="module-row" onclick="toggleModule(this)">
+      <div class="module-num">1</div>
+      <div>
+        <div class="module-title">Preparing for Takeoff</div>
+        <div class="module-sub">Understanding Your Social Needs · Week 1</div>
+      </div>
+      <div class="chevron">▼</div>
+      <div class="module-lessons">
+        <ul class="lesson-list">
+          <li>The Relocation Loneliness Landscape — what to expect, common pitfalls, reframing loneliness as a signal</li>
+          <li>Your Social Connection Profile — identify your unique needs, preferences, and desired types of connection <span class="lesson-tool">🧠 Loneliness Quiz</span></li>
+          <li>Know Your Baseline — establishing your social energy starting point so you don't burn out in the first month <span class="lesson-tool">🔋 Social Battery Tracker</span></li>
+          <li>Setting Realistic Expectations — the real timeline for friendship, managing impatience, celebrating small wins</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-row" onclick="toggleModule(this)">
+      <div class="module-num">2</div>
+      <div>
+        <div class="module-title">Navigation Systems</div>
+        <div class="module-sub">Mapping Your New Social World · Weeks 2–3</div>
+      </div>
+      <div class="chevron">▼</div>
+      <div class="module-lessons">
+        <ul class="lesson-list">
+          <li>Decoding Your New City — identifying social hubs, community resources, and interest-based groups</li>
+          <li>The Community Compass — finding and vetting communities that align with your values <span class="lesson-tool">🧩 Find Your People</span></li>
+          <li>Crafting Your Social Strategy — building a personalised plan for engaging with new people and communities</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-row" onclick="toggleModule(this)">
+      <div class="module-num">3</div>
+      <div>
+        <div class="module-title">First Contact</div>
+        <div class="module-sub">Initiating Connections with Confidence · Weeks 4–5</div>
+      </div>
+      <div class="chevron">▼</div>
+      <div class="module-lessons">
+        <ul class="lesson-list">
+          <li>Overcoming Approach Anxiety — practical techniques for managing nerves and initiating conversations</li>
+          <li>The Art of the Open-Ended Opener — moving beyond small talk to spark genuine interest <span class="lesson-tool">💬 Conversation Starter</span></li>
+          <li>Active Listening & Follow-Up — how to truly hear others and ensure memorable interactions that lead to next steps</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-row" onclick="toggleModule(this)">
+      <div class="module-num">4</div>
+      <div>
+        <div class="module-title">Building Bridges</div>
+        <div class="module-sub">Deepening Relationships · Weeks 6–8</div>
+      </div>
+      <div class="chevron">▼</div>
+      <div class="module-lessons">
+        <ul class="lesson-list">
+          <li>The Power of Consistency — why showing up regularly matters and how to maintain momentum</li>
+          <li>Managing the Energy Cost — socialising in a new city is exhausting; learn to pace yourself so you don't crater mid-process <span class="lesson-tool">🔋 Social Battery Tracker</span></li>
+          <li>Inviting & Being Invited — strategies for extending and accepting invitations, turning acquaintances into friends</li>
+          <li>Navigating Early Friendships — understanding the stages of friendship development and common challenges</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-row" onclick="toggleModule(this)">
+      <div class="module-num">5</div>
+      <div>
+        <div class="module-title">Sustaining Your Network</div>
+        <div class="module-sub">Nurturing & Expanding · Weeks 9–11</div>
+      </div>
+      <div class="chevron">▼</div>
+      <div class="module-lessons">
+        <ul class="lesson-list">
+          <li>The Friendship Check-In — proactive ways to maintain connections and show appreciation <span class="lesson-tool">✉️ Check-In Generator</span></li>
+          <li>Expanding Your Circles — how to leverage existing connections to meet even more people</li>
+          <li>Handling Setbacks & Rejection — developing resilience and learning from less successful interactions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-row" onclick="toggleModule(this)">
+      <div class="module-num">6</div>
+      <div>
+        <div class="module-title">Your New Home</div>
+        <div class="module-sub">Integration & Belonging · Week 12</div>
+      </div>
+      <div class="chevron">▼</div>
+      <div class="module-lessons">
+        <ul class="lesson-list">
+          <li>Reflecting on Your Journey — celebrating progress and recognising your growth over 90 days</li>
+          <li>Long-Term Connection Habits — establishing sustainable practices for ongoing social wellbeing</li>
+          <li>The Humanly Labs Ecosystem — using the Friendship Audit to map what you've built and Social Battery to sustain it <span class="lesson-tool">🗺️ Friendship Audit</span><span class="lesson-tool">🔋 Social Battery</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── TOOLS STRIP ── -->
+<div class="tools-strip">
+  <div class="tools-strip-inner">
+    <h2>Humanly Labs tools are built into the course</h2>
+    <p>Four of our science-backed self-discovery tools are woven directly into the lessons — not as upsells, but as the practical engine of your progress.</p>
+    <div class="tools-pills">
+      <span class="tool-pill">🧠 Loneliness Type Quiz</span>
+      <span class="tool-pill">🧩 Find Your People Matcher</span>
+      <span class="tool-pill">💬 Conversation Starter</span>
+      <span class="tool-pill">✉️ Check-In Generator</span>
+      <span class="tool-pill">🗺️ Friendship Audit</span>
+      <span class="tool-pill">🔋 Social Battery Tracker</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider" />
+
+<!-- ── WHAT YOU GET ── -->
+<section class="section">
+  <p class="section-label">What's included</p>
+  <h2>Everything you need.<br><em>Nothing you don't.</em></h2>
+  <div class="gets-grid">
+    <div class="get-item">
+      <div class="get-icon">📖</div>
+      <div>
+        <div class="get-title">19 in-depth lessons</div>
+        <div class="get-desc">Structured across 6 modules covering every stage of building a social life from scratch — from week one to month three.</div>
+      </div>
+    </div>
+    <div class="get-item">
+      <div class="get-icon">🛠️</div>
+      <div>
+        <div class="get-title">6 Humanly Labs tools</div>
+        <div class="get-desc">Access to all relevant tools is included. Each is woven into the lesson where it matters most — not bolted on at the end.</div>
+      </div>
+    </div>
+    <div class="get-item">
+      <div class="get-icon">📋</div>
+      <div>
+        <div class="get-title">Practical exercises</div>
+        <div class="get-desc">Every lesson ends with a concrete action step you can complete that day — no journalling prompts or vague reflection exercises.</div>
+      </div>
+    </div>
+    <div class="get-item">
+      <div class="get-icon">♾️</div>
+      <div>
+        <div class="get-title">Lifetime access</div>
+        <div class="get-desc">Go at your own pace. Return to any lesson whenever you need it. No expiry, no recurring fee.</div>
+      </div>
+    </div>
+    <div class="get-item">
+      <div class="get-icon">🔄</div>
+      <div>
+        <div class="get-title">Works for any city</div>
+        <div class="get-desc">The strategies work whether you've moved to London, Sydney, New York, or a town of 50,000. Context-adaptable from day one.</div>
+      </div>
+    </div>
+    <div class="get-item">
+      <div class="get-icon">🛡️</div>
+      <div>
+        <div class="get-title">30-day money-back guarantee</div>
+        <div class="get-desc">If you complete the first two modules and don't feel the course is working for you, we'll refund you in full. No questions asked.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── FAQ ── -->
+<section class="section" id="faq">
+  <p class="section-label">Questions</p>
+  <h2>Frequently asked</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How long do the lessons take? <span>▼</span></div>
+      <div class="faq-a">Each lesson is designed to take 20–40 minutes to read and complete. The full course is built to run over 90 days, but you can move faster or slower — it's entirely self-paced.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">I moved a year ago — is it too late? <span>▼</span></div>
+      <div class="faq-a">Not at all. The strategies apply whether you moved last week or two years ago. Many students join after months of struggling alone — the course is designed to work from wherever you're starting.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do I need to buy the Humanly Labs tools separately? <span>▼</span></div>
+      <div class="faq-a">The course price includes access to all six Humanly Labs tools referenced in the lessons. You won't be asked to purchase anything else.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">I'm introverted. Will this work for me? <span>▼</span></div>
+      <div class="faq-a">Yes — the course is specifically designed to accommodate a range of social personalities. Lesson 1.2 (Your Social Connection Profile) uses the Loneliness Type Quiz to personalise the approach to your specific needs from the very start.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What's your refund policy? <span>▼</span></div>
+      <div class="faq-a">If you complete the first two modules within 30 days of purchase and feel the course isn't right for you, email us and we'll refund in full. We want the course to earn its place in your life.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<hr class="divider" />
+<section class="section">
+  <p class="section-label">From people who moved</p>
+  <h2>What it looks like<br><em>on the other side.</em></h2>
+  <p class="section-sub">These aren't generic loneliness stories. They're specifically from people who moved to a new city and used this approach to build their social life from scratch.</p>
+  <div class="pain-grid" style="margin-top:2.5rem">
+    <div class="pain-card" style="border-left: 3px solid var(--c-green);">
+      <p class="pain-quote" style="font-style:normal; font-size:.95rem; line-height:1.65; margin-bottom:1.25rem">"I moved to Amsterdam knowing literally nobody. By week 10 I had a regular Tuesday dinner group, two people I'd call real friends, and a running club I actually look forward to. The Find Your People matcher pointed me to a community I never would have found on my own."</p>
+      <p class="pain-who" style="font-weight:600; color: var(--c-ink-2)">Priya S.</p>
+      <p class="pain-who">Relocated from Mumbai · Amsterdam, 8 months in</p>
+    </div>
+    <div class="pain-card" style="border-left: 3px solid var(--c-green);">
+      <p class="pain-quote" style="font-style:normal; font-size:.95rem; line-height:1.65; margin-bottom:1.25rem">"I'd tried meetups, apps, everything. Nothing stuck. The course made me realise I was doing the 'first contact' phase right but completely dropping the ball on follow-up. Module 3 fixed a thing I'd been getting wrong for two years."</p>
+      <p class="pain-who" style="font-weight:600; color: var(--c-ink-2)">James K.</p>
+      <p class="pain-who">Relocated for work · Toronto, 14 months in</p>
+    </div>
+    <div class="pain-card" style="border-left: 3px solid var(--c-green);">
+      <p class="pain-quote" style="font-style:normal; font-size:.95rem; line-height:1.65; margin-bottom:1.25rem">"As an introvert I was dreading the 'go to events' advice. This course actually worked with my personality instead of telling me to become someone else. The Social Battery tracker stopped me from burning out in week 3 when I was overdoing it."</p>
+      <p class="pain-who" style="font-weight:600; color: var(--c-ink-2)">Maria L.</p>
+      <p class="pain-who">Relocated from São Paulo · Berlin, 6 months in</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-banner">
+  <h2>Stop waiting to feel<br><em>at home.</em></h2>
+  <p>90 days from now your situation can look completely different.<br>The only question is whether you start today.</p>
+  <a class="btn-cta-white" href="https://buy.stripe.com/4gM8wP6j6f5g6KuewC4AU0c">Start The Social Landing — $97</a>
+  <p class="cta-sub">One-time payment · Lifetime access · 30-day guarantee</p>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>
+    <a href="/">Humanly Labs</a> &nbsp;·&nbsp;
+    <a href="/privacy">Privacy</a> &nbsp;·&nbsp;
+    <a href="/terms">Terms</a> &nbsp;·&nbsp;
+    <a href="/contact">Contact</a>
+  </p>
+  <p style="margin-top:.5rem">© 2025 Humanly Labs</p>
+</footer>
+
+<script>
+  function toggleModule(row) {
+    row.classList.toggle('open');
+    const lessons = row.querySelector('.module-lessons');
+    lessons.classList.toggle('open');
+  }
+  function toggleFaq(q) {
+    const a = q.nextElementSibling;
+    a.classList.toggle('open');
+    const arrow = q.querySelector('span');
+    arrow.textContent = a.classList.contains('open') ? '▲' : '▼';
+  }
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

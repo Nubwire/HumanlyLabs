@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Friendship Revival — Course Content — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.6; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 900px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: #3A6B49; }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .welcome-banner { background: #FEF0E6; border: 1px solid #E8B48A; border-radius: 16px; padding: 2rem; margin-bottom: 3rem; }
+    .welcome-banner h1 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 500; margin-bottom: .5rem; }
+    .welcome-banner h1 em { font-style: italic; color: #7A3B19; }
+    .welcome-banner p { color: var(--c-ink-2); font-size: .95rem; line-height: 1.65; }
+    .module-section { margin-bottom: 2.5rem; }
+    .module-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--c-border); }
+    .module-badge { background: #7A3B19; color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; flex-shrink: 0; }
+    .module-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 500; }
+    .lesson-cards { display: flex; flex-direction: column; gap: .6rem; }
+    .lesson-card { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow); }
+    .lesson-num { width: 28px; height: 28px; background: #FEF0E6; border: 1px solid #E8B48A; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 600; color: #7A3B19; flex-shrink: 0; }
+    .lesson-info { flex: 1; }
+    .lesson-title { font-weight: 600; font-size: .875rem; margin-bottom: 2px; }
+    .lesson-sub { font-size: .75rem; color: var(--c-ink-3); }
+    .lesson-status { font-size: 11px; font-weight: 500; color: #7A3B19; background: #FEF0E6; border: 1px solid #E8B48A; border-radius: 999px; padding: 3px 10px; flex-shrink: 0; }
+    .coming-soon { color: var(--c-ink-3) !important; background: var(--c-bg) !important; border-color: var(--c-border) !important; }
+    .tool-tag { display: inline-flex; align-items: center; gap: 3px; background: #FEF0E6; color: #7A3B19; border: 1px solid #E8B48A; border-radius: 999px; padding: 1px 7px; font-size: 10px; font-weight: 500; margin-left: .5rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: #7A3B19; }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } }
+
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="welcome-banner">
+    <h1>Welcome to <em>The Friendship Revival</em></h1>
+    <p>You're in. Your course content will appear here as each module is released. Work through each lesson in order — the modules are designed to build on each other week by week.</p>
+    <p style="margin-top:.75rem;font-size:.85rem;color:var(--c-ink-3)">Questions? Email us at <a href="mailto:hello@humanlylabs.org" style="color:#7A3B19">hello@humanlylabs.org</a></p>
+  </div>
+  
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 1</span>
+          <span class="module-title">The Friendship Audit · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Week 1</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">1</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Why Adult Friendships Fade</div>
+            <div class="lesson-sub">The science of friendship drift and why it accelerates after 30</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">2</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Your Social World Map<span class="tool-tag">🗺️ Friendship Audit</span></div>
+            <div class="lesson-sub">Audit your current relationships: who nourishes, who drains, who's been lost</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">3</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Intimacy Gap</div>
+            <div class="lesson-sub">Identifying which relationships have depth potential vs true acquaintances</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 2</span>
+          <span class="module-title">Understanding Your Pattern · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Weeks 2–3</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">4</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Your Attachment Style<span class="tool-tag">🌱 Attachment Style Quiz</span></div>
+            <div class="lesson-sub">How early relational patterns shape how you form friendships today</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">5</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Anxious, Avoidant & Secure</div>
+            <div class="lesson-sub">What each style looks like in adult friendship and where it gets stuck</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">6</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Changing the Pattern</div>
+            <div class="lesson-sub">Evidence-based strategies for earned security in adult relationships</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 3</span>
+          <span class="module-title">Reviving Dormant Connections · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Weeks 4–5</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">7</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Dormant Tie Opportunity</div>
+            <div class="lesson-sub">Why reconnecting with old friends is often easier than forming new ones</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">8</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The First Message<span class="tool-tag">✉️ Check-In Generator</span></div>
+            <div class="lesson-sub">How to reach out after years of silence without it feeling strange</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">9</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Reviving vs Releasing</div>
+            <div class="lesson-sub">How to tell which dormant friendships are worth pursuing</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 4</span>
+          <span class="module-title">Deepening Existing Relationships · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Weeks 6–7</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">10</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Depth Gradient</div>
+            <div class="lesson-sub">How to move conversations and relationships from surface to substance</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">11</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Vulnerability Without Oversharing</div>
+            <div class="lesson-sub">The art of appropriate self-disclosure in adult friendship</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">12</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Creating Shared Experience</div>
+            <div class="lesson-sub">Why doing things together is more powerful than talking about it</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 5</span>
+          <span class="module-title">Building New Friendships as an Adult · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Weeks 8–10</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">13</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Why Adult Friendship Formation is Different</div>
+            <div class="lesson-sub">And how to work with that reality rather than against it</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">14</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Proximity Principle</div>
+            <div class="lesson-sub">Identifying where in your current life new friendships are most likely to form</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">15</div>
+          <div class="lesson-info">
+            <div class="lesson-title">From Acquaintance to Friend<span class="tool-tag">✉️ Check-In Generator</span></div>
+            <div class="lesson-sub">The specific moves that transform casual contacts into real friendships</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 6</span>
+          <span class="module-title">Your Friendship Maintenance System · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Week 12</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">16</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Re-Audit<span class="tool-tag">🗺️ Friendship Audit</span></div>
+            <div class="lesson-sub">Revisiting your Friendship Audit to measure what's changed</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">17</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Your Personal Maintenance Rhythm</div>
+            <div class="lesson-sub">A simple, sustainable system for staying close to the people who matter</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">18</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Ongoing Growth</div>
+            <div class="lesson-sub">How to keep your social world expanding naturally as your life evolves</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

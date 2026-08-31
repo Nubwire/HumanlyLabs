@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;--border:rgba(28,25,23,0.12);--sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;--radius-md:14px;--radius-lg:20px;--shadow-md:0 4px 16px rgba(28,25,23,0.10)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;padding:1rem;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:3rem}
+    .card{width:100%;max-width:560px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem}
+    .card-wide{max-width:780px}
+    .wordmark{font-family:'Fraunces',serif;font-size:18px;font-weight:300;color:var(--ink);letter-spacing:-0.02em;margin-bottom:2rem;display:block;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--sage)}
+    h1{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.4rem;letter-spacing:-.02em}
+    .sub{font-size:13px;color:var(--ink-muted);margin-bottom:2rem}
+    label{font-size:13px;color:var(--ink-soft);display:block;margin-bottom:6px}
+    input[type="password"]{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:15px;color:var(--ink);outline:none;transition:border-color .15s;margin-bottom:.75rem}
+    input[type="password"]:focus{border-color:var(--sage)}
+    .btn{display:block;width:100%;padding:13px;text-align:center;background:var(--ink);color:var(--cream);border-radius:999px;font-size:14px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .15s;margin-bottom:.75rem}
+    .btn:hover{background:#2C2926}
+    .btn-outline{background:none;color:var(--ink);border:1px solid var(--border-strong,rgba(28,25,23,0.25))}
+    .btn-outline:hover{background:var(--cream)}
+    .btn-green{background:var(--sage);color:white}
+    .btn-green:hover{background:#3D6B4A}
+    .btn-danger{background:none;color:#9F3247;border:1px solid rgba(159,50,71,0.3)}
+    .btn-danger:hover{background:rgba(159,50,71,0.06)}
+    .error-msg{font-size:13px;color:#9F3247;padding:10px 14px;background:rgba(159,50,71,0.08);border:1px solid rgba(159,50,71,0.2);border-radius:var(--radius-md);margin-bottom:1rem;display:none}
+    /* SCREENS */
+    .page{display:none}
+    .page.active{display:flex;flex-direction:column;align-items:center;width:100%}
+    /* TABLE */
+    .stats-row{display:flex;gap:1rem;margin-bottom:1.5rem;width:100%}
+    .stat-box{flex:1;background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem;text-align:center}
+    .stat-num{font-family:'Fraunces',serif;font-size:28px;font-weight:300;color:var(--ink)}
+    .stat-lbl{font-size:11px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+    .table-wrap{overflow-x:auto;margin-bottom:1rem;border:1px solid var(--border);border-radius:var(--radius-md);width:100%;background:var(--warm-white)}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th{background:var(--cream);padding:10px 14px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-muted);font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap}
+    td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--ink-soft);max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:var(--sage-light)}
+    .type-pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:500}
+    .source-pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;background:var(--cream);color:var(--ink-muted);border:1px solid var(--border)}
+    .empty-state{text-align:center;padding:2.5rem;color:var(--ink-muted);font-size:14px;line-height:1.7}
+    .notice{background:var(--sage-light);border:1px solid var(--sage-border);border-radius:var(--radius-md);padding:1rem 1.25rem;font-size:13px;color:#2D5A3D;line-height:1.6;margin-bottom:1.5rem;width:100%}
+    .tab-row{display:flex;gap:.5rem;margin-bottom:1.5rem;width:100%}
+    .tab{padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:none;font-family:inherit;color:var(--ink-soft);transition:all .15s}
+    .tab.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+    .section-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.5rem;width:100%}
+    .section-actions .btn{width:auto;flex:1;min-width:120px;margin-bottom:0}
+    .dash-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;width:100%}
+    @media(max-width:600px){.stats-row{flex-direction:column}.section-actions{flex-direction:column}}
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div class="page active" id="page-login">
+  <div class="card">
+    <a class="wordmark" href="/">human<span>ly</span>
+      <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+    </a>
+    <h1>Admin</h1>
+    <p class="sub">Email lists &amp; newsletter export</p>
+    <label for="pwd">Password</label>
+    <input type="password" id="pwd" placeholder="Enter admin password" autocomplete="current-password" />
+    <div class="error-msg" id="login-error">Incorrect password — try again</div>
+    <button class="btn" id="login-btn">Sign in</button>
+    <p style="text-align:center;font-size:12px;color:var(--ink-muted)">
+      <a href="/" style="color:var(--ink-muted)">← Back to site</a>
+    </p>
+  </div>
+</div>
+
+<!-- DASHBOARD PAGE -->
+<div class="page" id="page-dashboard">
+  <div class="card card-wide">
+    <div class="dash-header">
+      <div>
+        <a class="wordmark" href="/" style="margin-bottom:.25rem">human<span>ly</span>
+          <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+        </a>
+        <p class="sub" style="margin-bottom:0" id="dash-sub">Email lists</p>
+      </div>
+      <button onclick="logout()" style="font-size:13px;color:var(--ink-muted);background:none;border:none;cursor:pointer;font-family:inherit;padding:4px 0">Sign out</button>
+    </div>
+
+    <div class="tab-row">
+      <button class="tab active" onclick="switchTab('quiz')" id="tab-quiz">Quiz emails</button>
+      <button class="tab" onclick="switchTab('newsletter')" id="tab-newsletter">Newsletter</button>
+      <button class="tab" onclick="switchTab('combined')" id="tab-combined">All combined</button>
+    </div>
+
+    <div class="notice" id="dash-notice">
+      ℹ️ Emails are stored in <strong>this browser's</strong> localStorage. Visit this admin page on each device to export its local list, then merge the CSVs.
+    </div>
+
+    <div class="stats-row" id="stats-row"></div>
+
+    <div class="table-wrap">
+      <div class="empty-state" id="empty-state" style="display:none">No emails in this list yet.</div>
+      <table id="data-table">
+        <thead id="table-head"></thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+
+    <div class="section-actions">
+      <button class="btn btn-green" onclick="downloadCSV()">⬇ Download CSV</button>
+      <button class="btn btn-outline" onclick="copyEmails()">📋 Copy emails only</button>
+      <button class="btn btn-danger" onclick="clearCurrent()">🗑 Clear this list</button>
+    </div>
+
+    <p style="font-size:12px;color:var(--ink-muted);line-height:1.7;margin-top:.5rem">
+      Questions? <a href="mailto:hello@humanlylabs.org" style="color:var(--sage)">hello@humanlylabs.org</a>
+    </p>
+  </div>
+</div>
+
+<script>
+/* ─────────────────────────────────
+   CHANGE PASSWORD BEFORE DEPLOYING
+   ───────────────────────────────── */
+const ADMIN_PWD = 'humanly2026admin';
+
+const STORAGE_KEYS = {
+  quiz:       'hly_emails',
+  newsletter: 'hly_newsletter',
+};
+
+const TYPE_PILLS = {
+  social:      { label:'Social',      bg:'#EEF4FC', color:'#1D5FA5' },
+  emotional:   { label:'Emotional',   bg:'#EEEDFE', color:'#3C3489' },
+  situational: { label:'Situational', bg:'#EAF2EC', color:'#2D5A3D' },
+  existential: { label:'Existential', bg:'#FDF2F4', color:'#7A2538' },
+  pending:     { label:'Pending',     bg:'#F5F0E8', color:'#9B948A' },
+};
+
+let currentTab = 'quiz';
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('pwd').addEventListener('keydown', e => { if (e.key === 'Enter') login(); });
+  document.getElementById('login-btn').addEventListener('click', login);
+
+  if (sessionStorage.getItem('hly_admin_auth') === '1') {
+    showDashboard();
+  }
+});
+
+/* ── AUTH ── */
+function login() {
+  const val = document.getElementById('pwd').value;
+  const err = document.getElementById('login-error');
+  if (val === ADMIN_PWD) {
+    err.style.display = 'none';
+    sessionStorage.setItem('hly_admin_auth', '1');
+    showDashboard();
+  } else {
+    err.style.display = 'block';
+    document.getElementById('pwd').value = '';
+    document.getElementById('pwd').focus();
+  }
+}
+
+function logout() {
+  sessionStorage.removeItem('hly_admin_auth');
+  document.getElementById('page-dashboard').classList.remove('active');
+  document.getElementById('page-login').classList.add('active');
+  document.getElementById('pwd').value = '';
+}
+
+function showDashboard() {
+  document.getElementById('page-login').classList.remove('active');
+  document.getElementById('page-dashboard').classList.add('active');
+  renderTab('quiz');
+}
+
+/* ── TABS ── */
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  renderTab(tab);
+}
+
+function renderTab(tab) {
+  const rows = getRows(tab);
+  renderStats(rows, tab);
+  renderTable(rows, tab);
+}
+
+/* ── DATA ── */
+function getRows(tab) {
+  if (tab === 'combined') {
+    const q = parseCSV(localStorage.getItem(STORAGE_KEYS.quiz) || '', 'quiz');
+    const n = parseCSV(localStorage.getItem(STORAGE_KEYS.newsletter) || '', 'newsletter');
+    return [...q, ...n].sort((a,b) => (b.timestamp||'').localeCompare(a.timestamp||''));
+  }
+  const key = STORAGE_KEYS[tab];
+  return parseCSV(localStorage.getItem(key) || '', tab);
+}
+
+function parseCSV(raw, source) {
+  return raw.split('\n')
+    .filter(l => l.trim() && !l.startsWith('email,'))
+    .map(l => {
+      const parts = l.split(',');
+      return {
+        email: parts[0]?.trim(),
+        timestamp: parts[1]?.trim(),
+        type: parts[2]?.trim() || '—',
+        source
+      };
+    })
+    .filter(r => r.email && r.email.includes('@'));
+}
+
+/* ── STATS ── */
+function renderStats(rows, tab) {
+  const today = new Date().toISOString().slice(0,10);
+  const todayCount = rows.filter(r => r.timestamp?.startsWith(today)).length;
+  const typedCount = rows.filter(r => r.type && r.type !== 'pending' && r.type !== '—').length;
+
+  let html = `
+    <div class="stat-box"><div class="stat-num">${rows.length}</div><div class="stat-lbl">Total emails</div></div>
+    <div class="stat-box"><div class="stat-num">${todayCount}</div><div class="stat-lbl">Added today</div></div>`;
+
+  if (tab !== 'newsletter') {
+    html += `<div class="stat-box"><div class="stat-num">${typedCount}</div><div class="stat-lbl">With type</div></div>`;
+  }
+
+  document.getElementById('stats-row').innerHTML = html;
+}
+
+/* ── TABLE ── */
+function renderTable(rows, tab) {
+  const empty = document.getElementById('empty-state');
+  const table = document.getElementById('data-table');
+
+  if (rows.length === 0) {
+    empty.style.display = 'block';
+    empty.textContent = tab === 'quiz'
+      ? 'No quiz emails yet. They appear here when users enter their email on the quiz page.'
+      : tab === 'newsletter'
+      ? 'No newsletter signups yet. They appear here when users sign up via the newsletter form.'
+      : 'No emails in either list yet.';
+    table.style.display = 'none';
+    return;
+  }
+
+  empty.style.display = 'none';
+  table.style.display = 'table';
+
+  const showSource = tab === 'combined';
+  const showType   = tab !== 'newsletter';
+
+  document.getElementById('table-head').innerHTML = `<tr>
+    <th>#</th><th>Email</th>
+    ${showType ? '<th>Type</th>' : ''}
+    ${showSource ? '<th>Source</th>' : ''}
+    <th>Date</th>
+  </tr>`;
+
+  document.getElementById('table-body').innerHTML = rows.map((r, i) => {
+    const pill = TYPE_PILLS[r.type] || TYPE_PILLS.pending;
+    const date = r.timestamp
+      ? new Date(r.timestamp).toLocaleDateString('en-AU', { day:'numeric', month:'short', year:'numeric' })
+      : '—';
+    return `<tr>
+      <td style="color:var(--ink-muted)">${i+1}</td>
+      <td title="${r.email}">${r.email}</td>
+      ${showType ? `<td><span class="type-pill" style="background:${pill.bg};color:${pill.color}">${pill.label}</span></td>` : ''}
+      ${showSource ? `<td><span class="source-pill">${r.source}</span></td>` : ''}
+      <td>${date}</td>
+    </tr>`;
+  }).join('');
+}
+
+/* ── ACTIONS ── */
+function downloadCSV() {
+  const rows = getRows(currentTab);
+  if (!rows.length) { alert('No data to export'); return; }
+
+  const showType   = currentTab !== 'newsletter';
+  const showSource = currentTab === 'combined';
+  const header = ['email','timestamp', showType ? 'loneliness_type' : null, showSource ? 'source' : null].filter(Boolean).join(',');
+  const body = rows.map(r => [r.email, r.timestamp, showType ? r.type : null, showSource ? r.source : null].filter(Boolean).join(',')).join('\n');
+  const csv = header + '\n' + body;
+
+  const blob = new Blob([csv], { type:'text/csv' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url;
+  a.download = `humanly-${currentTab}-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function copyEmails() {
+  const rows = getRows(currentTab);
+  if (!rows.length) { alert('No emails to copy'); return; }
+  const text = rows.map(r => r.email).join('\n');
+  navigator.clipboard.writeText(text).then(() => alert(`✓ Copied ${rows.length} email(s)`));
+}
+
+function clearCurrent() {
+  if (currentTab === 'combined') { alert('Switch to a specific tab to clear it.'); return; }
+  if (!confirm(`Clear ALL ${currentTab} emails from this browser? This cannot be undone.`)) return;
+  localStorage.removeItem(STORAGE_KEYS[currentTab]);
+  renderTab(currentTab);
+}
+</script>
+</body>
+</html>

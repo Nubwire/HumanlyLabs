@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attachment Style Quiz: Secure, Anxious or Avoidant?</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Attachment Style Quiz — Humanly Labs" />
+  <meta name="twitter:description" content="Discover your attachment style and what it means for your relationships. Science-backed, free." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+    <meta name="description" content="Discover your attachment style and what it means for your friendships and relationships. Free quiz, instant results." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="canonical" href="https://humanlylabs.org/attachment-quiz" />
+  <meta property="og:title" content="Attachment Style Quiz — Humanly Labs" />
+  <meta property="og:description" content="Discover your attachment style and what it means for your relationships. Science-backed, free." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/attachment-quiz" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+      <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Attachment Style Quiz \u2014 Humanly Labs",
+    "url": "https://humanlylabs.org/attachment-quiz",
+    "description": "Attachment Style Quiz \u2014 free self-discovery tool from Humanly Labs.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12);--border-strong:rgba(28,25,23,.25);
+      --violet:#5B3A8A;--violet-light:#F0EBFB;--violet-border:#C4B5E8;
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --rose:#9F3247;--rose-light:#FDF2F4;--rose-border:#F4B8C6;
+      --sky:#1C5DAF;--sky-light:#EBF2FB;--sky-border:#B5D4F4;
+      --amber:#B5530A;--amber-light:#FEF3E2;--amber-border:#F5C99A;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:680px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--violet)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:560px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* SHARED */
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--violet);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--violet)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .btn-primary{display:block;width:100%;padding:14px;text-align:center;background:var(--violet);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem}
+    .btn-primary:hover{background:#472D6E;transform:translateY(-1px)}
+    .btn-primary:disabled{opacity:.35;cursor:default;transform:none}
+    .btn-outline{width:100%;padding:12px;text-align:center;background:none;color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s;display:block}
+    .btn-outline:hover{background:var(--cream)}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+    .divider{height:1px;background:var(--border);margin:1.75rem 0}
+
+    /* LANDING */
+    .style-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:2rem}
+    .style-card{padding:1rem;border-radius:var(--radius-md);border:1px solid var(--border);background:var(--cream)}
+    .style-emoji{font-size:20px;margin-bottom:.4rem}
+    .style-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+    .style-desc{font-size:12px;color:var(--ink-muted);line-height:1.5}
+    .trust-list{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;padding:1.25rem;background:var(--violet-light);border-radius:var(--radius-md);border:1px solid var(--violet-border)}
+    .trust-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3C1F6B;line-height:1.5}
+    .trust-dot{width:6px;height:6px;border-radius:50%;background:var(--violet);flex-shrink:0;margin-top:7px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+
+    /* EMAIL CAPTURE */
+    .email-section{margin-bottom:1.5rem}
+    .email-label{font-size:13px;color:var(--ink-soft);margin-bottom:8px;display:block}
+    .email-row{display:flex;gap:8px}
+    .email-input{flex:1;padding:11px 14px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .15s}
+    .email-input:focus{border-color:var(--violet)}
+    .email-skip{font-size:12px;color:var(--ink-muted);text-align:center;margin-top:8px;cursor:pointer;background:none;border:none;font-family:inherit;text-decoration:underline;text-underline-offset:2px;width:100%}
+
+    /* PROGRESS */
+    .progress-wrap{margin-bottom:2rem}
+    .progress-meta{display:flex;justify-content:space-between;margin-bottom:8px}
+    .progress-label{font-size:12px;color:var(--ink-muted)}
+    .progress-bar{height:2px;background:var(--border);border-radius:2px}
+    .progress-fill{height:100%;background:var(--violet);border-radius:2px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+    .progress-dots{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.5rem}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s}
+    .dot.done{background:var(--violet)}
+    .dot.current{background:var(--violet);transform:scale(1.3)}
+
+    /* QUESTIONS */
+    .q-text{font-family:'Fraunces',serif;font-size:21px;font-weight:300;line-height:1.4;color:var(--ink);margin-bottom:1.75rem;letter-spacing:-.01em}
+    .options{display:flex;flex-direction:column;gap:10px;margin-bottom:2rem}
+    .option-btn{text-align:left;padding:14px 18px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);cursor:pointer;font-size:14px;color:var(--ink-soft);font-family:'DM Sans',sans-serif;line-height:1.5;transition:all .15s}
+    .option-btn:hover{background:var(--warm-white);border-color:var(--border-strong);color:var(--ink)}
+    .option-btn.selected{border-color:var(--violet);background:var(--violet-light);color:#3C1F6B;border-width:1.5px}
+    .nav-row{display:flex;align-items:center;justify-content:space-between}
+    .btn-ghost{font-size:14px;color:var(--ink-muted);background:none;border:none;cursor:pointer;font-family:inherit;padding:8px 0;transition:color .15s}
+    .btn-ghost:hover{color:var(--ink)}
+    .btn-ghost:disabled{opacity:.3;cursor:default}
+    .btn-next{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;background:var(--ink);color:var(--cream);border:none;border-radius:999px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:all .15s}
+    .btn-next:hover{background:#2C2926;transform:translateY(-1px)}
+    .btn-next:disabled{opacity:.3;cursor:default;transform:none}
+
+    /* RESULT */
+    .profile-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:1.25rem}
+    .result-headline{font-family:'Fraunces',serif;font-size:22px;font-weight:300;line-height:1.35;color:var(--ink);margin-bottom:1rem;letter-spacing:-.01em}
+    .result-desc{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .section-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-muted);font-weight:500;margin-bottom:1rem}
+    .trait-card{display:flex;gap:14px;padding:1.1rem;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);margin-bottom:.65rem}
+    .trait-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+    .trait-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:3px}
+    .trait-body{font-size:12px;color:var(--ink-soft);line-height:1.6}
+    .shift-card{background:var(--violet-light);border:1px solid var(--violet-border);border-radius:var(--radius-md);padding:1.1rem;margin-bottom:.65rem}
+    .shift-title{font-size:13px;font-weight:500;color:#3C1F6B;margin-bottom:3px}
+    .shift-body{font-size:12px;color:#4A2D80;line-height:1.6}
+
+    /* UPSELL */
+    .upsell-card{border:1.5px solid var(--violet-border);border-radius:var(--radius-md);padding:1.5rem;background:var(--violet-light);margin-top:1.5rem}
+    .upsell-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--violet);font-weight:500;margin-bottom:.5rem}
+    .upsell-headline{font-family:'Fraunces',serif;font-size:18px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em}
+    .upsell-body{font-size:13px;color:var(--ink-soft);line-height:1.65;margin-bottom:1.25rem}
+    .btn-upsell{display:block;width:100%;padding:13px;text-align:center;background:var(--violet);color:white;border-radius:999px;font-size:14px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .15s;text-decoration:none}
+    .btn-upsell:hover{background:#472D6E;transform:translateY(-1px)}
+    .upsell-price{text-align:center;font-size:12px;color:var(--ink-muted);margin-top:8px}
+
+    .result-actions{display:flex;gap:10px;margin-top:1.5rem;flex-wrap:wrap}
+    .result-actions .btn-outline{flex:1;min-width:120px}
+    .disclaimer{font-size:11px;color:var(--ink-muted);margin-top:1.5rem;text-align:center;line-height:1.6}
+    .btn-restart{font-size:13px;color:var(--ink-muted);background:none;border:none;cursor:pointer;font-family:inherit;margin-top:1rem;display:block;width:100%;text-align:center;text-decoration:underline;text-underline-offset:3px}
+
+    /* TOAST */
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    footer{max-width:560px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem}
+    @media(max-width:600px){.card{padding:1.75rem 1.25rem}.headline{font-size:26px}.style-grid{grid-template-columns:1fr}.email-row{flex-direction:column}}
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the 4 attachment styles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The four attachment styles are secure (comfortable with closeness and independence), anxious (craves closeness but fears abandonment), avoidant (values independence and feels uncomfortable with intimacy), and disorganised (a mix of anxious and avoidant, often linked to inconsistent early caregiving)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does my attachment style affect my friendships?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your attachment style shapes how you respond to closeness, conflict, and distance in relationships. Anxious attachment may lead to overthinking interactions while avoidant attachment may cause you to pull back when things get close. Understanding your style helps you recognise and change these patterns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can your attachment style change?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Attachment styles are not fixed for life. With self-awareness, intentional relationship experiences, and sometimes therapy, people regularly shift from insecure to more secure attachment patterns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the attachment style quiz take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Humanly Labs Attachment Style Quiz takes approximately 3 minutes and gives you an instant result with an explanation of what your style means for your relationships."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the attachment style quiz free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the quiz is completely free at Humanly Labs with no sign-up required."
+      }
+    }
+  ]
+}
+</script>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">Attachment Style Quiz</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- INTRO -->
+  <div id="screen-intro" class="screen active">
+    <div class="eyebrow">Free · 10 questions · 3 minutes</div>
+    <h1 class="headline">How do you <em>attach</em><br>to the people<br>you care about?</h1>
+    <p class="body-text">Your attachment style shapes every close relationship — romantic, friendship, family. Most people carry patterns they've never named. This quiz identifies yours and explains what it means in practice.</p>
+
+    <div class="style-grid">
+      <div class="style-card">
+        <div class="style-emoji">🟢</div>
+        <div class="style-name">Secure</div>
+        <div class="style-desc">Comfortable with closeness and independence</div>
+      </div>
+      <div class="style-card">
+        <div class="style-emoji">🟡</div>
+        <div class="style-name">Anxious</div>
+        <div class="style-desc">Craves closeness, fears abandonment</div>
+      </div>
+      <div class="style-card">
+        <div class="style-emoji">🔵</div>
+        <div class="style-name">Avoidant</div>
+        <div class="style-desc">Values independence, uncomfortable with need</div>
+      </div>
+      <div class="style-card">
+        <div class="style-emoji">🟣</div>
+        <div class="style-name">Disorganised</div>
+        <div class="style-desc">Mix of craving and fearing closeness</div>
+      </div>
+    </div>
+
+    <div class="trust-list">
+      <div class="trust-item"><div class="trust-dot"></div>Completely free — no payment needed</div>
+      <div class="trust-item"><div class="trust-dot"></div>Based on Bowlby & Ainsworth attachment research</div>
+      <div class="trust-item"><div class="trust-dot"></div>Private — your answers are never stored</div>
+    </div>
+
+    <div class="email-section">
+      <label class="email-label">Get your results + new tools by email <span style="color:var(--ink-muted)">(optional)</span></label>
+      <div class="email-row">
+        <input class="email-input" type="email" id="email-input" placeholder="you@example.com" />
+        <button class="btn-primary" style="width:auto;padding:11px 22px;margin-bottom:0" onclick="startQuiz()">Begin →</button>
+      </div>
+      <button class="email-skip" onclick="startQuiz()">Skip — start without email</button>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="screen-quiz" class="screen">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span class="progress-label" id="q-num">Question 1 of 10</span>
+        <span class="progress-label" id="q-pct">10%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress" style="width:10%"></div></div>
+    </div>
+    <div class="progress-dots" id="progress-dots"></div>
+    <div class="q-text" id="q-text"></div>
+    <div class="options" id="q-options"></div>
+    <div class="nav-row">
+      <button class="btn-ghost" id="btn-back" onclick="prevQ()" disabled>← Back</button>
+      <button class="btn-next" id="btn-next" onclick="nextQ()" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="screen-result" class="screen">
+    <div class="profile-pill" id="result-pill"></div>
+    <h2 class="result-headline" id="result-headline"></h2>
+    <p class="result-desc" id="result-desc"></p>
+
+    <div class="section-eyebrow">How this shows up for you</div>
+    <div id="traits-container"></div>
+
+    <div class="divider"></div>
+
+    <div class="section-eyebrow">3 shifts to try</div>
+    <div id="shifts-container"></div>
+
+    <!-- UPSELL to Deep Dive -->
+    <div class="upsell-card">
+      <div class="upsell-eyebrow">Go deeper</div>
+      <h3 class="upsell-headline">Try the Loneliness Deep Dive</h3>
+      <p class="upsell-body">Attachment patterns and loneliness are deeply connected. The Deep Dive uses AI to analyse your specific situation — not just your type — and builds you a personalised plan.</p>
+      <a class="btn-upsell" href="/deep-dive">See the Deep Dive Report →</a>
+      <div class="upsell-price">$8.99 one-time · from the free Loneliness Quiz</div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-outline" onclick="copyShare()">📋 Copy to share</button>
+      <button class="btn-outline" onclick="retakeQuiz()">Retake quiz</button>
+    </div>
+    <div class="disclaimer">This quiz is for self-reflection only. Attachment theory is a framework, not a fixed diagnosis. Patterns can and do change.</div>
+    <button class="btn-restart" onclick="retakeQuiz()">Start over</button>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/avoidant-attachment-style-signs">Avoidant attachment signs</a>
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE ── */
+const STRIPE_LINK = 'https://buy.stripe.com/00w4gz7na4qC3yi0FM4AU05';
+// Success URL: https://humanlylabs.org/attachment-quiz?paid=true
+
+/* ── QUESTIONS ── */
+const questions = [
+  {
+    text: "When someone you care about doesn't reply for a while, what happens inside you?",
+    options: [
+      "I notice it but assume they're busy — I don't spiral",
+      "I start wondering if I've done something wrong or if they're pulling away",
+      "I feel relieved — I don't need constant contact",
+      "I feel unsettled but try to push the feeling down"
+    ]
+  },
+  {
+    text: "How comfortable are you telling someone close to you that you need them?",
+    options: [
+      "Pretty comfortable — I can express needs without it feeling risky",
+      "I need reassurance often but worry I ask for too much",
+      "Uncomfortable — I'd rather handle things alone than seem needy",
+      "I want to ask but something stops me, even when I really need support"
+    ]
+  },
+  {
+    text: "When a relationship is going really well, what do you find yourself doing?",
+    options: [
+      "Enjoying it and feeling settled in it",
+      "Waiting for something to go wrong or for them to pull away",
+      "Feeling like I need more space than before",
+      "Both clinging to it and feeling overwhelmed by it at the same time"
+    ]
+  },
+  {
+    text: "How do you typically respond when someone gets emotionally close to you?",
+    options: [
+      "I welcome it — closeness feels safe and good",
+      "I lean in and want even more closeness",
+      "I feel the urge to create some distance",
+      "I feel pulled toward them and scared at the same time"
+    ]
+  },
+  {
+    text: "When you have a conflict with someone important to you, what's your instinct?",
+    options: [
+      "To work through it — I trust we can resolve it",
+      "To worry it signals the end or that they'll leave",
+      "To withdraw and wait for it to blow over on its own",
+      "To feel flooded — sometimes I can't tell if I want to fight or flee"
+    ]
+  },
+  {
+    text: "How do you feel about depending on other people?",
+    options: [
+      "Fine with it — interdependence feels natural",
+      "I depend on others a lot but feel anxious about it",
+      "I prefer not to — I like knowing I can manage alone",
+      "I want to depend on people but it doesn't feel safe to"
+    ]
+  },
+  {
+    text: "What best describes how you feel about intimacy in close relationships?",
+    options: [
+      "I find it comfortable and rewarding",
+      "I crave it deeply and can't seem to get enough",
+      "It makes me feel exposed — I tend to keep things surface-level",
+      "I want it badly but something in me resists when it's offered"
+    ]
+  },
+  {
+    text: "When someone you care about is upset with you, what do you feel?",
+    options: [
+      "Concerned, but I can stay grounded and work through it",
+      "Extremely anxious — I need to fix it immediately",
+      "Defensive or numb — I tend to shut down",
+      "Panicked and confused — my reactions feel hard to control"
+    ]
+  },
+  {
+    text: "How would you describe your general view of yourself in relationships?",
+    options: [
+      "I feel worthy of love and generally trust that people care for me",
+      "I worry I'm too much, not enough, or that people will leave eventually",
+      "I feel most comfortable when I'm self-sufficient",
+      "I often feel confused about my worth — it shifts depending on how others treat me"
+    ]
+  },
+  {
+    text: "Which statement resonates most with how relationships feel for you?",
+    options: [
+      "'I can be close to people without losing myself or worrying about them leaving'",
+      "'I want more closeness than most people seem comfortable giving me'",
+      "'I function best when I have plenty of space and don't rely on anyone too much'",
+      "'I find relationships both desperately important and deeply frightening'"
+    ]
+  }
+];
+
+/* ── SCORING ── */
+// Options map to: 0=secure, 1=anxious, 2=avoidant, 3=disorganised
+const scoringMap = [0,1,2,3]; // each question: option index = attachment index
+
+const profiles = {
+  secure: {
+    name: "Secure attachment",
+    emoji: "🟢",
+    bg: "#EAF2EC", color: "#2D5A3D", border: "#B8D9C2",
+    headline: "You're comfortable with closeness — and with independence",
+    desc: "Secure attachment means you generally feel worthy of love and trust that people who care for you won't suddenly disappear. You can be emotionally close without losing yourself, and you can handle conflict without catastrophising. This is the most adaptive style — not because you never struggle, but because you have a stable internal base to return to.",
+    traits: [
+      { icon: "💚", bg: "#EAF2EC", title: "You communicate needs clearly", body: "You can express what you need without excessive guilt or fear that asking will push people away." },
+      { icon: "🤝", bg: "#EAF2EC", title: "Conflict feels manageable", body: "Disagreements don't signal the end of a relationship to you — you can stay present and work through them." },
+      { icon: "🌱", bg: "#EAF2EC", title: "You allow genuine intimacy", body: "You can let people in without becoming enmeshed or feeling trapped — closeness feels like a choice, not a threat." }
+    ],
+    shifts: [
+      { title: "Stay curious about your patterns", body: "Secure doesn't mean perfect. Notice where you occasionally drift into anxious or avoidant behaviour under stress." },
+      { title: "Be a safe harbour for others", body: "Your secure base is a genuine gift in relationships — being reliably present for others without trying to fix them." },
+      { title: "Deepen rather than maintain", body: "The risk for secure attachers is coasting. Challenge yourself to pursue greater depth in your closest relationships." }
+    ]
+  },
+  anxious: {
+    name: "Anxious attachment",
+    emoji: "🟡",
+    bg: "#FEF3E2", color: "#7A4210", border: "#F5C99A",
+    headline: "You love deeply — and fear deeply that it won't last",
+    desc: "Anxious attachment typically develops when early caregiving was inconsistent — sometimes warm and present, sometimes not. You learned to stay hypervigilant to signals of withdrawal or rejection. In adult relationships, this often shows up as a deep need for reassurance, difficulty tolerating uncertainty, and a tendency to interpret silence or distance as rejection even when it isn't.",
+    traits: [
+      { icon: "💛", bg: "#FEF3E2", title: "You feel things intensely", body: "Your emotional sensitivity is a genuine strength — you notice nuance, you care deeply, and you're rarely indifferent." },
+      { icon: "📡", bg: "#FEF3E2", title: "You're hypertuned to others", body: "You read moods and micro-expressions well, often sensing shifts in a relationship before the other person has named them." },
+      { icon: "🔄", bg: "#FEF3E2", title: "Reassurance brings only temporary relief", body: "You may find that even when someone gives you reassurance, the anxiety returns quickly — the relief doesn't stick." }
+    ],
+    shifts: [
+      { title: "Self-soothe before seeking reassurance", body: "When anxiety spikes, try sitting with it for 20 minutes before reaching out. This builds internal regulation capacity over time." },
+      { title: "Distinguish threat from discomfort", body: "Ask: is this person actually pulling away, or am I interpreting neutral behaviour as rejection? Often it's the latter." },
+      { title: "Build relationships with yourself", body: "The antidote to anxious attachment isn't finding a more reassuring partner — it's developing a more stable relationship with yourself." }
+    ]
+  },
+  avoidant: {
+    name: "Avoidant attachment",
+    emoji: "🔵",
+    bg: "#EBF2FB", color: "#1D5FA5", border: "#B5D4F4",
+    headline: "You value independence — and keep connection at arm's length",
+    desc: "Avoidant attachment usually develops when emotional needs were consistently minimised or unmet in early life. You adapted by becoming self-reliant and learned that needing people wasn't safe. In adult relationships, you tend to feel most comfortable alone, can feel overwhelmed by others' emotional needs, and often find yourself withdrawing when relationships get deeply intimate.",
+    traits: [
+      { icon: "💙", bg: "#EBF2FB", title: "You're genuinely self-sufficient", body: "You've developed real independence and capability — you don't lean on others unnecessarily, and you're reliable under pressure." },
+      { icon: "🧠", bg: "#EBF2FB", title: "You process internally", body: "You tend to think things through alone rather than talking them out — which can feel like strength but can also become isolation." },
+      { icon: "🚪", bg: "#EBF2FB", title: "Closeness triggers a pull to withdraw", body: "When relationships get very intimate, a part of you wants to create distance — even when you consciously want the closeness." }
+    ],
+    shifts: [
+      { title: "Name the withdrawal before you act on it", body: "When you feel the urge to pull back, try saying to yourself or your partner: 'I'm feeling overwhelmed and need some time.' Naming it is different from disappearing." },
+      { title: "Practice micro-vulnerability", body: "You don't have to share everything. Start with one small true thing — a feeling, a preference, a fear — and notice that the sky doesn't fall." },
+      { title: "Recognise avoidance as protection, not preference", body: "The aloofness isn't really who you are — it's a strategy that kept you safe. You're allowed to not need it anymore." }
+    ]
+  },
+  disorganised: {
+    name: "Disorganised attachment",
+    emoji: "🟣",
+    bg: "#F0EBFB", color: "#5B3A8A", border: "#C4B5E8",
+    headline: "You want closeness — and it frightens you at the same time",
+    desc: "Disorganised attachment (sometimes called fearful-avoidant) typically develops when the source of comfort was also a source of fear — an environment where safety and threat came from the same place. In adult relationships, you can feel caught between desperately wanting intimacy and feeling deeply unsafe when it's offered. This creates confusing, painful push-pull dynamics that can be hard to explain even to yourself.",
+    traits: [
+      { icon: "🟣", bg: "#F0EBFB", title: "You feel the push and the pull simultaneously", body: "You can want someone intensely and feel panicked by their closeness at exactly the same moment." },
+      { icon: "⚡", bg: "#F0EBFB", title: "Your nervous system gets easily overwhelmed", body: "Emotional intensity in relationships can trigger a flood response — fight, flight, or freeze — that feels hard to control." },
+      { icon: "🔮", bg: "#F0EBFB", title: "You're deeply perceptive", body: "People with disorganised attachment often have high emotional intelligence — born from having to read environments very carefully." }
+    ],
+    shifts: [
+      { title: "Understand this is a survival adaptation", body: "Your patterns make complete sense given what you experienced. They were intelligent responses to difficult circumstances — not character flaws." },
+      { title: "Therapeutic support is particularly valuable here", body: "Disorganised attachment is the style most consistently helped by trauma-informed therapy. This isn't weakness — it's how the nervous system heals." },
+      { title: "Move slowly in relationships", body: "Give yourself permission to take things slowly. Trust is built in small moments of safety, not grand gestures. Rushing closeness tends to trigger the fear response." }
+    ]
+  }
+};
+
+/* ── STATE ── */
+let answers   = [];
+let currentQ  = 0;
+let currentProfile = null;
+let userEmail = '';
+
+/* ── EMAIL / START ── */
+function startQuiz() {
+  userEmail = document.getElementById('email-input').value.trim();
+  if (userEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail)) {
+    showToast('Please enter a valid email address'); return;
+  }
+  if (userEmail) saveEmail(userEmail);
+  goTo('screen-quiz');
+  renderProgressDots();
+}
+
+function saveEmail(email) {
+  const key      = 'hly_emails';
+  const existing = localStorage.getItem(key) || 'email,timestamp,loneliness_type\n';
+  if (existing.includes(email)) return;
+  localStorage.setItem(key, existing + `${email},${new Date().toISOString()},attachment-quiz\n`);
+}
+
+/* ── QUIZ ── */
+function renderProgressDots() {
+  document.getElementById('progress-dots').innerHTML =
+    Array.from({length: questions.length}, (_, i) => {
+      let cls = 'dot';
+      if (i < answers.length) cls += ' done';
+      else if (i === answers.length) cls += ' current';
+      return `<div class="${cls}"></div>`;
+    }).join('');
+}
+
+function renderQ() {
+  const q   = questions[currentQ];
+  const pct = Math.round(((currentQ + 1) / questions.length) * 100);
+  document.getElementById('q-num').textContent     = `Question ${currentQ + 1} of ${questions.length}`;
+  document.getElementById('q-pct').textContent     = pct + '%';
+  document.getElementById('progress').style.width  = pct + '%';
+  document.getElementById('q-text').textContent    = q.text;
+
+  const container = document.getElementById('q-options');
+  container.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn' + (answers[currentQ] === i ? ' selected' : '');
+    btn.textContent = opt;
+    btn.onclick = () => selectOption(i);
+    container.appendChild(btn);
+  });
+
+  document.getElementById('btn-back').disabled = currentQ === 0;
+  document.getElementById('btn-next').disabled = answers[currentQ] === undefined;
+  document.getElementById('btn-next').textContent = currentQ === questions.length - 1 ? 'See my results →' : 'Next →';
+  renderProgressDots();
+}
+
+function selectOption(i) {
+  answers[currentQ] = i;
+  document.querySelectorAll('.option-btn').forEach((b, idx) => b.classList.toggle('selected', idx === i));
+  document.getElementById('btn-next').disabled = false;
+}
+
+function nextQ() {
+  if (currentQ < questions.length - 1) { currentQ++; renderQ(); }
+  else { computeResult(); showResult(); }
+}
+
+function prevQ() {
+  if (currentQ > 0) { currentQ--; renderQ(); }
+}
+
+/* ── SCORING ── */
+function computeResult() {
+  const counts = { secure: 0, anxious: 0, avoidant: 0, disorganised: 0 };
+  const keys   = ['secure','anxious','avoidant','disorganised'];
+  answers.forEach(ans => { counts[keys[ans]]++; });
+  const topType = Object.entries(counts).sort((a,b) => b[1]-a[1])[0][0];
+  currentProfile = profiles[topType];
+  sessionStorage.setItem('hly_attachment_type', topType);
+}
+
+/* ── RENDER RESULT ── */
+function showResult() {
+  const p = currentProfile;
+
+  const pill = document.getElementById('result-pill');
+  pill.style.cssText = `background:${p.bg};color:${p.color};border:1px solid ${p.border}`;
+  pill.textContent   = `${p.emoji} ${p.name}`;
+
+  document.getElementById('result-headline').textContent = p.headline;
+  document.getElementById('result-desc').textContent     = p.desc;
+
+  document.getElementById('traits-container').innerHTML = p.traits.map(t => `
+    <div class="trait-card">
+      <div class="trait-icon" style="background:${t.bg}">${t.icon}</div>
+      <div>
+        <div class="trait-title">${t.title}</div>
+        <div class="trait-body">${t.body}</div>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('shifts-container').innerHTML = p.shifts.map(s => `
+    <div class="shift-card">
+      <div class="shift-title">${s.title}</div>
+      <div class="shift-body">${s.body}</div>
+    </div>`).join('');
+
+  goTo('screen-result');
+}
+
+/* ── SHARE ── */
+function copyShare() {
+  if (!currentProfile) return;
+  const p    = currentProfile;
+  const text = `I just discovered my attachment style with Humanly Labs.\n\nMy style: ${p.name} ${p.emoji}\n\n"${p.headline}"\n\nTake the free quiz → humanlylabs.org/attachment-quiz`;
+  copyToClipboard(text, () => showToast('✓ Copied to clipboard!'));
+}
+
+function copyToClipboard(text, cb) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(cb).catch(() => fallbackCopy(text, cb));
+  } else { fallbackCopy(text, cb); }
+}
+
+function fallbackCopy(text, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.cssText = 'position:fixed;left:-9999px';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); cb && cb(); } catch { showToast('Copy failed'); }
+  document.body.removeChild(ta);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+/* ── NAV ── */
+function retakeQuiz() {
+  answers = []; currentQ = 0; currentProfile = null;
+  document.getElementById('email-input').value = '';
+  goTo('screen-intro');
+}
+
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (id === 'screen-quiz') renderQ();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('email-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') startQuiz();
+  });
+});
+</script>
+<div style="max-width:680px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:var(--c-ink-3,#888);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/quiz" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Loneliness Type Quiz</a><a href="/deep-dive" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Loneliness Deep Dive</a><a href="/social-anxiety" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Social Anxiety Check</a></div>
+  <p style="font-size:13px;color:var(--c-ink-3,#888);margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+# 3. Client-side calls to the Anthropic API from tool pages
+
+Date: 2026-08-31
+
+## Status
+
+Proposed — flagged for a decision, not yet resolved
+
+## Context
+
+Several interactive tool pages (`social-anxiety.html`, `friendship-audit.html`,
+`find-your-people.html`, `checkin-generator.html`, `conversation-starter.html`,
+`social-battery.html`, `deep-dive.html`) contain client-side JavaScript that
+calls `https://api.anthropic.com/v1/messages` directly from the browser, with
+no API key attached to the request:
+
+```js
+const res = await fetch('https://api.anthropic.com/v1/messages', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ model: '...', max_tokens: 1200, messages: [...] })
+});
+```
+
+This pattern works inside environments that transparently inject
+credentials on behalf of the caller (for example, when a page like this is
+previewed inside Claude's own artifact/completions environment). It will
+**not** work as a public, standalone deployment: the Anthropic API requires
+authentication, so on the live site these calls should fail (each affected
+tool does have a fallback path for when the request fails, so pages degrade
+rather than break outright, but the AI-personalized part of the feature
+would not work as intended).
+
+## Decision
+
+**Not yet made.** This ADR exists to record the issue so it isn't lost
+between sessions. Options to evaluate:
+
+1. **Proxy through a Cloudflare Worker** — add a Worker route that holds the
+   real API key server-side and forwards requests, so the key is never
+   shipped to the browser. This fits the existing Cloudflare Pages hosting
+   with minimal added infrastructure.
+2. **Move generation server-side entirely** (e.g. Pages Functions) and have
+   the client call a same-origin endpoint.
+3. **Confirm this is intentionally out of scope for now** — e.g. if these
+   tools are only ever demoed inside an environment that injects
+   credentials, and public users are expected to only see the fallback
+   (non-AI) output.
+
+## Consequences
+
+Until this is resolved, treat the "personalized AI insight" behavior of the
+affected tool pages as unverified in production. Anyone testing the live
+site should check whether these calls succeed or silently fall back.

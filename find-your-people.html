@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Your People — Community Matcher | Humanly Labs</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Find Your People — Community Matcher — Humanly Labs" />
+  <meta name="twitter:description" content="Enter your interests and get AI-matched communities, groups, and first steps to find your people." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+    <meta name="description" content="Enter your interests and get specific communities, groups, and first steps to find your people. AI-matched to your personality." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="canonical" href="https://humanlylabs.org/find-your-people" />
+  <meta property="og:title" content="Find Your People — Community Matcher — Humanly Labs" />
+  <meta property="og:description" content="Enter your interests and get AI-matched communities, groups, and first steps to find your people." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/find-your-people" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Find Your People \u2014 Community Matcher \u2014 Humanly Labs",
+    "url": "https://humanlylabs.org/find-your-people",
+    "description": "Enter your interests and get specific communities, groups, and first steps to find your people. AI-matched to your personality.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12);--border-strong:rgba(28,25,23,.25);
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:680px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--sage)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:600px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* SHARED */
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--sage);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--sage)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .btn-sage{display:block;width:100%;padding:14px;text-align:center;background:var(--sage);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem;text-decoration:none}
+    .btn-sage:hover{background:#3D6B4A;transform:translateY(-1px)}
+    .btn-sage:disabled{opacity:.35;cursor:default;transform:none}
+    .btn-outline{width:100%;padding:12px;text-align:center;background:none;color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s;display:block;margin-bottom:.5rem}
+    .btn-outline:hover{background:var(--cream)}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+    .divider{height:1px;background:var(--border);margin:1.75rem 0}
+    .form-label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:.4rem;display:block}
+    .form-hint{font-size:12px;color:var(--ink-muted);margin-bottom:.65rem}
+    .form-section{margin-bottom:1.5rem}
+
+    /* LANDING */
+    .feature-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem;padding:1.25rem;background:var(--sage-light);border-radius:var(--radius-md);border:1px solid var(--sage-border)}
+    .feature-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#2D5A3D;line-height:1.5}
+    .feature-dot{width:6px;height:6px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:7px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+
+    /* INTEREST TAGS */
+    .interest-input-row{display:flex;gap:8px;margin-bottom:.75rem}
+    .interest-input{flex:1;padding:11px 14px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .15s}
+    .interest-input:focus{border-color:var(--sage)}
+    .interest-input::placeholder{color:var(--ink-muted)}
+    .add-tag-btn{padding:11px 18px;background:var(--sage);color:white;border:none;border-radius:var(--radius-md);font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;transition:all .15s;white-space:nowrap}
+    .add-tag-btn:hover{background:#3D6B4A}
+    .tags-wrap{display:flex;flex-wrap:wrap;gap:.5rem;min-height:20px;margin-bottom:.5rem}
+    .tag{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--sage-light);border:1px solid var(--sage-border);border-radius:999px;font-size:13px;color:#2D5A3D;font-weight:500}
+    .tag-remove{background:none;border:none;cursor:pointer;color:#2D5A3D;font-size:14px;line-height:1;padding:0;opacity:.6;transition:opacity .15s}
+    .tag-remove:hover{opacity:1}
+    .tag-hint{font-size:12px;color:var(--ink-muted)}
+    .suggested-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+    .suggest-tag{padding:5px 12px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--ink-soft);background:var(--cream);cursor:pointer;transition:all .15s}
+    .suggest-tag:hover{border-color:var(--sage);color:var(--sage);background:var(--sage-light)}
+
+    /* PERSONALITY PILLS */
+    .pill-grid{display:flex;flex-wrap:wrap;gap:.5rem}
+    .pill-btn{padding:8px 14px;border:1px solid var(--border);border-radius:999px;background:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-soft);cursor:pointer;transition:all .15s;white-space:nowrap}
+    .pill-btn:hover{background:var(--warm-white);border-color:var(--border-strong)}
+    .pill-btn.selected{border-color:var(--sage);background:var(--sage-light);color:#1F4A2D;border-width:1.5px;font-weight:500}
+
+    /* GENERATING */
+    .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--sage);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .gen-wrap{text-align:center;padding:2rem 0}
+    .gen-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+    .gen-sub{font-size:14px;color:var(--ink-muted);line-height:1.6}
+    .gen-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;text-align:left}
+    .gen-step{font-size:13px;color:var(--ink-muted);display:flex;align-items:center;gap:.75rem;transition:color .3s}
+    .gen-step.done{color:var(--sage)} .gen-step.active{color:var(--ink)}
+    .gen-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .3s}
+    .gen-step.done .gen-dot{background:var(--sage)}
+    .gen-step.active .gen-dot{background:var(--ink);animation:pulse .8s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+    /* RESULTS */
+    .results-intro{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .match-card{border:1px solid var(--border);border-radius:var(--radius-md);padding:1.5rem;margin-bottom:1rem;background:var(--cream);border-left:4px solid var(--sage)}
+    .mc-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.75rem}
+    .mc-interest{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);font-weight:500;margin-bottom:.25rem}
+    .mc-name{font-family:'Fraunces',serif;font-size:18px;font-weight:300;color:var(--ink);letter-spacing:-.01em}
+    .mc-type{font-size:11px;font-weight:500;padding:3px 10px;border-radius:999px;background:var(--sage-light);color:var(--sage);border:1px solid var(--sage-border);white-space:nowrap;flex-shrink:0;margin-top:4px}
+    .mc-desc{font-size:13px;color:var(--ink-soft);line-height:1.65;margin-bottom:1rem}
+    .mc-options{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem}
+    .mc-option{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--ink-soft)}
+    .mc-dot{width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:6px}
+    .mc-first-step{background:var(--sage-light);border:1px solid var(--sage-border);border-radius:var(--radius-sm);padding:.75rem 1rem;font-size:13px;color:#1F4A2D;line-height:1.6}
+    .mc-first-step strong{display:block;margin-bottom:.2rem;font-size:11px;text-transform:uppercase;letter-spacing:.06em;opacity:.7}
+    .result-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+    .result-actions .btn-outline{flex:1;min-width:120px;margin-bottom:0}
+
+    /* TOAST */
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    footer{max-width:600px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem}
+    @media(max-width:600px){.card{padding:1.75rem 1.25rem}.headline{font-size:26px}.interest-input-row{flex-direction:column}}
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I meet new people as an adult?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meeting people as an adult works best through repeated, low-pressure contact such as classes, clubs, volunteer groups, or hobby communities where you see the same people regularly. The Humanly Labs Find Your People tool matches you to specific communities based on your interests."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find friends with similar interests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best places depend on your interests, but community classes, local Meetup groups, Discord servers, and interest-based apps are all effective starting points. The Humanly Labs Community Matcher gives you personalised recommendations based on what you enjoy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is it so hard to make friends as an adult?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adult friendship is harder because the built-in structures of school and university are gone. Adults have to create proximity intentionally, which requires effort, vulnerability, and consistency that daily life does not naturally provide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to make a new friend as an adult?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Research suggests it takes roughly 50 hours of interaction to form a casual friendship and over 200 hours for a close friend. The key is finding contexts where repeated contact happens naturally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the community matcher free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the Find Your People matcher at Humanly Labs is completely free with no account required."
+      }
+    }
+  ]
+}
+</script>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">Find Your People</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- LANDING -->
+  <div id="screen-landing" class="screen active">
+    <div class="eyebrow">AI-matched · instant · $3.99</div>
+    <h1 class="headline">Find the people<br>who <em>get you</em></h1>
+    <p class="body-text">Most people know what they're interested in. What they don't know is where those interests lead to real human connection. This tool maps your interests to specific communities, groups, and formats — then gives you one concrete first step for each.</p>
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-dot"></div>Enter 3–5 of your interests or hobbies</div>
+      <div class="feature-item"><div class="feature-dot"></div>AI matches each to specific communities — online and offline</div>
+      <div class="feature-item"><div class="feature-dot"></div>Personalised to your social comfort level</div>
+      <div class="feature-item"><div class="feature-dot"></div>One concrete first step per match — no vague advice</div>
+      <div class="feature-item"><div class="feature-dot"></div>Unlimited regenerations per purchase</div>
+    </div>
+    <div class="price-row">
+      <div class="price">$3.99</div>
+      <div class="price-note">one-time · unlimited uses</div>
+    </div>
+    <button class="btn-sage" onclick="handlePurchase()">Find my communities → $3.99</button>
+    <div class="guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't help</div>
+    <button onclick="goTo('screen-form')" style="margin-top:1rem;width:100%;padding:10px;border:1px dashed var(--border-strong);border-radius:999px;background:none;font-size:12px;color:var(--ink-muted);cursor:pointer;font-family:inherit">[Dev] Skip payment</button>
+  </div>
+
+  <!-- FORM -->
+  <div id="screen-form" class="screen">
+    <div class="eyebrow">Tell us about you</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-.01em">What are you <em style="font-style:italic;color:var(--sage)">into?</em></h2>
+
+    <!-- Interests -->
+    <div class="form-section">
+      <label class="form-label">Your interests or hobbies</label>
+      <div class="form-hint">Add 3–5 things. They can be very specific — the more specific, the better the matches.</div>
+      <div class="interest-input-row">
+        <input class="interest-input" type="text" id="interest-input" placeholder="e.g. trail running, fermentation, sci-fi novels..." maxlength="50" onkeydown="if(event.key==='Enter')addInterest()" />
+        <button class="add-tag-btn" onclick="addInterest()">Add</button>
+      </div>
+      <div class="tags-wrap" id="tags-wrap">
+        <span class="tag-hint" id="tag-hint">Your interests will appear here</span>
+      </div>
+      <div style="font-size:12px;color:var(--ink-muted);margin-top:.5rem">Or pick from common ones:</div>
+      <div class="suggested-tags" id="suggested-tags">
+        <button class="suggest-tag" onclick="addSuggest(this)">Running</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Reading</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Hiking</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Cooking</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Gaming</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Photography</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Music</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Art</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Yoga</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Coding</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Writing</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Film</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Travel</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Cycling</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Board games</button>
+        <button class="suggest-tag" onclick="addSuggest(this)">Volunteering</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Social comfort level -->
+    <div class="form-section">
+      <label class="form-label">Your social comfort level</label>
+      <div class="form-hint">This shapes whether we suggest smaller or larger group formats</div>
+      <div class="pill-grid" id="comfort-grid">
+        <button class="pill-btn" data-val="introvert — small groups and one-on-one work best for me" onclick="selectPill(this,'comfort')">🤫 Introvert — smaller is better</button>
+        <button class="pill-btn" data-val="ambivert — comfortable in both small and larger groups" onclick="selectPill(this,'comfort')">⚖️ Ambivert — depends on the day</button>
+        <button class="pill-btn" data-val="extrovert — I thrive in bigger social settings" onclick="selectPill(this,'comfort')">🙋 Extrovert — bigger the better</button>
+      </div>
+    </div>
+
+    <!-- Location type -->
+    <div class="form-section">
+      <label class="form-label">Where are you based?</label>
+      <div class="form-hint">Shapes the balance of online vs in-person suggestions</div>
+      <div class="pill-grid" id="location-grid">
+        <button class="pill-btn" data-val="a large city" onclick="selectPill(this,'location')">🏙️ Large city</button>
+        <button class="pill-btn" data-val="a smaller town or regional area" onclick="selectPill(this,'location')">🏘️ Smaller town</button>
+        <button class="pill-btn" data-val="a rural or remote area" onclick="selectPill(this,'location')">🌳 Rural / remote</button>
+        <button class="pill-btn" data-val="anywhere — I'm open to online communities primarily" onclick="selectPill(this,'location')">🌐 Primarily online</button>
+      </div>
+    </div>
+
+    <!-- Goal -->
+    <div class="form-section" style="margin-bottom:0">
+      <label class="form-label">What are you looking for?</label>
+      <div class="pill-grid" id="goal-grid">
+        <button class="pill-btn" data-val="close friendships — people I can really connect with" onclick="selectPill(this,'goal')">Close friendships</button>
+        <button class="pill-btn" data-val="casual social contact — just being around people regularly" onclick="selectPill(this,'goal')">Casual social contact</button>
+        <button class="pill-btn" data-val="a sense of community and belonging" onclick="selectPill(this,'goal')">Community & belonging</button>
+        <button class="pill-btn" data-val="activity partners — people to do specific things with" onclick="selectPill(this,'goal')">Activity partners</button>
+      </div>
+    </div>
+
+    <div style="height:1.5rem"></div>
+    <button class="btn-sage" id="find-btn" onclick="findPeople()" disabled>Find my communities →</button>
+    <p style="text-align:center;margin-top:.75rem">
+      <button onclick="goTo('screen-landing')" style="background:none;border:none;font-family:inherit;font-size:12px;color:var(--ink-muted);cursor:pointer;text-decoration:underline;text-underline-offset:2px">← Back</button>
+    </p>
+  </div>
+
+  <!-- GENERATING -->
+  <div id="screen-generating" class="screen">
+    <div class="gen-wrap">
+      <div class="spinner"></div>
+      <div class="gen-title">Finding your people…</div>
+      <div class="gen-sub">Matching your interests to specific communities and building your first steps. About 15 seconds.</div>
+      <div class="gen-steps">
+        <div class="gen-step active" id="gs1"><div class="gen-dot"></div>Reading your interests</div>
+        <div class="gen-step" id="gs2"><div class="gen-dot"></div>Matching to online communities</div>
+        <div class="gen-step" id="gs3"><div class="gen-dot"></div>Finding local formats that fit</div>
+        <div class="gen-step" id="gs4"><div class="gen-dot"></div>Building your first steps</div>
+        <div class="gen-step" id="gs5"><div class="gen-dot"></div>Personalising to your comfort level</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="screen-results" class="screen">
+    <div class="eyebrow">Your community matches</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:300;color:var(--ink);margin-bottom:.75rem;letter-spacing:-.01em">Here's where to <em style="font-style:italic;color:var(--sage)">find your people</em></h2>
+    <p class="results-intro" id="results-intro"></p>
+    <div id="matches-container"></div>
+    <div class="result-actions">
+      <button class="btn-outline" onclick="copyResults()" style="flex:1">📋 Copy to share</button>
+      <button class="btn-outline" onclick="regenerate()" style="flex:1">↻ Different interests</button>
+    </div>
+    <div style="font-size:11px;color:var(--ink-muted);text-align:center;margin-top:1.25rem;line-height:1.6">
+      Your purchase gives unlimited regenerations — try different interest combinations any time.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/how-to-make-friends-in-your-30s">Make friends in your 30s</a>
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE ── */
+const STRIPE_LINK = 'https://buy.stripe.com/aFa6oHePC5uG5Gq4W24AU06';
+// Success URL: https://humanlylabs.org/find-your-people?paid=true
+
+/* ── STATE ── */
+let interests      = [];
+let selectedComfort  = '';
+let selectedLocation = '';
+let selectedGoal     = '';
+let hasPaid        = sessionStorage.getItem('hly_fyp_paid') === '1';
+let lastResults    = null;
+
+const MAX_INTERESTS = 6;
+
+/* ── INIT ── */
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    hasPaid = true;
+    sessionStorage.setItem('hly_fyp_paid', '1');
+    goTo('screen-form');
+  }
+  document.getElementById('interest-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); addInterest(); }
+  });
+});
+
+/* ── PURCHASE ── */
+function handlePurchase() {
+  window.location.href = STRIPE_LINK;
+}
+
+/* ── INTERESTS ── */
+function addInterest() {
+  const input = document.getElementById('interest-input');
+  const val   = input.value.trim();
+  if (!val || interests.map(i=>i.toLowerCase()).includes(val.toLowerCase()) || interests.length >= MAX_INTERESTS) return;
+  interests.push(val);
+  input.value = '';
+  renderTags();
+  updateFindBtn();
+}
+
+function addSuggest(btn) {
+  const val = btn.textContent.trim();
+  if (interests.map(i=>i.toLowerCase()).includes(val.toLowerCase()) || interests.length >= MAX_INTERESTS) return;
+  interests.push(val);
+  btn.style.display = 'none';
+  renderTags();
+  updateFindBtn();
+}
+
+function removeInterestByIndex(idx) {
+  const val = interests[idx];
+  interests.splice(idx, 1);
+  renderTags();
+  updateFindBtn();
+  // Re-show suggested tag if it was one
+  document.querySelectorAll('.suggest-tag').forEach(btn => {
+    if (btn.textContent.trim() === val) btn.style.display = '';
+  });
+}
+
+function renderTags() {
+  const wrap = document.getElementById('tags-wrap');
+  const hint = document.getElementById('tag-hint');
+  if (interests.length === 0) {
+    wrap.innerHTML = '';
+    wrap.appendChild(hint || Object.assign(document.createElement('span'), {className:'tag-hint',textContent:'Your interests will appear here'}));
+    return;
+  }
+  wrap.innerHTML = interests.map((interest, idx) => `
+    <span class="tag">${interest}
+      <button class="tag-remove" onclick="removeInterestByIndex(${idx})" title="Remove">×</button>
+    </span>`).join('');
+}
+
+/* ── PILLS ── */
+function selectPill(btn, group) {
+  document.querySelectorAll(`#${group}-grid .pill-btn`).forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  if (group === 'comfort')  selectedComfort  = btn.dataset.val;
+  if (group === 'location') selectedLocation = btn.dataset.val;
+  if (group === 'goal')     selectedGoal     = btn.dataset.val;
+  updateFindBtn();
+}
+
+function updateFindBtn() {
+  document.getElementById('find-btn').disabled =
+    interests.length < 3 || !selectedComfort || !selectedLocation || !selectedGoal;
+}
+
+/* ── FIND ── */
+async function findPeople() {
+  if (interests.length < 3 || !selectedComfort || !selectedLocation || !selectedGoal) return;
+  goTo('screen-generating');
+  animateGenSteps();
+
+  const prompt = `You are a social connection expert helping someone find their community. Give specific, actionable, real community suggestions.
+
+About this person:
+- Interests: ${interests.join(', ')}
+- Social comfort: ${selectedComfort}
+- Location: ${selectedLocation}
+- Looking for: ${selectedGoal}
+
+For each of their interests (or grouped where it makes sense), suggest ONE specific community match. Be concrete — name actual subreddits, specific types of clubs, real platforms, specific meetup formats. Don't be generic.
+
+Rules:
+- Match the comfort level (introvert = smaller groups, online-friendly; extrovert = larger events OK)
+- Match the location (rural = more online; city = more in-person options)
+- The "first step" must be ONE specific action they can take TODAY or THIS WEEK
+- No vague advice like "join a club" — say WHAT club, WHERE to find it, HOW to start
+- Vary the types: some online, some in-person, some hybrid
+
+Return ONLY valid JSON, no markdown:
+{
+  "intro": "One sentence personalised to their combination of interests and situation — encouraging but not cheesy",
+  "matches": [
+    {
+      "interest": "the interest this match is for",
+      "communityName": "Specific name of the community type or platform",
+      "type": "Online | In-person | Hybrid",
+      "description": "2 sentences explaining exactly what this community is and why it fits them specifically",
+      "options": [
+        "Specific option 1 — name a real subreddit, Discord server type, or club format",
+        "Specific option 2",
+        "Specific option 3"
+      ],
+      "firstStep": "One specific action to take today or this week — concrete, doable, no vagueness"
+    }
+  ]
+}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1500,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const raw  = data.content?.find(b => b.type === 'text')?.text || '';
+    lastResults = JSON.parse(raw.replace(/```json|```/g,'').trim());
+    renderResults();
+  } catch(err) {
+    console.error(err);
+    goTo('screen-form');
+    showToast('Something went wrong — please try again');
+  }
+}
+
+/* ── STEP ANIMATION ── */
+function animateGenSteps() {
+  const steps = ['gs1','gs2','gs3','gs4','gs5'];
+  let i = 0;
+  const iv = setInterval(() => {
+    if (i > 0) { document.getElementById(steps[i-1]).classList.remove('active'); document.getElementById(steps[i-1]).classList.add('done'); }
+    if (i < steps.length) { document.getElementById(steps[i]).classList.add('active'); i++; }
+    else clearInterval(iv);
+  }, 3000);
+}
+
+/* ── RENDER ── */
+function renderResults() {
+  document.getElementById('results-intro').textContent = lastResults.intro || '';
+  document.getElementById('matches-container').innerHTML = (lastResults.matches || []).map(m => `
+    <div class="match-card">
+      <div class="mc-header">
+        <div>
+          <div class="mc-interest">${m.interest}</div>
+          <div class="mc-name">${m.communityName}</div>
+        </div>
+        <span class="mc-type">${m.type}</span>
+      </div>
+      <div class="mc-desc">${m.description}</div>
+      <div class="mc-options">
+        ${(m.options||[]).map(o => `<div class="mc-option"><div class="mc-dot"></div><span>${o}</span></div>`).join('')}
+      </div>
+      <div class="mc-first-step">
+        <strong>Your first step</strong>
+        ${m.firstStep}
+      </div>
+    </div>`).join('');
+  goTo('screen-results');
+}
+
+/* ── COPY ── */
+function copyResults() {
+  if (!lastResults) return;
+  const text = `My community matches from Find Your People — Humanly Labs\n\nInterests: ${interests.join(', ')}\n\n` +
+    (lastResults.matches||[]).map(m =>
+      `${m.interest.toUpperCase()}\n${m.communityName} (${m.type})\n${m.description}\nOptions: ${(m.options||[]).join(' · ')}\nFirst step: ${m.firstStep}`
+    ).join('\n\n') +
+    '\n\nFind yours → humanlylabs.org/find-your-people';
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => showToast('✓ Copied!'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.cssText = 'position:fixed;left:-9999px';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { document.execCommand('copy'); showToast('✓ Copied!'); } catch { showToast('Copy failed'); }
+    document.body.removeChild(ta);
+  }
+}
+
+function regenerate() {
+  interests = []; selectedComfort = ''; selectedLocation = ''; selectedGoal = '';
+  renderTags();
+  document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('.suggest-tag').forEach(b => b.style.display = '');
+  updateFindBtn();
+  goTo('screen-form');
+}
+
+/* ── NAV ── */
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+
+<!-- SEO cross-links -->
+<nav data-seo-crosslinks style="text-align:center;padding:1.5rem 1rem;font-size:.85rem;opacity:.7">More tools: <a href="/quiz">Loneliness Type Quiz</a> · <a href="/friendship-audit">Friendship Audit</a></nav>
+<div style="max-width:680px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:var(--c-ink-3,#888);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/friendship-audit" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Friendship Audit</a><a href="/conversation-starter" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Conversation Starter</a><a href="/checkin-generator" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Check-In Generator</a></div>
+  <p style="font-size:13px;color:var(--c-ink-3,#888);margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

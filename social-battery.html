@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Battery Test — Why Socialising Drains You</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Social Battery Tracker — Humanly Labs" />
+  <meta name="twitter:description" content="Track your social energy for 7 days. Discover your drain patterns and get a personalised recharge plan." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://humanlylabs.org/social-battery" />
+  <meta property="og:title" content="Social Battery Tracker — Humanly Labs" />
+  <meta property="og:description" content="Track your social energy for 7 days. Discover your drain patterns and get a personalised recharge plan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/social-battery" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+    <meta name="description" content="Track your social energy for 7 days. Discover your drain patterns and get a personalised recharge plan. Free tool." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+      <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Social Battery Tracker \u2014 Humanly Labs",
+    "url": "https://humanlylabs.org/social-battery",
+    "description": "Social Battery Tracker \u2014 Humanly Labs",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:#F5F0E8; --warm-white:#FDFCF9; --ink:#1C1917; --ink-soft:#57534E; --ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12); --border-strong:rgba(28,25,23,.25);
+      --amber:#B5530A; --amber-light:#FEF3E2; --amber-border:#F5C99A;
+      --sage:#4A7C59; --sage-light:#EAF2EC; --sage-border:#B8D9C2;
+      --rose:#9F3247; --rose-light:#FDF2F4; --rose-border:#F4B8C6;
+      --sky:#1C5DAF; --sky-light:#EBF2FB; --sky-border:#B5D4F4;
+      --r-sm:8px; --r-md:14px; --r-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:680px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--amber)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:600px;background:var(--warm-white);border-radius:var(--r-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* SHARED */
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--amber)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .btn-primary{display:block;width:100%;padding:14px;text-align:center;background:var(--amber);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem;text-decoration:none}
+    .btn-primary:hover{background:#963F06;transform:translateY(-1px)}
+    .btn-primary:disabled{opacity:.35;cursor:default;transform:none}
+    .btn-outline{width:100%;padding:12px;text-align:center;background:none;color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s;display:block;text-decoration:none}
+    .btn-outline:hover{background:var(--cream)}
+    .btn-ghost{background:none;border:none;font-family:inherit;font-size:13px;color:var(--ink-muted);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+    .divider{height:1px;background:var(--border);margin:1.75rem 0}
+
+    /* LANDING */
+    .feature-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--r-md);border:1px solid var(--amber-border)}
+    .feature-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#6B2F04;line-height:1.5}
+    .feature-dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:7px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+
+    /* BATTERY VISUAL */
+    .battery-wrap{display:flex;justify-content:center;margin:1.5rem 0}
+    .battery-outer{width:80px;height:160px;border:3px solid var(--border-strong);border-radius:12px;position:relative;overflow:hidden;background:var(--cream)}
+    .battery-outer::before{content:'';position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:28px;height:12px;background:var(--border-strong);border-radius:4px 4px 0 0}
+    .battery-fill{position:absolute;bottom:0;left:0;right:0;border-radius:0 0 9px 9px;transition:height .5s ease, background .5s ease}
+    .battery-pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink)}
+
+    /* DAY TRACKER */
+    .day-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+    .day-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);letter-spacing:-.01em}
+    .day-progress{font-size:12px;color:var(--ink-muted)}
+    .day-progress strong{color:var(--ink);font-weight:500}
+
+    /* SLIDERS */
+    .slider-section{margin-bottom:1.5rem}
+    .slider-label{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:.25rem;display:flex;justify-content:space-between;align-items:center}
+    .slider-val{font-family:'Fraunces',serif;font-size:18px;color:var(--amber)}
+    .slider-hint{font-size:12px;color:var(--ink-muted);margin-bottom:.75rem}
+    input[type=range]{width:100%;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--border);outline:none;cursor:pointer}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--amber);border:3px solid white;box-shadow:0 1px 4px rgba(181,83,10,.3);cursor:pointer;transition:transform .15s}
+    input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
+    input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--amber);border:3px solid white;cursor:pointer}
+
+    /* ACTIVITY PILLS */
+    .activity-label{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:.4rem}
+    .activity-hint{font-size:12px;color:var(--ink-muted);margin-bottom:.75rem}
+    .activity-grid{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:0}
+    .act-btn{padding:7px 13px;border:1px solid var(--border);border-radius:999px;background:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-soft);cursor:pointer;transition:all .15s;white-space:nowrap}
+    .act-btn:hover{background:var(--warm-white);border-color:var(--border-strong)}
+    .act-btn.sel-drain{border-color:var(--rose);background:var(--rose-light);color:var(--rose)}
+    .act-btn.sel-charge{border-color:var(--sage);background:var(--sage-light);color:var(--sage)}
+    .act-legend{display:flex;gap:1rem;margin-bottom:.75rem}
+    .legend-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink-muted)}
+    .legend-dot{width:8px;height:8px;border-radius:50%}
+
+    /* MOOD NOTE */
+    .mood-textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;resize:none;transition:border-color .15s;line-height:1.6}
+    .mood-textarea:focus{border-color:var(--amber)}
+    .mood-textarea::placeholder{color:var(--ink-muted)}
+
+    /* DAY NAV */
+    .day-nav{display:flex;gap:.75rem;margin-top:1.5rem}
+    .day-nav .btn-primary{margin-bottom:0}
+    .day-nav .btn-outline{width:auto;padding:12px 20px;flex-shrink:0}
+
+    /* PROGRESS DOTS */
+    .progress-dots{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.5rem}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s}
+    .dot.done{background:var(--amber)}
+    .dot.current{background:var(--amber);transform:scale(1.3)}
+
+    /* ANALYSIS */
+    .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--amber);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .gen-wrap{text-align:center;padding:2rem 0}
+    .gen-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+    .gen-sub{font-size:14px;color:var(--ink-muted);line-height:1.6}
+    .gen-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;text-align:left}
+    .gen-step{font-size:13px;color:var(--ink-muted);display:flex;align-items:center;gap:.75rem;transition:color .3s}
+    .gen-step.done{color:var(--amber)}
+    .gen-step.active{color:var(--ink)}
+    .gen-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .3s}
+    .gen-step.done .gen-dot{background:var(--amber)}
+    .gen-step.active .gen-dot{background:var(--ink);animation:pulse .8s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+    /* REPORT */
+    .report-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);font-weight:500;margin-bottom:.5rem}
+    .report-headline{font-family:'Fraunces',serif;font-size:26px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.02em}
+    .report-headline em{font-style:italic;color:var(--amber)}
+    .report-sub{font-size:13px;color:var(--ink-muted);margin-bottom:1.75rem}
+
+    /* WEEK CHART */
+    .week-chart{display:flex;align-items:flex-end;gap:.5rem;height:100px;margin-bottom:.75rem;padding:.75rem;background:var(--cream);border-radius:var(--r-md);border:1px solid var(--border)}
+    .chart-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:.35rem}
+    .chart-bar-wrap{flex:1;width:100%;display:flex;flex-direction:column;justify-content:flex-end}
+    .chart-bar{width:100%;border-radius:4px 4px 0 0;transition:height .5s ease;min-height:3px}
+    .chart-day{font-size:10px;color:var(--ink-muted)}
+    .chart-legend{display:flex;gap:1.25rem;font-size:11px;color:var(--ink-muted);margin-bottom:1.5rem}
+    .chart-legend span{display:flex;align-items:center;gap:5px}
+    .cl-dot{width:8px;height:8px;border-radius:2px}
+
+    /* INSIGHT CARDS */
+    .insight-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);padding:1.25rem;margin-bottom:.75rem}
+    .ic-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);font-weight:500;margin-bottom:.35rem}
+    .ic-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:.4rem}
+    .ic-body{font-size:13px;color:var(--ink-soft);line-height:1.65}
+    .pattern-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:500;margin-bottom:1.5rem}
+    .recharge-card{background:var(--sage-light);border:1px solid var(--sage-border);border-radius:var(--r-md);padding:1.25rem;margin-bottom:.75rem}
+    .rc-title{font-size:14px;font-weight:500;color:#1F4A2D;margin-bottom:.35rem}
+    .rc-body{font-size:13px;color:#2D5A3D;line-height:1.65}
+    .week-summary-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.5rem}
+    .ws-box{background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);padding:1rem;text-align:center}
+    .ws-num{font-family:'Fraunces',serif;font-size:26px;font-weight:300;color:var(--ink)}
+    .ws-lbl{font-size:11px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+    .section-divider{height:1px;background:var(--border);margin:1.5rem 0}
+
+    /* STRIPE GATE */
+    .gate-wrap{text-align:center;margin-bottom:1.5rem}
+    .gate-lock{font-size:40px;margin-bottom:.75rem}
+    .gate-headline{font-family:'Fraunces',serif;font-size:24px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.02em}
+    .gate-sub{font-size:14px;color:var(--ink-soft);line-height:1.65;margin-bottom:1.5rem}
+    .gate-features{display:flex;flex-direction:column;gap:10px;margin-bottom:1.75rem}
+    .gate-feature{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-soft)}
+    .gate-check{width:18px;height:18px;border-radius:50%;background:var(--amber-light);border:1px solid var(--amber-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .gate-check svg{width:8px;height:8px;stroke:var(--amber)}
+
+    /* TOAST */
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    footer{max-width:600px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem}
+    @media(max-width:600px){.card{padding:1.75rem 1.25rem}.headline{font-size:26px}.week-summary-row{grid-template-columns:1fr 1fr}}
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a social battery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your social battery is your capacity for social interaction. When it is full, socialising feels energising and natural. When it is drained, even simple interactions feel exhausting. It is not a character flaw but a measurable aspect of how your nervous system processes social stimulation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I feel drained after socialising?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Feeling drained after socialising is common and can be caused by overstimulation, emotional labour, social anxiety, or simply being more introverted. Tracking your social energy patterns helps you understand your personal triggers and plan recovery time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Am I an introvert if socialising exhausts me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. Many extroverts also experience social fatigue, especially in large groups or emotionally demanding interactions. Social battery drain is about your nervous system, not your personality type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I recharge my social battery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recharging varies by person but typically involves quiet alone time, low-stimulation activities, sleep, and time in nature. The Humanly Labs Social Battery Tracker helps you identify your specific recharge patterns over 7 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the social battery tracker free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the Social Battery Tracker at Humanly Labs is completely free to use with no account required."
+      }
+    }
+  ]
+}
+</script>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">Social Battery Tracker</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- ── LANDING ── -->
+  <div id="screen-landing" class="screen active">
+    <div class="eyebrow">7-day tracker · AI analysis · $3.99</div>
+    <h1 class="headline">Map your <em>social energy</em></h1>
+    <p class="body-text">Some interactions charge you up. Others drain you flat. Most people never figure out which is which — so they can't protect their energy or recover properly. This tracker changes that.</p>
+
+    <div class="battery-wrap">
+      <div class="battery-outer">
+        <div class="battery-fill" id="landing-fill" style="height:60%;background:#F5C99A"></div>
+        <div class="battery-pct">60%</div>
+      </div>
+    </div>
+
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-dot"></div>Check in for 7 days — takes 2 minutes each day</div>
+      <div class="feature-item"><div class="feature-dot"></div>Track energy before and after social interactions</div>
+      <div class="feature-item"><div class="feature-dot"></div>Tag what drained or charged you each day</div>
+      <div class="feature-item"><div class="feature-dot"></div>AI identifies your personal drain patterns</div>
+      <div class="feature-item"><div class="feature-dot"></div>Get a tailored recharge plan at the end</div>
+    </div>
+
+    <div class="price-row">
+      <div class="price">$3.99</div>
+      <div class="price-note">one-time · 7-day tracker + AI report</div>
+    </div>
+    <button class="btn-primary" onclick="handlePurchase()">Start my 7-day tracker → $3.99</button>
+    <div class="guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't help</div>
+  </div>
+
+  <!-- ── DAILY CHECK-IN ── -->
+  <div id="screen-checkin" class="screen">
+    <div class="progress-dots" id="progress-dots"></div>
+
+    <div class="day-header">
+      <div class="day-title" id="checkin-title">Day 1 check-in</div>
+      <div class="day-progress"><strong id="days-done">0</strong>/7 done</div>
+    </div>
+
+    <!-- Battery visual -->
+    <div class="battery-wrap">
+      <div class="battery-outer">
+        <div class="battery-fill" id="checkin-fill" style="height:50%"></div>
+        <div class="battery-pct" id="checkin-pct">50%</div>
+      </div>
+    </div>
+
+    <!-- Energy slider -->
+    <div class="slider-section">
+      <div class="slider-label">
+        Energy level right now
+        <span class="slider-val" id="energy-val">5</span>
+      </div>
+      <div class="slider-hint">1 = completely depleted · 10 = fully charged</div>
+      <input type="range" id="energy-slider" min="1" max="10" value="5" oninput="updateEnergy(this.value)" />
+    </div>
+
+    <!-- Social time slider -->
+    <div class="slider-section">
+      <div class="slider-label">
+        Hours around people today
+        <span class="slider-val" id="social-val">3h</span>
+      </div>
+      <div class="slider-hint">Includes work, calls, social events — any interaction</div>
+      <input type="range" id="social-slider" min="0" max="12" value="3" oninput="updateSocial(this.value)" />
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Activity tags -->
+    <div class="activity-label">What happened today?</div>
+    <div class="activity-hint">Tap to mark as draining 🔴 or recharging 🟢 (tap twice to switch)</div>
+    <div class="act-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--rose)"></div>Draining</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--sage)"></div>Recharging</div>
+    </div>
+    <div class="activity-grid" id="activity-grid">
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Work meeting">Work meeting</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Social event">Social event</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="One-on-one chat">One-on-one chat</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Large group">Large group</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Phone call">Phone call</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Date or romance">Date / romance</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Family time">Family time</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Conflict or tension">Conflict / tension</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Time alone">Time alone</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Exercise">Exercise</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Creative work">Creative work</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Nature / outdoors">Nature / outdoors</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Small talk">Small talk</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Deep conversation">Deep conversation</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Helping someone">Helping someone</button>
+      <button class="act-btn" onclick="toggleActivity(this)" data-label="Cancelled plans">Cancelled plans</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Mood note -->
+    <div class="slider-label" style="margin-bottom:.4rem">Anything else about today?</div>
+    <div class="slider-hint" style="margin-bottom:.65rem">Optional — how are you feeling? What stood out?</div>
+    <textarea class="mood-textarea" id="mood-note" rows="3" placeholder="e.g. Had a great one-on-one with a friend but the team meeting left me flat..."></textarea>
+
+    <div class="day-nav">
+      <button class="btn-outline" onclick="saveDayAndContinue(false)" style="width:auto;padding:12px 20px">Save for later</button>
+      <button class="btn-primary" style="margin-bottom:0;flex:1" onclick="saveDayAndContinue(true)" id="continue-btn">Save & continue →</button>
+    </div>
+  </div>
+
+  <!-- ── GATE (before analysis) ── -->
+  <div id="screen-gate" class="screen">
+    <div class="gate-wrap">
+      <div class="gate-lock">🔋</div>
+      <h2 class="gate-headline">7 days complete — your analysis is ready</h2>
+      <p class="gate-sub">You've built a full picture of your social energy this week. Unlock your personal drain map and recharge plan.</p>
+    </div>
+    <div class="gate-features">
+      <div class="gate-feature"><div class="gate-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Your energy pattern across the 7 days</div>
+      <div class="gate-feature"><div class="gate-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Your top drain triggers (specific to your data)</div>
+      <div class="gate-feature"><div class="gate-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Your natural recharge activities</div>
+      <div class="gate-feature"><div class="gate-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Introvert / extrovert / ambivert spectrum result</div>
+      <div class="gate-feature"><div class="gate-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Personalised weekly energy management plan</div>
+    </div>
+    <div class="price-row" style="justify-content:center">
+      <div class="price">$3.99</div>
+      <div class="price-note">one-time · instant access</div>
+    </div>
+    <button class="btn-primary" onclick="handlePurchaseGate()">Unlock my analysis → $3.99</button>
+    <div class="guarantee" style="margin-bottom:1rem">🔒 Stripe · 7-day refund if it doesn't resonate</div>
+  </div>
+
+  <!-- ── GENERATING ── -->
+  <div id="screen-generating" class="screen">
+    <div class="gen-wrap">
+      <div class="spinner"></div>
+      <div class="gen-title">Analysing your week…</div>
+      <div class="gen-sub">Reading 7 days of energy data and building your personal battery profile. About 15 seconds.</div>
+      <div class="gen-steps">
+        <div class="gen-step active" id="gs1"><div class="gen-dot"></div>Reading your daily check-ins</div>
+        <div class="gen-step" id="gs2"><div class="gen-dot"></div>Identifying drain patterns</div>
+        <div class="gen-step" id="gs3"><div class="gen-dot"></div>Finding your recharge signals</div>
+        <div class="gen-step" id="gs4"><div class="gen-dot"></div>Mapping your spectrum position</div>
+        <div class="gen-step" id="gs5"><div class="gen-dot"></div>Writing your weekly plan</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── REPORT ── -->
+  <div id="screen-report" class="screen">
+    <div class="report-eyebrow">Your 7-day social battery report</div>
+    <h2 class="report-headline">Your energy <em>decoded</em></h2>
+    <div class="report-sub" id="report-date-sub"></div>
+
+    <!-- Spectrum pill -->
+    <div class="pattern-tag" id="spectrum-pill"></div>
+
+    <!-- Week summary stats -->
+    <div class="week-summary-row" id="week-summary"></div>
+
+    <!-- Energy chart -->
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);font-weight:500;margin-bottom:.75rem">Energy across the week</div>
+    <div class="week-chart" id="week-chart"></div>
+    <div class="chart-legend">
+      <span><div class="cl-dot" style="background:var(--amber)"></div>Your energy level (1–10)</span>
+      <span><div class="cl-dot" style="background:var(--sky-light);border:1px solid var(--sky-border)"></div>Social hours</span>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- AI insights -->
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);font-weight:500;margin-bottom:1rem">What your data shows</div>
+    <div id="insights-container"></div>
+
+    <div class="section-divider"></div>
+
+    <!-- Recharge plan -->
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);font-weight:500;margin-bottom:1rem">Your personalised recharge plan</div>
+    <div id="recharge-container"></div>
+
+    <div class="section-divider"></div>
+
+    <!-- Actions -->
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+      <button class="btn-outline" onclick="copyReport()" style="flex:1">📋 Copy summary</button>
+      <button class="btn-outline" onclick="restartTracker()" style="flex:1">↻ Start new week</button>
+    </div>
+    <div style="font-size:11px;color:var(--ink-muted);text-align:center;margin-top:1.25rem;line-height:1.6">
+      This report is for self-reflection only and is not a clinical tool.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/why-socialising-drains-you">Why socialising drains you</a>
+    <a href="/social-battery-meaning">What is a social battery?</a>
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE ── */
+const STRIPE_LINK = 'https://buy.stripe.com/4gM3cv8re5uG3yibkq4AU00';
+// Success URL: https://humanlylabs.org/social-battery?paid=true
+
+/* ── STATE ── */
+const DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+let entries      = JSON.parse(localStorage.getItem('hly_battery_entries') || '[]');
+let currentDay   = entries.length; // 0-indexed, which day we're filling
+let hasPaid      = sessionStorage.getItem('hly_battery_paid') === '1';
+let reportResult = null;
+
+/* ── INIT ── */
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    hasPaid = true;
+    sessionStorage.setItem('hly_battery_paid', '1');
+  }
+
+  animateLandingBattery();
+
+  // Resume if in progress
+  if (entries.length > 0 && entries.length < 7) {
+    goTo('screen-checkin');
+    loadCheckinUI();
+  } else if (entries.length >= 7) {
+    if (hasPaid) { runAnalysis(); }
+    else { goTo('screen-gate'); }
+  }
+});
+
+function animateLandingBattery() {
+  let pct = 20;
+  const fill = document.getElementById('landing-fill');
+  const interval = setInterval(() => {
+    pct = pct >= 90 ? 20 : pct + 1;
+    fill.style.height = pct + '%';
+    fill.style.background = batteryColor(pct);
+    fill.parentElement.querySelector('.battery-pct').textContent = pct + '%';
+  }, 60);
+  // Stop animation when user leaves landing screen
+  window._batteryInterval = interval;
+}
+
+function batteryColor(pct) {
+  if (pct <= 25) return '#F4B8C6'; // rose
+  if (pct <= 50) return '#F5C99A'; // amber light
+  if (pct <= 75) return '#F5C99A'; // amber
+  return '#A8CEAF';                // sage
+}
+
+/* ── PURCHASE ── */
+function handlePurchase() {
+  sessionStorage.setItem('hly_battery_pending', '1');
+  window.location.href = STRIPE_LINK;
+}
+function handlePurchaseGate() {
+  window.location.href = STRIPE_LINK;
+}
+
+/* ── CHECKIN UI ── */
+function loadCheckinUI() {
+  clearInterval(window._batteryInterval);
+  currentDay = entries.length;
+  renderProgressDots();
+  document.getElementById('checkin-title').textContent = `Day ${currentDay + 1} check-in`;
+  document.getElementById('days-done').textContent = currentDay;
+  // Reset form
+  document.getElementById('energy-slider').value = 5;
+  document.getElementById('social-slider').value = 3;
+  document.getElementById('mood-note').value = '';
+  document.querySelectorAll('.act-btn').forEach(b => { b.classList.remove('sel-drain','sel-charge'); b.dataset.state = ''; });
+  updateEnergy(5);
+  updateSocial(3);
+}
+
+function renderProgressDots() {
+  document.getElementById('progress-dots').innerHTML = Array.from({length:7}, (_,i) => {
+    let cls = 'dot';
+    if (i < entries.length) cls += ' done';
+    else if (i === entries.length) cls += ' current';
+    return `<div class="${cls}"></div>`;
+  }).join('');
+}
+
+/* ── SLIDERS ── */
+function updateEnergy(val) {
+  val = parseInt(val);
+  document.getElementById('energy-val').textContent = val;
+  const pct = Math.round((val / 10) * 100);
+  document.getElementById('checkin-fill').style.height = pct + '%';
+  document.getElementById('checkin-fill').style.background = batteryColor(pct);
+  document.getElementById('checkin-pct').textContent = pct + '%';
+}
+function updateSocial(val) {
+  document.getElementById('social-val').textContent = val + 'h';
+}
+
+/* ── ACTIVITY TAGS ── */
+function toggleActivity(btn) {
+  const state = btn.dataset.state || '';
+  if (!state) { btn.dataset.state = 'drain'; btn.classList.add('sel-drain'); }
+  else if (state === 'drain') { btn.dataset.state = 'charge'; btn.classList.remove('sel-drain'); btn.classList.add('sel-charge'); }
+  else { btn.dataset.state = ''; btn.classList.remove('sel-drain','sel-charge'); }
+}
+
+/* ── SAVE DAY ── */
+function saveDayAndContinue(advance) {
+  const entry = {
+    day: currentDay + 1,
+    energy: parseInt(document.getElementById('energy-slider').value),
+    socialHours: parseInt(document.getElementById('social-slider').value),
+    drains: [...document.querySelectorAll('.act-btn[data-state="drain"]')].map(b => b.dataset.label),
+    charges: [...document.querySelectorAll('.act-btn[data-state="charge"]')].map(b => b.dataset.label),
+    note: document.getElementById('mood-note').value.trim(),
+    timestamp: new Date().toISOString()
+  };
+
+  entries[currentDay] = entry;
+  localStorage.setItem('hly_battery_entries', JSON.stringify(entries));
+
+  if (!advance) { showToast('✓ Saved — come back tomorrow'); return; }
+
+  if (entries.length >= 7) {
+    if (hasPaid) { runAnalysis(); }
+    else { goTo('screen-gate'); }
+  } else {
+    goTo('screen-checkin');
+    loadCheckinUI();
+  }
+}
+
+/* ── AI ANALYSIS ── */
+async function runAnalysis() {
+  goTo('screen-generating');
+  animateGenSteps();
+
+  const summary = entries.map((e, i) =>
+    `Day ${i+1} (${DAYS[i]}): energy=${e.energy}/10, social=${e.socialHours}h, drains=[${e.drains.join(', ')||'none'}], charges=[${e.charges.join(', ')||'none'}], note="${e.note||'none'}"`
+  ).join('\n');
+
+  const avgEnergy = (entries.reduce((s,e) => s+e.energy, 0) / entries.length).toFixed(1);
+  const allDrains = entries.flatMap(e => e.drains);
+  const allCharges = entries.flatMap(e => e.charges);
+
+  const prompt = `You are an energy coach specialising in social psychology and introversion/extroversion research. Analyse this person's 7-day social battery tracking data.
+
+Data:
+${summary}
+
+Average energy: ${avgEnergy}/10
+Most tagged drains: ${[...new Set(allDrains)].join(', ') || 'none'}
+Most tagged recharges: ${[...new Set(allCharges)].join(', ') || 'none'}
+
+Based on this data, provide a personalised social battery analysis. Write for this specific person — don't be generic.
+
+Return ONLY valid JSON, no markdown:
+{
+  "spectrum": {
+    "label": "Introvert | Ambivert | Extrovert | Social Introvert | Situational Extrovert",
+    "description": "One sentence describing where they sit on the spectrum based on their data",
+    "bg": "#hex", "color": "#hex", "border": "#hex"
+  },
+  "weekSummary": {
+    "avgEnergy": "${avgEnergy}",
+    "bestDay": "Day name",
+    "hardestDay": "Day name"
+  },
+  "insights": [
+    { "label": "Pattern", "title": "insight title", "body": "2-3 sentences specific to their data" },
+    { "label": "Trigger", "title": "insight title", "body": "2-3 sentences specific to their data" },
+    { "label": "Strength", "title": "insight title", "body": "2-3 sentences specific to their data" }
+  ],
+  "rechargePlan": [
+    { "title": "recharge strategy title", "body": "Specific advice based on what charged them this week. 2-3 sentences." },
+    { "title": "recharge strategy title", "body": "Specific advice for managing their main drain triggers. 2-3 sentences." },
+    { "title": "recharge strategy title", "body": "A weekly rhythm suggestion based on their energy pattern. 2-3 sentences." }
+  ]
+}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const raw = data.content?.find(b => b.type === 'text')?.text || '';
+    reportResult = JSON.parse(raw.replace(/```json|```/g, '').trim());
+    renderReport();
+  } catch(err) {
+    console.error(err);
+    // Fallback static render
+    reportResult = {
+      spectrum: { label: 'Ambivert', description: 'You draw energy from both social time and solitude, depending on context.', bg: '#FEF3E2', color: '#B5530A', border: '#F5C99A' },
+      weekSummary: { avgEnergy: avgEnergy, bestDay: DAYS[entries.reduce((b,e,i,a) => e.energy > a[b].energy ? i : b, 0)], hardestDay: DAYS[entries.reduce((b,e,i,a) => e.energy < a[b].energy ? i : b, 0)] },
+      insights: [
+        { label: 'Pattern', title: 'Your energy fluctuates with social density', body: 'Days with more social hours tended to show different energy levels. Paying attention to this ratio is your most powerful tool.' },
+        { label: 'Trigger', title: allDrains.length ? `${allDrains[0]} appears frequently in your drains` : 'You have clear drain awareness', body: 'Recognising what depletes you is the first step to managing it proactively rather than reactively.' },
+        { label: 'Strength', title: allCharges.length ? `${allCharges[0]} consistently recharges you` : 'You know what restores you', body: 'Protect the activities and interactions that restore your energy — schedule them intentionally rather than hoping they happen.' }
+      ],
+      rechargePlan: [
+        { title: 'Protect your recharge activities', body: `${allCharges.length ? allCharges.slice(0,2).join(' and ') + ' appeared as energy sources this week' : 'Solitude and low-stimulation activities'} — block time for these in your week rather than treating them as optional.` },
+        { title: 'Create buffers around draining events', body: `${allDrains.length ? allDrains[0] : 'High-intensity social events'} can deplete you significantly. Build in 30–60 minutes of quiet before and after to protect your baseline.` },
+        { title: 'Work with your weekly rhythm', body: `Your best energy day was ${DAYS[entries.reduce((b,e,i,a) => e.energy > a[b].energy ? i : b, 0)]}. Schedule your most socially demanding commitments around your natural high points.` }
+      ]
+    };
+    renderReport();
+  }
+}
+
+/* ── STEP ANIMATION ── */
+function animateGenSteps() {
+  const steps = ['gs1','gs2','gs3','gs4','gs5'];
+  let i = 0;
+  const iv = setInterval(() => {
+    if (i > 0) { document.getElementById(steps[i-1]).classList.remove('active'); document.getElementById(steps[i-1]).classList.add('done'); }
+    if (i < steps.length) { document.getElementById(steps[i]).classList.add('active'); i++; }
+    else clearInterval(iv);
+  }, 3000);
+}
+
+/* ── RENDER REPORT ── */
+function renderReport() {
+  const r = reportResult;
+
+  // Date
+  document.getElementById('report-date-sub').textContent =
+    `Week of ${new Date(entries[0]?.timestamp || Date.now()).toLocaleDateString('en-AU', {day:'numeric',month:'long'})} · based on ${entries.length} check-ins`;
+
+  // Spectrum
+  const sp = document.getElementById('spectrum-pill');
+  sp.style.cssText = `background:${r.spectrum.bg};color:${r.spectrum.color};border:1px solid ${r.spectrum.border}`;
+  sp.textContent = '🔋 ' + r.spectrum.label + ' — ' + r.spectrum.description;
+
+  // Week summary
+  const best = entries.reduce((b,e,i,a) => e.energy > a[b].energy ? i : b, 0);
+  const hard = entries.reduce((b,e,i,a) => e.energy < a[b].energy ? i : b, 0);
+  document.getElementById('week-summary').innerHTML = `
+    <div class="ws-box"><div class="ws-num">${r.weekSummary.avgEnergy}</div><div class="ws-lbl">Avg energy</div></div>
+    <div class="ws-box"><div class="ws-num" style="font-size:18px">${DAYS[best]}</div><div class="ws-lbl">Best day</div></div>
+    <div class="ws-box"><div class="ws-num" style="font-size:18px">${DAYS[hard]}</div><div class="ws-lbl">Hardest day</div></div>`;
+
+  // Chart
+  const maxHours = Math.max(...entries.map(e => e.socialHours), 1);
+  document.getElementById('week-chart').innerHTML = entries.map((e, i) => {
+    const barH = Math.round((e.energy / 10) * 100);
+    const socialH = Math.round((e.socialHours / Math.max(maxHours, 1)) * 40);
+    return `<div class="chart-col">
+      <div class="chart-bar-wrap" style="position:relative">
+        <div class="chart-bar" style="height:${barH}%;background:${batteryColor(barH)}"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:${socialH}px;background:rgba(28,93,175,0.12);border-radius:2px;pointer-events:none"></div>
+      </div>
+      <div class="chart-day">${DAYS[i]}</div>
+    </div>`;
+  }).join('');
+
+  // Insights
+  document.getElementById('insights-container').innerHTML = r.insights.map(ins => `
+    <div class="insight-card">
+      <div class="ic-label">${ins.label}</div>
+      <div class="ic-title">${ins.title}</div>
+      <div class="ic-body">${ins.body}</div>
+    </div>`).join('');
+
+  // Recharge plan
+  document.getElementById('recharge-container').innerHTML = r.rechargePlan.map(rc => `
+    <div class="recharge-card">
+      <div class="rc-title">${rc.title}</div>
+      <div class="rc-body">${rc.body}</div>
+    </div>`).join('');
+
+  goTo('screen-report');
+}
+
+/* ── COPY REPORT ── */
+function copyReport() {
+  if (!reportResult) return;
+  const r = reportResult;
+  const text = `My Social Battery Report — Humanly Labs
+
+Spectrum: ${r.spectrum.label}
+${r.spectrum.description}
+
+Week summary:
+• Average energy: ${r.weekSummary.avgEnergy}/10
+• Best day: ${r.weekSummary.bestDay}
+• Hardest day: ${r.weekSummary.hardestDay}
+
+Key insights:
+${r.insights.map(i => `• ${i.title}: ${i.body}`).join('\n')}
+
+Recharge plan:
+${r.rechargePlan.map(p => `• ${p.title}: ${p.body}`).join('\n')}
+
+Track yours → humanlylabs.org/social-battery`;
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => showToast('✓ Report copied!'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.cssText = 'position:fixed;left:-9999px';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { document.execCommand('copy'); showToast('✓ Report copied!'); } catch { showToast('Copy failed'); }
+    document.body.removeChild(ta);
+  }
+}
+
+/* ── RESTART ── */
+function restartTracker() {
+  if (!confirm('Start a new 7-day tracking period? Your previous data will be cleared.')) return;
+  localStorage.removeItem('hly_battery_entries');
+  entries = []; currentDay = 0;
+  goTo('screen-landing');
+  animateLandingBattery();
+}
+
+/* ── NAV ── */
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+
+<!-- SEO cross-links -->
+<nav data-seo-crosslinks style="text-align:center;padding:1.5rem 1rem;font-size:.85rem;opacity:.7">More tools: <a href="/quiz">Loneliness Type Quiz</a> · <a href="/social-anxiety">Social Anxiety Check</a></nav>
+<div style="max-width:680px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:var(--c-ink-3,#888);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/quiz" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Loneliness Type Quiz</a><a href="/social-anxiety" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Social Anxiety Check</a><a href="/conversation-starter" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Conversation Starter</a></div>
+  <p style="font-size:13px;color:var(--c-ink-3,#888);margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

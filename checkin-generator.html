@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Check-In Message Generator — Reconnect With Friends</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Check-In Message Generator — Humanly Labs" />
+  <meta name="twitter:description" content="Generate a warm, natural check-in message for anyone in your life in seconds." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+    <meta name="description" content="Generate warm, natural check-in messages for anyone in your life. No cringe, no blank-screen anxiety. Free tool." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="canonical" href="https://humanlylabs.org/checkin-generator" />
+  <meta property="og:title" content="Check-In Message Generator — Humanly Labs" />
+  <meta property="og:description" content="Generate a warm, natural check-in message for anyone in your life in seconds." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/checkin-generator" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+      <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Check-In Generator \u2014 Humanly Labs",
+    "url": "https://humanlylabs.org/checkin-generator",
+    "description": "Check-In Generator \u2014 Humanly Labs",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12);--border-strong:rgba(28,25,23,.25);
+      --rose:#9F3247;--rose-light:#FDF2F4;--rose-border:#F4B8C6;
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:680px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--rose)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:580px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* SHARED */
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--rose);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--rose)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .btn-rose{display:block;width:100%;padding:14px;text-align:center;background:var(--rose);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem;text-decoration:none}
+    .btn-rose:hover{background:#7A2032;transform:translateY(-1px)}
+    .btn-rose:disabled{opacity:.35;cursor:default;transform:none}
+    .btn-outline{width:100%;padding:12px;text-align:center;background:none;color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s;display:block;margin-bottom:.5rem}
+    .btn-outline:hover{background:var(--cream)}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+    .divider{height:1px;background:var(--border);margin:1.75rem 0}
+    .form-label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:.4rem;display:block}
+    .form-hint{font-size:12px;color:var(--ink-muted);margin-bottom:.65rem}
+    .form-input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .15s}
+    .form-input:focus{border-color:var(--rose)}
+    .form-input::placeholder{color:var(--ink-muted)}
+    textarea.form-input{resize:none;line-height:1.6}
+    .form-section{margin-bottom:1.5rem}
+
+    /* LANDING */
+    .feature-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem;padding:1.25rem;background:var(--rose-light);border-radius:var(--radius-md);border:1px solid var(--rose-border)}
+    .feature-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#5A1525;line-height:1.5}
+    .feature-dot{width:6px;height:6px;border-radius:50%;background:var(--rose);flex-shrink:0;margin-top:7px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+
+    /* OPTION PILLS */
+    .pill-grid{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:0}
+    .pill-btn{padding:8px 14px;border:1px solid var(--border);border-radius:999px;background:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-soft);cursor:pointer;transition:all .15s;white-space:nowrap}
+    .pill-btn:hover{background:var(--warm-white);border-color:var(--border-strong)}
+    .pill-btn.selected{border-color:var(--rose);background:var(--rose-light);color:var(--rose);border-width:1.5px;font-weight:500}
+
+    /* CHANNEL ICONS */
+    .channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+    .channel-btn{padding:12px 8px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-soft);cursor:pointer;text-align:center;transition:all .15s}
+    .channel-btn:hover{background:var(--warm-white);border-color:var(--border-strong)}
+    .channel-btn.selected{border-color:var(--rose);background:var(--rose-light);color:var(--rose);border-width:1.5px}
+    .channel-emoji{font-size:20px;display:block;margin-bottom:4px}
+
+    /* GAP SLIDER */
+    input[type=range]{width:100%;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--border);outline:none;cursor:pointer;margin:8px 0}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--rose);border:3px solid white;box-shadow:0 1px 4px rgba(159,50,71,.3);cursor:pointer}
+    input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--rose);border:3px solid white;cursor:pointer}
+    .gap-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-muted);margin-top:4px}
+
+    /* GENERATING */
+    .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--rose);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .gen-wrap{text-align:center;padding:2rem 0}
+    .gen-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+    .gen-sub{font-size:14px;color:var(--ink-muted);line-height:1.6}
+    .gen-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;text-align:left}
+    .gen-step{font-size:13px;color:var(--ink-muted);display:flex;align-items:center;gap:.75rem;transition:color .3s}
+    .gen-step.done{color:var(--rose)} .gen-step.active{color:var(--ink)}
+    .gen-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .3s}
+    .gen-step.done .gen-dot{background:var(--rose)}
+    .gen-step.active .gen-dot{background:var(--ink);animation:pulse .8s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+    /* RESULTS */
+    .result-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+    .meta-pill{padding:4px 12px;border-radius:999px;font-size:12px;font-weight:500;background:var(--rose-light);color:var(--rose);border:1px solid var(--rose-border)}
+    .result-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-.01em}
+    .result-title em{font-style:italic;color:var(--rose)}
+    .message-variants{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.75rem}
+    .message-card{border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;background:var(--cream);cursor:pointer;transition:all .15s;position:relative}
+    .message-card:hover{border-color:var(--border-strong);background:var(--warm-white)}
+    .message-card.copied{border-color:var(--rose);background:var(--rose-light)}
+    .message-variant-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);font-weight:500;margin-bottom:.6rem;display:flex;justify-content:space-between;align-items:center}
+    .copy-hint{font-size:11px;color:var(--ink-muted);transition:color .15s}
+    .message-card:hover .copy-hint{color:var(--rose)}
+    .message-card.copied .copy-hint{color:var(--rose)}
+    .message-text{font-size:14px;color:var(--ink-soft);line-height:1.75}
+    .tips-box{background:var(--sage-light);border:1px solid var(--sage-border);border-radius:var(--radius-md);padding:1.25rem;margin-bottom:1.5rem}
+    .tips-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);font-weight:500;margin-bottom:.75rem}
+    .tip-item{font-size:13px;color:#2D5A3D;line-height:1.6;margin-bottom:.5rem;display:flex;align-items:flex-start;gap:8px}
+    .tip-item:last-child{margin-bottom:0}
+    .tip-dot{width:4px;height:4px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:8px}
+    .result-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+    .result-actions .btn-outline{flex:1;margin-bottom:0;min-width:120px}
+
+    /* TOAST */
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    footer{max-width:580px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem}
+    @media(max-width:600px){.card{padding:1.75rem 1.25rem}.headline{font-size:26px}.channel-grid{grid-template-columns:1fr 1fr}}
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do you say when checking in on a friend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good check-in is warm, specific, and low-pressure. Reference something personal to them, keep it brief, and make it easy to respond without obligation. The Humanly Labs Check-In Generator writes this for you based on your relationship and situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you reconnect with someone after a long time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Acknowledge the gap briefly, lead with warmth rather than apology, and reference something specific about them or a shared memory. Avoid over-explaining the silence and move straight into genuine reconnection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a natural way to text an old friend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Referencing a shared memory, mentioning you thought of them, or asking about something specific in their life works well. It signals you are thinking of them specifically rather than sending a broadcast message."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the check-in message generator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the Check-In Message Generator at Humanly Labs is completely free with no sign-up required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the check-in generator for any relationship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The tool works for old friends, new acquaintances, family members, colleagues, or anyone you want to reach out to. You describe the relationship and situation and it generates a message that fits."
+      }
+    }
+  ]
+}
+</script>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">Check-In Generator</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- LANDING -->
+  <div id="screen-landing" class="screen active">
+    <div class="eyebrow">AI-powered · instant · $3.99</div>
+    <h1 class="headline">Reach out without<br>the <em>blank screen</em></h1>
+    <p class="body-text">You've been meaning to check in on someone for weeks. You open a new message and freeze. This tool writes it for you — warm, natural, and nothing like a template. Works for texts, DMs, and emails.</p>
+
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-dot"></div>3 message variants per person — pick the one that fits</div>
+      <div class="feature-item"><div class="feature-dot"></div>Adjusts for how long it's been and your relationship</div>
+      <div class="feature-item"><div class="feature-dot"></div>Tone options: warm, casual, or just checking in</div>
+      <div class="feature-item"><div class="feature-dot"></div>Works for texts, DMs, WhatsApp, or email</div>
+      <div class="feature-item"><div class="feature-dot"></div>Unlimited generations — use for as many people as you like</div>
+    </div>
+
+    <div class="price-row">
+      <div class="price">$3.99</div>
+      <div class="price-note">one-time · unlimited uses</div>
+    </div>
+    <button class="btn-rose" onclick="handlePurchase()">Get my check-in messages → $3.99</button>
+    <div class="guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't help</div>
+    <button onclick="goTo('screen-form')" style="margin-top:1rem;width:100%;padding:10px;border:1px dashed var(--border-strong);border-radius:999px;background:none;font-size:12px;color:var(--ink-muted);cursor:pointer;font-family:inherit">[Dev] Skip payment</button>
+  </div>
+
+  <!-- FORM -->
+  <div id="screen-form" class="screen">
+    <div class="eyebrow">Tell us about this person</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-.01em">Who are you <em style="font-style:italic;color:var(--rose)">checking in on?</em></h2>
+
+    <!-- Name -->
+    <div class="form-section">
+      <label class="form-label">Their name</label>
+      <input class="form-input" type="text" id="person-name" placeholder="e.g. Sarah" maxlength="30" oninput="updateFormBtn()" />
+    </div>
+
+    <!-- Relationship -->
+    <div class="form-section">
+      <label class="form-label">Your relationship</label>
+      <div class="form-hint">Pick the closest match</div>
+      <div class="pill-grid" id="relationship-grid">
+        <button class="pill-btn" data-val="close friend" onclick="selectPill(this,'rel')">Close friend</button>
+        <button class="pill-btn" data-val="old friend I've drifted from" onclick="selectPill(this,'rel')">Old friend</button>
+        <button class="pill-btn" data-val="family member" onclick="selectPill(this,'rel')">Family</button>
+        <button class="pill-btn" data-val="colleague or work friend" onclick="selectPill(this,'rel')">Work friend</button>
+        <button class="pill-btn" data-val="acquaintance I want to know better" onclick="selectPill(this,'rel')">Acquaintance</button>
+        <button class="pill-btn" data-val="someone going through a hard time" onclick="selectPill(this,'rel')">Going through tough time</button>
+      </div>
+    </div>
+
+    <!-- Time since last contact -->
+    <div class="form-section">
+      <label class="form-label">How long since you last spoke?</label>
+      <div class="form-hint">Slide to the approximate gap</div>
+      <input type="range" id="gap-slider" min="0" max="5" value="2" oninput="updateGapLabel(this.value)" />
+      <div class="gap-labels">
+        <span>A few days</span>
+        <span>Few weeks</span>
+        <span>A month</span>
+        <span>Few months</span>
+        <span>6+ months</span>
+        <span>Over a year</span>
+      </div>
+      <div style="text-align:center;margin-top:.75rem;font-size:14px;color:var(--ink-soft)">
+        <span id="gap-label" style="font-weight:500;color:var(--rose)">A few weeks</span>
+      </div>
+    </div>
+
+    <!-- Channel -->
+    <div class="form-section">
+      <label class="form-label">Where will you send it?</label>
+      <div class="channel-grid" id="channel-grid">
+        <button class="channel-btn" data-val="text message or SMS" onclick="selectChannel(this)"><span class="channel-emoji">💬</span>Text / SMS</button>
+        <button class="channel-btn" data-val="WhatsApp message" onclick="selectChannel(this)"><span class="channel-emoji">📱</span>WhatsApp</button>
+        <button class="channel-btn" data-val="Instagram or social DM" onclick="selectChannel(this)"><span class="channel-emoji">📸</span>Social DM</button>
+        <button class="channel-btn" data-val="email" onclick="selectChannel(this)"><span class="channel-emoji">✉️</span>Email</button>
+        <button class="channel-btn" data-val="voice note" onclick="selectChannel(this)"><span class="channel-emoji">🎙️</span>Voice note script</button>
+        <button class="channel-btn" data-val="LinkedIn message" onclick="selectChannel(this)"><span class="channel-emoji">💼</span>LinkedIn</button>
+      </div>
+    </div>
+
+    <!-- Tone -->
+    <div class="form-section">
+      <label class="form-label">Tone</label>
+      <div class="pill-grid" id="tone-grid">
+        <button class="pill-btn" data-val="warm and genuine" onclick="selectPill(this,'tone')">Warm & genuine</button>
+        <button class="pill-btn" data-val="casual and light" onclick="selectPill(this,'tone')">Casual & light</button>
+        <button class="pill-btn" data-val="just quietly checking in" onclick="selectPill(this,'tone')">Low-key check-in</button>
+        <button class="pill-btn" data-val="heartfelt and caring" onclick="selectPill(this,'tone')">Heartfelt</button>
+        <button class="pill-btn" data-val="playful with a bit of humour" onclick="selectPill(this,'tone')">Playful</button>
+      </div>
+    </div>
+
+    <!-- Optional context -->
+    <div class="form-section" style="margin-bottom:0">
+      <label class="form-label">Anything specific to mention? <span style="color:var(--ink-muted);font-weight:400">(optional)</span></label>
+      <div class="form-hint">e.g. "they just had a baby", "we used to work together", "I saw something that reminded me of them"</div>
+      <textarea class="form-input" id="context-note" rows="3" placeholder="Any context that might help personalise the message..."></textarea>
+    </div>
+
+    <div style="height:1.5rem"></div>
+    <button class="btn-rose" id="generate-btn" onclick="generate()" disabled>Write my messages →</button>
+    <p style="text-align:center;margin-top:.75rem">
+      <button onclick="goTo('screen-landing')" style="background:none;border:none;font-family:inherit;font-size:12px;color:var(--ink-muted);cursor:pointer;text-decoration:underline;text-underline-offset:2px">← Back</button>
+    </p>
+  </div>
+
+  <!-- GENERATING -->
+  <div id="screen-generating" class="screen">
+    <div class="gen-wrap">
+      <div class="spinner"></div>
+      <div class="gen-title">Writing your messages…</div>
+      <div class="gen-sub">Crafting 3 natural-sounding check-ins tailored to this person and situation. About 10 seconds.</div>
+      <div class="gen-steps">
+        <div class="gen-step active" id="gs1"><div class="gen-dot"></div>Reading the relationship context</div>
+        <div class="gen-step" id="gs2"><div class="gen-dot"></div>Considering the time gap</div>
+        <div class="gen-step" id="gs3"><div class="gen-dot"></div>Matching channel and tone</div>
+        <div class="gen-step" id="gs4"><div class="gen-dot"></div>Writing 3 natural variants</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="screen-results" class="screen">
+    <div class="result-meta">
+      <span class="meta-pill" id="meta-name"></span>
+      <span class="meta-pill" id="meta-channel"></span>
+      <span class="meta-pill" id="meta-tone"></span>
+    </div>
+    <div class="result-title">3 messages for <em id="result-name-title"></em></div>
+
+    <div class="message-variants" id="message-variants"></div>
+
+    <div class="tips-box" id="tips-box" style="display:none">
+      <div class="tips-title">Sending tips</div>
+      <div id="tips-content"></div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-outline" onclick="generateAnother()">↻ Try again / different person</button>
+      <button class="btn-outline" onclick="goTo('screen-form')">Edit details</button>
+    </div>
+    <div style="font-size:11px;color:var(--ink-muted);text-align:center;margin-top:1.25rem;line-height:1.6">
+      Click any message to copy it. Your purchase gives unlimited generations.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/what-to-text-an-old-friend">What to text an old friend</a>
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE ── */
+const STRIPE_LINK = 'https://buy.stripe.com/7sY28razm3myecW1JQ4AU03';
+// $3.99 — Success URL: https://humanlylabs.org/checkin-generator?paid=true
+
+const GAP_LABELS = ['A few days','A few weeks','About a month','A few months','6+ months','Over a year'];
+
+/* ── STATE ── */
+let selectedRel     = '';
+let selectedTone    = '';
+let selectedChannel = '';
+let hasPaid         = sessionStorage.getItem('hly_checkin_paid') === '1';
+
+/* ── INIT ── */
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    hasPaid = true;
+    sessionStorage.setItem('hly_checkin_paid', '1');
+    goTo('screen-form');
+  }
+  updateGapLabel(2);
+});
+
+/* ── PURCHASE ── */
+function handlePurchase() {
+  if (STRIPE_LINK === 'REPLACE_WITH_STRIPE_LINK') { alert('Stripe not configured — use dev button.'); return; }
+  window.location.href = STRIPE_LINK;
+}
+
+/* ── FORM SELECTORS ── */
+function selectPill(btn, group) {
+  const grid = group === 'rel' ? 'relationship-grid' : 'tone-grid';
+  document.querySelectorAll(`#${grid} .pill-btn`).forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  if (group === 'rel') selectedRel = btn.dataset.val;
+  else selectedTone = btn.dataset.val;
+  updateFormBtn();
+}
+
+function selectChannel(btn) {
+  document.querySelectorAll('#channel-grid .channel-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedChannel = btn.dataset.val;
+  updateFormBtn();
+}
+
+function updateGapLabel(val) {
+  document.getElementById('gap-label').textContent = GAP_LABELS[parseInt(val)];
+}
+
+function updateFormBtn() {
+  const name = document.getElementById('person-name').value.trim();
+  document.getElementById('generate-btn').disabled = !name || !selectedRel || !selectedTone || !selectedChannel;
+}
+
+/* ── GENERATE ── */
+async function generate() {
+  const name    = document.getElementById('person-name').value.trim();
+  const gap     = GAP_LABELS[parseInt(document.getElementById('gap-slider').value)];
+  const context = document.getElementById('context-note').value.trim();
+  if (!name || !selectedRel || !selectedTone || !selectedChannel) return;
+
+  goTo('screen-generating');
+  animateGenSteps();
+
+  const prompt = `You are helping someone reconnect with a person in their life. Write 3 distinct check-in message variants.
+
+Details:
+- Person's name: ${name}
+- Relationship: ${selectedRel}
+- Time since last contact: ${gap}
+- Channel: ${selectedChannel}
+- Tone: ${selectedTone}
+${context ? `- Extra context: ${context}` : ''}
+
+Rules:
+- Each message must sound completely natural — like a real human wrote it, not AI
+- No clichés like "I hope this message finds you well" or "Just wanted to reach out"
+- Match the channel: texts/DMs should be short (1-3 sentences), emails can be slightly longer
+- Account for the time gap naturally — ${gap} should feel acknowledged without being awkward
+- Use the person's name naturally within the message (not always at the start)
+- Each variant should have a meaningfully different approach (e.g. one references a shared memory, one is direct, one is low-pressure)
+- For voice note script: write as spoken words, not written text
+- Keep it human. Keep it warm. Never sound like a template.
+
+Also write 2 short sending tips specific to this situation (channel + time gap + relationship).
+
+Return ONLY valid JSON, no markdown:
+{
+  "messages": [
+    { "label": "Direct & warm", "text": "the full message ready to send" },
+    { "label": "Light touch", "text": "the full message ready to send" },
+    { "label": "Personal reference", "text": "the full message ready to send" }
+  ],
+  "tips": [
+    "tip 1 specific to their situation",
+    "tip 2 specific to their situation"
+  ]
+}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const raw  = data.content?.find(b => b.type === 'text')?.text || '';
+    const parsed = JSON.parse(raw.replace(/```json|```/g,'').trim());
+    renderResults(name, parsed);
+  } catch(err) {
+    console.error(err);
+    goTo('screen-form');
+    showToast('Something went wrong — please try again');
+  }
+}
+
+/* ── STEP ANIMATION ── */
+function animateGenSteps() {
+  const steps = ['gs1','gs2','gs3','gs4'];
+  let i = 0;
+  const iv = setInterval(() => {
+    if (i > 0) { document.getElementById(steps[i-1]).classList.remove('active'); document.getElementById(steps[i-1]).classList.add('done'); }
+    if (i < steps.length) { document.getElementById(steps[i]).classList.add('active'); i++; }
+    else clearInterval(iv);
+  }, 2200);
+}
+
+/* ── RENDER ── */
+function renderResults(name, data) {
+  // Meta pills
+  document.getElementById('meta-name').textContent = name;
+  document.getElementById('meta-channel').textContent = selectedChannel;
+  document.getElementById('meta-tone').textContent = selectedTone;
+  document.getElementById('result-name-title').textContent = name;
+
+  // Messages
+  document.getElementById('message-variants').innerHTML = data.messages.map((m, i) => `
+    <div class="message-card" onclick="copyMessage(this, ${i})" title="Click to copy">
+      <div class="message-variant-label">
+        <span>${m.label}</span>
+        <span class="copy-hint">Click to copy</span>
+      </div>
+      <div class="message-text">${m.text}</div>
+    </div>`).join('');
+
+  // Store messages for copy
+  window._messages = data.messages;
+
+  // Tips
+  if (data.tips?.length) {
+    document.getElementById('tips-box').style.display = 'block';
+    document.getElementById('tips-content').innerHTML = data.tips.map(t =>
+      `<div class="tip-item"><div class="tip-dot"></div><span>${t}</span></div>`
+    ).join('');
+  }
+
+  goTo('screen-results');
+}
+
+/* ── COPY ── */
+function copyMessage(card, i) {
+  const text = window._messages?.[i]?.text || '';
+  copyToClipboard(text, () => {
+    card.classList.add('copied');
+    card.querySelector('.copy-hint').textContent = '✓ Copied!';
+    setTimeout(() => {
+      card.classList.remove('copied');
+      card.querySelector('.copy-hint').textContent = 'Click to copy';
+    }, 2500);
+  });
+}
+
+function copyToClipboard(text, cb) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(cb).catch(() => fallbackCopy(text, cb));
+  } else { fallbackCopy(text, cb); }
+}
+
+function fallbackCopy(text, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.cssText = 'position:fixed;left:-9999px';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); cb && cb(); } catch { showToast('Copy failed'); }
+  document.body.removeChild(ta);
+}
+
+/* ── NAV ── */
+function generateAnother() {
+  // Reset form for a new person
+  document.getElementById('person-name').value = '';
+  document.getElementById('context-note').value = '';
+  document.getElementById('gap-slider').value = 2;
+  updateGapLabel(2);
+  selectedRel = ''; selectedTone = ''; selectedChannel = '';
+  document.querySelectorAll('.pill-btn, .channel-btn').forEach(b => b.classList.remove('selected'));
+  updateFormBtn();
+  goTo('screen-form');
+}
+
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+
+<!-- SEO cross-links -->
+<nav data-seo-crosslinks style="text-align:center;padding:1.5rem 1rem;font-size:.85rem;opacity:.7">More tools: <a href="/conversation-starter">Conversation Starter</a> · <a href="/friendship-audit">Friendship Audit</a></nav>
+<div style="max-width:680px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:var(--c-ink-3,#888);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/conversation-starter" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Conversation Starter</a><a href="/friendship-audit" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Friendship Audit</a><a href="/find-your-people" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Find Your People</a></div>
+  <p style="font-size:13px;color:var(--c-ink-3,#888);margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

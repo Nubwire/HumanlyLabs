@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Confidence Blueprint — Course Content — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.6; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 900px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: #3A6B49; }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .welcome-banner { background: #EBF2FB; border: 1px solid #A3C0E8; border-radius: 16px; padding: 2rem; margin-bottom: 3rem; }
+    .welcome-banner h1 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 500; margin-bottom: .5rem; }
+    .welcome-banner h1 em { font-style: italic; color: #1C5DAF; }
+    .welcome-banner p { color: var(--c-ink-2); font-size: .95rem; line-height: 1.65; }
+    .module-section { margin-bottom: 2.5rem; }
+    .module-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--c-border); }
+    .module-badge { background: #1C5DAF; color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; flex-shrink: 0; }
+    .module-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 500; }
+    .lesson-cards { display: flex; flex-direction: column; gap: .6rem; }
+    .lesson-card { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow); }
+    .lesson-num { width: 28px; height: 28px; background: #EBF2FB; border: 1px solid #A3C0E8; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 600; color: #1C5DAF; flex-shrink: 0; }
+    .lesson-info { flex: 1; }
+    .lesson-title { font-weight: 600; font-size: .875rem; margin-bottom: 2px; }
+    .lesson-sub { font-size: .75rem; color: var(--c-ink-3); }
+    .lesson-status { font-size: 11px; font-weight: 500; color: #1C5DAF; background: #EBF2FB; border: 1px solid #A3C0E8; border-radius: 999px; padding: 3px 10px; flex-shrink: 0; }
+    .coming-soon { color: var(--c-ink-3) !important; background: var(--c-bg) !important; border-color: var(--c-border) !important; }
+    .tool-tag { display: inline-flex; align-items: center; gap: 3px; background: #EBF2FB; color: #1C5DAF; border: 1px solid #A3C0E8; border-radius: 999px; padding: 1px 7px; font-size: 10px; font-weight: 500; margin-left: .5rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: #1C5DAF; }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } }
+
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="welcome-banner">
+    <h1>Welcome to <em>The Confidence Blueprint</em></h1>
+    <p>You're in. Your course content will appear here as each module is released. Work through each lesson in order — the modules are designed to build on each other week by week.</p>
+    <p style="margin-top:.75rem;font-size:.85rem;color:var(--c-ink-3)">Questions? Email us at <a href="mailto:hello@humanlylabs.org" style="color:#1C5DAF">hello@humanlylabs.org</a></p>
+  </div>
+  
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 1</span>
+          <span class="module-title">Mapping Your Anxiety · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Week 1</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">1</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Anatomy of Social Anxiety</div>
+            <div class="lesson-sub">How the fear-avoidance cycle works and why it strengthens over time</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">2</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Your Trigger Map<span class="tool-tag">🫁 Social Anxiety Check</span></div>
+            <div class="lesson-sub">Identifying your specific social situations and avoidance patterns</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">3</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Social Energy & Your Baseline<span class="tool-tag">🔋 Social Battery</span></div>
+            <div class="lesson-sub">Understanding how your nervous system responds to social demands</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 2</span>
+          <span class="module-title">Rewriting the Story · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Weeks 2–3</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">4</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Thoughts Behind the Fear</div>
+            <div class="lesson-sub">Identifying the cognitive distortions that fuel social anxiety</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">5</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Realistic Rethinking</div>
+            <div class="lesson-sub">Evidence-based techniques for challenging anxious predictions</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">6</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Spotlight Effect & Other Traps</div>
+            <div class="lesson-sub">Why others notice and judge you far less than you think</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 3</span>
+          <span class="module-title">Graded Exposure · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Weeks 4–5</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">7</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Exposure Ladder</div>
+            <div class="lesson-sub">How to design a step-by-step anxiety hierarchy for your specific fears</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">8</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Your First Experiments</div>
+            <div class="lesson-sub">Low-stakes structured experiments to prove your predictions wrong</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">9</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Processing Outcomes</div>
+            <div class="lesson-sub">How to interpret social interactions without the anxious post-mortem</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 4</span>
+          <span class="module-title">Social Skills That Stick · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Weeks 6–7</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">10</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Conversation Fundamentals</div>
+            <div class="lesson-sub">How conversations actually work and where anxious people misunderstand them</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">11</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Entering & Exiting Gracefully</div>
+            <div class="lesson-sub">Strategies for joining groups and leaving without it being awkward</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">12</div>
+          <div class="lesson-info">
+            <div class="lesson-title">The Art of Follow-Through</div>
+            <div class="lesson-sub">How to move from single interaction to actual relationship</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 5</span>
+          <span class="module-title">Managing Energy & Overwhelm · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Weeks 8–10</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">13</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Reading Your Social Battery<span class="tool-tag">🔋 Social Battery</span></div>
+            <div class="lesson-sub">Learning to recognise your energy limits before they collapse</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">14</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Recovery Rituals</div>
+            <div class="lesson-sub">How to recharge effectively so social exertion doesn't deplete you for days</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">15</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Setting the Right Pace</div>
+            <div class="lesson-sub">Building a social life that energises rather than exhausts you</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+      <div class="module-section">
+        <div class="module-header">
+          <span class="module-badge">Module 6</span>
+          <span class="module-title">Your Confident Life · <span style="font-size:.9rem;color:var(--c-ink-3);font-family:'Instrument Sans',sans-serif;font-weight:400">Week 12</span></span>
+        </div>
+        <div class="lesson-cards">
+        <div class="lesson-card">
+          <div class="lesson-num">16</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Your Loneliness Profile Revisited<span class="tool-tag">🔬 Loneliness Deep Dive</span></div>
+            <div class="lesson-sub">Measuring how your needs and patterns have shifted</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">17</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Maintaining Progress</div>
+            <div class="lesson-sub">How to sustain gains and handle setbacks without spiralling</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">18</div>
+          <div class="lesson-info">
+            <div class="lesson-title">Building a Life That Feels Social</div>
+            <div class="lesson-sub">Designing your ongoing social world around your real personality</div>
+          </div>
+          <div class="lesson-status coming-soon">Coming soon</div>
+        </div>
+        </div>
+      </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

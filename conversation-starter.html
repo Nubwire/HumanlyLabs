@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversation Starters for Introverts | Humanly Labs</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Conversation Starter Generator — Humanly Labs" />
+  <meta name="twitter:description" content="Enter your interests and situation. Get 10 tailored conversation starters in seconds." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://humanlylabs.org/conversation-starter" />
+  <meta property="og:title" content="AI Conversation Starter Generator — Humanly Labs" />
+  <meta property="og:description" content="Enter your interests and situation. Get 10 tailored conversation starters in seconds." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/conversation-starter" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+    <meta name="description" content="Enter your interests and situation. Get 10 tailored conversation starters in seconds — no more awkward silences." />
+      <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Conversation Starter \u2014 Humanly Labs",
+    "url": "https://humanlylabs.org/conversation-starter",
+    "description": "Conversation Starter \u2014 Humanly Labs",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,0.12);--border-strong:rgba(28,25,23,0.25);
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --sky:#1C5DAF;--sky-light:#EBF2FB;--sky-border:#B5D4F4;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,0.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:680px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-0.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--sky)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:580px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* LANDING */
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--sky);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--sky)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:2rem}
+    .how-row{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;padding:1.25rem;background:var(--sky-light);border-radius:var(--radius-md);border:1px solid var(--sky-border)}
+    .how-item{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#0C3A7A}
+    .how-num{width:22px;height:22px;border-radius:50%;background:var(--sky);color:white;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+    .btn-sky{display:block;width:100%;padding:14px;text-align:center;background:var(--sky);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem;text-decoration:none}
+    .btn-sky:hover{background:#154F99;transform:translateY(-1px)}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+
+    /* FORM */
+    .form-section{margin-bottom:1.75rem}
+    .form-label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:.4rem;display:block}
+    .form-hint{font-size:12px;color:var(--ink-muted);margin-bottom:.65rem}
+    .form-input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .15s;resize:none}
+    .form-input:focus{border-color:var(--sky)}
+    .form-input::placeholder{color:var(--ink-muted)}
+    .situation-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:0}
+    .sit-btn{padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-soft);cursor:pointer;text-align:left;transition:all .15s;line-height:1.4}
+    .sit-btn:hover{background:var(--warm-white);border-color:var(--border-strong)}
+    .sit-btn.selected{border-color:var(--sky);background:var(--sky-light);color:#0C3A7A;border-width:1.5px}
+    .sit-emoji{font-size:16px;display:block;margin-bottom:3px}
+    .tone-row{display:flex;gap:.5rem;flex-wrap:wrap}
+    .tone-btn{padding:7px 14px;border:1px solid var(--border);border-radius:999px;background:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-soft);cursor:pointer;transition:all .15s}
+    .tone-btn:hover{background:var(--warm-white);border-color:var(--border-strong)}
+    .tone-btn.selected{border-color:var(--sky);background:var(--sky-light);color:#0C3A7A;border-width:1.5px}
+    .form-divider{height:1px;background:var(--border);margin:1.75rem 0}
+    .btn-primary{display:inline-flex;align-items:center;gap:6px;padding:13px 26px;background:var(--ink);color:var(--cream);border:none;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;cursor:pointer;transition:all .15s;width:100%;justify-content:center}
+    .btn-primary:hover{background:#2C2926;transform:translateY(-1px)}
+    .btn-primary:disabled{opacity:.35;cursor:default;transform:none}
+
+    /* GENERATING */
+    .generating-wrap{text-align:center;padding:2rem 0}
+    .spinner{width:38px;height:38px;border:2px solid var(--border);border-top-color:var(--sky);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.5rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .gen-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+    .gen-sub{font-size:14px;color:var(--ink-muted);line-height:1.6}
+    .gen-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;text-align:left}
+    .gen-step{font-size:13px;color:var(--ink-muted);display:flex;align-items:center;gap:.75rem;transition:color .3s}
+    .gen-step.done{color:var(--sky)}
+    .gen-step.active{color:var(--ink)}
+    .gen-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .3s}
+    .gen-step.done .gen-dot{background:var(--sky)}
+    .gen-step.active .gen-dot{background:var(--ink);animation:pulse .8s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+    /* RESULTS */
+    .results-header{margin-bottom:1.75rem;padding-bottom:1.75rem;border-bottom:1px solid var(--border)}
+    .results-meta{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem}
+    .meta-pill{padding:4px 12px;border-radius:999px;font-size:12px;font-weight:500;background:var(--sky-light);color:var(--sky);border:1px solid var(--sky-border)}
+    .results-title{font-family:'Fraunces',serif;font-size:24px;font-weight:300;color:var(--ink);letter-spacing:-.01em}
+    .results-title em{font-style:italic;color:var(--sky)}
+    .starters-list{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
+    .starter-card{display:flex;align-items:flex-start;gap:14px;padding:1.25rem;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);cursor:pointer;transition:all .15s;position:relative}
+    .starter-card:hover{border-color:var(--border-strong);background:var(--warm-white)}
+    .starter-card.copied{border-color:var(--sky);background:var(--sky-light)}
+    .starter-num{width:26px;height:26px;border-radius:50%;background:var(--sky-light);border:1px solid var(--sky-border);color:var(--sky);font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .starter-text{font-size:14px;color:var(--ink-soft);line-height:1.65;flex:1}
+    .starter-copy{font-size:11px;color:var(--ink-muted);margin-top:4px;transition:color .15s}
+    .starter-card:hover .starter-copy{color:var(--sky)}
+    .starter-card.copied .starter-copy{color:var(--sky)}
+    .tips-section{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;margin-bottom:1.5rem}
+    .tips-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);font-weight:500;margin-bottom:.75rem}
+    .tip-item{font-size:13px;color:var(--ink-soft);line-height:1.6;margin-bottom:.5rem;display:flex;align-items:flex-start;gap:8px}
+    .tip-item:last-child{margin-bottom:0}
+    .tip-dot{width:4px;height:4px;border-radius:50%;background:var(--sky);flex-shrink:0;margin-top:8px}
+    .result-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+    .btn-outline{flex:1;padding:11px 16px;border:1px solid var(--border-strong);border-radius:999px;background:none;font-size:14px;color:var(--ink);font-family:inherit;cursor:pointer;transition:all .15s;text-align:center;min-width:120px}
+    .btn-outline:hover{background:var(--cream)}
+
+    /* GATE */
+    .gate-lock{font-size:36px;text-align:center;margin-bottom:1rem}
+    .gate-headline{font-family:'Fraunces',serif;font-size:24px;font-weight:300;color:var(--ink);margin-bottom:.5rem;text-align:center}
+    .gate-sub{font-size:14px;color:var(--ink-soft);line-height:1.6;text-align:center;margin-bottom:1.5rem}
+    .gate-features{display:flex;flex-direction:column;gap:10px;margin-bottom:1.75rem}
+    .gate-feature{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-soft)}
+    .gate-check{width:18px;height:18px;border-radius:50%;background:var(--sky-light);border:1px solid var(--sky-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .gate-check svg{width:8px;height:8px;stroke:var(--sky)}
+
+    /* TOAST */
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    footer{max-width:580px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    footer .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem}
+
+    @media(max-width:600px){
+      .card{padding:1.75rem 1.25rem}
+      .situation-grid{grid-template-columns:1fr}
+      .headline{font-size:26px}
+    }
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are good conversation starters for introverts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Good conversation starters for introverts are open-ended, low-pressure, and based on genuine curiosity. Questions like what have you been into lately or what is something you have been thinking about recently invite real conversation without feeling forced."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I start a conversation without it being awkward?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The key is to ask something specific and open-ended rather than yes or no questions. Referencing shared context, such as where you are or what is happening, also makes openers feel natural. The Humanly Labs Conversation Starter tool generates personalised openers based on your situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I talk to someone I have not spoken to in a long time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Acknowledge the time gap briefly and move straight into warmth. Note that you have been thinking of them and ask about a specific area of their life. The Humanly Labs Check-In Generator can write this message for you in seconds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the conversation starters personalised?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Humanly Labs Conversation Starter uses AI to generate openers tailored to your specific interests, situation, and context, not generic scripts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the conversation starter tool free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the Conversation Starter tool at Humanly Labs is completely free with no sign-up required."
+      }
+    }
+  ]
+}
+</script>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">Conversation Starter</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- LANDING -->
+  <div id="screen-landing" class="screen active">
+    <div class="eyebrow">AI-powered · instant · $3.99</div>
+    <h1 class="headline">Never stare at a<br><em>blank message</em> again</h1>
+    <p class="body-text">Tell us your situation and a couple of interests. We'll generate 10 tailored conversation starters that sound like you — not a template. For dates, new coworkers, neighbours, anyone you want to know better.</p>
+    <div class="how-row">
+      <div class="how-item"><div class="how-num">1</div>Pick your situation and tone</div>
+      <div class="how-item"><div class="how-num">2</div>Add a couple of your interests</div>
+      <div class="how-item"><div class="how-num">3</div>Get 10 personalised openers instantly</div>
+    </div>
+    <div class="price-row">
+      <div class="price">$3.99</div>
+      <div class="price-note">one-time · unlimited generations</div>
+    </div>
+    <!--
+      STRIPE: Replace YOUR_STRIPE_LINK with your Stripe Payment Link for this product.
+      Success URL in Stripe dashboard: https://humanlylabs.org/conversation-starter?paid=true
+    -->
+    <button class="btn-sky" onclick="handlePurchase()">Get my conversation starters → $3.99</button>
+    <div class="guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't help</div>
+  </div>
+
+  <!-- FORM -->
+  <div id="screen-form" class="screen">
+    <div class="eyebrow">Step 1 of 2 · Tell us about your situation</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-.01em">What's the <em style="font-style:italic;color:var(--sky)">situation?</em></h2>
+
+    <div class="form-section">
+      <label class="form-label">Who are you talking to?</label>
+      <div class="form-hint">Pick the one that fits best</div>
+      <div class="situation-grid" id="situation-grid">
+        <button class="sit-btn" data-val="first date or romantic interest" onclick="selectSit(this)"><span class="sit-emoji">💘</span>First date / romantic interest</button>
+        <button class="sit-btn" data-val="new coworker or colleague" onclick="selectSit(this)"><span class="sit-emoji">💼</span>New coworker / colleague</button>
+        <button class="sit-btn" data-val="neighbour I want to know better" onclick="selectSit(this)"><span class="sit-emoji">🏠</span>Neighbour</button>
+        <button class="sit-btn" data-val="someone I met at a social event" onclick="selectSit(this)"><span class="sit-emoji">🎉</span>Someone at a social event</button>
+        <button class="sit-btn" data-val="old friend I've lost touch with" onclick="selectSit(this)"><span class="sit-emoji">👋</span>Old friend I've lost touch with</button>
+        <button class="sit-btn" data-val="someone I matched with online" onclick="selectSit(this)"><span class="sit-emoji">📱</span>Online match / app</button>
+        <button class="sit-btn" data-val="someone in a hobby group or class" onclick="selectSit(this)"><span class="sit-emoji">🎨</span>Hobby group / class</button>
+        <button class="sit-btn" data-val="someone I want to make friends with" onclick="selectSit(this)"><span class="sit-emoji">🤝</span>Potential new friend</button>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <label class="form-label">What tone feels right for you?</label>
+      <div class="tone-row" id="tone-row">
+        <button class="tone-btn" data-val="warm and genuine" onclick="selectTone(this)">Warm & genuine</button>
+        <button class="tone-btn" data-val="curious and thoughtful" onclick="selectTone(this)">Curious</button>
+        <button class="tone-btn" data-val="light and playful" onclick="selectTone(this)">Playful</button>
+        <button class="tone-btn" data-val="calm and relaxed" onclick="selectTone(this)">Relaxed</button>
+        <button class="tone-btn" data-val="slightly witty" onclick="selectTone(this)">Witty</button>
+      </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <div class="eyebrow" style="margin-bottom:1rem">Step 2 of 2 · A bit about you</div>
+
+    <div class="form-section">
+      <label class="form-label" for="interests">Your interests or hobbies <span style="color:var(--ink-muted);font-weight:400">(2–5 things)</span></label>
+      <div class="form-hint">e.g. hiking, cooking, sci-fi, coffee, travel, music production</div>
+      <input class="form-input" type="text" id="interests" placeholder="hiking, cooking, sci-fi novels..." maxlength="200" />
+    </div>
+
+    <div class="form-section" style="margin-bottom:0">
+      <label class="form-label" for="context">Anything specific about this person or situation? <span style="color:var(--ink-muted);font-weight:400">(optional)</span></label>
+      <div class="form-hint">e.g. "they mentioned they love travel", "it's a work event so I want to keep it professional"</div>
+      <textarea class="form-input" id="context" rows="3" placeholder="Add any useful context..."></textarea>
+    </div>
+
+    <div style="height:1.5rem"></div>
+    <button class="btn-primary" id="generate-btn" onclick="generate()">Generate my 10 starters →</button>
+    <p style="text-align:center;margin-top:.75rem;font-size:12px;color:var(--ink-muted)">
+      <button onclick="goTo('screen-landing')" style="background:none;border:none;font-family:inherit;font-size:12px;color:var(--ink-muted);cursor:pointer;text-decoration:underline;text-underline-offset:2px">← Back</button>
+    </p>
+  </div>
+
+  <!-- GENERATING -->
+  <div id="screen-generating" class="screen">
+    <div class="generating-wrap">
+      <div class="spinner"></div>
+      <div class="gen-title">Writing your starters…</div>
+      <div class="gen-sub">Tailoring 10 openers to your situation and interests. Takes about 10 seconds.</div>
+      <div class="gen-steps">
+        <div class="gen-step active" id="gs1"><div class="gen-dot"></div>Reading your situation</div>
+        <div class="gen-step" id="gs2"><div class="gen-dot"></div>Matching to your interests</div>
+        <div class="gen-step" id="gs3"><div class="gen-dot"></div>Adjusting tone</div>
+        <div class="gen-step" id="gs4"><div class="gen-dot"></div>Writing 10 personalised openers</div>
+        <div class="gen-step" id="gs5"><div class="gen-dot"></div>Adding usage tips</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="screen-results" class="screen">
+    <div class="results-header">
+      <div class="results-meta">
+        <span class="meta-pill" id="meta-situation"></span>
+        <span class="meta-pill" id="meta-tone"></span>
+      </div>
+      <div class="results-title">Your 10 <em>conversation starters</em></div>
+    </div>
+
+    <div class="starters-list" id="starters-list"></div>
+
+    <div class="tips-section" id="tips-section" style="display:none">
+      <div class="tips-title">How to use these</div>
+      <div id="tips-content"></div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-outline" onclick="copyAll()">📋 Copy all 10</button>
+      <button class="btn-outline" onclick="regenerate()">↻ Generate 10 more</button>
+      <button class="btn-outline" onclick="goTo('screen-form')">Change situation</button>
+    </div>
+    <div style="font-size:11px;color:var(--ink-muted);text-align:center;margin-top:1.25rem;line-height:1.6">
+      Click any starter to copy it individually. Your purchase gives unlimited regenerations.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE CONFIG ── */
+const STRIPE_LINK = 'https://buy.stripe.com/00w14n6j62iufh04W24AU01';
+// Create in Stripe dashboard → Payment Links → $3.99 product
+// Success URL: https://humanlylabs.org/conversation-starter?paid=true
+
+/* ── STATE ── */
+let selectedSituation = '';
+let selectedTone      = '';
+let hasPaid           = false;
+let lastStarters      = [];
+let lastTips          = [];
+
+/* ── INIT ── */
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    hasPaid = true;
+    sessionStorage.setItem('hly_conv_paid', '1');
+    goTo('screen-form');
+  }
+  if (sessionStorage.getItem('hly_conv_paid') === '1') {
+    hasPaid = true;
+  }
+});
+
+/* ── PURCHASE ── */
+function handlePurchase() {
+  window.location.href = STRIPE_LINK;
+}
+
+/* ── SELECTORS ── */
+function selectSit(btn) {
+  document.querySelectorAll('.sit-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedSituation = btn.dataset.val;
+  updateGenerateBtn();
+}
+
+function selectTone(btn) {
+  document.querySelectorAll('.tone-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedTone = btn.dataset.val;
+  updateGenerateBtn();
+}
+
+function updateGenerateBtn() {
+  const interests = document.getElementById('interests').value.trim();
+  document.getElementById('generate-btn').disabled =
+    !selectedSituation || !selectedTone || !interests;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('interests').addEventListener('input', updateGenerateBtn);
+  updateGenerateBtn();
+});
+
+/* ── GENERATE ── */
+async function generate() {
+  const interests = document.getElementById('interests').value.trim();
+  const context   = document.getElementById('context').value.trim();
+  if (!selectedSituation || !selectedTone || !interests) return;
+
+  goTo('screen-generating');
+  animateGenSteps();
+
+  const prompt = `You are helping someone start a conversation. Generate exactly 10 conversation starters for this person.
+
+Situation: ${selectedSituation}
+Their interests/hobbies: ${interests}
+Desired tone: ${selectedTone}
+${context ? `Extra context: ${context}` : ''}
+
+Rules:
+- Each starter should feel natural and specific — not generic
+- Weave in their interests where relevant but don't force it
+- Vary the types: some questions, some observations, some invitations to share
+- Keep each one to 1–2 sentences max
+- Avoid clichés like "So what do you do?" or "Come here often?"
+- Match the tone precisely: ${selectedTone}
+- Make them usable in the specific situation: ${selectedSituation}
+
+Also generate 3 short tips on how to use these starters effectively in this specific situation.
+
+Return ONLY valid JSON, no markdown, no preamble:
+{
+  "starters": [
+    "starter 1",
+    "starter 2",
+    "starter 3",
+    "starter 4",
+    "starter 5",
+    "starter 6",
+    "starter 7",
+    "starter 8",
+    "starter 9",
+    "starter 10"
+  ],
+  "tips": [
+    "tip 1",
+    "tip 2",
+    "tip 3"
+  ]
+}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const raw  = data.content?.find(b => b.type === 'text')?.text || '';
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const parsed = JSON.parse(clean);
+    lastStarters = parsed.starters || [];
+    lastTips     = parsed.tips     || [];
+    renderResults();
+  } catch(err) {
+    console.error(err);
+    goTo('screen-form');
+    showToast('Something went wrong — please try again');
+  }
+}
+
+function regenerate() { generate(); }
+
+/* ── STEP ANIMATION ── */
+function animateGenSteps() {
+  const steps = ['gs1','gs2','gs3','gs4','gs5'];
+  let i = 0;
+  const iv = setInterval(() => {
+    if (i > 0) {
+      document.getElementById(steps[i-1]).classList.remove('active');
+      document.getElementById(steps[i-1]).classList.add('done');
+    }
+    if (i < steps.length) { document.getElementById(steps[i]).classList.add('active'); i++; }
+    else clearInterval(iv);
+  }, 2000);
+}
+
+/* ── RENDER RESULTS ── */
+function renderResults() {
+  // Meta pills
+  const sitLabel = document.querySelector(`.sit-btn.selected`)?.textContent?.trim() || selectedSituation;
+  const toneLabel = document.querySelector(`.tone-btn.selected`)?.textContent?.trim() || selectedTone;
+  document.getElementById('meta-situation').textContent = sitLabel;
+  document.getElementById('meta-tone').textContent = toneLabel;
+
+  // Starters
+  document.getElementById('starters-list').innerHTML = lastStarters.map((s, i) => `
+    <div class="starter-card" onclick="copyStarter(this, ${i})" title="Click to copy">
+      <div class="starter-num">${i+1}</div>
+      <div>
+        <div class="starter-text">${s}</div>
+        <div class="starter-copy">Click to copy</div>
+      </div>
+    </div>`).join('');
+
+  // Tips
+  if (lastTips.length) {
+    document.getElementById('tips-section').style.display = 'block';
+    document.getElementById('tips-content').innerHTML = lastTips.map(t => `
+      <div class="tip-item"><div class="tip-dot"></div><span>${t}</span></div>`).join('');
+  }
+
+  goTo('screen-results');
+}
+
+/* ── COPY ── */
+function copyStarter(card, i) {
+  const text = lastStarters[i];
+  copyToClipboard(text, () => {
+    card.classList.add('copied');
+    card.querySelector('.starter-copy').textContent = '✓ Copied!';
+    setTimeout(() => {
+      card.classList.remove('copied');
+      card.querySelector('.starter-copy').textContent = 'Click to copy';
+    }, 2500);
+  });
+}
+
+function copyAll() {
+  const text = lastStarters.map((s,i) => `${i+1}. ${s}`).join('\n\n');
+  copyToClipboard(text, () => showToast('✓ All 10 copied!'));
+}
+
+function copyToClipboard(text, cb) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(cb).catch(() => fallbackCopy(text, cb));
+  } else { fallbackCopy(text, cb); }
+}
+
+function fallbackCopy(text, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.cssText = 'position:fixed;left:-9999px';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); cb && cb(); } catch { showToast('Copy failed — try long-pressing'); }
+  document.body.removeChild(ta);
+}
+
+/* ── NAV ── */
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+
+<!-- SEO cross-links -->
+<nav data-seo-crosslinks style="text-align:center;padding:1.5rem 1rem;font-size:.85rem;opacity:.7">More tools: <a href="/quiz">Loneliness Type Quiz</a> · <a href="/checkin-generator">Check-In Generator</a></nav>
+<div style="max-width:680px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:var(--c-ink-3,#888);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/checkin-generator" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Check-In Generator</a><a href="/find-your-people" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Find Your People</a><a href="/social-anxiety" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Social Anxiety Check</a></div>
+  <p style="font-size:13px;color:var(--c-ink-3,#888);margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

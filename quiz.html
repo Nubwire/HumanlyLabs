@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Loneliness Quiz — What Type of Lonely Are You?</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Loneliness Type Quiz — Humanly Labs" />
+  <meta name="twitter:description" content="Discover your loneliness type and get a personalised 3-step plan. Free." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://humanlylabs.org/quiz" />
+  <meta property="og:title" content="Loneliness Type Quiz — Humanly Labs" />
+  <meta property="og:description" content="Discover your loneliness type and get a personalised 3-step plan. Free." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/quiz" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+    <meta name="description" content="9 questions. Discover your loneliness type and get a personalised 3-step action plan. Free — no sign-up needed." />
+      <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Loneliness Type Quiz \u2014 Humanly Labs",
+    "url": "https://humanlylabs.org/quiz",
+    "description": "Loneliness Type Quiz \u2014 free self-discovery tool from Humanly Labs.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F5F0E8; --warm-white: #FDFCF9;
+      --ink: #1C1917; --ink-soft: #57534E; --ink-muted: #A8A29E;
+      --border: rgba(28,25,23,0.12); --border-strong: rgba(28,25,23,0.25);
+      --sage: #4A7C59; --sage-light: #EAF2EC; --sage-border: #B8D9C2;
+      --amber: #B45309; --amber-light: #FEF3C7;
+      --rose: #9F3247; --rose-light: #FDF2F4;
+      --sky: #1D5FA5; --sky-light: #EEF4FC;
+      --radius-sm: 8px; --radius-md: 14px; --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(28,25,23,0.08); --shadow-md: 0 4px 16px rgba(28,25,23,0.10);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 0 1rem; }
+    nav { width: 100%; max-width: 680px; padding: 1.5rem 0 0; display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem; }
+    .wordmark { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 300; color: var(--ink); letter-spacing: -0.02em; text-decoration: none; }
+    .wordmark span { font-style: italic; color: var(--sage); }
+    .nav-tag { font-size: 12px; color: var(--ink-muted); border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; background: var(--warm-white); }
+    .card { width: 100%; max-width: 560px; background: var(--warm-white); border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-md); padding: 2.5rem 2.25rem; margin-bottom: 1.5rem; }
+    .screen { display: none; }
+    .screen.active { display: block; animation: fadeUp 0.3s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* INTRO */
+    .intro-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage); font-weight: 500; margin-bottom: 1rem; }
+    .intro-headline { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 300; line-height: 1.25; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .intro-headline em { font-style: italic; color: var(--sage); }
+    .intro-body { font-size: 15px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 1.5rem; }
+    .trust-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.75rem; padding: 1.25rem; background: var(--sage-light); border-radius: var(--radius-md); border: 1px solid var(--sage-border); }
+    .trust-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #2D5A3D; line-height: 1.5; }
+    .trust-dot { width: 6px; height: 6px; background: var(--sage); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+
+    /* EMAIL CAPTURE */
+    .email-section { margin-bottom: 1.5rem; }
+    .email-label { font-size: 13px; color: var(--ink-soft); margin-bottom: 8px; display: block; }
+    .email-row { display: flex; gap: 8px; }
+    .email-input { flex: 1; padding: 11px 14px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); outline: none; transition: border-color .15s; }
+    .email-input:focus { border-color: var(--sage); }
+    .email-skip { font-size: 12px; color: var(--ink-muted); text-align: center; margin-top: 8px; cursor: pointer; background: none; border: none; font-family: inherit; text-decoration: underline; text-underline-offset: 2px; width: 100%; }
+
+    /* PROGRESS */
+    .progress-wrap { margin-bottom: 2rem; }
+    .progress-meta { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .progress-label { font-size: 12px; color: var(--ink-muted); }
+    .progress-bar { height: 2px; background: var(--border); border-radius: 2px; }
+    .progress-fill { height: 100%; background: var(--sage); border-radius: 2px; transition: width 0.4s cubic-bezier(0.4,0,0.2,1); }
+
+    /* QUESTIONS */
+    .q-text { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 300; line-height: 1.4; color: var(--ink); margin-bottom: 1.75rem; letter-spacing: -0.01em; }
+    .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+    .option-btn { text-align: left; padding: 14px 18px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--cream); cursor: pointer; font-size: 14px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; line-height: 1.5; transition: all 0.15s; }
+    .option-btn:hover { background: var(--warm-white); border-color: var(--border-strong); color: var(--ink); }
+    .option-btn.selected { border-color: var(--sage); background: var(--sage-light); color: #1F4A2D; border-width: 1.5px; }
+    .nav-row { display: flex; align-items: center; justify-content: space-between; }
+    .btn-ghost { font-size: 14px; color: var(--ink-muted); background: none; border: none; cursor: pointer; font-family: inherit; padding: 8px 0; transition: color .15s; }
+    .btn-ghost:hover { color: var(--ink); }
+    .btn-ghost:disabled { opacity: 0.3; cursor: default; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 6px; padding: 11px 22px; background: var(--ink); color: var(--cream); border: none; border-radius: 999px; font-size: 14px; font-weight: 500; font-family: inherit; cursor: pointer; transition: all .15s; }
+    .btn-primary:hover { background: #2C2926; transform: translateY(-1px); }
+    .btn-primary:disabled { opacity: 0.3; cursor: default; transform: none; }
+
+    /* RESULT */
+    .profile-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 500; margin-bottom: 1.25rem; }
+    .result-headline { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 300; line-height: 1.35; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.01em; }
+    .result-desc { font-size: 15px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .steps-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); font-weight: 500; margin-bottom: 1rem; }
+    .step-card { display: flex; gap: 16px; padding: 1.25rem; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--cream); margin-bottom: 10px; }
+    .step-num-badge { width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: var(--cream); font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+    .step-body { font-size: 13px; color: var(--ink-soft); line-height: 1.65; }
+
+    /* UPSELL CARD */
+    .upsell-card { border: 1.5px solid var(--sage-border); border-radius: var(--radius-md); padding: 1.5rem; background: var(--sage-light); margin-top: 1.5rem; }
+    .upsell-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--sage); font-weight: 500; margin-bottom: .5rem; }
+    .upsell-headline { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 300; color: var(--ink); margin-bottom: .5rem; letter-spacing: -.01em; }
+    .upsell-body { font-size: 13px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 1.25rem; }
+    .upsell-features { display: flex; flex-direction: column; gap: 7px; margin-bottom: 1.25rem; }
+    .upsell-feature { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #2D5A3D; }
+    .upsell-check { width: 16px; height: 16px; border-radius: 50%; background: white; border: 1px solid var(--sage-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .upsell-check svg { width: 8px; height: 8px; stroke: var(--sage); }
+    .btn-upsell { display: block; width: 100%; padding: 13px; text-align: center; background: var(--sage); color: white; border-radius: 999px; font-size: 14px; font-weight: 500; font-family: inherit; border: none; cursor: pointer; transition: all .15s; text-decoration: none; }
+    .btn-upsell:hover { background: #3D6B4A; transform: translateY(-1px); }
+    .upsell-price { text-align: center; font-size: 12px; color: var(--ink-muted); margin-top: 8px; }
+
+    .result-actions { display: flex; gap: 10px; margin-top: 1.5rem; flex-wrap: wrap; }
+    .btn-outline { flex: 1; padding: 11px 16px; border: 1px solid var(--border-strong); border-radius: 999px; background: none; font-size: 14px; color: var(--ink); font-family: inherit; cursor: pointer; transition: all .15s; text-align: center; min-width: 120px; }
+    .btn-outline:hover { background: var(--cream); }
+    .disclaimer { font-size: 11px; color: var(--ink-muted); margin-top: 1.5rem; text-align: center; line-height: 1.6; }
+    .btn-restart { font-size: 13px; color: var(--ink-muted); background: none; border: none; cursor: pointer; font-family: inherit; margin-top: 1rem; display: block; width: 100%; text-align: center; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* TOAST */
+    .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--cream); padding: 10px 20px; border-radius: 999px; font-size: 13px; opacity: 0; transition: all .3s; pointer-events: none; white-space: nowrap; z-index: 999; }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* FOOTER */
+    footer { max-width: 560px; width: 100%; padding-bottom: 2rem; text-align: center; font-size: 12px; color: var(--ink-muted); }
+    footer a { color: var(--ink-muted); }
+    footer .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: .5rem; }
+
+    @media (max-width: 600px) {
+      .card { padding: 1.75rem 1.25rem; }
+      .intro-headline { font-size: 26px; }
+      .q-text { font-size: 18px; }
+      .email-row { flex-direction: column; }
+    }
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the 4 types of loneliness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 4 types are social loneliness (lack of a social network), intimate loneliness (lack of a close confidant), existential loneliness (feeling disconnected from meaning or purpose), and transient loneliness (temporary feelings triggered by situational changes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know which type of lonely I am?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take the free 9-question Loneliness Type Quiz at Humanly Labs. It analyses your answers and gives you a personalised result with a 3-step action plan in under 2 minutes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the loneliness quiz free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the Humanly Labs loneliness quiz is completely free with no sign-up or payment required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you be lonely even when surrounded by people?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. This is called social loneliness or intimate loneliness. You can be in a room full of people and still feel deeply alone if those connections lack depth or genuine understanding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the loneliness quiz take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The quiz takes approximately 2 minutes to complete. It has 9 questions and delivers your personalised loneliness type and action plan immediately."
+      }
+    }
+  ]
+}
+</script>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span> <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup></a>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none;">← All tools</a>
+    <div class="nav-tag">Loneliness Type Quiz</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- INTRO -->
+  <div id="screen-intro" class="screen active">
+    <div class="intro-eyebrow">Free · 2 minutes · 9 questions</div>
+    <h1 class="intro-headline">What kind of<br><em>loneliness</em> are<br>you carrying?</h1>
+    <p class="intro-body">Loneliness isn't one thing. There are four distinct types — and the way out of each one is different. Answer 9 questions and discover yours, with a personalised plan to move forward.</p>
+    <div class="trust-list">
+      <div class="trust-item"><div class="trust-dot"></div>Completely free — no payment needed</div>
+      <div class="trust-item"><div class="trust-dot"></div>Based on clinical loneliness research</div>
+      <div class="trust-item"><div class="trust-dot"></div>Private — your answers are never stored</div>
+    </div>
+
+    <!-- EMAIL CAPTURE -->
+    <div class="email-section">
+      <label class="email-label">Get your results + new tools by email <span style="color:var(--ink-muted)">(optional)</span></label>
+      <div class="email-row">
+        <input class="email-input" type="email" id="email-input" placeholder="you@example.com" />
+        <button class="btn-primary" onclick="startQuiz()">Begin →</button>
+      </div>
+      <button class="email-skip" onclick="startQuiz()">Skip — start without email</button>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="screen-quiz" class="screen">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span class="progress-label" id="q-num">Question 1 of 9</span>
+        <span class="progress-label" id="q-pct">11%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress" style="width:11%"></div></div>
+    </div>
+    <div class="q-text" id="q-text"></div>
+    <div class="options" id="q-options"></div>
+    <div class="nav-row">
+      <button class="btn-ghost" id="btn-back" onclick="prevQ()" disabled>← Back</button>
+      <button class="btn-primary" id="btn-next" onclick="nextQ()" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="screen-result" class="screen">
+    <div class="profile-pill" id="result-pill"></div>
+    <h2 class="result-headline" id="result-headline"></h2>
+    <p class="result-desc" id="result-desc"></p>
+    <div class="steps-eyebrow">Your 3-step action plan</div>
+    <div id="steps-container"></div>
+
+    <!-- UPSELL to deep-dive -->
+    <div class="upsell-card" id="upsell-section">
+      <div class="upsell-eyebrow">Want to go deeper?</div>
+      <h3 class="upsell-headline">Get your full personalised Deep Dive Report</h3>
+      <p class="upsell-body">This quiz gave you your type and a starter plan. The Deep Dive uses AI to analyse your specific answers and generate a report written entirely around <em>you</em> — not your type in general.</p>
+      <div class="upsell-features">
+        <div class="upsell-feature"><div class="upsell-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>AI analysis of your exact 9 answers</div>
+        <div class="upsell-feature"><div class="upsell-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>5 personalised insights unique to your pattern</div>
+        <div class="upsell-feature"><div class="upsell-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>A week-by-week 4-week action plan</div>
+        <div class="upsell-feature"><div class="upsell-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Specific scripts for hard social moments</div>
+        <div class="upsell-feature"><div class="upsell-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Downloadable PDF to keep and revisit</div>
+      </div>
+      <button class="btn-upsell" onclick="goToDeepDive()">Get my Deep Dive Report →</button>
+      <div class="upsell-price">$8.99 · one-time · instant access</div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-outline" id="share-btn" onclick="copyShare()">📋 Copy to share</button>
+      <button class="btn-outline" onclick="retakeQuiz()">Retake quiz</button>
+    </div>
+    <div class="disclaimer">Humanly Labs is a self-reflection tool, not a clinical service. If loneliness is significantly affecting your daily life, please speak with a mental health professional.</div>
+    <button class="btn-restart" onclick="retakeQuiz()">Start over</button>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/lonely-in-a-relationship">Lonely in a relationship?</a>
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── DATA ── */
+const questions = [
+  { text: "When does loneliness hit you hardest?", options: ["Late at night or weekends when I'm home alone","When I'm around people but still feel disconnected","After a big life change — a move, breakup, job loss","Consistently, no matter what I'm doing or where I am"] },
+  { text: "How would you describe your social circle right now?", options: ["I have people around but connections feel shallow","I've lost touch with friends and haven't rebuilt","I'm somewhere new and haven't met people yet","I have friends, but still feel deeply alone inside"] },
+  { text: "What's your biggest barrier to feeling connected?", options: ["Anxiety or fear of how people see me","I don't know how to start or maintain friendships","My situation changed and my social world changed with it","Something internal — I just feel different or unseen"] },
+  { text: "How long have you been feeling this way?", options: ["A few weeks — something specific happened","Several months, it comes and goes","Over a year — it feels persistent","As long as I can remember"] },
+  { text: "Which of these feels most true right now?", options: ["I want more people in my life but don't know how","I have people but they don't really know me","I used to have more connection but lost it","I feel fundamentally different from most people"] },
+  { text: "When you imagine feeling less lonely, what does that look like?", options: ["A close friend I can call without overthinking it","Feeling truly understood by at least one person","Rebuilding the social life I had before","A sense of belonging somewhere — a real community"] },
+  { text: "How does being around people usually make you feel?", options: ["Exhausting — I worry what they think of me","Temporarily better, but the loneliness returns","Like an outsider looking in","Fine on the surface, but still empty somehow"] },
+  { text: "What have you tried to feel less lonely?", options: ["Dating or social apps — they made it worse","Joining groups or classes — hard to break in","Leaning on old connections — they've drifted","Therapy or journalling — helps but hasn't fixed it"] },
+  { text: "Which statement lands most deeply for you?", options: ["'I'm scared people won't like me if they really know me'","'I just need one person who truly gets me'","'My life used to feel fuller than this'","'I've always felt like I don't quite fit'"] }
+];
+
+const scoringMap = [
+  ['situational','emotional','situational','existential'],
+  ['emotional','social','situational','existential'],
+  ['social','social','situational','existential'],
+  ['situational','social','existential','existential'],
+  ['social','emotional','situational','existential'],
+  ['social','emotional','situational','social'],
+  ['social','emotional','existential','emotional'],
+  ['social','social','situational','emotional'],
+  ['social','social','situational','existential']
+];
+
+const profiles = {
+  social: {
+    name: "Social loneliness", emoji: "🤝",
+    bg: "#EEF4FC", color: "#1D5FA5", border: "#B5D4F4",
+    headline: "You have the capacity for connection — the network just isn't there yet",
+    desc: "Social loneliness means you lack enough people in your life — not depth of connection. It often follows a move, a job change, or gradual drift from old friends. The good news: this is the most directly addressable type. You're not broken — your circumstances shifted, and so can your social world.",
+    steps: [
+      { title: "Find one repeatable context", body: "Friendship rarely happens in one-off events. Identify one place you can show up weekly — a gym class, a local club, a regular café. Repetition builds familiarity, and familiarity is the quiet foundation of friendship." },
+      { title: "Lower the bar for reaching out", body: "A meme, a voice note, a 'thought of you' text — these count. Set a weekly reminder to send one low-stakes message to someone you've lost touch with. Consistency matters more than effort." },
+      { title: "Make yourself findable", body: "Join one online community in an interest you genuinely have. Don't just lurk — comment once a week. Many real-world friendships now begin in digital spaces, and yours might too." }
+    ]
+  },
+  emotional: {
+    name: "Emotional loneliness", emoji: "💙",
+    bg: "#EEEDFE", color: "#3C3489", border: "#CECBF6",
+    headline: "You have people around you — but you don't feel truly known",
+    desc: "Emotional loneliness is the ache of being unseen, even in a crowd. You may have friends, a partner, or colleagues — but no one who really gets the whole of you. This type often runs deeper and needs different solutions than simply meeting more people.",
+    steps: [
+      { title: "Identify one safe person", body: "Think of someone you already know who seems emotionally perceptive or warm. Risk one slightly deeper conversation — share something real, not just a complaint. See what happens." },
+      { title: "Express, don't just report", body: "Most of us share events, not feelings. Practise finishing this sentence in conversations: 'The part I found hard was…' Vulnerability invites vulnerability back." },
+      { title: "Consider a dedicated space for being heard", body: "Therapy, a support group, or even a reflective journalling practice can bridge the gap while you build deeper relationships. Being fully heard by even one person changes how you move through the world." }
+    ]
+  },
+  situational: {
+    name: "Situational loneliness", emoji: "🌱",
+    bg: "#EAF2EC", color: "#2D5A3D", border: "#B8D9C2",
+    headline: "Something changed — and your social world changed with it",
+    desc: "Situational loneliness is triggered by a specific life event — a move, a breakup, a job loss, a bereavement. It's acute rather than chronic. The pain is real, but it's also a signal: you had connection before, which means you can build it again. This type responds well to deliberate action.",
+    steps: [
+      { title: "Name the transition — don't rush past it", body: "Give yourself permission to grieve what changed. Situational loneliness that isn't acknowledged tends to harden into chronic loneliness over time. Write about what you've lost." },
+      { title: "Fix the week before fixing the social life", body: "Loneliness hits hardest in unstructured time. Before rebuilding your social life, rebuild your week — anchor points like exercise, a regular class, or a consistent outing create natural connection opportunities." },
+      { title: "Tell people where you're at", body: "Most people want to help but don't know you need it. One honest message — 'I've been feeling pretty isolated since I moved, want to catch up?' — often works far better than waiting for invites." }
+    ]
+  },
+  existential: {
+    name: "Existential loneliness", emoji: "🌙",
+    bg: "#FDF2F4", color: "#7A2538", border: "#F4C0D1",
+    headline: "You feel fundamentally different — like you don't quite fit",
+    desc: "Existential loneliness runs beneath the social surface. You may have friends and connection, but still carry a quiet sense of being fundamentally apart — from others, from the world, from yourself. This is especially common in people who are neurodivergent, highly sensitive, or who've been through experiences that set them apart.",
+    steps: [
+      { title: "Find your specific people, not just any people", body: "Generic socialising rarely fixes this. Look for communities built around something specific to you — a diagnosis, an experience, a niche interest. Being understood by a few people who truly get it matters more than broad popularity." },
+      { title: "Reframe 'different' as 'specific'", body: "The things that make you feel unlike others are also the things that make you interesting to the right people. Leaning into your specificity — rather than masking it — tends to attract the connections that actually stick." },
+      { title: "Build a relationship with solitude", body: "Existential loneliness and solitude can both become peaceful when distinguished from each other. Journalling, creative work, and time in nature can transform aloneness from something painful into something replenishing." }
+    ]
+  }
+};
+
+/* ── STATE ── */
+let answers = [], currentQ = 0, currentProfile = null, userEmail = '';
+
+/* ── EMAIL / START ── */
+function startQuiz() {
+  userEmail = document.getElementById('email-input').value.trim();
+  if (userEmail && !isValidEmail(userEmail)) {
+    showToast('Please enter a valid email address');
+    return;
+  }
+  if (userEmail) saveEmail(userEmail);
+  goTo('screen-quiz');
+}
+
+function isValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+function saveEmail(email) {
+  /* Saves to localStorage as a running CSV list.
+     You can retrieve this from the browser console with:
+     localStorage.getItem('hly_emails')
+     Or export via the admin link below. */
+  const existing = localStorage.getItem('hly_emails') || 'email,timestamp,loneliness_type\n';
+  const row = `${email},${new Date().toISOString()},pending\n`;
+  localStorage.setItem('hly_emails', existing + row);
+}
+
+function updateEmailWithType(type) {
+  if (!userEmail) return;
+  const data = localStorage.getItem('hly_emails') || '';
+  const updated = data.replace(
+    new RegExp(`(${userEmail.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')},[^,]+,)pending`),
+    `$1${type}`
+  );
+  localStorage.setItem('hly_emails', updated);
+}
+
+/* ── NAV ── */
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (id === 'screen-quiz') renderQ();
+}
+
+/* ── QUIZ ── */
+function renderQ() {
+  const q = questions[currentQ];
+  const pct = Math.round(((currentQ + 1) / questions.length) * 100);
+  document.getElementById('q-num').textContent = `Question ${currentQ + 1} of ${questions.length}`;
+  document.getElementById('q-pct').textContent = pct + '%';
+  document.getElementById('progress').style.width = pct + '%';
+  document.getElementById('q-text').textContent = q.text;
+  const container = document.getElementById('q-options');
+  container.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn' + (answers[currentQ] === i ? ' selected' : '');
+    btn.textContent = opt;
+    btn.onclick = () => selectOption(i);
+    container.appendChild(btn);
+  });
+  document.getElementById('btn-back').disabled = currentQ === 0;
+  document.getElementById('btn-next').disabled = answers[currentQ] === undefined;
+  document.getElementById('btn-next').textContent = currentQ === questions.length - 1 ? 'See my results →' : 'Next →';
+}
+
+function selectOption(i) {
+  answers[currentQ] = i;
+  document.querySelectorAll('.option-btn').forEach((b, idx) => b.classList.toggle('selected', idx === i));
+  document.getElementById('btn-next').disabled = false;
+}
+
+function nextQ() {
+  if (currentQ < questions.length - 1) { currentQ++; renderQ(); }
+  else { computeResult(); showResult(); }
+}
+
+function prevQ() { if (currentQ > 0) { currentQ--; renderQ(); } }
+
+/* ── SCORING ── */
+function computeResult() {
+  const counts = { social: 0, emotional: 0, situational: 0, existential: 0 };
+  answers.forEach((ans, qi) => { if (scoringMap[qi]?.[ans]) counts[scoringMap[qi][ans]]++; });
+  const topType = Object.entries(counts).sort((a,b) => b[1]-a[1])[0][0];
+  currentProfile = profiles[topType];
+  updateEmailWithType(topType);
+  sessionStorage.setItem('hly_profile', topType);
+  sessionStorage.setItem('hly_answers', JSON.stringify(answers));
+}
+
+/* ── RENDER RESULT ── */
+function showResult() {
+  if (!currentProfile) computeResult();
+  const p = currentProfile;
+  if (window.gtag) gtag('event', 'quiz_complete', { quiz_name: 'loneliness_type', result_type: p.name });
+  const pill = document.getElementById('result-pill');
+  pill.style.cssText = `background:${p.bg};color:${p.color};border:1px solid ${p.border}`;
+  pill.textContent = `${p.emoji} ${p.name}`;
+  document.getElementById('result-headline').textContent = p.headline;
+  document.getElementById('result-desc').textContent = p.desc;
+  document.getElementById('steps-container').innerHTML = p.steps.map((s, i) => `
+    <div class="step-card">
+      <div class="step-num-badge">${i + 1}</div>
+      <div class="step-content">
+        <div class="step-title">${s.title}</div>
+        <div class="step-body">${s.body}</div>
+      </div>
+    </div>`).join('');
+  goTo('screen-result');
+}
+
+/* ── DEEP DIVE UPSELL ── */
+function goToDeepDive() {
+  /* Passes profile + answers to deep-dive page via sessionStorage */
+  window.location.href = 'deep-dive.html';
+}
+
+/* ── SHARE (fixed) ── */
+function copyShare() {
+  if (!currentProfile) return;
+  const p = currentProfile;
+  const text = `I just discovered my loneliness type with Humanly Labs.\n\nMy type: ${p.name} ${p.emoji}\n\n"${p.headline}"\n\nTake the free 2-minute quiz → humanlylabs.org/quiz`;
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(() => showToast('✓ Copied to clipboard!'))
+      .catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try {
+    document.execCommand('copy');
+    showToast('✓ Copied to clipboard!');
+  } catch {
+    showToast('Copy failed — try long-pressing the text');
+  }
+  document.body.removeChild(ta);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+/* ── RESTART ── */
+function retakeQuiz() {
+  answers = []; currentQ = 0; currentProfile = null;
+  document.getElementById('email-input').value = '';
+  goTo('screen-intro');
+}
+
+/* EMAIL ENTER KEY */
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('email-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') startQuiz();
+  });
+});
+</script>
+<div style="max-width:680px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:var(--c-ink-3,#888);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/deep-dive" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Loneliness Deep Dive</a><a href="/attachment-quiz" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Attachment Style Quiz</a><a href="/friendship-audit" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Friendship Audit</a></div>
+  <p style="font-size:13px;color:var(--c-ink-3,#888);margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+</body>
+</html>

@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="p:domain_verify" content="9c7c8c339b534c5060ced8bac66078d8"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Humanly Labs — Tools for the Inner Life</title>
+    <meta name="description" content="Free science-backed tools to understand loneliness, audit your friendships, track your social battery, and build real connection. No sign-up needed." />
+    <link rel="canonical" href="https://humanlylabs.org/" />
+  <meta property="og:title" content="Humanly Labs — Tools for the Inner Life" />
+  <meta property="og:description" content="A growing suite of science-backed self-discovery tools. Understand loneliness, social energy, friendships and connection." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Humanly Labs — Tools for the inner life" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Humanly Labs — Tools for the Inner Life" />
+  <meta name="twitter:description" content="Science-backed self-discovery tools for loneliness, social energy and connection." />
+    <meta name="robots" content="index, follow" />
+  <meta name="author" content="Humanly Labs" />
+  <meta name="keywords" content="loneliness quiz, social battery tracker, friendship audit, self discovery tools, conversation starters, loneliness type, social anxiety, connection tools" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Humanly Labs",
+    "url": "https://humanlylabs.org",
+    "description": "A suite of science-backed self-discovery tools for loneliness, social energy and connection.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "email": "hello@humanlylabs.org"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --c-bg:        #F7F3EC;
+      --c-surface:   #FDFCF9;
+      --c-ink:       #1A1714;
+      --c-ink-2:     #4A453F;
+      --c-ink-3:     #9B948A;
+      --c-border:    rgba(26,23,20,.10);
+      --c-border-2:  rgba(26,23,20,.20);
+      --c-green:     #3A6B49;
+      --c-green-l:   #E8F2EC;
+      --c-green-b:   #A8CEAF;
+      --c-amber:     #B5530A;
+      --c-amber-l:   #FEF3E2;
+      --c-rose:      #9B2D3F;
+      --c-rose-l:    #FCEEF0;
+      --c-sky:       #1C5DAF;
+      --c-sky-l:     #EBF2FB;
+      --c-violet:    #5B3A8A;
+      --c-violet-l:  #F0EBFB;
+      --c-teal:      #1A7070;
+      --c-teal-l:    #E5F4F4;
+      --r-sm: 8px; --r-md: 14px; --r-lg: 22px; --r-xl: 32px;
+      --shadow: 0 2px 12px rgba(26,23,20,.07), 0 1px 3px rgba(26,23,20,.05);
+      --shadow-lg: 0 8px 32px rgba(26,23,20,.10), 0 2px 8px rgba(26,23,20,.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: var(--c-bg);
+      color: var(--c-ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(247,243,236,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 400;
+      color: var(--c-ink); text-decoration: none;
+      letter-spacing: -.02em;
+    }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 9px; font-weight: 500;
+      color: var(--c-ink-3); letter-spacing: .06em;
+      text-transform: uppercase; vertical-align: super;
+      margin-left: 3px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      font-size: 14px; color: var(--c-ink-2); text-decoration: none;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--c-ink); }
+    .nav-cta {
+      padding: 8px 18px;
+      background: var(--c-ink); color: var(--c-bg) !important;
+      border-radius: 999px; font-size: 13px; font-weight: 500;
+      text-decoration: none; transition: all .15s;
+    }
+    .nav-cta:hover { background: #2C2825; color: var(--c-bg) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+      display: grid; grid-template-columns: 1fr 420px;
+      gap: 4rem; align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--c-green);
+      margin-bottom: 1.25rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 24px; height: 1px; background: var(--c-green);
+    }
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 400; line-height: 1.15;
+      letter-spacing: -.03em; color: var(--c-ink);
+      margin-bottom: 1.5rem;
+    }
+    .hero-headline em { font-style: italic; color: var(--c-green); }
+    .hero-body {
+      font-size: 17px; color: var(--c-ink-2);
+      line-height: 1.75; max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── STICKMAN ── */
+    .stickman-wrap {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.75rem;
+      opacity: 0; animation: fadeUp .6s ease .15s both;
+    }
+    .stickman-img {
+      width: 64px; height: auto;
+      mix-blend-mode: multiply;
+      opacity: .9;
+      animation: stickmanFloat 4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    .stickman-bubble {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 12px 12px 12px 4px;
+      padding: 8px 14px;
+      font-size: 13px; color: var(--c-ink-2);
+      line-height: 1.45;
+      box-shadow: 0 2px 8px rgba(26,23,20,.06);
+      position: relative;
+    }
+    .stickman-bubble strong { color: var(--c-ink); font-weight: 600; }
+    @keyframes stickmanFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-5px); }
+    }
+    @media (max-width: 600px) {
+      .stickman-img { width: 48px; }
+      .stickman-bubble { font-size: 12px; }
+    }
+    .btn-primary {
+      padding: 13px 26px;
+      background: var(--c-green); color: white;
+      border-radius: 999px; font-size: 15px; font-weight: 500;
+      text-decoration: none; transition: all .2s;
+      border: none; cursor: pointer; font-family: inherit;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #2F5A3D; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(58,107,73,.25); }
+    .btn-ghost-link {
+      font-size: 14px; color: var(--c-ink-2); text-decoration: none;
+      display: flex; align-items: center; gap: 6px; transition: color .15s;
+    }
+    .btn-ghost-link:hover { color: var(--c-ink); }
+
+    /* hero stats card */
+    .hero-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-card-label {
+      font-size: 11px; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--c-ink-3);
+      margin-bottom: 1.5rem;
+    }
+    .stat-row {
+      display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .stat-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .stat-emoji {
+      width: 38px; height: 38px;
+      background: var(--c-bg); border: 1px solid var(--c-border);
+      border-radius: var(--r-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .stat-text {}
+    .stat-name { font-size: 14px; font-weight: 500; color: var(--c-ink); }
+    .stat-desc { font-size: 12px; color: var(--c-ink-3); margin-top: 2px; }
+    .stat-badge {
+      margin-left: auto; flex-shrink: 0;
+      padding: 3px 10px; border-radius: 999px;
+      font-size: 11px; font-weight: 500;
+    }
+    .badge-live { background: var(--c-green-l); color: var(--c-green); border: 1px solid var(--c-green-b); }
+    .badge-soon { background: var(--c-bg); color: var(--c-ink-3); border: 1px solid var(--c-border); }
+
+    /* show-more toggle */
+    .stat-row-extra { display: none; }
+    .stat-row-extra.open { display: contents; }
+    .show-more-btn {
+      width: 100%; margin-top: 1rem;
+      background: none; border: 1px solid var(--c-border);
+      border-radius: 99px; padding: 7px 0;
+      font-size: 12px; font-weight: 500; color: var(--c-ink-3);
+      cursor: pointer; font-family: inherit;
+      display: flex; align-items: center; justify-content: center; gap: 5px;
+      transition: border-color .15s, color .15s;
+    }
+    .show-more-btn:hover { border-color: var(--c-border-2); color: var(--c-ink-2); }
+    .show-more-btn .chevron { transition: transform .25s; display: inline-block; }
+    .show-more-btn.open .chevron { transform: rotate(180deg); }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem;
+      border-top: 1px solid var(--c-border);
+    }
+
+    /* ── APPS SECTION ── */
+    .apps-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem 6rem; }
+    .section-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; margin-bottom: 3rem;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px; font-weight: 400;
+      letter-spacing: -.02em; color: var(--c-ink);
+    }
+    .section-title em { font-style: italic; color: var(--c-green); }
+    .section-sub { font-size: 14px; color: var(--c-ink-3); max-width: 320px; text-align: right; }
+
+    /* ── APP GRID ── */
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .app-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: 1.75rem;
+      display: flex; flex-direction: column;
+      box-shadow: var(--shadow);
+      transition: all .2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .app-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--c-border-2);
+    }
+    .app-card.is-live { cursor: default; }
+    .app-card.is-soon { opacity: .85; }
+
+    .card-accent {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; border-radius: var(--r-lg) var(--r-lg) 0 0;
+    }
+    .card-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; margin-bottom: 1rem;
+    }
+    .card-icon {
+      width: 44px; height: 44px;
+      border-radius: var(--r-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .card-status {
+      padding: 4px 10px; border-radius: 999px;
+      font-size: 11px; font-weight: 500;
+    }
+    .status-live { background: var(--c-green-l); color: var(--c-green); border: 1px solid var(--c-green-b); }
+    .status-soon { background: var(--c-bg); color: var(--c-ink-3); border: 1px solid var(--c-border); }
+
+    .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px; font-weight: 400;
+      color: var(--c-ink); margin-bottom: .4rem;
+      letter-spacing: -.01em;
+    }
+    .card-tagline { font-size: 13px; color: var(--c-ink-3); margin-bottom: .85rem; }
+    .card-desc {
+      font-size: 14px; color: var(--c-ink-2);
+      line-height: 1.65; margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem;
+      margin-top: auto; padding-top: 1.25rem;
+      border-top: 1px solid var(--c-border);
+    }
+    .card-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 400; color: var(--c-ink);
+    }
+    .card-price span { font-size: 12px; color: var(--c-ink-3); font-family: 'Instrument Sans', sans-serif; }
+
+    .btn-card-cta {
+      padding: 9px 20px;
+      border-radius: 999px; font-size: 13px; font-weight: 500;
+      cursor: pointer; transition: all .15s;
+      text-decoration: none; display: inline-block;
+      font-family: inherit; border: none;
+    }
+    .btn-card-live {
+      background: var(--c-ink); color: var(--c-bg);
+    }
+    .btn-card-live:hover { background: #2C2825; transform: translateY(-1px); }
+    .btn-card-soon {
+      background: var(--c-bg); color: var(--c-ink-3);
+      border: 1px solid var(--c-border);
+      cursor: default;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .how-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .how-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px; font-weight: 400;
+      color: var(--c-ink); text-align: center;
+      margin-bottom: 3.5rem; letter-spacing: -.02em;
+    }
+    .how-title em { font-style: italic; color: var(--c-green); }
+    .how-steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+    .how-step { text-align: center; }
+    .how-num {
+      width: 44px; height: 44px;
+      background: var(--c-green); color: white;
+      border-radius: 50%;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+    .how-step-title { font-size: 16px; font-weight: 500; color: var(--c-ink); margin-bottom: .5rem; }
+    .how-step-body { font-size: 14px; color: var(--c-ink-2); line-height: 1.7; }
+
+    /* ── TESTIMONIALS ── */
+    .social-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .quotes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .quote-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .quote-stars { color: var(--c-amber); font-size: 13px; margin-bottom: .75rem; }
+    .quote-text { font-size: 14px; color: var(--c-ink-2); line-height: 1.7; margin-bottom: 1rem; font-style: italic; }
+    .quote-author { font-size: 12px; color: var(--c-ink-3); font-weight: 500; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      max-width: 1100px; margin: 0 auto 5rem;
+      padding: 0 2rem;
+    }
+    .cta-inner {
+      background: var(--c-ink);
+      border-radius: var(--r-xl);
+      padding: 4rem;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .cta-text {}
+    .cta-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px; font-weight: 400;
+      color: var(--c-bg); margin-bottom: .75rem;
+      letter-spacing: -.02em;
+    }
+    .cta-headline em { font-style: italic; color: #A8CEAF; }
+    .cta-body { font-size: 15px; color: rgba(247,243,236,.65); max-width: 420px; line-height: 1.7; }
+    .btn-cta-light {
+      padding: 14px 28px;
+      background: var(--c-bg); color: var(--c-ink);
+      border-radius: 999px; font-size: 15px; font-weight: 500;
+      text-decoration: none; white-space: nowrap;
+      transition: all .2s; flex-shrink: 0;
+      display: inline-block;
+    }
+    .btn-cta-light:hover { background: white; transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--c-border);
+      padding: 2rem;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy { font-size: 13px; color: var(--c-ink-3); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 13px; color: var(--c-ink-3); text-decoration: none; }
+    .footer-links a:hover { color: var(--c-ink); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp .6s ease both; }
+    .delay-1 { animation-delay: .1s; }
+    .delay-2 { animation-delay: .2s; }
+    .delay-3 { animation-delay: .3s; }
+    .delay-4 { animation-delay: .4s; }
+
+    /* ── STRIPE MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(26,23,20,.5); backdrop-filter: blur(4px);
+      z-index: 1000; align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--c-surface);
+      border-radius: var(--r-xl); padding: 2.5rem;
+      max-width: 440px; width: 100%;
+      box-shadow: var(--shadow-lg);
+      animation: fadeUp .25s ease;
+    }
+    .modal-close {
+      float: right; background: none; border: none;
+      font-size: 20px; cursor: pointer; color: var(--c-ink-3);
+      line-height: 1; margin-top: -4px;
+    }
+    .modal-close:hover { color: var(--c-ink); }
+    .modal-icon { font-size: 32px; margin-bottom: 1rem; }
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px; font-weight: 400;
+      color: var(--c-ink); margin-bottom: .5rem;
+    }
+    .modal-sub { font-size: 14px; color: var(--c-ink-2); margin-bottom: 2rem; line-height: 1.6; }
+    .modal-price-row {
+      display: flex; align-items: baseline; gap: 8px;
+      margin-bottom: 1.5rem;
+    }
+    .modal-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px; color: var(--c-ink);
+    }
+    .modal-price-note { font-size: 13px; color: var(--c-ink-3); }
+    .modal-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+    .modal-feature {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--c-ink-2);
+    }
+    .modal-check {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--c-green-l); border: 1px solid var(--c-green-b);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .modal-check svg { width: 9px; height: 9px; stroke: var(--c-green); }
+    .modal-btn {
+      display: block; width: 100%;
+      padding: 14px; text-align: center;
+      background: var(--c-green); color: white;
+      border-radius: 999px; font-size: 15px; font-weight: 500;
+      text-decoration: none; transition: all .2s;
+      margin-bottom: .75rem; border: none;
+      cursor: pointer; font-family: inherit;
+    }
+    .modal-btn:hover { background: #2F5A3D; transform: translateY(-1px); }
+    .modal-guarantee { font-size: 12px; color: var(--c-ink-3); text-align: center; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 3.5rem; }
+      .hero-card { max-width: 480px; }
+      .how-steps { grid-template-columns: 1fr; gap: 2rem; }
+      .quotes-grid { grid-template-columns: 1fr; }
+      .cta-inner { flex-direction: column; text-align: center; }
+      .cta-body { max-width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 4rem 1.5rem 3rem; }
+      .apps-section { padding: 3rem 1.5rem; }
+      .app-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 1rem; }
+      .nav-links .nav-text-link { font-size: 13px; }
+      .nav-links .hide-sm { display: none; }
+      .nav-cta { padding: 7px 14px; font-size: 13px; }
+      .section-sub { display: none; }
+    }
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <div class="nav-links">
+      <a class="nav-text-link" href="#apps">Tools</a>
+      <a class="nav-text-link hide-sm" href="#how">How it works</a>
+      <a class="nav-text-link" href="#courses">Courses</a>
+      <a class="nav-text-link hide-sm" href="/mini-course">Free Course</a>
+      <a class="nav-text-link hide-sm" href="/contact">Contact</a>
+      <a class="nav-cta" href="#apps" onclick="event.preventDefault();document.getElementById('apps').scrollIntoView({behavior:'smooth'})">Explore tools</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow fade-up">Self-discovery tools</div>
+    <h1 class="hero-headline fade-up delay-1">
+      Tools for the<br><em>inner life</em>
+    </h1>
+
+    <div class="stickman-wrap">
+      <img class="stickman-img" src="/images/stickman.jpg" alt="Humanly Labs mascot" width="64" height="114" loading="eager" />
+      <div class="stickman-bubble">
+        <strong>Hi, I'm the Humanly Labs guy.</strong><br>
+        I help people feel a little less alone.
+      </div>
+    </div>
+
+    <p class="hero-body fade-up delay-2">
+      A growing suite of science-backed mini apps designed to help you understand yourself better — your patterns, your blocks, your next steps. No fluff. No subscriptions. Pay once, keep it forever.
+    </p>
+    <div class="hero-actions fade-up delay-3">
+      <a class="btn-primary" href="/quiz">Take the free 2-minute quiz</a>
+      <a class="btn-ghost-link" href="#apps" onclick="event.preventDefault();document.getElementById('apps').scrollIntoView({behavior:'smooth'})">
+        Browse all tools
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-card fade-up delay-4">
+    <div class="hero-card-label">Available in the suite</div>
+    <div class="stat-row" id="suite-list">
+      <div class="stat-item">
+        <div class="stat-emoji">🧠</div>
+        <div class="stat-text">
+          <div class="stat-name">Loneliness Type Quiz</div>
+          <div class="stat-desc">Identify your loneliness profile · Free</div>
+        </div>
+        <div class="stat-badge badge-live">● Live</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-emoji">🔬</div>
+        <div class="stat-text">
+          <div class="stat-name">Loneliness Deep Dive</div>
+          <div class="stat-desc">AI-personalised report · $8.99</div>
+        </div>
+        <div class="stat-badge badge-live">● Live</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-emoji">💬</div>
+        <div class="stat-text">
+          <div class="stat-name">Conversation Starter</div>
+          <div class="stat-desc">10 personalised openers · $3.99</div>
+        </div>
+        <div class="stat-badge badge-live">● Live</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-emoji">🔋</div>
+        <div class="stat-text">
+          <div class="stat-name">Social Battery Tracker</div>
+          <div class="stat-desc">7-day energy map · $3.99</div>
+        </div>
+        <div class="stat-badge badge-live">● Live</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-emoji">🗺️</div>
+        <div class="stat-text">
+          <div class="stat-name">Friendship Audit</div>
+          <div class="stat-desc">Map your social world · $4.99</div>
+        </div>
+        <div class="stat-badge badge-live">● Live</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-emoji">✉️</div>
+        <div class="stat-text">
+          <div class="stat-name">Check-In Generator</div>
+          <div class="stat-desc">3 natural messages · $3.99</div>
+        </div>
+        <div class="stat-badge badge-live">● Live</div>
+      </div>
+      <!-- hidden extras -->
+      <div class="stat-item stat-extra" style="display:none">
+        <div class="stat-emoji">🌱</div>
+        <div class="stat-text">
+          <div class="stat-name">Attachment Style Quiz</div>
+          <div class="stat-desc">Secure, anxious, avoidant, disorganised · Free</div>
+        </div>
+        <div class="stat-badge badge-live">● Live</div>
+      </div>
+      <div class="stat-item stat-extra" style="display:none">
+        <div class="stat-emoji">🧩</div>
+        <div class="stat-text">
+          <div class="stat-name">Find Your People Matcher</div>
+          <div class="stat-desc">AI community matches · $3.99</div>
+        </div>
+        <div class="stat-badge badge-live">● Live</div>
+      </div>
+      <div class="stat-item stat-extra" style="display:none">
+        <div class="stat-emoji">🫁</div>
+        <div class="stat-text">
+          <div class="stat-name">Social Anxiety Check</div>
+          <div class="stat-desc">Trigger map + coping plan · $4.99</div>
+        </div>
+        <div class="stat-badge badge-live">● Live</div>
+      </div>
+      <div class="stat-item stat-extra" style="display:none">
+        <div class="stat-emoji">✦</div>
+        <div class="stat-text">
+          <div class="stat-name">3 more tools coming</div>
+          <div class="stat-desc">New tools launching regularly</div>
+        </div>
+        <div class="stat-badge badge-soon">Soon</div>
+      </div>
+    </div>
+    <button class="show-more-btn" id="suite-toggle" onclick="
+      const extras = document.querySelectorAll('.stat-extra');
+      const btn = document.getElementById('suite-toggle');
+      const open = btn.classList.toggle('open');
+      extras.forEach(el => el.style.display = open ? 'flex' : 'none');
+      btn.querySelector('.label').textContent = open ? 'Show less' : '4 more tools';
+    ">
+      <span class="label">4 more tools</span>
+      <span class="chevron">↓</span>
+    </button>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══ APP DIRECTORY ══ -->
+<section class="apps-section" id="apps">
+  <div class="section-header">
+    <h2 class="section-title">The <em>full suite</em></h2>
+    <div class="section-sub">9 tools live now. New tools launching regularly — bookmark this page.</div>
+  </div>
+
+  <div class="app-grid" id="app-grid">
+    <!-- Rendered by JS -->
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="how-section" id="how">
+  <div class="how-inner">
+    <h2 class="how-title">Simple, <em>private</em>, effective</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-step-title">Choose a tool</div>
+        <div class="how-step-body">Browse the suite and pick the tool that matches what you're working through right now.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-step-title">Answer honestly</div>
+        <div class="how-step-body">No account needed. Your answers stay in your browser — we never store or sell them.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-step-title">Get your plan</div>
+        <div class="how-step-body">Receive a personalised profile and a concrete, actionable plan tailored to your situation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOCIAL PROOF ══ -->
+<section class="social-section">
+  <div class="section-header">
+    <h2 class="section-title">What people are <em>saying</em></h2>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card">
+      <div class="quote-stars">★★★★★</div>
+      <div class="quote-text">"I've read about loneliness before but this was the first time I felt like something actually understood my specific situation. The action plan was genuinely useful."</div>
+      <div class="quote-author">— Sarah M., Sydney</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-stars">★★★★★</div>
+      <div class="quote-text">"Took 3 minutes. I expected generic advice but the result was surprisingly accurate. Shared it with my therapist and we used it as a starting point."</div>
+      <div class="quote-author">— James T., London</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-stars">★★★★★</div>
+      <div class="quote-text">"The distinction between emotional and social loneliness clicked for me immediately. I'd been trying to solve the wrong problem for months."</div>
+      <div class="quote-author">— Priya K., Toronto</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ DEEP DIVE COURSES ══ -->
+<section style="max-width:1100px;margin:0 auto;padding:0 2rem 4rem" id="courses">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;gap:2rem;flex-wrap:wrap">
+    <div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--c-green);font-weight:500;margin-bottom:.5rem">Deep dive courses</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:400;color:var(--c-ink);letter-spacing:-.02em">Go <em style="font-style:italic">deeper</em></h2>
+    </div>
+    <p style="font-size:14px;color:var(--c-ink-3);max-width:320px;text-align:right">For when a tool isn't enough. Structured courses that take you from understanding to real change.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem">
+
+    <!-- Course 1 -->
+    <div style="background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:1.75rem;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:all .2s;position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#1C5DAF;border-radius:var(--r-lg) var(--r-lg) 0 0"></div>
+      <div style="width:44px;height:44px;background:#EBF2FB;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:1rem">📍</div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#1C5DAF;font-weight:500;margin-bottom:.4rem">12-week course</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--c-ink);margin-bottom:.5rem;letter-spacing:-.01em">The Social Landing</h3>
+      <p style="font-size:13px;color:var(--c-ink-3);line-height:1.6;margin-bottom:1.5rem;flex:1">Build a genuine social life from scratch after relocating — a structured, week-by-week guide from first steps to real belonging.</p>
+      <div style="border-top:1px solid var(--c-border);padding-top:1.25rem;display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--c-ink)">$97</div>
+          <div style="font-size:11px;color:var(--c-ink-3)">one-time</div>
+        </div>
+        <a href="/courses/social-landing/"
+           id="enroll-social-landing"
+           data-course="social-landing"
+           data-price="97"
+           style="padding:10px 20px;background:#1C5DAF;color:white;border-radius:999px;font-size:13px;font-weight:500;text-decoration:none;transition:all .15s"
+           onmouseover="this.style.background='#154F99'" onmouseout="this.style.background='#1C5DAF'">Learn more →</a>
+      </div>
+    </div>
+
+    <!-- Course 2 -->
+    <div style="background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:1.75rem;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:all .2s;position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#5B3A8A;border-radius:var(--r-lg) var(--r-lg) 0 0"></div>
+      <div style="width:44px;height:44px;background:#F0EBFB;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:1rem">🧠</div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#5B3A8A;font-weight:500;margin-bottom:.4rem">12-week course</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--c-ink);margin-bottom:.5rem;letter-spacing:-.01em">The Confidence Blueprint</h3>
+      <p style="font-size:13px;color:var(--c-ink-3);line-height:1.6;margin-bottom:1.5rem;flex:1">A structured programme for overcoming social anxiety — from understanding your triggers to building genuine confidence in the situations that matter most.</p>
+      <div style="border-top:1px solid var(--c-border);padding-top:1.25rem;display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--c-ink)">$97</div>
+          <div style="font-size:11px;color:var(--c-ink-3)">one-time</div>
+        </div>
+        <a href="/courses/confidence-blueprint/"
+           id="enroll-confidence-blueprint"
+           data-course="confidence-blueprint"
+           data-price="97"
+           style="padding:10px 20px;background:#5B3A8A;color:white;border-radius:999px;font-size:13px;font-weight:500;text-decoration:none;transition:all .15s"
+           onmouseover="this.style.background='#472D6E'" onmouseout="this.style.background='#5B3A8A'">Learn more →</a>
+      </div>
+    </div>
+
+    <!-- Course 3 -->
+    <div style="background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:1.75rem;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:all .2s;position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#1A7070;border-radius:var(--r-lg) var(--r-lg) 0 0"></div>
+      <div style="width:44px;height:44px;background:#E5F4F4;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:1rem">🤝</div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#1A7070;font-weight:500;margin-bottom:.4rem">12-week course</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--c-ink);margin-bottom:.5rem;letter-spacing:-.01em">The Friendship Revival</h3>
+      <p style="font-size:13px;color:var(--c-ink-3);line-height:1.6;margin-bottom:1.5rem;flex:1">Rebuild your adult friendships from drift to depth — a practical guide to reconnecting with old friends and building new ones after the years pull people apart.</p>
+      <div style="border-top:1px solid var(--c-border);padding-top:1.25rem;display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--c-ink)">$97</div>
+          <div style="font-size:11px;color:var(--c-ink-3)">one-time</div>
+        </div>
+        <a href="/courses/friendship-revival/"
+           id="enroll-friendship-revival"
+           data-course="friendship-revival"
+           data-price="97"
+           style="padding:10px 20px;background:#1A7070;color:white;border-radius:999px;font-size:13px;font-weight:500;text-decoration:none;transition:all .15s"
+           onmouseover="this.style.background='#135555'" onmouseout="this.style.background='#1A7070'">Learn more →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FREE COURSE PROMO ══ -->
+<section style="max-width:1100px;margin:0 auto;padding:0 2rem 3rem">
+  <div style="background:linear-gradient(135deg,#1C1917 0%,#2D2520 100%);border-radius:var(--r-xl);padding:3.5rem;display:flex;align-items:center;gap:3rem;flex-wrap:wrap;position:relative;overflow:hidden">
+    <!-- Decorative circles -->
+    <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(74,124,89,.15);pointer-events:none"></div>
+    <div style="position:absolute;bottom:-60px;right:120px;width:140px;height:140px;border-radius:50%;background:rgba(74,124,89,.08);pointer-events:none"></div>
+    <div style="flex:1;min-width:280px;position:relative">
+      <div style="display:inline-block;padding:4px 12px;background:rgba(74,124,89,.25);border:1px solid rgba(168,206,175,.3);border-radius:999px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:#A8CEAF;margin-bottom:1rem">Free mini-course</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,32px);font-weight:400;color:#F7F3EC;margin-bottom:.75rem;letter-spacing:-.02em;line-height:1.25">Recharge &amp; Connect:<br><em style="font-style:italic;color:#A8CEAF">Mastering Your Social Battery</em></h2>
+      <p style="font-size:15px;color:rgba(247,243,236,.65);line-height:1.7;max-width:420px">A free 4-module course for introverts on managing social energy, easing anxiety, and building genuine connections. 8 lessons, 30 minutes, completely free.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem;flex-shrink:0;position:relative">
+      <div style="display:flex;flex-direction:column;gap:.5rem">
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(247,243,236,.75)"><span style="color:#A8CEAF">✓</span> 4 modules · 8 lessons</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(247,243,236,.75)"><span style="color:#A8CEAF">✓</span> Science-backed strategies</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(247,243,236,.75)"><span style="color:#A8CEAF">✓</span> Integrates all our tools</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(247,243,236,.75)"><span style="color:#A8CEAF">✓</span> Go at your own pace</div>
+      </div>
+      <a href="/mini-course" style="display:block;padding:14px 28px;background:#4A7C59;color:white;border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;text-align:center;transition:all .2s;font-family:'Instrument Sans',sans-serif" onmouseover="this.style.background='#3D6B4A'" onmouseout="this.style.background='#4A7C59'">Start the free course →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWSLETTER ══ -->
+
+<!-- ══ JOURNAL ══ -->
+<section style="max-width:1100px;margin:0 auto;padding:0 2rem 4rem" id="journal">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:2rem">
+    <h2 style="font-family:'Playfair Display',serif;font-size:26px;font-weight:400;color:var(--c-ink);letter-spacing:-.02em">From the <em style="font-style:italic;color:var(--c-green)">journal</em></h2>
+    <p style="font-size:14px;color:var(--c-ink-3)">Honest writing on connection — no fluff</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem">
+    <a href="/why-socialising-drains-you" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:1.5rem;text-decoration:none;box-shadow:var(--shadow);transition:all .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--c-green);margin-bottom:.6rem">Social energy</div>
+      <div style="font-family:'Playfair Display',serif;font-size:19px;color:var(--c-ink);line-height:1.35;margin-bottom:.6rem">Why does socialising drain me — even with people I like?</div>
+      <div style="font-size:13px;color:var(--c-ink-3);line-height:1.6">What actually empties your social battery, and five ways to recover faster.</div>
+    </a>
+    <a href="/what-to-text-an-old-friend" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:1.5rem;text-decoration:none;box-shadow:var(--shadow);transition:all .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--c-green);margin-bottom:.6rem">Reconnection</div>
+      <div style="font-family:'Playfair Display',serif;font-size:19px;color:var(--c-ink);line-height:1.35;margin-bottom:.6rem">What to text a friend you haven't spoken to in months</div>
+      <div style="font-size:13px;color:var(--c-ink-3);line-height:1.6">Why reaching out almost always lands well — plus 12 copy-and-send messages.</div>
+    </a>
+    <a href="/lonely-in-a-relationship" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:1.5rem;text-decoration:none;box-shadow:var(--shadow);transition:all .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--c-green);margin-bottom:.6rem">Loneliness, explained</div>
+      <div style="font-family:'Playfair Display',serif;font-size:19px;color:var(--c-ink);line-height:1.35;margin-bottom:.6rem">Can you be lonely in a relationship?</div>
+      <div style="font-size:13px;color:var(--c-ink-3);line-height:1.6">Why it happens even in loving partnerships, and how to start closing the gap.</div>
+    </a>
+    <a href="/how-to-make-friends-in-your-30s" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:1.5rem;text-decoration:none;box-shadow:var(--shadow);transition:all .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--c-green);margin-bottom:.6rem">Finding your people</div>
+      <div style="font-family:'Playfair Display',serif;font-size:19px;color:var(--c-ink);line-height:1.35;margin-bottom:.6rem">How to make friends in your 30s</div>
+      <div style="font-size:13px;color:var(--c-ink-3);line-height:1.6">Why it got structurally harder, and a realistic playbook that actually works.</div>
+    </a>
+    <a href="/avoidant-attachment-style-signs" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:1.5rem;text-decoration:none;box-shadow:var(--shadow);transition:all .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--c-green);margin-bottom:.6rem">Attachment, explained</div>
+      <div style="font-family:'Playfair Display',serif;font-size:19px;color:var(--c-ink);line-height:1.35;margin-bottom:.6rem">Avoidant attachment style: 9 signs</div>
+      <div style="font-size:13px;color:var(--c-ink-3);line-height:1.6">Crave closeness but pull away when you get it? What helps the pattern soften.</div>
+    </a>
+    <a href="/social-battery-meaning" style="display:block;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:1.5rem;text-decoration:none;box-shadow:var(--shadow);transition:all .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--c-green);margin-bottom:.6rem">Social energy</div>
+      <div style="font-family:'Playfair Display',serif;font-size:19px;color:var(--c-ink);line-height:1.35;margin-bottom:.6rem">What is a social battery?</div>
+      <div style="font-size:13px;color:var(--c-ink-3);line-height:1.6">The meaning behind the metaphor, what drains it fastest, and how to recharge.</div>
+    </a>
+  </div>
+</section>
+
+<section style="max-width:1100px;margin:0 auto;padding:0 2rem 5rem">
+  <div style="background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-xl);padding:3.5rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap">
+    <div style="max-width:420px">
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--c-green);font-weight:500;margin-bottom:.75rem">Free newsletter</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:26px;font-weight:400;color:var(--c-ink);margin-bottom:.75rem;letter-spacing:-.02em">Tools and ideas for <em style="font-style:italic">feeling less alone</em></h2>
+      <p style="font-size:14px;color:var(--c-ink-2);line-height:1.7">New tools, research on loneliness and connection, and honest writing on what actually helps. No fluff. Usually fortnightly.</p>
+    </div>
+    <div style="flex:1;min-width:260px;max-width:380px">
+      <iframe data-tally-src="https://tally.so/embed/yPRK9X?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="253" frameborder="0" marginheight="0" marginwidth="0" title="Humanly Labs Newsletter Signup"></iframe>
+      <p style="font-size:11px;color:var(--c-ink-3);padding:0 4px;margin-top:.4rem">No spam. Unsubscribe any time. We keep your email private.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BANNER ══ -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="cta-headline">Start with the<br><em>loneliness quiz</em></div>
+      <p class="cta-body">9 questions. Your profile. A personalised 3-step plan. Free — takes 2 minutes.</p>
+    </div>
+    <a class="btn-cta-light" href="/quiz">Take the quiz →</a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 Humanly Labs · Made with care in Sydney</div>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+  <nav aria-label="All tools" style="max-width:860px;margin:24px auto 0;padding:24px 24px 0;border-top:1px solid rgba(0,0,0,0.08);display:flex;flex-wrap:wrap;gap:8px 24px;">
+    <span style="font-size:12px;font-weight:600;color:var(--c-ink-3);width:100%;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">All Tools</span>
+    <a href="/quiz" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Loneliness Type Quiz</a>
+    <a href="/deep-dive" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Loneliness Deep Dive</a>
+    <a href="/friendship-audit" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Friendship Audit</a>
+    <a href="/social-battery" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Social Battery Tracker</a>
+    <a href="/conversation-starter" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Conversation Starter</a>
+    <a href="/checkin-generator" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Check-In Generator</a>
+    <a href="/attachment-quiz" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Attachment Style Quiz</a>
+    <a href="/social-anxiety" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Social Anxiety Check</a>
+    <a href="/find-your-people" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Find Your People</a>
+    <a href="/mini-course" style="font-size:13px;color:var(--c-ink-2);text-decoration:none;">Mini Course</a>
+  </nav>
+</footer>
+
+<!-- ══ PAYMENT MODAL ══ -->
+<div class="modal-overlay" id="payment-modal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('payment-modal').classList.remove('open')">×</button>
+    <div class="modal-icon" id="modal-icon"></div>
+    <h3 class="modal-title" id="modal-title"></h3>
+    <p class="modal-sub" id="modal-sub"></p>
+    <div class="modal-price-row">
+      <div class="modal-price" id="modal-price"></div>
+      <div class="modal-price-note">one-time · instant access</div>
+    </div>
+    <div class="modal-features" id="modal-features"></div>
+    <a class="modal-btn" id="modal-cta" href="#" target="_blank">Unlock now via Stripe →</a>
+    <div class="modal-guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't resonate</div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════
+   STRIPE PAYMENT LINKS CONFIG
+   ─────────────────────────────────────────
+   For each app, set stripeUrl to your Stripe
+   Payment Link (https://buy.stripe.com/xxx).
+
+   Steps:
+   1. Go to dashboard.stripe.com → Payment Links
+   2. Create a new link per product, set price
+   3. Paste the link URL into stripeUrl below
+   4. For the live quiz, set page to 'quiz.html'
+      (the quiz handles its own payment flow)
+   ════════════════════════════════════════════ */
+
+const APPS = [
+  {
+    id: 'loneliness-quiz',
+    name: 'Loneliness Type Quiz',
+    tagline: 'Identify your loneliness profile',
+    desc: 'Answer 9 questions and discover which of 4 loneliness types fits your situation — plus a personalised 3-step plan to move forward.',
+    emoji: '🧠',
+    accentColor: '#3A6B49',
+    iconBg: '#E8F2EC',
+    price: 'Free',
+    status: 'live',
+    page: '/quiz',
+    stripeUrl: null,
+    features: [
+      'Your loneliness type + what drives it',
+      'Personalised 3-step action plan',
+      'Shareable profile card',
+      'No payment needed'
+    ]
+  },
+  {
+    id: 'deep-dive',
+    name: 'Loneliness Deep Dive',
+    tagline: 'AI-personalised report from your quiz answers',
+    desc: 'An AI reads your specific 9 quiz answers and writes a report built entirely around you — 5 insights, a 4-week plan, and scripts for hard social moments.',
+    emoji: '🔬',
+    accentColor: '#5B3A8A',
+    iconBg: '#F0EBFB',
+    price: '$8.99',
+    status: 'live',
+    page: '/deep-dive',
+    stripeUrl: null,
+    features: [
+      'AI analysis of your exact answers',
+      '5 insights unique to your pattern',
+      '4-week personalised action plan',
+      'Word-for-word social scripts'
+    ]
+  },
+  {
+    id: 'conversation-starter',
+    name: 'Conversation Starter',
+    tagline: 'Personalised social openers',
+    desc: 'Input your interests and situation — get 10 tailored conversation starters for dates, new coworkers, neighbours, or anyone you want to know better.',
+    emoji: '💬',
+    accentColor: '#1C5DAF',
+    iconBg: '#EBF2FB',
+    price: '$3.99',
+    status: 'live',
+    page: '/conversation-starter',
+    stripeUrl: null,
+    features: [
+      '10 tailored openers per session',
+      'Situation-aware (date, work, social)',
+      'Tone options: warm, curious, playful',
+      'Regenerate as many times as you like'
+    ]
+  },
+  {
+    id: 'attachment-quiz',
+    name: 'Attachment Style Quiz',
+    tagline: 'Understand how you connect',
+    desc: 'Discover your attachment style — secure, anxious, avoidant, or disorganised — and what it means for your relationships and friendships.',
+    emoji: '🌱',
+    accentColor: '#5B3A8A',
+    iconBg: '#F0EBFB',
+    price: 'Free',
+    status: 'live',
+    page: '/attachment-quiz',
+    stripeUrl: null,
+    features: [
+      'Full attachment style profile',
+      'How it shows up in your relationships',
+      '3 practical shifts to try',
+      'Cross-links to the Deep Dive report'
+    ]
+  },
+  {
+    id: 'social-battery',
+    name: 'Social Battery Tracker',
+    tagline: 'Manage your energy around people',
+    desc: 'A 7-day check-in tool that maps when and why your social energy depletes — and gives you a personalised recovery + engagement plan.',
+    emoji: '🔋',
+    accentColor: '#B5530A',
+    iconBg: '#FEF3E2',
+    price: '$3.99',
+    status: 'live',
+    page: '/social-battery',
+    stripeUrl: null,
+    features: [
+      '7-day energy tracking journal',
+      'Drain pattern identification',
+      'Recharge strategy matched to you',
+      'Introvert/extrovert spectrum chart'
+    ]
+  },
+  {
+    id: 'friendship-audit',
+    name: 'Friendship Audit',
+    tagline: 'Map the health of your social world',
+    desc: 'A structured reflection that helps you see which friendships are nourishing, which are draining, and where the gaps in your social world are.',
+    emoji: '🗺️',
+    accentColor: '#1A7070',
+    iconBg: '#E5F4F4',
+    price: '$4.99',
+    status: 'live',
+    page: '/friendship-audit',
+    stripeUrl: null,
+    features: [
+      'Visual friendship map output',
+      'Nourishing vs draining analysis',
+      'Gap identification + next steps',
+      'AI-personalised connection plan'
+    ]
+  },
+  {
+    id: 'check-in-generator',
+    name: 'Check-In Message Generator',
+    tagline: 'Reach out without the blank page',
+    desc: 'Enter who you want to contact and how long it\'s been — get 3 warm, natural messages to send by text, DM, WhatsApp, or email. No cringe, no overthinking.',
+    emoji: '✉️',
+    accentColor: '#9F3247',
+    iconBg: '#FDF2F4',
+    price: '$3.99',
+    status: 'live',
+    page: '/checkin-generator',
+    stripeUrl: null,
+    features: [
+      '3 natural message variants per person',
+      'Adjusts for relationship and time gap',
+      'Works for text, DM, WhatsApp, email',
+      'Unlimited generations per purchase'
+    ]
+  },
+  {
+    id: 'hobby-matcher',
+    name: 'Find Your People Matcher',
+    tagline: 'Discover your community',
+    desc: 'Input 3–5 interests and get specific club types, subreddits, meetup formats, and one concrete first step for each — all matched to your personality.',
+    emoji: '🧩',
+    accentColor: '#3A6B49',
+    iconBg: '#E8F2EC',
+    price: '$3.99',
+    status: 'live',
+    page: '/find-your-people',
+    stripeUrl: 'https://buy.stripe.com/aFa6oHePC5uG5Gq4W24AU06',
+    features: [
+      'Community suggestions per interest',
+      'Online + offline options',
+      'First-step action for each',
+      'Personality-adjusted recommendations'
+    ]
+  },
+  {
+    id: 'anxiety-checker',
+    name: 'Social Anxiety Check',
+    tagline: 'Understand your social fears',
+    desc: 'A nuanced assessment that goes beyond "are you shy?" — mapping exactly where social anxiety shows up for you and giving targeted coping strategies.',
+    emoji: '🫁',
+    accentColor: '#1C5DAF',
+    iconBg: '#EBF2FB',
+    price: '$4.99',
+    status: 'live',
+    page: '/social-anxiety',
+    stripeUrl: 'https://buy.stripe.com/28E7sL0YM6yKgl43RY4AU07',
+    features: [
+      'Situation-specific anxiety mapping',
+      'Avoidance pattern identification',
+      '3 evidence-based coping tools',
+      'Progress check-in (retake free)'
+    ]
+  },
+  {
+    id: 'new-in-town',
+    name: 'New In Town Planner',
+    tagline: 'Build a social life after moving',
+    desc: 'A 4-week structured plan for building connection in a new city — from becoming a regular somewhere to finding your first friend. Step by step.',
+    emoji: '📍',
+    accentColor: '#B5530A',
+    iconBg: '#FEF3E2',
+    price: '$4.99',
+    status: 'soon',
+    page: 'new-in-town.html',
+    stripeUrl: 'https://buy.stripe.com/eVq7sL9vi5uG5Gqdsy4AU08',
+    features: [
+      '4-week guided action plan',
+      'Comfort-level personalisation',
+      'Local exploration prompts',
+      'Weekly check-in questions'
+    ]
+  },
+  {
+    id: 'values-mapper',
+    name: 'Core Values Mapper',
+    tagline: 'Know what matters to you',
+    desc: 'A structured process that helps you identify your top 5 core values — and shows you how misalignment between values and life is often the hidden root of emptiness.',
+    emoji: '🧭',
+    accentColor: '#5B3A8A',
+    iconBg: '#F0EBFB',
+    price: '$3.99',
+    status: 'soon',
+    page: 'values-mapper.html',
+    stripeUrl: 'https://buy.stripe.com/7sY5kD9vi2iu9WG4W24AU09',
+    features: [
+      'Identifies your top 5 core values',
+      'Values vs life alignment score',
+      'Practical alignment suggestions',
+      'PDF values card to keep'
+    ]
+  },
+  {
+    id: 'evening-ritual',
+    name: 'Solo Evening Ritual Builder',
+    tagline: 'Make nights alone feel intentional',
+    desc: 'A personalised evening routine generator for people living alone — built around your mood, energy level, and what you need most that night.',
+    emoji: '🌙',
+    accentColor: '#1A7070',
+    iconBg: '#E5F4F4',
+    price: '$3.99',
+    status: 'soon',
+    page: 'evening-ritual.html',
+    stripeUrl: 'https://buy.stripe.com/8x25kDbDq4qCgl49ci4AU0a',
+    features: [
+      'Mood-responsive routine generator',
+      'Cozy / active / reflective modes',
+      'Printable nightly planner',
+      '30-day ritual tracker'
+    ]
+  },
+  {
+    id: 'self-compassion',
+    name: 'Self-Compassion Reset',
+    tagline: 'Quieten your inner critic',
+    desc: 'A guided 10-minute self-compassion practice designed for moments when the inner critic is loudest — loneliness, rejection, failure, or just a bad day.',
+    emoji: '🤍',
+    accentColor: '#9B2D3F',
+    iconBg: '#FCEEF0',
+    price: '$3.99',
+    status: 'soon',
+    page: 'self-compassion.html',
+    stripeUrl: 'https://buy.stripe.com/8x2bJ14aY8GS9WGgEK4AU0b',
+    features: [
+      'Guided audio + text practice',
+      'Inner critic pattern identification',
+      'Personalised self-talk reframes',
+      'Repeat anytime, unlimited access'
+    ]
+  }
+];
+
+/* ── RENDER CARDS ── */
+function renderApps() {
+  const grid = document.getElementById('app-grid');
+  grid.innerHTML = APPS.map(app => `
+    <div class="app-card ${app.status === 'live' ? 'is-live' : 'is-soon'}">
+      <div class="card-accent" style="background:${app.accentColor}"></div>
+      <div class="card-top">
+        <div class="card-icon" style="background:${app.iconBg}">${app.emoji}</div>
+        <div class="card-status ${app.status === 'live' ? 'status-live' : 'status-soon'}">
+          ${app.status === 'live' ? '● Live' : 'Coming Soon'}
+        </div>
+      </div>
+      <div class="card-name">${app.name}</div>
+      <div class="card-tagline">${app.tagline}</div>
+      <div class="card-desc">${app.desc}</div>
+      <div class="card-footer">
+        <div class="card-price">${app.price === 'Free' ? 'Free' : `${app.price} <span>one-time</span>`}</div>
+        ${app.status === 'live'
+          ? `<a class="btn-card-cta btn-card-live" href="${app.page}">${app.price === 'Free' ? 'Try free →' : 'Try it →'}</a>`
+          : `<button class="btn-card-cta btn-card-soon" disabled>Coming Soon</button>`
+        }
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ── PAYMENT MODAL ── */
+function openModal(appId) {
+  const app = APPS.find(a => a.id === appId);
+  if (!app) return;
+
+  // If it has its own page (e.g. the quiz), navigate there
+  if (app.page) { window.location.href = app.page; return; }
+
+  document.getElementById('modal-icon').textContent = app.emoji;
+  document.getElementById('modal-title').textContent = app.name;
+  document.getElementById('modal-sub').textContent = app.desc;
+  document.getElementById('modal-price').textContent = app.price;
+  document.getElementById('modal-features').innerHTML = app.features.map(f => `
+    <div class="modal-feature">
+      <div class="modal-check">
+        <svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="1.5,5 4,7.5 8.5,2.5"/>
+        </svg>
+      </div>
+      <span>${f}</span>
+    </div>
+  `).join('');
+
+  const cta = document.getElementById('modal-cta');
+  cta.href = app.stripeUrl && app.stripeUrl !== 'REPLACE_WITH_STRIPE_LINK'
+    ? app.stripeUrl
+    : '#';
+  cta.style.opacity = (app.stripeUrl && app.stripeUrl !== 'REPLACE_WITH_STRIPE_LINK') ? '1' : '.45';
+  cta.onclick = (app.stripeUrl === 'REPLACE_WITH_STRIPE_LINK' || !app.stripeUrl)
+    ? (e) => { e.preventDefault(); alert('Stripe Payment Link not yet configured for this app.'); }
+    : null;
+
+  document.getElementById('payment-modal').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('payment-modal')) {
+    document.getElementById('payment-modal').classList.remove('open');
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('payment-modal').classList.remove('open');
+});
+
+apps.sort((a, b) => {
+  const rank = x => (x.status === 'live' ? (x.price === 'Free' ? 0 : 1) : 2);
+  return rank(a) - rank(b);
+});
+renderApps();
+</script>
+
+  <!-- Tally.so newsletter embed -->
+  <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+  <script>
+    // Track newsletter submissions via Tally's postMessage event
+    window.addEventListener('message', function(e) {
+      try {
+        var data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data && data.event === 'Tally.FormSubmitted' && window.gtag) {
+          gtag('event', 'newsletter_signup', { location: 'homepage' });
+        }
+      } catch (err) {}
+    });
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+  var t = e.target.closest('a.btn-card-cta, .hero-actions a.btn-primary');
+  if (t && window.gtag) gtag('event', 'select_tool', { tool_path: t.getAttribute('href') || '' });
+});
+</script>
+</body>
+</html>

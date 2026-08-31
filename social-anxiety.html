@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Anxiety Test — Map Your Triggers | Humanly Labs</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Social Anxiety Check — Humanly Labs" />
+  <meta name="twitter:description" content="Map exactly where social anxiety shows up for you and get targeted, evidence-based coping strategies." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+    <meta name="description" content="Map exactly where social anxiety shows up for you and get targeted, evidence-based coping strategies. Free tool, no sign-up." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="canonical" href="https://humanlylabs.org/social-anxiety" />
+  <meta property="og:title" content="Social Anxiety Check — Humanly Labs" />
+  <meta property="og:description" content="Map exactly where social anxiety shows up for you and get targeted, evidence-based coping strategies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/social-anxiety" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+      <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Social Anxiety Check — Humanly Labs",
+    "url": "https://humanlylabs.org/social-anxiety",
+    "description": "Map your social anxiety triggers and get evidence-based coping strategies.",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Social Anxiety"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12);--border-strong:rgba(28,25,23,.25);
+      --sky:#1C5DAF;--sky-light:#EBF2FB;--sky-border:#B5D4F4;
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --amber:#B5530A;--amber-light:#FEF3E2;--amber-border:#F5C99A;
+      --rose:#9F3247;--rose-light:#FDF2F4;--rose-border:#F4B8C6;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:680px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--sky)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:580px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* SHARED */
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--sky);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--sky)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .btn-sky{display:block;width:100%;padding:14px;text-align:center;background:var(--sky);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem}
+    .btn-sky:hover{background:#154F99;transform:translateY(-1px)}
+    .btn-sky:disabled{opacity:.35;cursor:default;transform:none}
+    .btn-outline{width:100%;padding:12px;text-align:center;background:none;color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s;display:block}
+    .btn-outline:hover{background:var(--cream)}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+    .divider{height:1px;background:var(--border);margin:1.75rem 0}
+
+    /* LANDING */
+    .trust-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem;padding:1.25rem;background:var(--sky-light);border-radius:var(--radius-md);border:1px solid var(--sky-border)}
+    .trust-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#0C3A7A;line-height:1.5}
+    .trust-dot{width:6px;height:6px;border-radius:50%;background:var(--sky);flex-shrink:0;margin-top:7px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+
+    /* EMAIL */
+    .email-row{display:flex;gap:8px;margin-bottom:.5rem}
+    .email-input{flex:1;padding:11px 14px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .15s}
+    .email-input:focus{border-color:var(--sky)}
+    .email-skip{font-size:12px;color:var(--ink-muted);text-align:center;margin-top:6px;cursor:pointer;background:none;border:none;font-family:inherit;text-decoration:underline;text-underline-offset:2px;width:100%}
+
+    /* PROGRESS */
+    .progress-wrap{margin-bottom:1.75rem}
+    .progress-meta{display:flex;justify-content:space-between;margin-bottom:8px}
+    .progress-label{font-size:12px;color:var(--ink-muted)}
+    .progress-bar{height:2px;background:var(--border);border-radius:2px}
+    .progress-fill{height:100%;background:var(--sky);border-radius:2px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+
+    /* SITUATION RATING */
+    .situation-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;margin-bottom:.75rem}
+    .sit-name{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:.35rem}
+    .sit-desc{font-size:13px;color:var(--ink-muted);margin-bottom:1rem;line-height:1.5}
+    .rating-row{display:flex;gap:.4rem}
+    .rating-btn{flex:1;padding:9px 4px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--warm-white);font-family:'DM Sans',sans-serif;font-size:12px;color:var(--ink-soft);cursor:pointer;text-align:center;transition:all .15s;line-height:1.3}
+    .rating-btn:hover{border-color:var(--sky);color:var(--sky)}
+    .rating-btn.selected{background:var(--sky-light);border-color:var(--sky);color:var(--sky);font-weight:500;border-width:1.5px}
+    .rating-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--ink-muted);margin-top:4px}
+
+    /* NAV BUTTONS */
+    .nav-row{display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem}
+    .btn-ghost{font-size:14px;color:var(--ink-muted);background:none;border:none;cursor:pointer;font-family:inherit;padding:8px 0}
+    .btn-ghost:hover{color:var(--ink)}
+    .btn-ghost:disabled{opacity:.3;cursor:default}
+    .btn-next{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;background:var(--ink);color:var(--cream);border:none;border-radius:999px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:all .15s}
+    .btn-next:hover{background:#2C2926;transform:translateY(-1px)}
+    .btn-next:disabled{opacity:.3;cursor:default;transform:none}
+    .q-section-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--sky);font-weight:500;margin-bottom:1rem}
+
+    /* GENERATING */
+    .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--sky);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .gen-wrap{text-align:center;padding:2rem 0}
+    .gen-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+    .gen-sub{font-size:14px;color:var(--ink-muted);line-height:1.6}
+    .gen-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;text-align:left}
+    .gen-step{font-size:13px;color:var(--ink-muted);display:flex;align-items:center;gap:.75rem;transition:color .3s}
+    .gen-step.done{color:var(--sky)} .gen-step.active{color:var(--ink)}
+    .gen-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .3s}
+    .gen-step.done .gen-dot{background:var(--sky)}
+    .gen-step.active .gen-dot{background:var(--ink);animation:pulse .8s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+    /* RESULT */
+    .severity-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:1.25rem}
+    .result-headline{font-family:'Fraunces',serif;font-size:22px;font-weight:300;line-height:1.35;color:var(--ink);margin-bottom:1rem;letter-spacing:-.01em}
+    .result-desc{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem;padding-bottom:1.75rem;border-bottom:1px solid var(--border)}
+    .section-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-muted);font-weight:500;margin-bottom:1rem}
+
+    /* TRIGGER MAP */
+    .trigger-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.5rem}
+    .trigger-item{padding:.75rem;border-radius:var(--radius-sm);border:1px solid var(--border);text-align:center}
+    .trigger-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:.25rem}
+    .trigger-bar{height:4px;border-radius:2px;margin-bottom:.25rem}
+    .trigger-score{font-size:10px;color:var(--ink-muted)}
+
+    /* INSIGHT & COPING CARDS */
+    .insight-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.1rem;margin-bottom:.65rem}
+    .ic-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);font-weight:500;margin-bottom:.3rem}
+    .ic-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:.3rem}
+    .ic-body{font-size:13px;color:var(--ink-soft);line-height:1.65}
+    .coping-card{background:var(--sky-light);border:1px solid var(--sky-border);border-radius:var(--radius-md);padding:1.1rem;margin-bottom:.65rem}
+    .cc-title{font-size:14px;font-weight:500;color:#0C3A7A;margin-bottom:.3rem}
+    .cc-body{font-size:13px;color:#1D4F8C;line-height:1.65}
+    .cc-type{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--sky);margin-bottom:.35rem}
+
+    .result-actions{display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap}
+    .result-actions .btn-outline{flex:1;min-width:120px}
+    .disclaimer{font-size:11px;color:var(--ink-muted);margin-top:1.5rem;text-align:center;line-height:1.6}
+
+    /* TOAST */
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    footer{max-width:580px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem}
+    @media(max-width:600px){.card{padding:1.75rem 1.25rem}.headline{font-size:26px}.trigger-grid{grid-template-columns:1fr}.email-row{flex-direction:column}}
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is social anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Social anxiety is persistent fear or discomfort in social situations due to worry about being judged, embarrassed, or rejected. It goes beyond shyness and can significantly affect daily life, relationships, and work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between shyness and social anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shyness is a personality trait involving discomfort in new social situations that typically fades once you warm up. Social anxiety is more intense, persistent, and often includes physical symptoms like a racing heart or avoidance of situations entirely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if I have social anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common signs include intense fear before social events, replaying interactions afterwards, avoiding situations to prevent embarrassment, and physical symptoms like blushing or nausea in social settings. The Humanly Labs Social Anxiety Check can help you map where it shows up for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can social anxiety be managed without therapy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mild to moderate social anxiety can be improved with self-guided strategies including gradual exposure, cognitive reframing, and breathing techniques. For more severe cases, professional support such as CBT is recommended alongside self-help tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the social anxiety check free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the Social Anxiety Check at Humanly Labs is completely free with no account or payment needed."
+      }
+    }
+  ]
+}
+</script>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">Social Anxiety Check</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- LANDING -->
+  <div id="screen-landing" class="screen active">
+    <div class="eyebrow">Free to start · AI analysis · $4.99</div>
+    <h1 class="headline">Where does social<br>anxiety hit you <em>hardest?</em></h1>
+    <p class="body-text">Social anxiety isn't one thing. It shows up differently for everyone — some people freeze in groups, others are fine in groups but terrified one-on-one. This check maps exactly where yours shows up, then gives you targeted tools for those specific situations.</p>
+    <div class="trust-list">
+      <div class="trust-item"><div class="trust-dot"></div>Rate 12 social situations — not just "are you shy"</div>
+      <div class="trust-item"><div class="trust-dot"></div>Get a personalised trigger map — see your pattern visually</div>
+      <div class="trust-item"><div class="trust-dot"></div>3 evidence-based coping strategies matched to your triggers</div>
+      <div class="trust-item"><div class="trust-dot"></div>Retake free — track progress over time</div>
+    </div>
+    <div class="price-row">
+      <div class="price">$4.99</div>
+      <div class="price-note">one-time · full analysis + coping plan</div>
+    </div>
+    <div style="margin-bottom:1.25rem">
+      <label style="font-size:13px;color:var(--ink-soft);display:block;margin-bottom:8px">Get your results by email <span style="color:var(--ink-muted)">(optional)</span></label>
+      <div class="email-row">
+        <input class="email-input" type="email" id="email-input" placeholder="you@example.com" />
+        <button class="btn-sky" style="width:auto;padding:11px 22px;margin-bottom:0" onclick="handleStart()">Begin →</button>
+      </div>
+      <button class="email-skip" onclick="handleStart()">Skip — start without email</button>
+    </div>
+    <div class="guarantee">🔒 Full results unlocked after rating · Secure payment via Stripe</div>
+  </div>
+
+  <!-- QUIZ — PAGE 1: Performance & Evaluation situations -->
+  <div id="screen-q1" class="screen">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span class="progress-label">Part 1 of 2 — Being evaluated</span>
+        <span class="progress-label" id="q1-pct">50%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress1" style="width:50%"></div></div>
+    </div>
+    <div class="q-section-label">Rate how anxious each situation makes you</div>
+
+    <div id="situations-1"></div>
+
+    <div class="nav-row">
+      <button class="btn-ghost" onclick="goTo('screen-landing')">← Back</button>
+      <button class="btn-next" id="next1-btn" onclick="goTo('screen-q2')" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- QUIZ — PAGE 2: Social interaction situations -->
+  <div id="screen-q2" class="screen">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span class="progress-label">Part 2 of 2 — Social interaction</span>
+        <span class="progress-label" id="q2-pct">100%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress2" style="width:100%"></div></div>
+    </div>
+    <div class="q-section-label">Rate how anxious each situation makes you</div>
+
+    <div id="situations-2"></div>
+
+    <div class="nav-row">
+      <button class="btn-ghost" onclick="goTo('screen-q1')">← Back</button>
+      <button class="btn-next" id="next2-btn" onclick="handleComplete()" disabled>See my results →</button>
+    </div>
+  </div>
+
+  <!-- GATE -->
+  <div id="screen-gate" class="screen">
+    <div style="text-align:center;margin-bottom:1.5rem">
+      <div style="font-size:40px;margin-bottom:.75rem">🔒</div>
+      <h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:300;color:var(--ink);margin-bottom:.5rem">Your anxiety map is ready</h2>
+      <p style="font-size:14px;color:var(--ink-soft);line-height:1.65">Unlock your personalised trigger analysis and coping plan.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:1.75rem">
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-soft)">
+        <div style="width:18px;height:18px;border-radius:50%;background:var(--sky-light);border:1px solid var(--sky-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#1C5DAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+        Your trigger map — which situations hit hardest
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-soft)">
+        <div style="width:18px;height:18px;border-radius:50%;background:var(--sky-light);border:1px solid var(--sky-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#1C5DAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+        3 evidence-based coping strategies for your specific triggers
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-soft)">
+        <div style="width:18px;height:18px;border-radius:50%;background:var(--sky-light);border:1px solid var(--sky-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#1C5DAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+        Avoidance pattern identification
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-soft)">
+        <div style="width:18px;height:18px;border-radius:50%;background:var(--sky-light);border:1px solid var(--sky-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#1C5DAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+        Retake free — track how your pattern changes over time
+      </div>
+    </div>
+    <div class="price-row">
+      <div class="price">$4.99</div>
+      <div class="price-note">one-time · instant access</div>
+    </div>
+    <button class="btn-sky" onclick="handlePurchase()">Unlock my analysis → $4.99</button>
+    <div class="guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't resonate</div>
+    <button onclick="generateReport()" style="margin-top:1rem;width:100%;padding:10px;border:1px dashed var(--border-strong);border-radius:999px;background:none;font-size:12px;color:var(--ink-muted);cursor:pointer;font-family:inherit">[Dev] Preview without paying</button>
+  </div>
+
+  <!-- GENERATING -->
+  <div id="screen-generating" class="screen">
+    <div class="gen-wrap">
+      <div class="spinner"></div>
+      <div class="gen-title">Mapping your anxiety pattern…</div>
+      <div class="gen-sub">Analysing your 12 situation ratings and building your personalised coping plan. About 15 seconds.</div>
+      <div class="gen-steps">
+        <div class="gen-step active" id="gs1"><div class="gen-dot"></div>Reading your situation ratings</div>
+        <div class="gen-step" id="gs2"><div class="gen-dot"></div>Identifying your trigger clusters</div>
+        <div class="gen-step" id="gs3"><div class="gen-dot"></div>Mapping avoidance patterns</div>
+        <div class="gen-step" id="gs4"><div class="gen-dot"></div>Selecting evidence-based coping tools</div>
+        <div class="gen-step" id="gs5"><div class="gen-dot"></div>Writing your personalised plan</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="screen-result" class="screen">
+    <div class="severity-pill" id="severity-pill"></div>
+    <h2 class="result-headline" id="result-headline"></h2>
+    <p class="result-desc" id="result-desc"></p>
+
+    <div class="section-label">Your trigger map</div>
+    <div class="trigger-grid" id="trigger-grid"></div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">What your pattern reveals</div>
+    <div id="insights-container"></div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Your 3 coping strategies</div>
+    <div id="coping-container"></div>
+
+    <div class="result-actions">
+      <button class="btn-outline" onclick="copyShare()">📋 Copy to share</button>
+      <button class="btn-outline" onclick="retake()">↻ Retake</button>
+    </div>
+    <div class="disclaimer">This tool is for self-reflection only and is not a clinical assessment. If social anxiety is significantly affecting your daily life, please consider speaking with a mental health professional. Beyond Blue: 1300 22 4636.</div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE ── */
+const STRIPE_LINK = 'https://buy.stripe.com/28E7sL0YM6yKgl43RY4AU07';
+// Success URL: https://humanlylabs.org/social-anxiety?paid=true
+
+/* ── SITUATIONS ── */
+const situations = [
+  // Page 1 — Performance / evaluation
+  { id:'speaking',   name:'Speaking in a group or meeting',     desc:'Contributing ideas, answering questions, or presenting in front of others',         category:'performance' },
+  { id:'phone',      name:'Making or receiving phone calls',     desc:'Especially unexpected calls or calls with strangers',                                category:'performance' },
+  { id:'eating',     name:'Eating or drinking in public',        desc:'In cafes, restaurants, or with people you don\'t know well',                        category:'performance' },
+  { id:'assertive',  name:'Disagreeing or asserting yourself',   desc:'Saying no, giving feedback, or holding a different opinion from someone',            category:'performance' },
+  { id:'observed',   name:'Being watched while doing something', desc:'Writing, working, or performing while others can see',                               category:'performance' },
+  { id:'mistake',    name:'Making a mistake in front of others', desc:'Getting something wrong, forgetting something, or looking incompetent publicly',     category:'performance' },
+  // Page 2 — Social interaction
+  { id:'strangers',  name:'Talking to strangers',                desc:'Initiating conversation with someone you don\'t know',                               category:'interaction' },
+  { id:'party',      name:'Attending social events or parties',  desc:'Especially where you don\'t know many people',                                      category:'interaction' },
+  { id:'authority',  name:'Talking to authority figures',        desc:'Managers, doctors, officials — people with perceived power over you',                category:'interaction' },
+  { id:'dating',     name:'Dating or romantic situations',       desc:'First dates, flirting, expressing interest in someone',                              category:'interaction' },
+  { id:'joining',    name:'Joining a group already in progress', desc:'Sitting with people already talking, walking into a room where a meeting\'s started', category:'interaction' },
+  { id:'conflict',   name:'Addressing conflict directly',        desc:'Bringing up a problem with someone, or responding when someone\'s upset with you',   category:'interaction' },
+];
+
+const page1 = situations.filter(s => s.category === 'performance');
+const page2 = situations.filter(s => s.category === 'interaction');
+
+const RATING_LABELS = ['None','Mild','Moderate','Strong','Severe'];
+const RATING_COLORS = ['#EAF2EC','#FEF3E2','#FEF3E2','#FDF2F4','#FDF2F4'];
+const RATING_TEXT   = ['#2D5A3D','#7A4210','#7A4210','#7A2538','#7A2538'];
+
+/* ── STATE ── */
+let ratings = {}; // situationId -> 0-4
+let hasPaid = sessionStorage.getItem('hly_sa_paid') === '1';
+let reportData = null;
+let userEmail = '';
+
+/* ── INIT ── */
+window.addEventListener('DOMContentLoaded', () => {
+  renderSituations('situations-1', page1, 'next1-btn');
+  renderSituations('situations-2', page2, 'next2-btn');
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    hasPaid = true;
+    sessionStorage.setItem('hly_sa_paid', '1');
+    generateReport();
+  }
+  document.getElementById('email-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') handleStart();
+  });
+});
+
+/* ── RENDER SITUATIONS ── */
+function renderSituations(containerId, sits, nextBtnId) {
+  document.getElementById(containerId).innerHTML = sits.map(s => `
+    <div class="situation-card">
+      <div class="sit-name">${s.name}</div>
+      <div class="sit-desc">${s.desc}</div>
+      <div class="rating-row" id="rating-${s.id}">
+        ${RATING_LABELS.map((l,i) => `
+          <button class="rating-btn ${ratings[s.id]===i?'selected':''}"
+            onclick="setRating('${s.id}',${i},'${nextBtnId}')" data-val="${i}">
+            ${l}
+          </button>`).join('')}
+      </div>
+      <div class="rating-labels"><span>No anxiety</span><span>Severe anxiety</span></div>
+    </div>`).join('');
+}
+
+function setRating(sitId, val, nextBtnId) {
+  ratings[sitId] = val;
+  document.querySelectorAll(`#rating-${sitId} .rating-btn`).forEach((b,i) => {
+    b.classList.toggle('selected', i === val);
+  });
+  // Check if all on this page are rated
+  const page = nextBtnId === 'next1-btn' ? page1 : page2;
+  const allRated = page.every(s => ratings[s.id] !== undefined);
+  document.getElementById(nextBtnId).disabled = !allRated;
+}
+
+/* ── START ── */
+function handleStart() {
+  userEmail = document.getElementById('email-input').value.trim();
+  if (userEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail)) {
+    showToast('Please enter a valid email'); return;
+  }
+  if (userEmail) {
+    const key = 'hly_emails';
+    const existing = localStorage.getItem(key) || 'email,timestamp,loneliness_type\n';
+    if (!existing.includes(userEmail)) {
+      localStorage.setItem(key, existing + `${userEmail},${new Date().toISOString()},social-anxiety\n`);
+    }
+  }
+  goTo('screen-q1');
+}
+
+/* ── COMPLETE ── */
+function handleComplete() {
+  sessionStorage.setItem('hly_sa_ratings', JSON.stringify(ratings));
+  if (hasPaid) { generateReport(); }
+  else { goTo('screen-gate'); }
+}
+
+/* ── PURCHASE ── */
+function handlePurchase() {
+  sessionStorage.setItem('hly_sa_ratings', JSON.stringify(ratings));
+  window.location.href = STRIPE_LINK;
+}
+
+/* ── GENERATE ── */
+async function generateReport() {
+  const savedRatings = sessionStorage.getItem('hly_sa_ratings');
+  if (savedRatings) ratings = JSON.parse(savedRatings);
+
+  goTo('screen-generating');
+  animateGenSteps();
+
+  const ratingsSummary = situations.map(s =>
+    `${s.name}: ${RATING_LABELS[ratings[s.id] ?? 0]} (${ratings[s.id] ?? 0}/4)`
+  ).join('\n');
+
+  const avgScore = situations.reduce((sum,s) => sum + (ratings[s.id]??0), 0) / situations.length;
+  const topTriggers = [...situations].sort((a,b) => (ratings[b.id]??0)-(ratings[a.id]??0)).slice(0,3);
+
+  const prompt = `You are a clinical psychologist specialising in social anxiety. Analyse this person's social anxiety assessment.
+
+Their ratings (0=None, 1=Mild, 2=Moderate, 3=Strong, 4=Severe):
+${ratingsSummary}
+
+Average score: ${avgScore.toFixed(2)}/4
+Highest triggers: ${topTriggers.map(s=>s.name).join(', ')}
+
+Provide a personalised, compassionate analysis. Be specific to their actual ratings — don't be generic.
+
+Return ONLY valid JSON, no markdown:
+{
+  "severity": "Minimal | Mild | Moderate | Significant | Severe",
+  "severityBg": "#hex",
+  "severityColor": "#hex",
+  "severityBorder": "#hex",
+  "headline": "A specific, insightful headline about their pattern (not generic)",
+  "description": "3-4 sentences about their specific anxiety profile. Reference their actual high and low-scoring situations. Normalise but don't minimise.",
+  "insights": [
+    { "label": "Primary pattern", "title": "specific insight title", "body": "2-3 sentences referencing their actual ratings" },
+    { "label": "Avoidance risk", "title": "specific insight title", "body": "2-3 sentences about what they're likely avoiding based on their scores" },
+    { "label": "Relative strength", "title": "specific insight title", "body": "2-3 sentences about the situations that scored lower and what that tells us" }
+  ],
+  "copingStrategies": [
+    { "type": "Immediate tool", "title": "specific technique name", "body": "Concrete, evidence-based technique for their highest-scoring trigger situations. 3-4 sentences with specific instructions." },
+    { "type": "Weekly practice", "title": "specific practice name", "body": "A regular practice suited to their specific pattern. 3-4 sentences with specific instructions." },
+    { "type": "Longer-term shift", "title": "specific approach name", "body": "A cognitive or behavioural approach for their pattern. 3-4 sentences. Can mention therapy modalities if appropriate (CBT, ACT, exposure)." }
+  ]
+}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1200,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const raw  = data.content?.find(b => b.type === 'text')?.text || '';
+    reportData = JSON.parse(raw.replace(/```json|```/g,'').trim());
+    renderResult();
+  } catch(err) {
+    console.error(err);
+    // Fallback
+    const severityMap = [
+      {label:'Minimal',  bg:'#EAF2EC', color:'#2D5A3D', border:'#B8D9C2'},
+      {label:'Mild',     bg:'#FEF3E2', color:'#7A4210', border:'#F5C99A'},
+      {label:'Moderate', bg:'#FEF3E2', color:'#7A4210', border:'#F5C99A'},
+      {label:'Significant',bg:'#FDF2F4',color:'#7A2538',border:'#F4B8C6'},
+      {label:'Severe',   bg:'#FDF2F4', color:'#7A2538', border:'#F4B8C6'},
+    ];
+    const sev = severityMap[Math.min(Math.round(avgScore), 4)];
+    reportData = {
+      severity: sev.label, severityBg: sev.bg, severityColor: sev.color, severityBorder: sev.border,
+      headline: `Your anxiety is strongest in ${topTriggers[0]?.name.toLowerCase()} situations`,
+      description: `Your ratings show a clear pattern — anxiety is highest around ${topTriggers.slice(0,2).map(s=>s.name.toLowerCase()).join(' and ')}. This is a common and highly treatable pattern. The situations where you rated lowest are genuine strengths to build from.`,
+      insights: [
+        { label:'Primary pattern', title:'Performance anxiety is your main theme', body:`Your highest scores cluster around ${topTriggers[0]?.name.toLowerCase()}. This suggests your anxiety is primarily driven by fear of negative evaluation rather than interaction itself.` },
+        { label:'Avoidance risk', title:'Avoidance is likely reinforcing the cycle', body:'The situations you find most anxiety-provoking are ones that likely get avoided — which feels like relief but maintains the anxiety long-term.' },
+        { label:'Relative strength', title:'You have real anchors to build from', body:`${situations.filter(s=>(ratings[s.id]??0)<=1).map(s=>s.name).slice(0,2).join(' and ')} scored low, showing genuine areas of social confidence.` }
+      ],
+      copingStrategies: [
+        { type:'Immediate tool', title:'Grounded breathing before high-anxiety situations', body:`Before entering a ${topTriggers[0]?.name.toLowerCase()} situation, try 4-7-8 breathing: inhale for 4 counts, hold for 7, exhale for 8. Do this 3 times. It activates the parasympathetic nervous system and reduces the initial anxiety spike.` },
+        { type:'Weekly practice', title:'Graduated exposure — start where you are', body:`Pick your lowest-rated situation and deliberately seek it out once a week. The goal isn't comfort — it's experience. Each exposure, however uncomfortable, teaches your nervous system the situation is survivable.` },
+        { type:'Longer-term shift', title:'Cognitive defusion from evaluative thoughts', body:`The core of social anxiety is the belief that others are constantly evaluating you negatively. ACT (Acceptance and Commitment Therapy) and CBT both have strong evidence for changing this. A therapist who uses either approach would be particularly suited to your pattern.` }
+      ]
+    };
+    renderResult();
+  }
+}
+
+/* ── STEP ANIMATION ── */
+function animateGenSteps() {
+  const steps = ['gs1','gs2','gs3','gs4','gs5'];
+  let i = 0;
+  const iv = setInterval(() => {
+    if (i > 0) { document.getElementById(steps[i-1]).classList.remove('active'); document.getElementById(steps[i-1]).classList.add('done'); }
+    if (i < steps.length) { document.getElementById(steps[i]).classList.add('active'); i++; }
+    else clearInterval(iv);
+  }, 3000);
+}
+
+/* ── RENDER RESULT ── */
+function renderResult() {
+  const r = reportData;
+
+  const pill = document.getElementById('severity-pill');
+  pill.style.cssText = `background:${r.severityBg};color:${r.severityColor};border:1px solid ${r.severityBorder}`;
+  pill.textContent = `Social anxiety level: ${r.severity}`;
+
+  document.getElementById('result-headline').textContent = r.headline;
+  document.getElementById('result-desc').textContent     = r.description;
+
+  // Trigger map
+  const sorted = [...situations].sort((a,b) => (ratings[b.id]??0)-(ratings[a.id]??0));
+  const maxRating = 4;
+  const barColors = ['#B8D9C2','#F5C99A','#F5C99A','#F4B8C6','#F4B8C6'];
+  document.getElementById('trigger-grid').innerHTML = sorted.map(s => {
+    const score = ratings[s.id] ?? 0;
+    const pct   = Math.round((score / maxRating) * 100);
+    return `<div class="trigger-item">
+      <div class="trigger-name">${s.name}</div>
+      <div class="trigger-bar" style="background:${barColors[score]};width:${Math.max(pct,8)}%"></div>
+      <div class="trigger-score">${RATING_LABELS[score]}</div>
+    </div>`;
+  }).join('');
+
+  // Insights
+  document.getElementById('insights-container').innerHTML = (r.insights||[]).map(ins => `
+    <div class="insight-card">
+      <div class="ic-label">${ins.label}</div>
+      <div class="ic-title">${ins.title}</div>
+      <div class="ic-body">${ins.body}</div>
+    </div>`).join('');
+
+  // Coping
+  document.getElementById('coping-container').innerHTML = (r.copingStrategies||[]).map(c => `
+    <div class="coping-card">
+      <div class="cc-type">${c.type}</div>
+      <div class="cc-title">${c.title}</div>
+      <div class="cc-body">${c.body}</div>
+    </div>`).join('');
+
+  goTo('screen-result');
+}
+
+/* ── SHARE ── */
+function copyShare() {
+  if (!reportData) return;
+  const r = reportData;
+  const text = `My Social Anxiety Check — Humanly Labs\n\nLevel: ${r.severity}\n${r.headline}\n\n${r.description}\n\nTake the check → humanlylabs.org/social-anxiety`;
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => showToast('✓ Copied!'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.cssText = 'position:fixed;left:-9999px';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { document.execCommand('copy'); showToast('✓ Copied!'); } catch { showToast('Copy failed'); }
+    document.body.removeChild(ta);
+  }
+}
+
+/* ── NAV ── */
+function retake() {
+  ratings = {}; reportData = null;
+  renderSituations('situations-1', page1, 'next1-btn');
+  renderSituations('situations-2', page2, 'next2-btn');
+  document.getElementById('next1-btn').disabled = true;
+  document.getElementById('next2-btn').disabled = true;
+  goTo('screen-landing');
+}
+
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+
+<!-- SEO cross-links -->
+<nav data-seo-crosslinks style="text-align:center;padding:1.5rem 1rem;font-size:.85rem;opacity:.7">More tools: <a href="/quiz">Loneliness Type Quiz</a> · <a href="/social-battery">Social Battery Tracker</a></nav>
+<div style="max-width:680px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:var(--c-ink-3,#888);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/social-battery" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Social Battery Tracker</a><a href="/conversation-starter" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Conversation Starter</a><a href="/find-your-people" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Find Your People</a></div>
+  <p style="font-size:13px;color:var(--c-ink-3,#888);margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

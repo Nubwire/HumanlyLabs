@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Humanly Labs</title>
+  <meta property="og:title" content="Page Not Found — Humanly Labs" />
+  <meta property="og:description" content="This page does not exist. Explore our free self-discovery tools instead." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg:       #F7F3EC;
+      --c-surface:  #FDFCF9;
+      --c-ink:      #1A1714;
+      --c-ink-2:    #4A453F;
+      --c-ink-3:    #9B948A;
+      --c-border:   rgba(26,23,20,.10);
+      --c-border-2: rgba(26,23,20,.20);
+      --c-green:    #3A6B49;
+      --c-green-l:  #E8F2EC;
+      --c-green-b:  #A8CEAF;
+      --r-md: 14px; --r-lg: 22px;
+      --shadow: 0 2px 12px rgba(26,23,20,.07), 0 1px 3px rgba(26,23,20,.05);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: var(--c-bg);
+      color: var(--c-ink);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(247,243,236,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 400;
+      color: var(--c-ink); text-decoration: none;
+    }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: .6rem; font-weight: 500;
+      color: var(--c-ink-3);
+      vertical-align: super; margin-left: 1px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      font-size: .875rem; color: var(--c-ink-2);
+      text-decoration: none; transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--c-ink); }
+    .nav-cta {
+      background: var(--c-ink); color: var(--c-bg) !important;
+      padding: .45rem 1.1rem; border-radius: 99px;
+      font-size: .875rem; font-weight: 500;
+    }
+    .nav-cta:hover { background: #2C2825; }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .error-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
+      padding: 3.5rem 3rem;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .error-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem; font-weight: 400; line-height: 1;
+      color: var(--c-green);
+      margin-bottom: .5rem;
+      letter-spacing: -.02em;
+    }
+
+    .error-card h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 400;
+      color: var(--c-ink);
+      margin-bottom: .75rem;
+    }
+
+    .error-card p {
+      font-size: .95rem;
+      color: var(--c-ink-2);
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+
+    .btn-home {
+      display: inline-block;
+      background: var(--c-ink); color: var(--c-bg);
+      padding: .75rem 2rem; border-radius: 99px;
+      font-size: .9rem; font-weight: 500;
+      text-decoration: none;
+      transition: background .15s;
+      margin-bottom: 2.5rem;
+    }
+    .btn-home:hover { background: #2C2825; }
+
+    .divider {
+      height: 1px; background: var(--c-border);
+      margin-bottom: 2rem;
+    }
+
+    .tools-label {
+      font-size: .75rem; font-weight: 500; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--c-ink-3);
+      margin-bottom: 1rem;
+    }
+
+    .tool-links {
+      display: flex; flex-wrap: wrap;
+      gap: .6rem; justify-content: center;
+    }
+
+    .tool-pill {
+      background: var(--c-green-l);
+      color: var(--c-green);
+      border: 1px solid var(--c-green-b);
+      border-radius: 99px;
+      padding: .35rem .9rem;
+      font-size: .8rem; font-weight: 500;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .tool-pill:hover {
+      background: var(--c-green-b);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: .8rem;
+      color: var(--c-ink-3);
+      border-top: 1px solid var(--c-border);
+    }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    footer a:hover { color: var(--c-ink-2); }
+
+    @media (max-width: 480px) {
+      .error-card { padding: 2.5rem 1.5rem; }
+      .error-number { font-size: 4.5rem; }
+      .nav-links .nav-text-link { display: none; }
+    }
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <div class="nav-links">
+      <a class="nav-text-link" href="/#apps">Tools</a>
+      <a class="nav-text-link" href="/contact">Contact</a>
+      <a class="nav-cta" href="/">Home</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="error-card">
+    <div class="error-number">404</div>
+    <h1>This page got lost in thought.</h1>
+    <p>The page you're looking for doesn't exist or may have moved.<br>Let's get you somewhere useful.</p>
+    <a class="btn-home" href="/">Back to Humanly Labs</a>
+    <div class="divider"></div>
+    <p class="tools-label">Or try one of our tools</p>
+    <div class="tool-links">
+      <a class="tool-pill" href="/quiz">Loneliness Quiz</a>
+      <a class="tool-pill" href="/attachment-quiz">Attachment Style Quiz</a>
+      <a class="tool-pill" href="/social-anxiety">Social Anxiety Check</a>
+      <a class="tool-pill" href="/social-battery">Social Battery Tracker</a>
+      <a class="tool-pill" href="/friendship-audit">Friendship Audit</a>
+      <a class="tool-pill" href="/find-your-people">Find Your People</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a>
+</footer>
+
+<script>
+  // Report exactly which URL 404'd and where the visitor came from
+  window.addEventListener('load', function() {
+    if (window.gtag) gtag('event', 'page_not_found', {
+      missing_path: location.pathname + location.search,
+      came_from: document.referrer || '(none)'
+    });
+  });
+</script>
+</body>
+</html>

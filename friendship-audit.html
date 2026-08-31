@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friendship Audit — Are Your Friendships Draining You?</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Friendship Audit — Humanly Labs" />
+  <meta name="twitter:description" content="Map the health of your social world. Discover which friendships nourish you, which drain you, and where the gaps are." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+    <meta name="description" content="Map the health of your social world in 60 seconds. Discover which friendships nourish you, which drain you, and where the gaps are." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="canonical" href="https://humanlylabs.org/friendship-audit" />
+  <meta property="og:title" content="Friendship Audit — Humanly Labs" />
+  <meta property="og:description" content="Map the health of your social world. Discover which friendships nourish you, which drain you, and where the gaps are." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/friendship-audit" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+      <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Friendship Audit \u2014 Humanly Labs",
+    "url": "https://humanlylabs.org/friendship-audit",
+    "description": "Friendship Audit \u2014 Humanly Labs",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12);--border-strong:rgba(28,25,23,.25);
+      --teal:#1A7070;--teal-light:#E5F4F4;--teal-border:#7EC8C8;
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --rose:#9F3247;--rose-light:#FDF2F4;--rose-border:#F4B8C6;
+      --amber:#B5530A;--amber-light:#FEF3E2;--amber-border:#F5C99A;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:700px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--teal)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:660px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* SHARED */
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--teal)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .btn-teal{display:block;width:100%;padding:14px;text-align:center;background:var(--teal);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem;text-decoration:none}
+    .btn-teal:hover{background:#135555;transform:translateY(-1px)}
+    .btn-teal:disabled{opacity:.35;cursor:default;transform:none}
+    .btn-outline{width:100%;padding:12px;text-align:center;background:none;color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s;display:block;margin-bottom:.5rem}
+    .btn-outline:hover{background:var(--cream)}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+    .divider{height:1px;background:var(--border);margin:1.75rem 0}
+    .section-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-muted);font-weight:500;margin-bottom:1rem}
+
+    /* LANDING */
+    .feature-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem;padding:1.25rem;background:var(--teal-light);border-radius:var(--radius-md);border:1px solid var(--teal-border)}
+    .feature-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#0D4040;line-height:1.5}
+    .feature-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+
+    /* FRIEND ENTRY FORM */
+    .friend-list{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem}
+    .friend-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;position:relative;transition:border-color .15s}
+    .friend-card:focus-within{border-color:var(--teal)}
+    .friend-num{font-size:11px;color:var(--ink-muted);margin-bottom:.6rem;display:flex;align-items:center;justify-content:space-between}
+    .fc-remove{background:none;border:none;font-size:16px;color:var(--ink-muted);cursor:pointer;padding:0;line-height:1;transition:color .15s}
+    .fc-remove:hover{color:var(--rose)}
+    .fc-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
+    .fc-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem}
+    .fc-input{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--warm-white);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;transition:border-color .15s}
+    .fc-input:focus{border-color:var(--teal)}
+    .fc-input::placeholder{color:var(--ink-muted)}
+    .fc-label{font-size:11px;color:var(--ink-muted);margin-bottom:4px;display:block}
+    .scale-btns{display:flex;gap:.3rem}
+    .scale-btn{flex:1;padding:7px 4px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--warm-white);font-family:'DM Sans',sans-serif;font-size:12px;color:var(--ink-soft);cursor:pointer;text-align:center;transition:all .15s}
+    .scale-btn:hover{border-color:var(--teal);color:var(--teal)}
+    .scale-btn.active{background:var(--teal-light);border-color:var(--teal);color:var(--teal);font-weight:500}
+    .add-friend-btn{display:flex;align-items:center;gap:8px;padding:12px 16px;border:1.5px dashed var(--border-strong);border-radius:var(--radius-md);background:none;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink-muted);cursor:pointer;width:100%;justify-content:center;transition:all .15s;margin-bottom:1.5rem}
+    .add-friend-btn:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-light)}
+    .min-note{font-size:12px;color:var(--ink-muted);text-align:center;margin-bottom:1.5rem}
+
+    /* ORBIT VISUAL */
+    .orbit-wrap{display:flex;justify-content:center;margin:1.5rem 0 2rem;position:relative}
+    .orbit-svg{width:280px;height:280px}
+
+    /* GENERATING */
+    .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--teal);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .gen-wrap{text-align:center;padding:2rem 0}
+    .gen-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+    .gen-sub{font-size:14px;color:var(--ink-muted);line-height:1.6}
+    .gen-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;text-align:left}
+    .gen-step{font-size:13px;color:var(--ink-muted);display:flex;align-items:center;gap:.75rem;transition:color .3s}
+    .gen-step.done{color:var(--teal)} .gen-step.active{color:var(--ink)}
+    .gen-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .3s}
+    .gen-step.done .gen-dot{background:var(--teal)}
+    .gen-step.active .gen-dot{background:var(--ink);animation:pulse .8s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+    /* REPORT */
+    .report-hero{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .report-title{font-family:'Fraunces',serif;font-size:26px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.02em}
+    .report-title em{font-style:italic;color:var(--teal)}
+    .summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.5rem}
+    .sg-box{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem;text-align:center}
+    .sg-num{font-family:'Fraunces',serif;font-size:28px;font-weight:300;color:var(--ink)}
+    .sg-lbl{font-size:11px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+    .friend-report-card{border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;margin-bottom:.75rem;background:var(--cream);border-left-width:4px}
+    .frc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+    .frc-name{font-size:15px;font-weight:500;color:var(--ink)}
+    .frc-type{font-size:11px;font-weight:500;padding:3px 10px;border-radius:999px}
+    .frc-body{font-size:13px;color:var(--ink-soft);line-height:1.65}
+    .insight-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;margin-bottom:.75rem}
+    .ic-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);font-weight:500;margin-bottom:.3rem}
+    .ic-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:.4rem}
+    .ic-body{font-size:13px;color:var(--ink-soft);line-height:1.65}
+    .action-card{background:var(--teal-light);border:1px solid var(--teal-border);border-radius:var(--radius-md);padding:1.25rem;margin-bottom:.75rem}
+    .ac-title{font-size:14px;font-weight:500;color:#0D4040;margin-bottom:.35rem}
+    .ac-body{font-size:13px;color:#1A5050;line-height:1.65}
+
+    /* TOAST */
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    footer{max-width:660px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem}
+    @media(max-width:600px){
+      .card{padding:1.75rem 1.25rem}.headline{font-size:26px}
+      .fc-row{grid-template-columns:1fr}.fc-row-3{grid-template-columns:1fr 1fr}
+      .summary-grid{grid-template-columns:1fr 1fr}
+    }
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a friendship audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A friendship audit is a structured self-reflection tool that helps you evaluate the quality and balance of your current friendships, identifying which relationships nourish you, which drain you, and where gaps exist in your social world."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if my friendships are healthy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Healthy friendships feel reciprocal, energising, and safe. If you consistently feel drained, anxious, or undervalued after spending time with someone, that friendship may be costing more than it gives. The Humanly Labs Friendship Audit helps you map this clearly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the friendship audit take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Humanly Labs Friendship Audit takes about 60 seconds and gives you an instant visual map of your social world."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it normal to outgrow friendships as an adult?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it is completely normal. Adult friendships naturally shift as life circumstances, values, and priorities change. Recognising this is the first step to building a social circle that reflects who you are now."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do if my friendships feel one-sided?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start by mapping the imbalance using a tool like the Friendship Audit. From there, you can decide whether to invest in improving the relationship, set new boundaries, or gradually redirect your social energy toward more reciprocal connections."
+      }
+    }
+  ]
+}
+</script>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">Friendship Audit</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- LANDING -->
+  <div id="screen-landing" class="screen active">
+    <div class="eyebrow">Reflection tool · AI analysis · $4.99</div>
+    <h1 class="headline">Map your <em>social world</em></h1>
+    <p class="body-text">Most of us carry friendships on autopilot — never stopping to ask which ones actually nourish us, which drain us, and what's genuinely missing. This audit changes that. Honest, private, and surprisingly clarifying.</p>
+
+    <!-- Orbit illustration -->
+    <div class="orbit-wrap">
+      <svg class="orbit-svg" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer ring -->
+        <circle cx="140" cy="140" r="120" fill="none" stroke="#E5F4F4" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <!-- Mid ring -->
+        <circle cx="140" cy="140" r="80" fill="none" stroke="#7EC8C8" stroke-width="1" stroke-dasharray="4 4" opacity=".6"/>
+        <!-- Inner ring -->
+        <circle cx="140" cy="140" r="44" fill="none" stroke="#1A7070" stroke-width="1" opacity=".4"/>
+        <!-- You -->
+        <circle cx="140" cy="140" r="22" fill="#1A7070"/>
+        <text x="140" y="145" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="white" font-style="italic">you</text>
+        <!-- Close friends -->
+        <circle cx="140" cy="97" r="14" fill="#E5F4F4" stroke="#7EC8C8" stroke-width="1.5"/>
+        <text x="140" y="101" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#1A7070">A</text>
+        <circle cx="176" cy="115" r="14" fill="#EAF2EC" stroke="#B8D9C2" stroke-width="1.5"/>
+        <text x="176" y="119" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#2D5A3D">B</text>
+        <!-- Mid friends -->
+        <circle cx="86" cy="108" r="11" fill="#FDF2F4" stroke="#F4B8C6" stroke-width="1"/>
+        <text x="86" y="112" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#7A2538">C</text>
+        <circle cx="175" cy="165" r="11" fill="#EAF2EC" stroke="#B8D9C2" stroke-width="1"/>
+        <text x="175" y="169" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#2D5A3D">D</text>
+        <!-- Outer -->
+        <circle cx="110" cy="234" r="9" fill="#FEF3E2" stroke="#F5C99A" stroke-width="1"/>
+        <text x="110" y="238" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#6B2F04">E</text>
+        <circle cx="222" cy="118" r="9" fill="#F5F0E8" stroke="#D6CEBC" stroke-width="1"/>
+        <text x="222" y="122" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9B948A">F</text>
+        <circle cx="68" cy="190" r="9" fill="#F5F0E8" stroke="#D6CEBC" stroke-width="1"/>
+        <text x="68" y="194" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9B948A">G</text>
+        <!-- Gap indicator -->
+        <circle cx="200" cy="220" r="16" fill="none" stroke="#1A7070" stroke-width="1.5" stroke-dasharray="3 3" opacity=".5"/>
+        <text x="200" y="225" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1A7070" opacity=".5">?</text>
+      </svg>
+    </div>
+
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-dot"></div>Add up to 12 people from your social world</div>
+      <div class="feature-item"><div class="feature-dot"></div>Rate closeness, energy, and reciprocity for each</div>
+      <div class="feature-item"><div class="feature-dot"></div>AI maps your nourishing vs draining friendships</div>
+      <div class="feature-item"><div class="feature-dot"></div>Identifies gaps — what type of friend you're missing</div>
+      <div class="feature-item"><div class="feature-dot"></div>Personalised action plan for each relationship tier</div>
+    </div>
+
+    <div class="price-row">
+      <div class="price">$4.99</div>
+      <div class="price-note">one-time · instant access</div>
+    </div>
+    <button class="btn-teal" onclick="handlePurchase()">Start my Friendship Audit → $4.99</button>
+    <div class="guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't resonate</div>
+    <button onclick="goTo('screen-form')" style="margin-top:1rem;width:100%;padding:10px;border:1px dashed var(--border-strong);border-radius:999px;background:none;font-size:12px;color:var(--ink-muted);cursor:pointer;font-family:inherit">[Dev] Skip payment</button>
+  </div>
+
+  <!-- FORM -->
+  <div id="screen-form" class="screen">
+    <div class="eyebrow">Your friendship map</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em">Add the people in <em style="font-style:italic;color:var(--teal)">your world</em></h2>
+    <p style="font-size:14px;color:var(--ink-soft);line-height:1.65;margin-bottom:1.5rem">Include a mix — close friends, casual ones, family if relevant, coworkers you see socially. Be honest. No one sees this but you.</p>
+
+    <div class="friend-list" id="friend-list"></div>
+
+    <button class="add-friend-btn" onclick="addFriend()" id="add-btn">+ Add another person</button>
+    <p class="min-note" id="min-note">Add at least 3 people to continue</p>
+
+    <button class="btn-teal" onclick="runAudit()" id="audit-btn" disabled>Analyse my friendships →</button>
+    <p style="text-align:center;margin-top:.75rem">
+      <button onclick="goTo('screen-landing')" style="background:none;border:none;font-family:inherit;font-size:12px;color:var(--ink-muted);cursor:pointer;text-decoration:underline;text-underline-offset:2px">← Back</button>
+    </p>
+  </div>
+
+  <!-- GENERATING -->
+  <div id="screen-generating" class="screen">
+    <div class="gen-wrap">
+      <div class="spinner"></div>
+      <div class="gen-title">Mapping your social world…</div>
+      <div class="gen-sub">Analysing your friendships and identifying patterns. About 15 seconds.</div>
+      <div class="gen-steps">
+        <div class="gen-step active" id="gs1"><div class="gen-dot"></div>Reading your friendship data</div>
+        <div class="gen-step" id="gs2"><div class="gen-dot"></div>Sorting nourishing vs draining</div>
+        <div class="gen-step" id="gs3"><div class="gen-dot"></div>Identifying gaps in your social world</div>
+        <div class="gen-step" id="gs4"><div class="gen-dot"></div>Writing personalised insights</div>
+        <div class="gen-step" id="gs5"><div class="gen-dot"></div>Building your action plan</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPORT -->
+  <div id="screen-report" class="screen">
+    <div class="report-hero">
+      <div class="eyebrow">Your friendship audit</div>
+      <h2 class="report-title">Your social <em>map</em></h2>
+      <div style="font-size:13px;color:var(--ink-muted)" id="report-meta"></div>
+    </div>
+
+    <!-- Summary stats -->
+    <div class="summary-grid" id="summary-grid"></div>
+
+    <div class="divider"></div>
+
+    <!-- Friend breakdown -->
+    <div class="section-label">How each friendship rates</div>
+    <div id="friend-breakdown"></div>
+
+    <div class="divider"></div>
+
+    <!-- AI insights -->
+    <div class="section-label">What your map reveals</div>
+    <div id="insights-container"></div>
+
+    <div class="divider"></div>
+
+    <!-- Action plan -->
+    <div class="section-label">Your action plan</div>
+    <div id="action-container"></div>
+
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem">
+      <button class="btn-outline" onclick="copyReport()" style="flex:1">📋 Copy summary</button>
+      <button class="btn-outline" onclick="startOver()" style="flex:1">↻ Start over</button>
+    </div>
+    <div style="font-size:11px;color:var(--ink-muted);text-align:center;margin-top:1.25rem;line-height:1.6">
+      This audit is for self-reflection only and is not a clinical tool.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE ── */
+const STRIPE_LINK = 'https://buy.stripe.com/28E4gz8re6yK8SC9ci4AU04';
+// Create at $4.99 in Stripe dashboard
+// Success URL: https://humanlylabs.org/friendship-audit?paid=true
+
+/* ── STATE ── */
+let friends  = [];
+let reportData = null;
+let hasPaid  = sessionStorage.getItem('hly_fa_paid') === '1';
+
+const CLOSENESS_LABELS = ['1','2','3','4','5'];
+const ENERGY_LABELS    = ['Draining','Neutral','Energising'];
+const RECIPROCAL_LABELS= ['One-sided','Balanced','They give more'];
+const FREQUENCY_LABELS = ['Rarely','Monthly','Weekly','Often'];
+
+/* ── INIT ── */
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    hasPaid = true;
+    sessionStorage.setItem('hly_fa_paid', '1');
+  }
+  // Start with 3 empty friend slots
+  addFriend(); addFriend(); addFriend();
+  if (hasPaid) goTo('screen-form');
+});
+
+/* ── PURCHASE ── */
+function handlePurchase() {
+  if (STRIPE_LINK === 'REPLACE_WITH_STRIPE_LINK') { alert('Stripe not configured — use dev button.'); return; }
+  window.location.href = STRIPE_LINK;
+}
+
+/* ── FRIEND FORM ── */
+let friendCount = 0;
+
+function addFriend() {
+  if (friendCount >= 12) return;
+  friendCount++;
+  const id = friendCount;
+  const list = document.getElementById('friend-list');
+  const div = document.createElement('div');
+  div.className = 'friend-card';
+  div.id = `fc-${id}`;
+  div.innerHTML = `
+    <div class="friend-num">
+      <span>Person ${id}</span>
+      ${id > 1 ? `<button class="fc-remove" onclick="removeFriend(${id})" title="Remove">✕</button>` : ''}
+    </div>
+    <div class="fc-row">
+      <div>
+        <label class="fc-label">First name or nickname</label>
+        <input class="fc-input" type="text" id="name-${id}" placeholder="e.g. Sarah" maxlength="30" oninput="updateValidation()" />
+      </div>
+      <div>
+        <label class="fc-label">How you know them</label>
+        <input class="fc-input" type="text" id="context-${id}" placeholder="e.g. uni friend, coworker" maxlength="40" />
+      </div>
+    </div>
+    <div class="fc-row-3">
+      <div>
+        <label class="fc-label">Closeness (1–5)</label>
+        <div class="scale-btns" id="closeness-${id}">
+          ${CLOSENESS_LABELS.map((l,i) => `<button class="scale-btn" onclick="setScale('closeness-${id}',${i+1},'closeness',${id})" data-val="${i+1}">${l}</button>`).join('')}
+        </div>
+      </div>
+      <div>
+        <label class="fc-label">Energy</label>
+        <div class="scale-btns" id="energy-${id}">
+          ${ENERGY_LABELS.map((l,i) => `<button class="scale-btn" onclick="setScale('energy-${id}',${i+1},'energy',${id})" data-val="${i+1}" style="font-size:10px">${l}</button>`).join('')}
+        </div>
+      </div>
+      <div>
+        <label class="fc-label">Frequency</label>
+        <div class="scale-btns" id="freq-${id}">
+          ${FREQUENCY_LABELS.map((l,i) => `<button class="scale-btn" onclick="setScale('freq-${id}',${i+1},'freq',${id})" data-val="${i+1}" style="font-size:10px">${l}</button>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  list.appendChild(div);
+
+  // Init data
+  friends.push({ id, name:'', context:'', closeness:0, energy:0, freq:0 });
+  updateAddBtn();
+}
+
+function removeFriend(id) {
+  document.getElementById(`fc-${id}`)?.remove();
+  friends = friends.filter(f => f.id !== id);
+  updateValidation();
+}
+
+function setScale(groupId, val, field, friendId) {
+  document.querySelectorAll(`#${groupId} .scale-btn`).forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.val) === val);
+  });
+  const f = friends.find(f => f.id === friendId);
+  if (f) f[field] = val;
+  updateValidation();
+}
+
+function updateValidation() {
+  // Sync names from inputs
+  friends.forEach(f => {
+    const input = document.getElementById(`name-${f.id}`);
+    if (input) f.name = input.value.trim();
+    const ctx = document.getElementById(`context-${f.id}`);
+    if (ctx) f.context = ctx.value.trim();
+  });
+
+  const activeFriends = friends.filter(f => f.name);
+  const readyFriends  = activeFriends.filter(f => f.closeness && f.energy && f.freq);
+  const btn = document.getElementById('audit-btn');
+  const note = document.getElementById('min-note');
+
+  if (activeFriends.length < 3) {
+    btn.disabled = true;
+    note.textContent = `Add at least 3 people to continue (${activeFriends.length} named so far)`;
+  } else if (readyFriends.length < activeFriends.length) {
+    btn.disabled = true;
+    note.textContent = `Rate all ${activeFriends.length} people to continue`;
+  } else {
+    btn.disabled = false;
+    note.textContent = `${readyFriends.length} people ready — tap Analyse to continue`;
+  }
+}
+
+function updateAddBtn() {
+  const btn = document.getElementById('add-btn');
+  if (friendCount >= 12) { btn.style.display = 'none'; }
+}
+
+/* ── RUN AUDIT ── */
+async function runAudit() {
+  updateValidation();
+  const readyFriends = friends.filter(f => f.name && f.closeness && f.energy && f.freq);
+  if (readyFriends.length < 3) return;
+
+  goTo('screen-generating');
+  animateGenSteps();
+
+  const energyMap  = {1:'draining',2:'neutral',3:'energising'};
+  const freqMap    = {1:'rarely',2:'monthly',3:'weekly',4:'often'};
+  const summary = readyFriends.map(f =>
+    `- ${f.name} (${f.context||'friend'}): closeness=${f.closeness}/5, energy=${energyMap[f.energy]}, frequency=${freqMap[f.freq]}`
+  ).join('\n');
+
+  const prompt = `You are a social wellbeing coach. Analyse this person's friendship audit data and provide personalised insights.
+
+Their social world (${readyFriends.length} people):
+${summary}
+
+Provide a detailed, compassionate, and specific analysis. Reference people by name. Don't be generic.
+
+Return ONLY valid JSON, no markdown:
+{
+  "overallHealth": "Thriving | Stable | Stretched | Depleted",
+  "healthColour": "#hex colour matching the health status (green=thriving, amber=stable, orange=stretched, rose=depleted)",
+  "nourishing": ["name1", "name2"],
+  "draining": ["name1"],
+  "neutral": ["name1"],
+  "friendBreakdown": [
+    {
+      "name": "person name",
+      "tier": "Close | Regular | Casual | Peripheral",
+      "tierColour": "#hex",
+      "tierBg": "#hex light version",
+      "assessment": "1-2 sentence honest assessment of this friendship's current state and value",
+      "nudge": "One specific, actionable suggestion for this friendship"
+    }
+  ],
+  "gaps": ["type of friend or connection they're missing, based on the data"],
+  "insights": [
+    { "label": "Pattern", "title": "specific insight title", "body": "2-3 sentences referencing their actual friends by name where relevant" },
+    { "label": "Gap", "title": "specific insight title", "body": "2-3 sentences about what's missing from their social world" },
+    { "label": "Strength", "title": "specific insight title", "body": "2-3 sentences about what's working well" }
+  ],
+  "actions": [
+    { "title": "action title", "body": "Specific action referencing their actual friends. 2-3 sentences." },
+    { "title": "action title", "body": "An action for addressing a gap or a draining friendship." },
+    { "title": "action title", "body": "A longer-term social investment suggestion." }
+  ]
+}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1500,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const raw  = data.content?.find(b => b.type === 'text')?.text || '';
+    reportData = JSON.parse(raw.replace(/```json|```/g,'').trim());
+    renderReport(readyFriends);
+  } catch(err) {
+    console.error(err);
+    // Fallback
+    const nourishing = readyFriends.filter(f => f.energy === 3).map(f => f.name);
+    const draining   = readyFriends.filter(f => f.energy === 1).map(f => f.name);
+    reportData = {
+      overallHealth: readyFriends.filter(f=>f.energy===3).length > readyFriends.length/2 ? 'Stable' : 'Stretched',
+      healthColour: '#B5530A',
+      nourishing, draining,
+      neutral: readyFriends.filter(f=>f.energy===2).map(f=>f.name),
+      friendBreakdown: readyFriends.map(f => ({
+        name: f.name,
+        tier: f.closeness >= 4 ? 'Close' : f.closeness >= 3 ? 'Regular' : 'Casual',
+        tierColour: f.closeness >= 4 ? '#2D5A3D' : f.closeness >= 3 ? '#1D5FA5' : '#6B6560',
+        tierBg: f.closeness >= 4 ? '#EAF2EC' : f.closeness >= 3 ? '#EBF2FB' : '#F5F0E8',
+        assessment: `You see ${f.name} ${['rarely','monthly','weekly','often'][f.freq-1]} and rate this friendship as ${['draining','neutral','energising'][f.energy-1]}.`,
+        nudge: f.energy === 1 ? `Consider having an honest conversation with ${f.name} about what you both need from this friendship.` : `Keep nurturing your connection with ${f.name} — it's a genuine asset.`
+      })),
+      gaps: ['A close friend you can call without planning ahead', 'Someone who shares a hobby or interest with you'],
+      insights: [
+        { label:'Pattern', title:'Your energy balance needs attention', body:`${draining.length > 0 ? `${draining.join(', ')} appear${draining.length===1?'s':''} to drain your energy` : 'Most of your friendships feel neutral or positive'}. Pay attention to how you feel after time with each person.` },
+        { label:'Gap', title:"You're missing a go-to friend", body:'Your audit suggests you may not have someone you can reach out to spontaneously. This is one of the most important gaps to fill.' },
+        { label:'Strength', title:`${nourishing.length > 0 ? nourishing[0] + ' is a genuine anchor' : 'You have some solid foundations'}`, body:`${nourishing.length > 0 ? `Your friendship with ${nourishing[0]} appears energising and worth investing in.` : 'Some of your friendships show real potential — the key is nurturing them consistently.'}` }
+      ],
+      actions: [
+        { title: 'Prioritise your energising friendships', body: `${nourishing.length > 0 ? `Reach out to ${nourishing.join(' and ')} this week — even just a short message.` : 'Identify which friendships leave you feeling good and invest there first.'}` },
+        { title: 'Address the draining dynamic', body: `${draining.length > 0 ? `Think about what you actually want from your friendship with ${draining[0]}. Is it worth investing in, or is it time to let it drift?` : "Keep an eye on friendships that start feeling one-sided — it's easier to address early."}` },
+        { title: 'Fill the gap deliberately', body: "The most effective way to meet someone who could become a close friend is to find a recurring context — a regular class, group or activity where you see the same people weekly." }
+      ]
+    };
+    renderReport(readyFriends);
+  }
+}
+
+/* ── STEP ANIMATION ── */
+function animateGenSteps() {
+  const steps = ['gs1','gs2','gs3','gs4','gs5'];
+  let i = 0;
+  const iv = setInterval(() => {
+    if (i > 0) { document.getElementById(steps[i-1]).classList.remove('active'); document.getElementById(steps[i-1]).classList.add('done'); }
+    if (i < steps.length) { document.getElementById(steps[i]).classList.add('active'); i++; }
+    else clearInterval(iv);
+  }, 3000);
+}
+
+/* ── RENDER REPORT ── */
+function renderReport(readyFriends) {
+  const r = reportData;
+
+  document.getElementById('report-meta').textContent =
+    `${readyFriends.length} friendships audited · ${new Date().toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'})}`;
+
+  // Summary grid
+  document.getElementById('summary-grid').innerHTML = `
+    <div class="sg-box">
+      <div class="sg-num">${readyFriends.length}</div>
+      <div class="sg-lbl">People mapped</div>
+    </div>
+    <div class="sg-box">
+      <div class="sg-num" style="color:var(--sage)">${r.nourishing?.length||0}</div>
+      <div class="sg-lbl">Nourishing</div>
+    </div>
+    <div class="sg-box">
+      <div class="sg-num" style="color:var(--rose)">${r.draining?.length||0}</div>
+      <div class="sg-lbl">Draining</div>
+    </div>`;
+
+  // Friend breakdown
+  document.getElementById('friend-breakdown').innerHTML = (r.friendBreakdown||[]).map(f => `
+    <div class="friend-report-card" style="border-left-color:${f.tierColour}">
+      <div class="frc-header">
+        <div class="frc-name">${f.name}</div>
+        <span class="frc-type" style="background:${f.tierBg};color:${f.tierColour}">${f.tier}</span>
+      </div>
+      <div class="frc-body">${f.assessment}</div>
+      <div style="font-size:12px;color:var(--teal);margin-top:.5rem;font-style:italic">→ ${f.nudge}</div>
+    </div>`).join('');
+
+  // Insights
+  document.getElementById('insights-container').innerHTML = (r.insights||[]).map(ins => `
+    <div class="insight-card">
+      <div class="ic-label">${ins.label}</div>
+      <div class="ic-title">${ins.title}</div>
+      <div class="ic-body">${ins.body}</div>
+    </div>`).join('');
+
+  // Actions
+  document.getElementById('action-container').innerHTML = (r.actions||[]).map(a => `
+    <div class="action-card">
+      <div class="ac-title">${a.title}</div>
+      <div class="ac-body">${a.body}</div>
+    </div>`).join('');
+
+  goTo('screen-report');
+}
+
+/* ── COPY ── */
+function copyReport() {
+  if (!reportData) return;
+  const r = reportData;
+  const text = `My Friendship Audit — Humanly Labs
+
+Overall health: ${r.overallHealth}
+People mapped: ${(r.friendBreakdown||[]).length}
+Nourishing: ${(r.nourishing||[]).join(', ')||'none identified'}
+Draining: ${(r.draining||[]).join(', ')||'none identified'}
+
+Key insights:
+${(r.insights||[]).map(i=>`• ${i.title}: ${i.body}`).join('\n')}
+
+Actions:
+${(r.actions||[]).map(a=>`• ${a.title}: ${a.body}`).join('\n')}
+
+Audit yours → humanlylabs.org/friendship-audit`;
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(()=>showToast('✓ Summary copied!'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.cssText='position:fixed;left:-9999px';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try{document.execCommand('copy');showToast('✓ Summary copied!');}catch{showToast('Copy failed');}
+    document.body.removeChild(ta);
+  }
+}
+
+/* ── NAV ── */
+function startOver() {
+  if (!confirm('Start a new audit? Your current data will be cleared.')) return;
+  friends=[]; friendCount=0;
+  document.getElementById('friend-list').innerHTML='';
+  addFriend(); addFriend(); addFriend();
+  goTo('screen-form');
+}
+
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showToast(msg) {
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+</script>
+
+<!-- SEO cross-links -->
+<nav data-seo-crosslinks style="text-align:center;padding:1.5rem 1rem;font-size:.85rem;opacity:.7">More tools: <a href="/quiz">Loneliness Type Quiz</a> · <a href="/find-your-people">Find Your People</a></nav>
+<div style="max-width:680px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:var(--c-ink-3,#888);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/quiz" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Loneliness Type Quiz</a><a href="/checkin-generator" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Check-In Generator</a><a href="/find-your-people" style="font-size:13px;color:var(--c-ink-2,#555);text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Find Your People</a></div>
+  <p style="font-size:13px;color:var(--c-ink-3,#888);margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

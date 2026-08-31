@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Humanly Labs</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact — Humanly Labs" />
+  <meta name="twitter:description" content="Get in touch with Humanly Labs for questions, refunds, partnerships or press enquiries." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+    <meta name="description" content="Get in touch with Humanly Labs — questions, refunds, press or partnership enquiries. We read every message and reply within two business days." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="canonical" href="https://humanlylabs.org/contact" />
+  <meta property="og:title" content="Contact — Humanly Labs" />
+  <meta property="og:description" content="Get in touch with Humanly Labs for questions, refunds, partnerships or press enquiries." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/contact" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+    <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12);--border-strong:rgba(28,25,23,.25);
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --radius-md:14px;--radius-lg:20px;--shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:680px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--sage)}
+    .card{width:100%;max-width:640px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:2rem}
+    h1{font-family:'Fraunces',serif;font-size:30px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.02em}
+    h1 em{font-style:italic;color:var(--sage)}
+    .intro{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:2rem}
+    h2{font-size:13px;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:.08em;margin:2rem 0 1rem}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+    .contact-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem}
+    .cc-emoji{font-size:22px;margin-bottom:.6rem;display:block}
+    .cc-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:.3rem}
+    .cc-body{font-size:13px;color:var(--ink-soft);line-height:1.6;margin-bottom:.6rem}
+    .cc-link{font-size:13px;color:var(--sage);text-decoration:none;font-weight:500}
+    .cc-link:hover{text-decoration:underline;text-underline-offset:2px}
+    .divider{height:1px;background:var(--border);margin:2rem 0}
+    .detail-row{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.25rem}
+    .detail-label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);font-weight:500;width:120px;flex-shrink:0;padding-top:2px}
+    .detail-value{font-size:14px;color:var(--ink-soft);line-height:1.6}
+    .detail-value a{color:var(--sage);text-decoration:none}
+    .detail-value a:hover{text-decoration:underline}
+    .response-note{background:var(--sage-light);border:1px solid var(--sage-border);border-radius:var(--radius-md);padding:1rem 1.25rem;font-size:13px;color:#2D5A3D;line-height:1.6;margin-top:1.5rem}
+    footer{max-width:640px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem}
+    @media(max-width:600px){.card{padding:1.75rem 1.25rem}.contact-grid{grid-template-columns:1fr}.detail-row{flex-direction:column;gap:.25rem}.detail-label{width:auto}}
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← Home</a>
+</nav>
+
+<div class="card">
+  <h1>Get in <em>touch</em></h1>
+  <p class="intro">We're a small independent studio based in Sydney. We read every message and aim to respond within 2 business days.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <span class="cc-emoji">💬</span>
+      <div class="cc-title">General enquiries</div>
+      <div class="cc-body">Questions about our tools, how they work, or anything else.</div>
+      <a class="cc-link" href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a>
+    </div>
+    <div class="contact-card">
+      <span class="cc-emoji">💳</span>
+      <div class="cc-title">Refunds & billing</div>
+      <div class="cc-body">We offer a 7-day no-questions refund on all paid tools.</div>
+      <a class="cc-link" href="mailto:hello@humanlylabs.org?subject=Refund request">Request a refund</a>
+    </div>
+    <div class="contact-card">
+      <span class="cc-emoji">🤝</span>
+      <div class="cc-title">Partnerships</div>
+      <div class="cc-body">Therapists, coaches, creators — we're open to collaboration.</div>
+      <a class="cc-link" href="mailto:hello@humanlylabs.org?subject=Partnership enquiry">Get in touch</a>
+    </div>
+    <div class="contact-card">
+      <span class="cc-emoji">📰</span>
+      <div class="cc-title">Press & media</div>
+      <div class="cc-body">Writing about loneliness, connection, or our tools? Happy to help.</div>
+      <a class="cc-link" href="mailto:hello@humanlylabs.org?subject=Press enquiry">Press enquiry</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>About Humanly Labs</h2>
+
+  <div class="detail-row">
+    <div class="detail-label">Studio</div>
+    <div class="detail-value">Humanly Labs — an independent digital studio building self-discovery tools</div>
+  </div>
+  <div class="detail-row">
+    <div class="detail-label">Location</div>
+    <div class="detail-value">Sydney, New South Wales, Australia</div>
+  </div>
+  <div class="detail-row">
+    <div class="detail-label">Email</div>
+    <div class="detail-value"><a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></div>
+  </div>
+  <div class="detail-row">
+    <div class="detail-label">Website</div>
+    <div class="detail-value"><a href="https://humanlylabs.org">humanlylabs.org</a></div>
+  </div>
+  <div class="detail-row">
+    <div class="detail-label">Tools live</div>
+    <div class="detail-value">Loneliness Type Quiz (free) · Deep Dive Report · Conversation Starter · Social Battery Tracker · Friendship Audit</div>
+  </div>
+  <div class="detail-row">
+    <div class="detail-label">Payments</div>
+    <div class="detail-value">Processed securely by Stripe. We never store card details. Refunds available within 7 days of purchase.</div>
+  </div>
+  <div class="detail-row">
+    <div class="detail-label">Privacy</div>
+    <div class="detail-value">Your quiz answers stay in your browser — we never store or sell them. <a href="/privacy">Read our Privacy Policy</a></div>
+  </div>
+  <div class="detail-row">
+    <div class="detail-label">Governing law</div>
+    <div class="detail-value">Australian Consumer Law applies to all purchases. ACL provides automatic consumer guarantees on top of our 7-day refund policy.</div>
+  </div>
+
+  <div class="response-note">
+    ✉️ We aim to respond to all messages within 2 Australian business days (Mon–Fri, AEST). For urgent billing issues, include your Stripe order ID in the subject line.
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Humanly Labs · Sydney, Australia</p>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+</body>
+</html>

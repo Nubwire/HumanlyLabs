@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Mini-Course: Recharge & Connect — Humanly Labs</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Mini-Course: Recharge & Connect — Humanly Labs" />
+  <meta name="twitter:description" content="A free 4-module course for introverts on managing social energy and building genuine connections." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+  <meta property="og:url" content="https://humanlylabs.org/mini-course" />
+  <meta name="description" content="Free 5-day email mini-course on managing your social battery — recharge rituals, boundary scripts and connection habits for introverts. No payment needed." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://humanlylabs.org/mini-course" />
+  <meta property="og:title" content="Free Mini-Course: Recharge & Connect — Humanly Labs" />
+  <meta property="og:description" content="A free 4-module course for introverts on managing social energy and building genuine connections." />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F5F0E8; --warm-white: #FDFCF9; --ink: #1C1917; --ink-soft: #57534E; --ink-muted: #A8A29E;
+      --border: rgba(28,25,23,.12); --border-strong: rgba(28,25,23,.22);
+      --sage: #4A7C59; --sage-light: #EAF2EC; --sage-border: #B8D9C2;
+      --sky: #1C5DAF; --sky-light: #EBF2FB; --sky-border: #B5D4F4;
+      --amber: #B5530A; --amber-light: #FEF3E2; --amber-border: #F5C99A;
+      --violet: #5B3A8A; --violet-light: #F0EBFB; --violet-border: #C4B5E8;
+      --rose: #9F3247; --rose-light: #FDF2F4; --rose-border: #F4B8C6;
+      --teal: #1A7070; --teal-light: #E5F4F4; --teal-border: #7EC8C8;
+      --radius-sm: 8px; --radius-md: 14px; --radius-lg: 20px; --radius-xl: 28px;
+      --shadow: 0 2px 12px rgba(28,25,23,.07); --shadow-md: 0 4px 20px rgba(28,25,23,.10);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(245,240,232,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 58px; }
+    .wordmark { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 300; color: var(--ink); text-decoration: none; letter-spacing: -.02em; }
+    .wordmark em { font-style: italic; color: var(--sage); }
+    .nav-back { font-size: 13px; color: var(--ink-soft); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .nav-back:hover { color: var(--ink); }
+    .free-badge { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--sage); background: var(--sage-light); border: 1px solid var(--sage-border); border-radius: 999px; padding: 4px 12px; }
+
+    /* HERO */
+    .hero { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 3rem; text-align: center; }
+    .hero-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--sage); font-weight: 500; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .hero-eyebrow::before, .hero-eyebrow::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--sage-border); }
+    .hero-title { font-family: 'Fraunces', serif; font-size: clamp(30px, 5vw, 50px); font-weight: 300; line-height: 1.15; color: var(--ink); margin-bottom: 1.25rem; letter-spacing: -.03em; }
+    .hero-title em { font-style: italic; color: var(--sage); }
+    .hero-subtitle { font-size: 17px; color: var(--ink-soft); line-height: 1.75; max-width: 560px; margin: 0 auto 2.5rem; }
+    .hero-meta { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .hero-meta-item { display: flex; align-items: center; gap: 7px; font-size: 14px; color: var(--ink-soft); }
+    .meta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+    .btn-start { display: inline-block; padding: 14px 32px; background: var(--sage); color: white; border-radius: 999px; font-size: 16px; font-weight: 500; text-decoration: none; transition: all .2s; }
+    .btn-start:hover { background: #3D6B4A; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74,124,89,.25); }
+
+    /* WHO IT'S FOR */
+    .for-section { background: var(--warm-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3rem 2rem; }
+    .for-inner { max-width: 900px; margin: 0 auto; }
+    .section-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--sage); font-weight: 500; margin-bottom: .75rem; text-align: center; }
+    .section-title { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 300; color: var(--ink); text-align: center; margin-bottom: 2.5rem; letter-spacing: -.02em; }
+    .section-title em { font-style: italic; color: var(--sage); }
+    .for-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .for-card { background: var(--cream); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.25rem; }
+    .for-emoji { font-size: 24px; margin-bottom: .65rem; }
+    .for-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: .35rem; }
+    .for-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+
+    /* MODULES */
+    .modules-section { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+    .module-block { margin-bottom: 3rem; }
+    .module-header { display: flex; align-items: flex-start; gap: 1.25rem; margin-bottom: 1.75rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); }
+    .module-num { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 20px; font-weight: 300; flex-shrink: 0; }
+    .module-meta {}
+    .module-label { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 500; margin-bottom: .3rem; }
+    .module-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 300; color: var(--ink); letter-spacing: -.01em; }
+    .module-title em { font-style: italic; }
+    .module-intro { font-size: 15px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 2rem; }
+
+    /* LESSONS */
+    .lessons { display: flex; flex-direction: column; gap: 1.25rem; }
+    .lesson { background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .lesson-header { padding: 1.25rem 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; transition: background .15s; }
+    .lesson-header:hover { background: var(--cream); }
+    .lesson-header.open { background: var(--cream); border-bottom: 1px solid var(--border); }
+    .lesson-title-row {}
+    .lesson-num { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-muted); font-weight: 500; margin-bottom: .2rem; }
+    .lesson-title { font-size: 16px; font-weight: 500; color: var(--ink); }
+    .lesson-chevron { width: 20px; height: 20px; flex-shrink: 0; transition: transform .25s; color: var(--ink-muted); }
+    .lesson-header.open .lesson-chevron { transform: rotate(180deg); }
+    .lesson-body { display: none; padding: 1.5rem; }
+    .lesson-body.open { display: block; }
+
+    /* LESSON CONTENT */
+    .lesson-intro { font-size: 15px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 1.5rem; }
+    .lesson-h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 300; color: var(--ink); margin: 1.5rem 0 .75rem; letter-spacing: -.01em; }
+    .lesson-p { font-size: 14px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 1rem; }
+    .lesson-p:last-of-type { margin-bottom: 0; }
+    .tip-box { background: var(--sage-light); border: 1px solid var(--sage-border); border-radius: var(--radius-md); padding: 1.1rem 1.25rem; margin: 1.25rem 0; }
+    .tip-box p { font-size: 13px; color: #1F4A2D; line-height: 1.7; }
+    .tip-box strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--sage); margin-bottom: .35rem; }
+    .bullet-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin: .75rem 0 1.25rem; }
+    .bullet-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+    .bullet-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); flex-shrink: 0; margin-top: 8px; }
+
+    /* TOOL CTA */
+    .tool-cta { display: flex; align-items: center; gap: 14px; padding: 1.1rem 1.25rem; border-radius: var(--radius-md); text-decoration: none; border: 1.5px solid; margin: 1.25rem 0; transition: all .15s; }
+    .tool-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+    .tool-cta-icon { width: 38px; height: 38px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .tool-cta-text {}
+    .tool-cta-label { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; font-weight: 500; margin-bottom: 2px; }
+    .tool-cta-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+    .tool-cta-desc { font-size: 12px; color: var(--ink-muted); }
+    .tool-cta-arrow { margin-left: auto; font-size: 16px; flex-shrink: 0; }
+
+    /* MODULE COLOURS */
+    .mod1-num { background: var(--sage-light); color: var(--sage); }
+    .mod1-label { color: var(--sage); }
+    .mod1-title em { color: var(--sage); }
+    .mod2-num { background: var(--amber-light); color: var(--amber); }
+    .mod2-label { color: var(--amber); }
+    .mod2-title em { color: var(--amber); }
+    .mod3-num { background: var(--sky-light); color: var(--sky); }
+    .mod3-label { color: var(--sky); }
+    .mod3-title em { color: var(--sky); }
+    .mod4-num { background: var(--teal-light); color: var(--teal); }
+    .mod4-label { color: var(--teal); }
+    .mod4-title em { color: var(--teal); }
+
+    /* TOOL CTA COLOURS per module */
+    .tool-sage { background: var(--sage-light); border-color: var(--sage-border); }
+    .tool-sage .tool-cta-label { color: var(--sage); }
+    .tool-sage .tool-cta-icon { background: white; }
+    .tool-amber { background: var(--amber-light); border-color: var(--amber-border); }
+    .tool-amber .tool-cta-label { color: var(--amber); }
+    .tool-amber .tool-cta-icon { background: white; }
+    .tool-sky { background: var(--sky-light); border-color: var(--sky-border); }
+    .tool-sky .tool-cta-label { color: var(--sky); }
+    .tool-sky .tool-cta-icon { background: white; }
+    .tool-teal { background: var(--teal-light); border-color: var(--teal-border); }
+    .tool-teal .tool-cta-label { color: var(--teal); }
+    .tool-teal .tool-cta-icon { background: white; }
+    .tool-violet { background: var(--violet-light); border-color: var(--violet-border); }
+    .tool-violet .tool-cta-label { color: var(--violet); }
+    .tool-violet .tool-cta-icon { background: white; }
+    .tool-rose { background: var(--rose-light); border-color: var(--rose-border); }
+    .tool-rose .tool-cta-label { color: var(--rose); }
+    .tool-rose .tool-cta-icon { background: white; }
+
+    /* CONCLUSION */
+    .conclusion { background: var(--ink); padding: 4rem 2rem; }
+    .conclusion-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .conclusion-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: rgba(245,240,232,.5); font-weight: 500; margin-bottom: 1rem; }
+    .conclusion-title { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 300; color: var(--cream); margin-bottom: 1rem; letter-spacing: -.02em; }
+    .conclusion-title em { font-style: italic; color: #A8CEAF; }
+    .conclusion-body { font-size: 15px; color: rgba(245,240,232,.7); line-height: 1.75; margin-bottom: 2.5rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .conclusion-tools { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-bottom: 2.5rem; }
+    .conclusion-tool-pill { padding: 6px 14px; border-radius: 999px; background: rgba(245,240,232,.1); border: 1px solid rgba(245,240,232,.2); font-size: 13px; color: var(--cream); }
+    .btn-cta-light { display: inline-block; padding: 14px 32px; background: var(--cream); color: var(--ink); border-radius: 999px; font-size: 16px; font-weight: 500; text-decoration: none; transition: all .2s; }
+    .btn-cta-light:hover { background: white; transform: translateY(-2px); }
+
+    /* EMAIL SIGNUP */
+    .email-section { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+    .email-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 2.5rem; display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+    .email-text { flex: 1; min-width: 220px; }
+    .email-text h3 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 300; color: var(--ink); margin-bottom: .5rem; letter-spacing: -.01em; }
+    .email-text h3 em { font-style: italic; color: var(--sage); }
+    .email-text p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+    .email-form { flex: 1; min-width: 260px; }
+    .email-row { display: flex; gap: .6rem; margin-bottom: .5rem; }
+    .email-input { flex: 1; padding: 11px 16px; border: 1px solid var(--border); border-radius: 999px; background: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); outline: none; transition: border-color .15s; }
+    .email-input:focus { border-color: var(--sage); }
+    .email-submit { padding: 11px 20px; background: var(--sage); color: white; border: none; border-radius: 999px; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; transition: background .15s; }
+    .email-submit:hover { background: #3D6B4A; }
+    .email-note { font-size: 11px; color: var(--ink-muted); }
+    #nl-success-course { display: none; font-size: 14px; color: var(--sage); font-weight: 500; }
+
+    /* PROGRESS TRACKER */
+    .progress-bar-course { position: fixed; top: 0; left: 0; height: 3px; background: var(--sage); z-index: 200; transition: width .2s; width: 0%; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 2rem; }
+    .footer-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 13px; color: var(--ink-muted); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 700px) {
+      .for-grid { grid-template-columns: 1fr; }
+      .module-header { flex-direction: column; gap: .75rem; }
+      .email-card { flex-direction: column; gap: 1.5rem; }
+      .email-row { flex-direction: column; }
+      .hero { padding: 2.5rem 1.5rem 2rem; }
+      .modules-section { padding: 2.5rem 1.5rem; }
+    }
+  
+    /* ── QUALITY FLOOR ── */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--c-green, #3A6B49);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div class="progress-bar-course" id="reading-progress"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="/"><em>humanly</em><sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;margin-left:2px">labs</sup></a>
+    <div class="free-badge">Free mini-course</div>
+    <a class="nav-back" href="/">← All tools</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Free mini-course for introverts</div>
+  <h1 class="hero-title">Recharge &amp; Connect:<br><em>Mastering Your Social Battery</em></h1>
+  <p class="hero-subtitle">Feeling drained after social interactions but still craving meaningful connection? This free course gives you science-backed tools to manage your social energy, ease anxiety, and build relationships that actually work for you.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="meta-dot"></div>4 modules · 8 lessons</div>
+    <div class="hero-meta-item"><div class="meta-dot"></div>30–40 minutes total</div>
+    <div class="hero-meta-item"><div class="meta-dot"></div>Completely free</div>
+    <div class="hero-meta-item"><div class="meta-dot"></div>Go at your own pace</div>
+  </div>
+  <a class="btn-start" href="#module-1">Start learning →</a>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="for-section">
+  <div class="for-inner">
+    <div class="section-eyebrow">Who this is for</div>
+    <h2 class="section-title">If any of these sound familiar,<br>this course is <em>for you</em></h2>
+    <div class="for-grid">
+      <div class="for-card">
+        <div class="for-emoji">🔋</div>
+        <div class="for-title">You run out of social energy fast</div>
+        <div class="for-desc">Social events leave you exhausted, even when you enjoyed them. You need more recovery time than most people seem to.</div>
+      </div>
+      <div class="for-card">
+        <div class="for-emoji">🤝</div>
+        <div class="for-title">You want connection but it's complicated</div>
+        <div class="for-desc">You crave deep relationships but find small talk excruciating, large groups draining, and putting yourself out there genuinely hard.</div>
+      </div>
+      <div class="for-card">
+        <div class="for-emoji">😮‍💨</div>
+        <div class="for-title">Social anxiety makes it harder</div>
+        <div class="for-desc">You're not just introverted — you experience real anxiety before, during, or after social situations. The anticipation is often worse than the event.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules-section">
+
+  <!-- MODULE 1 -->
+  <div class="module-block" id="module-1">
+    <div class="module-header">
+      <div class="module-num mod1-num">1</div>
+      <div class="module-meta">
+        <div class="module-label mod1-label">Module 1 · 2 lessons</div>
+        <div class="module-title mod1-title">Understanding Your Unique <em>Social Energy Blueprint</em></div>
+      </div>
+    </div>
+    <p class="module-intro">Before you can manage your social energy, you need to understand it. This module introduces the concept of the social battery — what it is, why it matters, and how your unique connection style shapes the way you experience loneliness and belonging.</p>
+
+    <div class="lessons">
+
+      <!-- LESSON 1.1 -->
+      <div class="lesson">
+        <div class="lesson-header" onclick="toggleLesson(this)">
+          <div class="lesson-title-row">
+            <div class="lesson-num">Lesson 1.1</div>
+            <div class="lesson-title">What is a Social Battery?</div>
+          </div>
+          <svg class="lesson-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-intro">The social battery is a metaphor — but it describes something genuinely real. Just as a phone battery drains with use, your capacity for social interaction has limits. For some people, those limits are wide. For others, the battery runs down quickly and needs significant recharge time. Neither is wrong. They're just different.</p>
+
+          <h3 class="lesson-h3">What is social energy?</h3>
+          <p class="lesson-p">Social energy is the mental and emotional resource you draw on during interactions with other people. Every conversation, meeting, event, or phone call costs some of it. The key insight: this isn't about whether you like people or not. It's about how your nervous system responds to social stimulation.</p>
+          <p class="lesson-p">Introverts tend to find social interaction stimulating in a way that eventually becomes depleting — the brain is working hard processing social cues, managing self-presentation, and tracking conversation. For highly sensitive people (HSPs), that processing is even more intense.</p>
+
+          <h3 class="lesson-h3">Signs your battery is running low</h3>
+          <ul class="bullet-list">
+            <li>You feel foggy or slow-thinking after social events</li>
+            <li>Small irritations feel bigger than they usually would</li>
+            <li>You find yourself going quieter than usual mid-conversation</li>
+            <li>You cancel plans that once would have appealed to you</li>
+            <li>You feel a strong pull to be alone — not from sadness but from need</li>
+            <li>You replay conversations afterwards, analysing what you said</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>Key insight</strong>Draining doesn't mean bad. A conversation can be deeply enjoyable and still cost energy. The goal isn't to avoid all social drain — it's to understand your patterns so you can budget your energy rather than spending it accidentally.</p>
+          </div>
+
+          <h3 class="lesson-h3">Introvert vs shy vs socially anxious</h3>
+          <p class="lesson-p">These three things often get conflated but they're distinct. Introversion is about energy: you recharge alone. Shyness is about discomfort in social situations: you want to connect but feel uncomfortable. Social anxiety is about fear: the anticipation or experience of social situations triggers real anxiety. You can be any combination of these — or none of them.</p>
+          <p class="lesson-p">Understanding which is operating for you matters, because the strategies that help are different for each.</p>
+        </div>
+      </div>
+
+      <!-- LESSON 1.2 -->
+      <div class="lesson">
+        <div class="lesson-header" onclick="toggleLesson(this)">
+          <div class="lesson-title-row">
+            <div class="lesson-num">Lesson 1.2</div>
+            <div class="lesson-title">Discover Your Loneliness &amp; Connection Style</div>
+          </div>
+          <svg class="lesson-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-intro">Loneliness is not simply being alone. Research identifies several distinct types — and understanding which one you're experiencing is the first step to addressing it effectively. Similarly, your attachment style shapes how you connect with others at a deep level.</p>
+
+          <h3 class="lesson-h3">The four types of loneliness</h3>
+          <p class="lesson-p"><strong style="color:var(--ink)">Social loneliness</strong> — you don't have enough people in your life. The network is thin. This is the most directly addressable type.</p>
+          <p class="lesson-p"><strong style="color:var(--ink)">Emotional loneliness</strong> — you have people around you, but you don't feel truly known. There's a gap between the surface of your relationships and what you actually long for.</p>
+          <p class="lesson-p"><strong style="color:var(--ink)">Situational loneliness</strong> — something changed — a move, a breakup, a job loss — and your social world changed with it. This type is acute rather than chronic.</p>
+          <p class="lesson-p"><strong style="color:var(--ink)">Existential loneliness</strong> — a deeper sense of being fundamentally different or apart. Common in people who are neurodivergent, highly sensitive, or who've had unusual life experiences.</p>
+
+          <div class="tip-box">
+            <p><strong>Try this now</strong>Which of these four sounds most like what you experience? The answer changes what you should focus on. Social loneliness responds to adding more people. Emotional loneliness responds to going deeper with existing ones.</p>
+          </div>
+
+          <a class="tool-cta tool-sage" href="/quiz" target="_blank">
+            <div class="tool-cta-icon">🧠</div>
+            <div class="tool-cta-text">
+              <div class="tool-cta-label">Humanly Labs tool</div>
+              <div class="tool-cta-name">Loneliness Type Quiz — Free</div>
+              <div class="tool-cta-desc">9 questions · identifies your loneliness type + a 3-step plan</div>
+            </div>
+            <div class="tool-cta-arrow">→</div>
+          </a>
+
+          <h3 class="lesson-h3">Your attachment style and connection</h3>
+          <p class="lesson-p">Attachment theory describes the patterns we develop around closeness, trust, and connection — usually formed in childhood and replayed in adult relationships. The four main styles are secure, anxious, avoidant, and disorganised.</p>
+          <p class="lesson-p">For introverts, avoidant attachment is particularly common — not because introverts don't want connection, but because the self-reliance that developed as an adaptation to finding people draining can look a lot like emotional avoidance. Knowing your style helps you distinguish preference from protection.</p>
+
+          <a class="tool-cta tool-violet" href="/attachment-quiz" target="_blank">
+            <div class="tool-cta-icon">🌱</div>
+            <div class="tool-cta-text">
+              <div class="tool-cta-label">Humanly Labs tool</div>
+              <div class="tool-cta-name">Attachment Style Quiz — Free</div>
+              <div class="tool-cta-desc">10 questions · secure, anxious, avoidant, or disorganised</div>
+            </div>
+            <div class="tool-cta-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODULE 2 -->
+  <div class="module-block" id="module-2">
+    <div class="module-header">
+      <div class="module-num mod2-num">2</div>
+      <div class="module-meta">
+        <div class="module-label mod2-label">Module 2 · 2 lessons</div>
+        <div class="module-title mod2-title">Practical Strategies for <em>Social Battery Management</em></div>
+      </div>
+    </div>
+    <p class="module-intro">Understanding your battery is one thing. Managing it deliberately is another. This module gives you practical tools for identifying your personal drain and recharge patterns, setting boundaries without guilt, and pacing your social engagement so it works with your nature rather than against it.</p>
+
+    <div class="lessons">
+
+      <!-- LESSON 2.1 -->
+      <div class="lesson">
+        <div class="lesson-header" onclick="toggleLesson(this)">
+          <div class="lesson-title-row">
+            <div class="lesson-num">Lesson 2.1</div>
+            <div class="lesson-title">Identifying Your Energy Drainers &amp; Rechargers</div>
+          </div>
+          <svg class="lesson-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-intro">Most people run on intuition about what drains and restores them. The problem with intuition is that it's often wrong — we misattribute the source of exhaustion, and we underinvest in what actually helps. Mapping this explicitly changes everything.</p>
+
+          <h3 class="lesson-h3">Common drain patterns for introverts</h3>
+          <ul class="bullet-list">
+            <li><strong style="color:var(--ink)">Large group events</strong> — not because they're unpleasant, but because tracking multiple conversations simultaneously is cognitively demanding</li>
+            <li><strong style="color:var(--ink)">Sustained small talk</strong> — the effort of surface-level conversation without real content is often more draining than deep discussion</li>
+            <li><strong style="color:var(--ink)">Unexpected social demands</strong> — phone calls when you weren't prepared, spontaneous invitations, being put on the spot</li>
+            <li><strong style="color:var(--ink)">Conflict or emotional intensity</strong> — especially for HSPs, emotionally charged interactions deplete quickly</li>
+            <li><strong style="color:var(--ink)">Performing or being observed</strong> — presenting, speaking in meetings, or doing anything under scrutiny</li>
+          </ul>
+
+          <h3 class="lesson-h3">What actually recharges?</h3>
+          <p class="lesson-p">Recharging doesn't always mean solitude. For some introverts, one-on-one conversations with trusted friends are genuinely restorative. For others, it's physical activity alone, creative work, nature, or simply quiet. The key is that the activity doesn't demand social processing.</p>
+
+          <div class="tip-box">
+            <p><strong>Self-assessment exercise</strong>For one week, rate your energy level (1–10) at the end of each day and note what you did socially. After 7 days, patterns will emerge — specific situations that reliably drain you, and specific activities that reliably restore you. This is the foundation of deliberate energy management.</p>
+          </div>
+
+          <a class="tool-cta tool-amber" href="/social-battery" target="_blank">
+            <div class="tool-cta-icon">🔋</div>
+            <div class="tool-cta-text">
+              <div class="tool-cta-label">Humanly Labs tool</div>
+              <div class="tool-cta-name">Social Battery Tracker — $3.99</div>
+              <div class="tool-cta-desc">7-day tracker · AI drain pattern analysis · personalised recharge plan</div>
+            </div>
+            <div class="tool-cta-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- LESSON 2.2 -->
+      <div class="lesson">
+        <div class="lesson-header" onclick="toggleLesson(this)">
+          <div class="lesson-title-row">
+            <div class="lesson-num">Lesson 2.2</div>
+            <div class="lesson-title">Setting Social Boundaries &amp; Pacing Yourself</div>
+          </div>
+          <svg class="lesson-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-intro">Boundaries get talked about constantly but rarely explained concretely. For introverts, the most useful boundaries aren't about keeping people out — they're about protecting the conditions under which you can actually show up well.</p>
+
+          <h3 class="lesson-h3">Saying no without lengthy explanation</h3>
+          <p class="lesson-p">You don't owe anyone a detailed reason for not attending something. "I can't make it but hope it goes well" is a complete sentence. The cultural pressure to justify declining is real, but most people don't actually need or expect an explanation — we project that expectation onto them.</p>
+
+          <ul class="bullet-list">
+            <li><strong style="color:var(--ink)">"I'm not able to this time"</strong> — direct, no explanation, no apology required</li>
+            <li><strong style="color:var(--ink)">"I'd love to, but I need a quieter weekend"</strong> — honest without being overly exposing</li>
+            <li><strong style="color:var(--ink)">"Can we do something smaller?"</strong> — redirects rather than simply declining</li>
+          </ul>
+
+          <h3 class="lesson-h3">Scheduling social recovery</h3>
+          <p class="lesson-p">Treat post-event recovery as a real appointment. If you have a demanding social event on Friday evening, block Saturday morning as non-negotiable quiet time. This isn't selfish — it's what allows you to be fully present at the next thing.</p>
+
+          <h3 class="lesson-h3">Pacing over time</h3>
+          <p class="lesson-p">The most sustainable social life for an introvert isn't one with zero events — it's one where events are spaced and balanced. A useful rule: for every high-stimulation social event, schedule at least one full recovery window before the next one.</p>
+
+          <div class="tip-box">
+            <p><strong>Practical pacing tool</strong>Look at your next two weeks of social commitments. For each one, add a recovery block immediately after in your calendar. Treat it as seriously as the event itself. Notice what happens to your energy over those two weeks compared to your baseline.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODULE 3 -->
+  <div class="module-block" id="module-3">
+    <div class="module-header">
+      <div class="module-num mod3-num">3</div>
+      <div class="module-meta">
+        <div class="module-label mod3-label">Module 3 · 2 lessons</div>
+        <div class="module-title mod3-title">Connecting Authentically, <em>Minimising Anxiety</em></div>
+      </div>
+    </div>
+    <p class="module-intro">Many introverts don't just find social situations draining — they find them anxiety-provoking. This module addresses the overlap between introversion and social anxiety, and gives you concrete techniques for initiating the kind of deeper, more meaningful conversations that actually make connection feel worth the energy.</p>
+
+    <div class="lessons">
+
+      <!-- LESSON 3.1 -->
+      <div class="lesson">
+        <div class="lesson-header" onclick="toggleLesson(this)">
+          <div class="lesson-title-row">
+            <div class="lesson-num">Lesson 3.1</div>
+            <div class="lesson-title">Navigating Social Anxiety as an Introvert</div>
+          </div>
+          <svg class="lesson-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-intro">Social anxiety and introversion are different things — but they often travel together. Understanding the link helps you address each one more effectively, rather than treating them as one problem with one solution.</p>
+
+          <h3 class="lesson-h3">How introversion and social anxiety interact</h3>
+          <p class="lesson-p">Introversion means you prefer less social stimulation. Social anxiety means you fear negative evaluation. These overlap because an introvert who's been pushed to socialise more than their nature allows often develops anxiety around social situations — not because they're inherently anxious, but because they've learned that social situations are where they feel depleted, exhausted, and out of their depth.</p>
+          <p class="lesson-p">The crucial distinction: if you're tired after socialising, that's introversion. If you're dreading it before, during, or replaying it obsessively after — that's anxiety. Both are valid, but they need different responses.</p>
+
+          <h3 class="lesson-h3">The avoidance trap</h3>
+          <p class="lesson-p">Anxiety is maintained by avoidance. Every time you skip an event because of anxiety, the relief you feel teaches your brain that avoidance works — which makes the anxiety stronger next time. The evidence-based path out is gradual exposure: deliberately and gently engaging with the situations that trigger anxiety, at a pace you can manage.</p>
+
+          <div class="tip-box">
+            <p><strong>The pre-event reset</strong>Before an anxiety-provoking event: write down your three worst fears about it. Then ask — have any of these actually happened before? What's the realistic worst case? What would you do if it did? This cognitive defusion exercise takes 5 minutes and consistently reduces anticipatory anxiety.</p>
+          </div>
+
+          <a class="tool-cta tool-sky" href="/social-anxiety" target="_blank">
+            <div class="tool-cta-icon">🫁</div>
+            <div class="tool-cta-text">
+              <div class="tool-cta-label">Humanly Labs tool</div>
+              <div class="tool-cta-name">Social Anxiety Check — $4.99</div>
+              <div class="tool-cta-desc">Rate 12 situations · trigger map · 3 evidence-based coping strategies</div>
+            </div>
+            <div class="tool-cta-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- LESSON 3.2 -->
+      <div class="lesson">
+        <div class="lesson-header" onclick="toggleLesson(this)">
+          <div class="lesson-title-row">
+            <div class="lesson-num">Lesson 3.2</div>
+            <div class="lesson-title">Beyond Small Talk: Initiating Meaningful Conversations</div>
+          </div>
+          <svg class="lesson-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-intro">Most introverts don't dislike conversation — they dislike hollow conversation. Small talk feels costly because it uses social energy without providing the depth that makes connection feel meaningful. The solution isn't to avoid small talk entirely; it's to learn how to move past it quickly.</p>
+
+          <h3 class="lesson-h3">Why small talk exists (and why it matters)</h3>
+          <p class="lesson-p">Small talk is social scaffolding — it establishes safety before substance. Skipping it entirely tends to make other people uncomfortable, which ironically makes connection harder. The goal is to move through it efficiently rather than linger or avoid it entirely.</p>
+
+          <h3 class="lesson-h3">Moving to depth without being intense</h3>
+          <p class="lesson-p">The transition from small to deep is usually a question that invites real reflection rather than a factual answer. Compare: "What do you do?" (factual) versus "What's the best part of what you do?" (reflective). The second version invites the person to share something real.</p>
+
+          <ul class="bullet-list">
+            <li>Ask about their experience, not just their facts</li>
+            <li>Share something real yourself — vulnerability invites vulnerability</li>
+            <li>Follow genuine curiosity, not a script</li>
+            <li>Give yourself permission to pause — silence isn't failure</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>The blank page problem</strong>Even knowing these principles, many people freeze in the moment. The blank page before you reach out or start a conversation is often the hardest part — not the conversation itself.</p>
+          </div>
+
+          <a class="tool-cta tool-sky" href="/conversation-starter" target="_blank">
+            <div class="tool-cta-icon">💬</div>
+            <div class="tool-cta-text">
+              <div class="tool-cta-label">Humanly Labs tool</div>
+              <div class="tool-cta-name">Conversation Starter — $3.99</div>
+              <div class="tool-cta-desc">Enter your situation · get 10 personalised openers · unlimited regenerations</div>
+            </div>
+            <div class="tool-cta-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODULE 4 -->
+  <div class="module-block" id="module-4">
+    <div class="module-header">
+      <div class="module-num mod4-num">4</div>
+      <div class="module-meta">
+        <div class="module-label mod4-label">Module 4 · 2 lessons</div>
+        <div class="module-title mod4-title">Building &amp; Nurturing Your <em>Connection Ecosystem</em></div>
+      </div>
+    </div>
+    <p class="module-intro">The final module is about the long game — building a social world that actually sustains you. For introverts, this rarely looks like a wide network. It looks like a small number of deep, reciprocal relationships, tended carefully. This module gives you the tools to audit what you have, fill what's missing, and stay connected without burning out.</p>
+
+    <div class="lessons">
+
+      <!-- LESSON 4.1 -->
+      <div class="lesson">
+        <div class="lesson-header" onclick="toggleLesson(this)">
+          <div class="lesson-title-row">
+            <div class="lesson-num">Lesson 4.1</div>
+            <div class="lesson-title">Quality Over Quantity: Cultivating Deep Friendships</div>
+          </div>
+          <svg class="lesson-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-intro">Research consistently shows that the quality of close relationships matters far more than quantity for wellbeing. Having one or two deeply trusted friends is associated with better mental and physical health than having a large but shallow social network. This is especially true for introverts.</p>
+
+          <h3 class="lesson-h3">What makes a friendship nourishing?</h3>
+          <ul class="bullet-list">
+            <li>You feel energised (or at least not depleted) after time together</li>
+            <li>You can be fully yourself — no performance required</li>
+            <li>There's genuine mutual interest and reciprocity</li>
+            <li>You can be honest, including about difficult things</li>
+            <li>The friendship has survived at least one difficult moment</li>
+          </ul>
+
+          <h3 class="lesson-h3">Friendships that drain</h3>
+          <p class="lesson-p">Not all friendships are worth equal investment. Some relationships are consistently one-sided, anxiety-provoking, or leave you feeling worse than before. For introverts with limited social energy, spending that energy on draining relationships has a real opportunity cost — it's energy not available for nourishing ones.</p>
+          <p class="lesson-p">This isn't about ruthlessly cutting people off. It's about being honest with yourself about where your energy is well-spent, and gradually redirecting investment toward the relationships that genuinely sustain you.</p>
+
+          <div class="tip-box">
+            <p><strong>The 3-question audit</strong>For each close friendship, ask: (1) How do I feel after spending time with this person? (2) Does this person know the real me? (3) Is this relationship roughly reciprocal? The answers will tell you where to invest.</p>
+          </div>
+
+          <a class="tool-cta tool-teal" href="/friendship-audit" target="_blank">
+            <div class="tool-cta-icon">🗺️</div>
+            <div class="tool-cta-text">
+              <div class="tool-cta-label">Humanly Labs tool</div>
+              <div class="tool-cta-name">Friendship Audit — $4.99</div>
+              <div class="tool-cta-desc">Map your social world · nourishing vs draining · AI action plan</div>
+            </div>
+            <div class="tool-cta-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- LESSON 4.2 -->
+      <div class="lesson">
+        <div class="lesson-header" onclick="toggleLesson(this)">
+          <div class="lesson-title-row">
+            <div class="lesson-num">Lesson 4.2</div>
+            <div class="lesson-title">Reaching Out &amp; Maintaining Connections (The Introvert Way)</div>
+          </div>
+          <svg class="lesson-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,8 10,13 15,8"/></svg>
+        </div>
+        <div class="lesson-body">
+          <p class="lesson-intro">One of the most common sources of loneliness for introverts isn't a lack of people — it's a failure to stay in touch with the people they care about. Life gets busy, the gap grows, and then reaching out starts to feel awkward. This lesson is about low-pressure ways to keep connections alive.</p>
+
+          <h3 class="lesson-h3">Why introverts often lose touch</h3>
+          <p class="lesson-p">Introverts tend to need a reason to reach out — a specific thing to say, a news item, a shared reference. Without that trigger, the blank page problem takes over and nothing gets sent. Meanwhile, time passes, and the gap makes reaching out feel progressively more awkward.</p>
+          <p class="lesson-p">The solution isn't forcing yourself to be more spontaneous. It's building low-friction habits: a standing monthly coffee, a regular text thread, a shared interest that gives you natural things to share.</p>
+
+          <h3 class="lesson-h3">Low-pressure ways to stay connected</h3>
+          <ul class="bullet-list">
+            <li>A short voice note — more personal than text, less demanding than a call</li>
+            <li>Sharing something that reminded you of them — a link, a photo, a reference</li>
+            <li>A genuine "thinking of you" with no expectation of a long reply</li>
+            <li>A standing recurring plan, even if infrequent — monthly, quarterly</li>
+            <li>Remembering and following up on things they mentioned last time</li>
+          </ul>
+
+          <div class="tip-box">
+            <p><strong>The blank page problem, solved</strong>The hardest part of reaching out after a gap isn't the conversation — it's the first message. A tool that writes it for you removes that friction entirely.</p>
+          </div>
+
+          <a class="tool-cta tool-rose" href="/checkin-generator" target="_blank">
+            <div class="tool-cta-icon">✉️</div>
+            <div class="tool-cta-text">
+              <div class="tool-cta-label">Humanly Labs tool</div>
+              <div class="tool-cta-name">Check-In Message Generator — $3.99</div>
+              <div class="tool-cta-desc">3 natural message variants · adjusts for time gap · unlimited uses</div>
+            </div>
+            <div class="tool-cta-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- CONCLUSION -->
+<section class="conclusion">
+  <div class="conclusion-inner">
+    <div class="conclusion-eyebrow">Course complete</div>
+    <h2 class="conclusion-title">Your social life, on<br><em>your own terms</em></h2>
+    <p class="conclusion-body">Being an introvert doesn't mean being lonely — it means needing a different approach to connection. You now have the framework: understand your energy, manage it deliberately, engage authentically, and build relationships that genuinely sustain you.</p>
+    <p class="conclusion-body" style="margin-top:1rem">The tools below are designed to support exactly what this course covered — each one is a practical extension of what you've just learned.</p>
+    <div class="conclusion-tools">
+      <a href="/quiz" class="conclusion-tool-pill">🧠 Loneliness Quiz</a>
+      <a href="/attachment-quiz" class="conclusion-tool-pill">🌱 Attachment Quiz</a>
+      <a href="/social-battery" class="conclusion-tool-pill">🔋 Social Battery Tracker</a>
+      <a href="/social-anxiety" class="conclusion-tool-pill">🫁 Social Anxiety Check</a>
+      <a href="/conversation-starter" class="conclusion-tool-pill">💬 Conversation Starter</a>
+      <a href="/friendship-audit" class="conclusion-tool-pill">🗺️ Friendship Audit</a>
+      <a href="/checkin-generator" class="conclusion-tool-pill">✉️ Check-In Generator</a>
+    </div>
+    <a class="btn-cta-light" href="/">Explore all tools →</a>
+  </div>
+</section>
+
+<!-- EMAIL SIGNUP -->
+<section class="email-section">
+  <div class="email-card">
+    <div class="email-text">
+      <h3>Get new tools &amp; ideas by <em>email</em></h3>
+      <p>New tools, research on loneliness and connection, and honest writing on what actually helps. Usually fortnightly.</p>
+    </div>
+    <div class="email-form">
+      <div id="nl-form-course">
+        <div class="email-row">
+          <input type="email" id="nl-email-course" class="email-input" placeholder="you@example.com" onkeydown="if(event.key==='Enter')subscribeCourse()" />
+          <button class="email-submit" onclick="subscribeCourse()">Subscribe</button>
+        </div>
+        <div class="email-note">No spam. Unsubscribe any time.</div>
+      </div>
+      <div id="nl-success-course">✓ You're on the list — welcome!</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 Humanly Labs · Made with care in Sydney</div>
+    <div class="footer-links">
+      <a href="/">All tools</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+    <a href="/courses/friendship-revival/">Friendship Revival</a>
+  </div>
+</footer>
+
+<script>
+/* ── ACCORDION ── */
+function toggleLesson(header) {
+  const body = header.nextElementSibling;
+  const isOpen = header.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.lesson-header').forEach(h => h.classList.remove('open'));
+  document.querySelectorAll('.lesson-body').forEach(b => b.classList.remove('open'));
+  // Open this one if it was closed
+  if (!isOpen) {
+    header.classList.add('open');
+    body.classList.add('open');
+    // Smooth scroll so top of lesson is visible
+    setTimeout(() => header.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  }
+}
+
+/* ── READING PROGRESS ── */
+window.addEventListener('scroll', () => {
+  const doc   = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const pct   = total > 0 ? (window.scrollY / total) * 100 : 0;
+  document.getElementById('reading-progress').style.width = pct + '%';
+});
+
+/* ── NEWSLETTER ── */
+function subscribeCourse() {
+  const input = document.getElementById('nl-email-course');
+  const email = input.value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    input.style.borderColor = '#9F3247';
+    setTimeout(() => input.style.borderColor = '', 2000);
+    return;
+  }
+  const key      = 'hly_newsletter';
+  const existing = localStorage.getItem(key) || 'email,timestamp\n';
+  if (!existing.includes(email)) {
+    localStorage.setItem(key, existing + `${email},${new Date().toISOString()}\n`);
+  }
+  document.getElementById('nl-form-course').style.display  = 'none';
+  document.getElementById('nl-success-course').style.display = 'block';
+}
+
+/* ── AUTO-OPEN FIRST LESSON ── */
+window.addEventListener('DOMContentLoaded', () => {
+  const first = document.querySelector('.lesson-header');
+  if (first) {
+    first.classList.add('open');
+    first.nextElementSibling.classList.add('open');
+  }
+});
+</script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+</body>
+</html>
