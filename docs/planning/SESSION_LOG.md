@@ -6,6 +6,47 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-08-31 (4) — Built out The Confidence Blueprint course (18 lessons)
+
+**What was done:** wrote and published all 18 lesson pages for *The
+Confidence Blueprint* course (CBT/exposure-based course for social anxiety),
+covering all 6 modules end to end. Same pattern as The Social Landing:
+- One standalone page per lesson, ~870–1040 words each (avg ~937), with a
+  "Try this" exercise box in every lesson
+- Lessons pairing with a tool (Social Anxiety Check, Social Battery ×2,
+  Loneliness Deep Dive) link out to it directly
+- Blue theme (`#1C5DAF`) to match this course's existing branding, distinct
+  from Social Landing's green
+
+**Content note — mental health topic handled carefully:** this course
+covers CBT concepts (cognitive distortions, exposure hierarchies, the
+spotlight effect) as psychoeducation, consistent with the course's own
+existing FAQ disclaimer on the landing page ("not a substitute for
+professional mental health treatment"). Lesson 1 repeats that disclaimer
+up front, and Lesson 17 explicitly names when a setback is a signal to
+seek professional support rather than push through alone. No diagnostic
+claims are made anywhere in the lesson content.
+
+**How it's built:** same generator pattern as Social Landing —
+`docs/scripts/build-confidence-blueprint-lessons.py` holds the `LESSONS`
+data and renders through a shared template into
+`courses/confidence-blueprint/content/lessons/*.html`.
+
+**Wired into the site:** `courses/confidence-blueprint/content/index.html`
+— all 18 "Coming soon" cards converted to real links with a "Start →"
+badge. No landing-page copy bugs found this time (lesson count was already
+correct at "18 lessons").
+
+**Verified:** full repo-wide link check (zero broken links/assets across
+the whole site, including both courses' lesson pages), JS syntax check
+across every HTML file, `noindex` coverage on all 18 new pages, and
+`target="_blank"` + `noopener` coverage — all clean.
+
+**Not done yet:** Friendship Revival (19 lessons) is the last of the three
+courses still showing "Coming soon" for every lesson. Same pattern applies.
+
+---
+
 ## 2026-08-31 (3) — Built out The Social Landing course (20 lessons)
 
 **What was done:** wrote and published all 20 lesson pages for *The Social

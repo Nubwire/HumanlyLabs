@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Energy & Your Baseline — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 1 · Mapping Your Anxiety</span>
+    <span class="lesson-num-badge">Lesson 3 of 18</span>
+  </div>
+  <h1 class="lesson-title">Social Energy & Your Baseline</h1>
+  <p class="lesson-sub">Understanding how your nervous system responds to social demands</p>
+  <div class="lesson-body">
+
+    <p>Social anxiety and social energy are related but genuinely distinct things, and it's worth untangling them clearly before moving further into this course. Anxiety is about a threat prediction — the anticipation that something bad will happen. Energy is about a resource being spent — the actual physiological and cognitive cost of being socially engaged, which happens regardless of whether anxiety is present. For many people dealing with social anxiety, these two things compound each other: anxious social situations are more energy-costly than calm ones, because your nervous system is doing extra work — scanning for threat, monitoring yourself, suppressing visible signs of distress — on top of the ordinary effort of the interaction itself.</p>
+
+    <h2>Why anxious socialising is more exhausting</h2>
+    <p>A calm, low-anxiety social interaction draws on your normal social effort: following the conversation, responding appropriately, reading the other person's cues. An anxious one adds a second, parallel layer of effort running the whole time: monitoring your own anxiety symptoms, worrying about how you're coming across, mentally rehearsing what to say next instead of being present, and managing whatever safety behaviours you identified in Lesson 2. This second layer is genuinely, measurably more taxing — which is why an anxious social interaction can leave you far more depleted than a calm one of the same length, even though from the outside they might look similar.</p>
+    <p>This matters practically because it means your energy limits aren't fixed — they shift depending on how anxious a given interaction is, not just how long or how socially demanding it is in a neutral sense. Learning to read this accurately, rather than assuming a flat, constant social capacity, is an important skill this course will keep returning to, particularly in Module 5.</p>
+
+    <h2>Your nervous system's actual response</h2>
+    <p>The physical sensations of social anxiety — racing heart, tight chest, shaky hands, a flushed face, a mind that goes blank — are your body's fight-or-flight system activating in response to a perceived threat, the same system that would activate for a genuine physical danger. This is worth understanding clearly, because a huge amount of anxiety about anxiety comes from misinterpreting these very normal physical sensations as evidence that something is actually wrong, or as visible proof of embarrassment to others (a distortion Lesson 6 covers directly). The sensations themselves are not dangerous, however uncomfortable they feel — they're your nervous system doing exactly what it evolved to do, just in response to a threat that, in a social context, usually isn't actually there.</p>
+
+    <h2>Establishing your baseline honestly</h2>
+    <p>Before working to change anything, it's useful to have an honest read of where you currently stand: roughly how much low-anxiety social contact you can sustain in a week versus how much high-anxiety social contact, and how long recovery typically takes after each. This isn't about judging your current capacity as too low — it's simply useful information for pacing the exposure work in Module 3 sensibly, so you're neither so cautious that progress stalls, nor so aggressive that you burn out and reinforce the avoidance cycle through a bad experience early on.</p>
+
+    <h2>Use the Social Battery tool to map your current capacity</h2>
+    <p>The Social Battery tool below helps you take stock of your current energy patterns — what depletes you, what restores you, and how much social contact you can currently sustain. Use it now as a baseline, and expect to return to it in Module 5, once some of the anxiety-specific work has had a chance to shift how costly certain interactions feel.</p>
+
+    <h2>Sleep, stress, and your anxious baseline</h2>
+    <p>It's worth noting directly that your general physiological state significantly affects how much capacity your nervous system has for handling anxious activation on any given day. Poor sleep, high general stress, illness, or even just a demanding week at work can all lower your baseline resilience, making a social situation that would normally be manageable feel disproportionately difficult. This isn't a sign the anxiety work isn't holding — it's a sign your overall system is running with less spare capacity that day. Learning to factor this in, rather than assuming a bad day is purely about the social situation itself, will make your energy readings throughout this course considerably more accurate.</p>
+    <p>This is also worth keeping in mind if you notice your anxiety seems worse on a day when, by your own account, "nothing anxiety-provoking is even happening." A depleted baseline can make ordinary, previously comfortable interactions feel harder than usual, independent of any change in the situations themselves — worth checking your sleep, stress, and general physical state before concluding the anxiety work has stalled or reversed.</p>
+
+    <h2>You're not just tired — you're tired in a specific way</h2>
+    <p>It's worth distinguishing social depletion from general tiredness, since they can call for different responses. General physical fatigue tends to respond well to rest and sleep; social depletion specifically responds best to the kind of recovery covered in Module 5 — time without social demand, not simply time without activity. Confusing the two can lead to "resting" in ways that don't actually restore your social capacity, only to find yourself still depleted going into the next social commitment despite having technically rested.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>After using the tool, write one sentence naming the difference, if any, between how much low-anxiety social contact you can handle versus high-anxiety social contact. This distinction will directly inform how you pace your exposure work later in the course.</p>
+    </div>
+
+    <p>You now have a full picture: how the fear-avoidance cycle works, your specific trigger map, and an honest read of your energy baseline. Module 2 turns to the thoughts themselves — the specific predictions and distortions that drive the whole cycle, and the evidence-based techniques for challenging them.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🔋</div>
+    <div class="tool-copy"><strong>Use the Social Battery</strong>This lesson pairs with the Social Battery tool — use it now while the ideas are fresh.</div>
+    <a href="/social-battery">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/02-your-trigger-map.html">← Lesson 2: Your Trigger Map</a>
+    <a href="/courses/confidence-blueprint/content/lessons/04-the-thoughts-behind-the-fear.html">Lesson 4: The Thoughts Behind the Fear →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

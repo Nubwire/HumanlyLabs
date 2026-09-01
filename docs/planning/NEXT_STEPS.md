@@ -27,10 +27,17 @@ _Last updated: 2026-08-31_
   6 modules are written, published, and linked from the curriculum page. See
   `docs/scripts/build-social-landing-lessons.py` for how to edit/regenerate
   lesson content.
-- **Confidence Blueprint and Friendship Revival are next** — both still show
-  their full curriculum (18–19 lessons each) as "Coming soon." Same process
-  as Social Landing: individual lesson pages, ~1000-word lessons with
-  exercises, linked from each course's `content/index.html`.
+- **The Confidence Blueprint course is fully built out** — all 18 lessons
+  across 6 modules are written, published, and linked from the curriculum
+  page. See `docs/scripts/build-confidence-blueprint-lessons.py`. This
+  course covers CBT/exposure-therapy content for social anxiety — the
+  existing "not a substitute for therapy" disclaimer from the landing
+  page's FAQ is echoed in Lesson 1, and Lesson 17 addresses when to seek
+  professional support.
+- **Friendship Revival is the last course left** — still shows its full
+  curriculum (19 lessons) as "Coming soon." Same process: individual lesson
+  pages, ~900–1000-word lessons with exercises, linked from
+  `content/index.html`, generator script in `docs/scripts/`.
 
 ## Open questions (need answers before more work should land)
 
@@ -54,9 +61,8 @@ _Last updated: 2026-08-31_
 
 ## Suggested next steps (in rough priority order)
 
-- [ ] Build out Confidence Blueprint (18 lessons) using the same pattern and
-      generator script approach as Social Landing.
-- [ ] Build out Friendship Revival (19 lessons) — same pattern.
+- [ ] Build out Friendship Revival (19 lessons) — same pattern as the other
+      two courses.
 - [ ] Confirm deployment target and, if not yet connected, connect this repo
       to Cloudflare Pages (or wherever it should live).
 - [ ] Resolve ADR-0003 (client-side API key exposure) — pick an approach and

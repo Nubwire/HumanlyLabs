@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your First Experiments — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 3 · Graded Exposure</span>
+    <span class="lesson-num-badge">Lesson 8 of 18</span>
+  </div>
+  <h1 class="lesson-title">Your First Experiments</h1>
+  <p class="lesson-sub">Low-stakes structured experiments to prove your predictions wrong</p>
+  <div class="lesson-body">
+
+    <p>With your ladder built, this lesson is about actually running your first exposures — treating each one as a genuine experiment rather than simply an ordeal to survive. Framing them this way matters more than it might seem: an experiment is something you run to find something out, with genuine curiosity about the result, while an ordeal is just something to endure and escape as fast as possible. The experimental framing is what turns exposure into something that actually builds new evidence, rather than just repeating the same anxious experience without learning anything new from it.</p>
+
+    <h2>Structuring an exposure as a real experiment</h2>
+    <p>Before attempting an item from your ladder, it's worth writing down three things, briefly:</p>
+    <ul>
+      <li><strong>The specific prediction</strong> — what exactly do you expect to happen, in concrete terms (not just "it'll go badly," but specifically what "badly" would look like)?</li>
+      <li><strong>Your predicted anxiety peak</strong> — on the same 0–10 scale, how anxious do you expect to feel at the worst moment?</li>
+      <li><strong>What would count as disconfirming evidence</strong> — what would actually need to happen for you to conclude your prediction was wrong, or significantly overestimated?</li>
+    </ul>
+    <p>After the exposure, compare what actually happened against all three. Nearly everyone finds a meaningful gap between the prediction and the reality — the feared outcome usually doesn't happen, or happens in a much milder form than predicted, and the anxiety, while genuinely uncomfortable, usually peaks lower and settles faster than expected. This comparison, done explicitly and in writing rather than left as a vague impression, is what actually produces the belief change — it's much harder for an anxious mind to dismiss a written, specific gap between prediction and outcome than a general feeling that "it wasn't that bad."</p>
+
+    <h2>Start at the bottom, genuinely</h2>
+    <p>There's often a temptation to skip the lower rungs because they feel almost too easy to bother with, or to jump ahead to a higher rung out of impatience to make faster progress. Resist this. The lower rungs aren't just warm-ups to get through quickly — they're where you build the specific skill of running the experiment structure itself (predicting, attempting, comparing) while the stakes are genuinely low, so that by the time you reach the harder items, the process feels familiar rather than being new territory on top of an already difficult exposure.</p>
+
+    <h2>Handling a rough exposure</h2>
+    <p>Not every exposure will go smoothly, and it's worth being honest about that in advance rather than being caught off guard by it. If an exposure goes worse than expected — anxiety peaks higher than predicted, or something genuinely awkward happens — that's still useful data, not a sign the whole approach has failed. A single difficult exposure doesn't erase the value of the method; it's one data point in a series, and the appropriate response is usually to repeat the same or a similar rung again soon, rather than either giving up or jumping to a much easier item out of self-protection. Repetition after a rough exposure is often exactly what turns it from a discouraging one-off into a manageable, expected part of the process.</p>
+
+    <h2>Frequency matters more than intensity</h2>
+    <p>Frequent, moderate exposures reliably produce better results than occasional, intense ones. Aim for several exposures a week rather than one big attempt followed by a long gap — momentum matters here in much the same way it matters for building any new social pattern, and long gaps between exposures tend to let some of the anxious prediction creep back in before the next attempt.</p>
+
+    <h2>What if the exposure goes better than expected?</h2>
+    <p>It's worth explicitly preparing for this outcome too, since it's actually the most common one and yet the easiest to discount. When an exposure goes noticeably better than predicted, there's a common anxious tendency to explain it away rather than let it count as real evidence — "that only went fine because it was a low-stakes situation," "I just got lucky that time," "that doesn't really prove anything." Catch this specific pattern if it shows up; it's a distortion in its own right (discounting the positive, from Lesson 4), and letting it run unchecked can quietly prevent the exposure work from producing the belief change it's actually capable of, even while you're doing everything else right.</p>
+    <p>The corrective is the same explicit comparison from earlier in this lesson: write down what you predicted, write down what actually happened, and let the gap register as real, valid evidence rather than something to be explained away. Over enough repetitions, this consistent gap between prediction and outcome is what does the actual work of retraining the underlying belief.</p>
+
+    <h2>You don't need to feel calm to run a successful exposure</h2>
+    <p>A common misconception is that an exposure "worked" only if the anxiety was manageable or mild throughout. In reality, a genuinely successful exposure can involve significant, uncomfortable anxiety the entire way through — what matters for the underlying learning is that you stayed in the situation without relying on your usual safety behaviours, and that you gathered real evidence about the actual outcome, not that you felt comfortable doing it. Expecting comfort as the marker of success sets an unrealistic bar; expecting genuine, if uncomfortable, engagement with the situation is the more accurate and more achievable standard.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Pick the lowest item on your ladder and run it as a full experiment this week: write your prediction, your predicted anxiety peak, and what would count as disconfirming evidence beforehand. Afterward, write down what actually happened and compare it honestly to your prediction.</p>
+    </div>
+
+    <p>The next lesson addresses something that trips up a lot of people doing this work: how to interpret what happened afterward without falling into the same anxious distortions from Module 2 during the post-event replay.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/07-the-exposure-ladder.html">← Lesson 7: The Exposure Ladder</a>
+    <a href="/courses/confidence-blueprint/content/lessons/09-processing-outcomes.html">Lesson 9: Processing Outcomes →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

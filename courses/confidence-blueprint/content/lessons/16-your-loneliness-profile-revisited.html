@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Loneliness Profile Revisited — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 6 · Your Confident Life</span>
+    <span class="lesson-num-badge">Lesson 16 of 18</span>
+  </div>
+  <h1 class="lesson-title">Your Loneliness Profile Revisited</h1>
+  <p class="lesson-sub">Measuring how your needs and patterns have shifted</p>
+  <div class="lesson-body">
+
+    <p>You started this course by mapping your anxiety in detail back in Module 1. This lesson is a deliberate pause to look at how things have actually shifted since then — using a genuine tool-based comparison rather than relying purely on memory, which tends to underrate gradual change the same way it did for the relocation-focused course covered elsewhere on Humanly Labs.</p>
+
+    <h2>Why gradual change is hard to feel</h2>
+    <p>Anxiety reduction through consistent exposure work happens gradually, week by week, which makes it notoriously difficult to register in the moment — you're far more likely to notice today feeling similar to yesterday than to notice today compared clearly against week one. Without a deliberate comparison, it's easy to keep carrying an outdated internal sense of "I'm still that anxious person" well after the actual evidence, built through months of exposures, has meaningfully shifted.</p>
+
+    <h2>Revisit your Module 1 material directly</h2>
+    <p>Go back to your Lesson 1 exercise (the situation you avoided and what you predicted), your Lesson 2 trigger map, and your Lesson 7 exposure ladder. Read through them now, and answer honestly:</p>
+    <ul>
+      <li>Which items on your original trigger map or ladder no longer produce much anxiety at all?</li>
+      <li>Which items have moved down significantly in intensity, even if they're not fully resolved?</li>
+      <li>Are there items you'd now rate quite differently than your original 0–10 scores?</li>
+      <li>How does your current use of safety behaviours and post-event processing compare to when you first identified them in Lesson 2?</li>
+    </ul>
+    <p>Be honest in both directions here — genuine progress deserves to be recognised clearly, and areas that are still difficult deserve to be named plainly rather than glossed over. Both are useful, and it would be inaccurate — not encouraging — to pretend everything has resolved if it hasn't.</p>
+
+    <h2>Use the Loneliness Deep Dive as a fresh, structured measure</h2>
+    <p>The Loneliness Deep Dive tool below runs a more thorough assessment of your current social needs and patterns than the initial Social Anxiety Check from Module 1 — useful now specifically because your relationship to social contact has likely shifted meaningfully over the course, not just in terms of anxiety intensity, but in terms of what kind of connection you actually want and pursue. Running it now gives you a genuine, structured snapshot to compare against where you started.</p>
+
+    <h2>Progress rarely looks exactly like the original goal</h2>
+    <p>It's worth naming directly: the version of "less anxious" you have now, twelve weeks in, likely doesn't look exactly like what you imagined when you started. Maybe a specific feared situation you focused on early is still genuinely hard, while a different one you barely thought about has become completely comfortable. Maybe the anxiety hasn't disappeared, but your relationship to it has changed — less avoidance, faster recovery, more willingness to act despite it. All of that counts as real, substantial progress, even when it doesn't match a tidy, imagined before-and-after.</p>
+
+    <h2>If the comparison reveals uneven progress</h2>
+    <p>It's genuinely common for progress to be uneven across your original trigger map — significant improvement in some areas, much more modest change in others. This doesn't indicate the course "didn't work" for the harder areas; some anxiety patterns are simply more deeply established than others and reasonably take longer than twelve weeks to shift substantially. If specific items remain quite difficult, that's useful, actionable information: those are exactly the items worth continuing to work on deliberately using the same tools, past the formal end of this course, rather than assuming the process has run its course simply because the structured lessons are ending.</p>
+
+    <h2>Sharing your progress, if you want to</h2>
+    <p>If you've told anyone close to you about working through this course, it can be genuinely worthwhile to share some of this comparison with them directly. People who've watched you avoid certain situations for a long time often notice change even before you fully register it yourself, and hearing an outside perspective can add useful confirmation to your own internal assessment. This isn't the reassurance-seeking pattern warned about in Lesson 5 — a one-time, genuine conversation about real progress is different from a repeated, anxious need for validation after each interaction.</p>
+
+    <h2>What to do with this measurement going forward</h2>
+    <p>Beyond the immediate comparison, this fresh assessment is worth treating as a new baseline in its own right — something to compare against again in a few months, the same way your Module 1 baseline served this comparison. Anxiety and social needs both continue to shift with life circumstances well beyond the end of this course, and having a periodic, structured measurement rather than relying purely on memory keeps your sense of your own progress grounded in something more reliable than how any single recent week happened to feel.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Write a short, honest comparison between your Lesson 1 and Lesson 2 material and where things stand now — specific situations, specific ratings, not just a general sense of "better." Keep it. It's genuinely useful evidence to revisit on a future harder week.</p>
+    </div>
+
+    <p>The final two lessons look forward — how to sustain this progress for the long term, and how to build an ongoing social life shaped around your actual personality rather than around managing anxiety.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🔬</div>
+    <div class="tool-copy"><strong>Use the Loneliness Deep Dive</strong>This lesson pairs with the Loneliness Deep Dive tool — use it now while the ideas are fresh.</div>
+    <a href="/deep-dive">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/15-setting-the-right-pace.html">← Lesson 15: Setting the Right Pace</a>
+    <a href="/courses/confidence-blueprint/content/lessons/17-maintaining-progress.html">Lesson 17: Maintaining Progress →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entering & Exiting Gracefully — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 4 · Social Skills That Stick</span>
+    <span class="lesson-num-badge">Lesson 11 of 18</span>
+  </div>
+  <h1 class="lesson-title">Entering & Exiting Gracefully</h1>
+  <p class="lesson-sub">Strategies for joining groups and leaving without it being awkward</p>
+  <div class="lesson-body">
+
+    <p>Two specific moments carry a disproportionate share of social anxiety for a lot of people: the entrance (walking up to a group or starting a conversation) and the exit (leaving without it feeling abrupt or rude). Both feel high-stakes because they're transition points, visible and a bit exposed by nature — but both are also far more routine and far less scrutinised by others than anxious anticipation makes them feel. This lesson gives you concrete, practical approaches for both.</p>
+
+    <h2>Entering a group</h2>
+    <p>Joining an existing group conversation is a common trigger, largely because it feels like interrupting something already in motion. A few things make it noticeably easier:</p>
+    <ul>
+      <li><strong>Approach at a natural pause</strong> — right after a laugh, a topic shift, or a lull, rather than mid-sentence. This isn't about finding a perfect moment (there's rarely one that feels fully "safe"), just a reasonably natural one.</li>
+      <li><strong>You don't need an opening line prepared</strong> — simply standing nearby, making eye contact, and offering a small nonverbal acknowledgment (a nod, a smile) is often enough of an entry; most groups will naturally include someone who does this, without needing a scripted line.</li>
+      <li><strong>Listen before contributing</strong> — give yourself permission to just take in the topic for a minute before saying anything. There's no rule requiring an immediate contribution the moment you join.</li>
+      <li><strong>A simple, genuine question works better than a clever comment</strong> — "what are you all talking about?" or a direct follow-up question on the current topic is low-risk and almost always well received.</li>
+    </ul>
+    <p>It's worth directly naming the anxious prediction that usually accompanies this: that the group will notice the interruption and judge it. In reality, groups absorb new arrivals constantly and with far less scrutiny than it feels like from the anxious perspective of the person joining — this is the spotlight effect from Lesson 6, showing up again in a specific, common situation.</p>
+
+    <h2>Exiting gracefully</h2>
+    <p>Leaving a conversation or group carries its own anxious weight — a fear of seeming rude, of the exit being awkward, or of not having a good enough reason. A few reliable approaches:</p>
+    <ul>
+      <li><strong>A simple, warm close is enough</strong> — "it was great talking to you, I'm going to go say hi to a few other people" or "I should get going, but this was really nice" covers the vast majority of situations cleanly.</li>
+      <li><strong>You don't need an elaborate justification</strong> — over-explaining an exit tends to draw more attention to it than a brief, confident one does. A short reason, or sometimes no explicit reason at all, is completely normal and accepted.</li>
+      <li><strong>Physical cues help signal the transition</strong> — a small step back, glancing toward where you're headed, or standing up (if seated) all naturally cue that the conversation is winding down, which most people read easily without needing it stated outright.</li>
+      <li><strong>It's fine to exit mid-lull</strong> — you don't need to wait for a natural high point in the conversation; a comfortable, ordinary moment is a perfectly fine time to close things out.</li>
+    </ul>
+
+    <h2>Both get easier with repetition</h2>
+    <p>Like most of the skills in this course, entering and exiting feel far more effortful and high-stakes the first several times than they do after some repetition. This is a natural, direct application of the exposure principle from Module 3 — treat both as items on your ladder if they're not already there, and expect the anxiety around them to decrease noticeably with practice, the same way it does for any other exposure item.</p>
+
+    <h2>Treating these as ladder items</h2>
+    <p>If entering groups or exiting conversations rated fairly high on your original exposure ladder from Module 3, it's worth explicitly returning to that ladder now with these specific techniques in hand. Facing a high-anxiety item armed with a concrete approach, rather than facing it with nothing but the vague instruction to "just do it," tends to make a meaningful difference in how manageable it feels — the techniques in this lesson aren't a replacement for exposure, they're tools that make the exposure itself more approachable and more likely to go well.</p>
+    <p>It's also worth noting that these two skills — entering and exiting — often generalise well once you've practised them a handful of times in one context. Confidence built entering a work event, for instance, tends to transfer at least partially to entering a social gathering outside of work, since the underlying mechanics (approaching at a natural pause, not needing an elaborate opener) are largely the same regardless of the specific setting.</p>
+
+    <h2>What if you're not sure whether an exit felt abrupt?</h2>
+    <p>A common lingering worry after an exit is uncertainty about whether it came across as abrupt or rude, even when it followed the guidance above. Here, the same rethinking process from Lesson 5 applies directly: what's the actual evidence it was abrupt, versus the anxious assumption? In most cases, a warm, brief close following ordinary social conventions registers to the other person as completely unremarkable — people generally aren't tracking the precise wording or timing of how a conversation ended nearly as closely as the anxious mind assumes.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>At your next opportunity, practise one deliberate entrance and one deliberate exit using the approaches above. Afterward, note whether either felt as high-stakes in reality as it did in anticipation — for most people, this gap is one of the more noticeable ones in the whole course.</p>
+    </div>
+
+    <p>Entering and exiting well gets you into and out of conversations smoothly — the next lesson addresses what happens between those two points across multiple interactions: turning a single good conversation into an actual ongoing relationship.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/10-conversation-fundamentals.html">← Lesson 10: Conversation Fundamentals</a>
+    <a href="/courses/confidence-blueprint/content/lessons/12-the-art-of-follow-through.html">Lesson 12: The Art of Follow-Through →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

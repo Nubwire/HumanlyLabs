@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Realistic Rethinking — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 2 · Rewriting the Story</span>
+    <span class="lesson-num-badge">Lesson 5 of 18</span>
+  </div>
+  <h1 class="lesson-title">Realistic Rethinking</h1>
+  <p class="lesson-sub">Evidence-based techniques for challenging anxious predictions</p>
+  <div class="lesson-body">
+
+    <p>Now that you can identify your own automatic thoughts and the distortions behind them, this lesson gives you the actual technique for working with them: realistic rethinking, the core CBT skill for loosening the grip of anxious predictions. It's worth being precise about what this technique is and isn't — it's not about forcing yourself into blind positivity or pretending everything will definitely go well. It's about examining an anxious prediction with the same rigour you'd apply to any other claim, rather than accepting it automatically just because it feels true.</p>
+
+    <h2>The core technique: examining the evidence</h2>
+    <p>For any specific anxious prediction — the kind you started collecting in Lesson 1's exercise and Lesson 4's noticing practice — the rethinking process asks a consistent set of questions:</p>
+    <ul>
+      <li><strong>What's the actual evidence for this prediction?</strong> Not how strongly it feels true, but what concrete evidence actually supports it.</li>
+      <li><strong>What's the evidence against it?</strong> Times this exact feared outcome didn't happen, even in similar situations; other explanations for whatever evidence you did have.</li>
+      <li><strong>What would I tell a friend who had this exact thought?</strong> Most people are far more balanced and generous when evaluating someone else's anxious thought than their own — this question borrows that outside perspective.</li>
+      <li><strong>What's a more realistic, balanced version of this prediction?</strong> Not a falsely positive one — a version that actually fits the evidence you've gathered.</li>
+    </ul>
+    <p>Running through these questions, ideally in writing at first, turns an anxious prediction from something you're simply swept along by into something you actively evaluate — which is where its power to drive avoidance genuinely starts to weaken.</p>
+
+    <h2>A worked example</h2>
+    <p>Take a common anxious prediction: "if I say something in this meeting, everyone will think it's a stupid idea." Evidence for: maybe one time, months ago, a comment landed awkwardly. Evidence against: most comments people make in meetings, including plenty of imperfect ones, get a neutral or mildly positive response and are quickly forgotten; you can likely think of several times you or others said something in a meeting that wasn't remarkable and nothing negative happened at all. What you'd tell a friend: "one awkward comment months ago doesn't mean this one will go the same way — most comments just land as ordinary." A more realistic version: "there's a chance this specific comment doesn't land perfectly, but the far more likely outcome is that it's simply received as an ordinary contribution, and even an imperfect comment is very unlikely to be remembered as sharply as it feels right now."</p>
+    <p>Notice that the realistic version isn't a guarantee of a good outcome — it still acknowledges some real uncertainty. That's intentional. Rethinking isn't about achieving false certainty that everything will go well; it's about replacing a distorted, worst-case certainty with an accurate, more balanced uncertainty, which is a much easier thing to act despite.</p>
+
+    <h2>Why this needs practice to feel natural</h2>
+    <p>This process will likely feel effortful and a bit mechanical at first — that's completely normal, and it doesn't mean it's not working. The automatic anxious thought has had years of repetition behind it; the rethinking process is brand new and hasn't had any repetition yet. With consistent practice, this kind of evidence-checking gradually becomes faster and more automatic itself, eventually running almost as quickly as the anxious prediction it's meant to counter — but that only happens through repeated use, not through understanding the technique intellectually on its own.</p>
+
+    <h2>Rethinking is not the same as reassurance</h2>
+    <p>It's worth distinguishing this technique clearly from simply seeking reassurance from other people ("do you think that went okay?") which can feel similar in the moment but tends to work quite differently over time. Reassurance-seeking often provides temporary relief without building any lasting skill — it depends on someone else's input each time, and can subtly reinforce the belief that you can't trust your own evaluation of a situation. Rethinking, done as a genuine skill you practise yourself, builds your own internal capacity to evaluate anxious predictions accurately, which is durable in a way that repeatedly asking others for reassurance isn't.</p>
+    <p>This distinction matters practically: if you notice yourself wanting to ask someone else whether an interaction went fine, try running your own rethinking process first, in writing, before seeking outside input. Over time, this builds genuine confidence in your own judgment rather than a dependence on others to regulate your anxiety for you.</p>
+
+    <h2>Doing this in the moment vs. afterward</h2>
+    <p>When you're first learning this technique, doing it in writing after the fact — as in this lesson's exercise — is considerably more effective than trying to do it in real time during an anxious moment, since writing forces a slower, more deliberate pace than a live conversation allows. With enough repeated practice, an abbreviated version of this process can eventually run quickly enough to use in the moment itself, but that's a later-stage skill, not something to expect or demand of yourself immediately. Build the skill on paper first.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Take the anxious prediction you wrote down back in Lesson 1, and run it through the four questions above in writing. Notice, specifically, whether the realistic version feels meaningfully different to sit with than the original — even a small shift is a genuine, useful result at this stage.</p>
+    </div>
+
+    <p>The next lesson looks closely at two of the most common and specific distortions in social anxiety — the spotlight effect and its close relatives — because they're worth understanding in real depth given how central they are to most people's experience of social fear.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/04-the-thoughts-behind-the-fear.html">← Lesson 4: The Thoughts Behind the Fear</a>
+    <a href="/courses/confidence-blueprint/content/lessons/06-the-spotlight-effect-other-traps.html">Lesson 6: The Spotlight Effect & Other Traps →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

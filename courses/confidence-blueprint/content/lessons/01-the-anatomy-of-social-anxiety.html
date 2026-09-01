@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Anatomy of Social Anxiety — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 1 · Mapping Your Anxiety</span>
+    <span class="lesson-num-badge">Lesson 1 of 18</span>
+  </div>
+  <h1 class="lesson-title">The Anatomy of Social Anxiety</h1>
+  <p class="lesson-sub">How the fear-avoidance cycle works and why it strengthens over time</p>
+  <div class="lesson-body">
+
+    <p>If social situations regularly leave you anxious, over-analysed, or wanting to disappear, you're dealing with something extremely common — social anxiety is one of the most widespread patterns of human difficulty, spanning everything from mild self-consciousness in unfamiliar settings to a persistent, life-shaping fear of judgment. This lesson lays the groundwork for the whole course: understanding the actual mechanics of how social anxiety works, so the rest of what you learn makes sense as a coherent approach rather than a disconnected list of tips.</p>
+
+    <p>A brief, important note before we start: this course draws on well-established Cognitive Behavioural Therapy (CBT) and exposure-based principles, translated into practical steps. It's built to help with the common range of social anxiety — self-consciousness, avoidance, and persistent worry about judgment. It isn't a replacement for professional treatment. If your anxiety is severe, involves panic attacks, or is significantly limiting your life, working through this course alongside a therapist trained in CBT will get you further, faster, than either alone.</p>
+
+    <h2>The fear-avoidance cycle</h2>
+    <p>At the centre of nearly all social anxiety is a self-reinforcing pattern psychologists call the fear-avoidance cycle, and understanding its mechanics is the single most useful thing you can learn in this entire course. It runs roughly like this: a social situation triggers an anxious prediction (something bad will happen, I'll be judged, I'll embarrass myself) → the prediction produces real physical and emotional discomfort → to escape that discomfort, you avoid the situation, or endure it while doing something to protect yourself (avoiding eye contact, rehearsing exit lines, saying very little) → the relief of escaping or protecting yourself feels like confirmation that avoidance was the right call → the anxious prediction about that type of situation gets stronger for next time.</p>
+    <p>The cruel trick of this cycle is that avoidance always feels like the solution in the moment — the anxiety genuinely does go down once you leave or avoid the situation — while actually being the mechanism that keeps the whole system running. Every successful avoidance is, neurologically, a rehearsal that confirms the danger was real and escaping was necessary, even when nothing bad was ever going to happen in the first place. This is why social anxiety so often gets worse over time rather than better on its own: the cycle is self-sustaining unless something deliberately interrupts it.</p>
+
+    <h2>Why this isn't about willpower or personality</h2>
+    <p>It's worth being direct about something many people carry a lot of unnecessary shame over: social anxiety is not a character flaw, a sign of weakness, or evidence that you're fundamentally bad at being around people. It's a learned pattern — sometimes shaped by specific past experiences (being embarrassed, excluded, or harshly judged), sometimes by a naturally more sensitive nervous system, often by some combination of both — and learned patterns, unlike fixed traits, can be unlearned. The entire premise of this course rests on that fact: the fear-avoidance cycle got built through repetition, and it can be dismantled the same way, through a different kind of repetition, deliberately structured rather than left to chance.</p>
+
+    <h2>What "getting better" actually looks like</h2>
+    <p>It's worth setting an honest expectation early: the goal of this course isn't to eliminate anxiety entirely, or to turn you into someone who feels nothing walking into a room of strangers. Some baseline nervousness in genuinely new or high-stakes social situations is normal for nearly everyone, anxious or not. The realistic goal — and a genuinely achievable one — is to shrink the anxiety down to a manageable level, stop it from driving avoidance, and build enough tolerance for the discomfort that it stops running your decisions. People who've worked through this kind of process typically don't describe becoming fearless; they describe the fear becoming quieter, more manageable, and much less able to dictate what they do and don't do.</p>
+
+    <h2>What this course won't ask you to do</h2>
+    <p>This isn't a course about forcing yourself to become fearless, or about treating every social interaction as a challenge to be conquered through sheer willpower. It's a structured process, grounded in well-established techniques, that works specifically because it's gradual and evidence-based rather than relying on forcing yourself through raw effort alone. You'll keep your own pace throughout, and the goal is a genuinely manageable, workable relationship with social situations — not a personality transplant into someone entirely different from who you actually are.</p>
+    <p>It's also worth setting expectations about timeline. Real, durable change in anxiety patterns typically takes weeks to months of consistent work, not days. If you've tried to "just get over" social anxiety before through sheer force of will and found it didn't stick, that's not evidence you're uniquely resistant to change — it's evidence that willpower alone, without the structured cognitive and exposure techniques this course provides, usually isn't enough on its own. The structure matters as much as the effort.</p>
+
+    <h2>How this course is structured</h2>
+    <p>Each module builds directly on the one before it: Module 1 maps your specific anxiety pattern, Module 2 gives you tools for the thoughts driving it, Module 3 puts those tools into action through structured exposure, Module 4 builds the practical conversational skills that make interactions go more smoothly once anxiety is less dominant, Module 5 addresses the very real energy cost of doing this work, and Module 6 consolidates everything into a sustainable, ongoing approach. Skipping ahead rarely works well here — each module genuinely depends on groundwork from the ones before it, so working through them in order, even when a later module feels more urgently relevant to your specific struggles, will serve you better than jumping straight to it.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Think of one recent social situation you avoided, or got through only by protecting yourself somehow (staying quiet, leaving early, avoiding eye contact). Write down: what did you predict would happen if you hadn't avoided or protected yourself that way? Keep this note — you'll return to it directly in Lesson 5.</p>
+    </div>
+
+    <p>The next two lessons build your specific map: exactly which situations trigger your anxiety and how, and how your energy and nervous system respond to social demand. From Module 2 onward, we start actively working on the thoughts and predictions that drive the cycle you've just learned about.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <span class="nav-placeholder">← Start of course</span>
+    <a href="/courses/confidence-blueprint/content/lessons/02-your-trigger-map.html">Lesson 2: Your Trigger Map →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

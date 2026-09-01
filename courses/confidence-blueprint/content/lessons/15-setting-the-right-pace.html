@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting the Right Pace — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 5 · Managing Energy & Overwhelm</span>
+    <span class="lesson-num-badge">Lesson 15 of 18</span>
+  </div>
+  <h1 class="lesson-title">Setting the Right Pace</h1>
+  <p class="lesson-sub">Building a social life that energises rather than exhausts you</p>
+  <div class="lesson-body">
+
+    <p>This lesson closes out the energy management module by pulling recognition and recovery together into an overall sustainable rhythm — a pace of social engagement and exposure work that continues building your confidence without running you into the ground. Pace is worth thinking about deliberately, because both too little and too much carry real costs, in different ways.</p>
+
+    <h2>The two failure modes of pacing</h2>
+    <p><strong>Too slow.</strong> Under-pacing — doing exposure work only occasionally, with long gaps between attempts — tends to let some of the anxious prediction creep back in between exposures, slowing progress and sometimes making each new attempt feel almost like starting over. This often comes from an understandable but ultimately counterproductive instinct toward excessive caution, treating every exposure as something to recover fully from before considering another.</p>
+    <p><strong>Too fast.</strong> Over-pacing — pushing through consistent depletion, taking on more exposures and social commitments than your actual energy can sustain — risks the kind of overwhelming experience discussed in Module 3, which can get remembered as confirming evidence for the anxiety rather than disconfirming it, effectively working against the very progress you're trying to build.</p>
+    <p>The right pace sits between these: frequent enough that momentum builds and doesn't stall, but respectful enough of your actual energy capacity that each attempt has a genuine chance to go well rather than being undermined by exhaustion going in.</p>
+
+    <h2>What sustainable pacing actually looks like</h2>
+    <p>In practice, this usually means several moderate exposures or social commitments spread across a week, rather than either one isolated attempt or an overloaded schedule, with deliberate recovery time built in around the more demanding ones per the last lesson. It also means being willing to adjust week to week based on an honest energy check-in, rather than rigidly following a fixed schedule regardless of how you're actually doing — pacing is a living, adjustable thing, not a plan set once and never revisited.</p>
+
+    <h2>Progress isn't linear, and pace shouldn't pretend it is</h2>
+    <p>It's worth expecting your actual capacity to fluctuate — some weeks will have more available energy than others, for reasons that may have nothing to do with your anxiety work specifically (sleep, general life stress, physical health). A sustainable approach to pacing treats this as normal and expected, scaling activity up and down with actual capacity, rather than treating any week with reduced output as a failure or a step backward. The overall trend across months, not the variation week to week, is what actually matters for genuine progress.</p>
+
+    <h2>A simple framework for weekly planning</h2>
+    <p>At the start of each week, it's worth briefly answering three questions: what's my current energy baseline this week (using the warning-signs awareness from Lesson 13), what ladder items make sense to attempt given that baseline, and what recovery time needs to be protected around the more demanding ones. This doesn't need to be an elaborate process — a few minutes of honest planning tends to produce a noticeably more sustainable week than simply reacting to whatever comes up, without any deliberate pacing at all.</p>
+
+    <h2>Pace will naturally shift as the course progresses</h2>
+    <p>It's worth expecting your sustainable pace to change over the twelve weeks, not stay fixed from the start. Early on, even relatively small exposures may carry significant energy cost, given how much anxiety and unfamiliarity is involved. As situations move down your ladder from difficult to manageable to comfortable, the same activities generally become far less energy-intensive, which usually means your overall sustainable capacity for social contact increases over the course, not just your tolerance for any single situation. Tracking this shift explicitly — noticing that what used to require careful pacing now happens almost without thinking about it — is itself good evidence of genuine progress.</p>
+
+    <h2>Pace is personal — resist comparing yours to anyone else's</h2>
+    <p>It's worth explicitly warning against comparing your own pace to anyone else's, including other people's accounts of working through similar anxiety, or even an imagined "ideal" version of how fast this should go. Genuine, appropriate pace depends on your specific starting point, your specific triggers, your available time and energy, and factors entirely outside this course's control. A pace that looks slower on paper but is genuinely sustainable for you will produce better long-term results than a faster pace borrowed from someone else's circumstances and pushed through unsustainably.</p>
+
+    <h2>Trust the process over any single week's results</h2>
+    <p>Any individual week may look uneven relative to your plan — an exposure that went harder than expected, a recovery period that took longer than budgeted, an energy dip that forced a lighter week than intended. None of this, taken in isolation, indicates the overall approach isn't working. What matters far more than any single week is the trend across the full twelve weeks: are the same categories of situations, on the whole, requiring less deliberate pacing and producing less anxiety than they did a month or two earlier? That broader trend is the real signal worth tracking, not the noise of any individual week.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Using the three-question framework above, plan out this coming week: your current energy baseline, one or two specific ladder items that fit it, and where you'll protect recovery time. Revisit and adjust it partway through the week if your actual capacity turns out different from what you expected.</p>
+    </div>
+
+    <p>You now have the full picture of sustainable progress: recognising depletion, recovering from it effectively, and pacing your overall effort so it builds rather than burns you out. The final module looks at where you've come from, and how to sustain what you've built well beyond the end of this course.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/14-recovery-rituals.html">← Lesson 14: Recovery Rituals</a>
+    <a href="/courses/confidence-blueprint/content/lessons/16-your-loneliness-profile-revisited.html">Lesson 16: Your Loneliness Profile Revisited →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

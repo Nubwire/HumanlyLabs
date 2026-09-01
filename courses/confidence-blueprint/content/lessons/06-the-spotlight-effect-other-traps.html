@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Spotlight Effect & Other Traps — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 2 · Rewriting the Story</span>
+    <span class="lesson-num-badge">Lesson 6 of 18</span>
+  </div>
+  <h1 class="lesson-title">The Spotlight Effect & Other Traps</h1>
+  <p class="lesson-sub">Why others notice and judge you far less than you think</p>
+  <div class="lesson-body">
+
+    <p>Of all the distortions covered in Lesson 4, one shows up so consistently in social anxiety that it deserves its own dedicated lesson: the spotlight effect, the well-documented tendency to significantly overestimate how much other people notice and evaluate us. Understanding this one pattern in depth tends to do a disproportionate amount of work in loosening social anxiety's grip, because it sits underneath so many other specific fears.</p>
+
+    <h2>What the spotlight effect actually is</h2>
+    <p>The spotlight effect describes a consistent, well-replicated finding in social psychology: people systematically believe they're being watched, noticed, and evaluated far more closely by others than they actually are. This happens because each of us is, quite naturally, the centre of our own experience — we're intensely aware of our own anxiety, our own stumbles, our own perceived flaws — and that intense self-awareness gets mistakenly projected outward, as though everyone else must be noticing us just as closely as we're noticing ourselves. In reality, most people are just as absorbed in their own experience, their own self-consciousness, their own concerns, and have far less spare attention for closely monitoring you than it feels like from the inside of your own head.</p>
+    <p>Classic experiments on this effect are worth knowing about directly: in one well-known study, participants wore a moderately embarrassing t-shirt into a room of strangers and estimated that roughly half the room would remember it. The actual number who noticed and later recalled it was far lower — usually less than half of what participants predicted. This gap between predicted and actual notice-taking is the spotlight effect in action, and it applies just as much to a stumbled sentence, a moment of visible nervousness, or an awkward pause as it does to a t-shirt.</p>
+
+    <h2>Related traps worth naming specifically</h2>
+    <p><strong>The illusion of transparency</strong> — the related belief that your internal anxious state is more visible to others than it actually is. Feeling intensely anxious internally does not mean it's showing on your face or in your voice nearly as clearly as it feels from the inside; internal and external experience of anxiety are far less correlated than anxious people typically assume.</p>
+    <p><strong>The negativity bias in memory</strong> — even on the rare occasion someone does notice a genuine social stumble, they typically don't dwell on it or judge it nearly as harshly or for nearly as long as the anxious person imagines. Most people are quick to move past minor social imperfections in others, in large part because they're preoccupied with their own.</p>
+    <p><strong>Assumed uniqueness of your anxiety</strong> — many socially anxious people believe their level of nervousness is unusually visible or unusual compared to everyone else in the room, when in reality a significant portion of any given room is managing some degree of their own social self-consciousness, largely invisible to everyone else for the same reasons yours is.</p>
+
+    <h2>Using this practically, not just intellectually</h2>
+    <p>Knowing about the spotlight effect intellectually is a start, but it tends to become genuinely useful only once you start actively applying it in the moment — specifically, noticing when a spotlight-effect thought shows up ("everyone's going to notice I'm nervous") and running it through the rethinking process from Lesson 5: what's the actual evidence that people are watching this closely, versus absorbed in their own experience? What would I actually remember about a stranger's minor stumble a week later, if I'm honest?</p>
+
+    <h2>Why this effect persists even after you know about it</h2>
+    <p>It's worth being honest that simply knowing about the spotlight effect intellectually rarely eliminates it entirely on its own — this is true of most cognitive biases, which tend to operate automatically regardless of conscious knowledge about them. The value of understanding it isn't that the knowledge alone fixes the pattern; it's that it gives you a specific, nameable thing to check for and challenge in the moment, using the rethinking process from Lesson 5, rather than being swept along by an unexamined feeling of certainty that everyone is watching and judging closely.</p>
+    <p>Over repeated practice — noticing the spotlight-effect thought, naming it specifically, and running it through the evidence-checking process — most people find its grip does genuinely loosen over time, not because the bias disappears entirely, but because the automatic belief in it weakens with enough repeated disconfirming evidence, exactly the same mechanism covered for exposure in the next module.</p>
+
+    <h2>A useful mental shortcut</h2>
+    <p>Many people find it helpful to keep a simple, memorable phrase in mind for moments the spotlight effect shows up strongly: "they're thinking about themselves, not me" — a rough, quick version of the fuller evidence-checking process, useful specifically for in-the-moment situations where a full written analysis isn't practical. It's not a substitute for the deeper rethinking work, but as a quick redirect in the middle of a live interaction, it can meaningfully take the edge off in the moment itself.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Think back to the last time you were mildly embarrassed by something in a social setting. Now try to recall: can you name a specific instance of someone else visibly stumbling — a slip of the tongue, an awkward pause — in a social setting you were part of recently? For most people, this is surprisingly hard to recall in detail, which is itself direct evidence of how little these moments actually stick with observers.</p>
+    </div>
+
+    <p>You've now built the full cognitive toolkit: understanding the fear-avoidance cycle, catching automatic thoughts, rethinking them realistically, and specifically countering the spotlight effect. Module 3 puts all of this into action — structured, graded exposure to the situations you mapped back in Lesson 2.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/05-realistic-rethinking.html">← Lesson 5: Realistic Rethinking</a>
+    <a href="/courses/confidence-blueprint/content/lessons/07-the-exposure-ladder.html">Lesson 7: The Exposure Ladder →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

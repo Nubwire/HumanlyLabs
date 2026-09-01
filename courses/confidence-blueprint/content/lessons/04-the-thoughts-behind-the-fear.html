@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Thoughts Behind the Fear — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 2 · Rewriting the Story</span>
+    <span class="lesson-num-badge">Lesson 4 of 18</span>
+  </div>
+  <h1 class="lesson-title">The Thoughts Behind the Fear</h1>
+  <p class="lesson-sub">Identifying the cognitive distortions that fuel social anxiety</p>
+  <div class="lesson-body">
+
+    <p>Underneath every anxious social prediction is a specific thought, even when it happens so fast it barely registers as a distinct thought at all — more like an instant, automatic sense of dread. CBT calls these automatic thoughts, and learning to notice them clearly, rather than just feeling their downstream emotional effect, is the foundation for everything the next two lessons build on. This lesson is about slowing that process down enough to actually see the thoughts driving the fear.</p>
+
+    <h2>Automatic thoughts happen faster than you notice</h2>
+    <p>In an anxious social moment, what you consciously experience is usually just the feeling — a wave of dread, an urge to leave, a blank mind — without necessarily noticing the specific thought that triggered it. That thought is still there; it's just moving fast enough, and has been repeated often enough, that it fires almost instantly and automatically, the way a well-practised skill runs without conscious thought. The first real skill of this module is learning to catch these thoughts by deliberately slowing down and asking, in the moment or immediately after: what did I just predict would happen?</p>
+
+    <h2>Common distortions in socially anxious thinking</h2>
+    <p>Certain patterns of distorted thinking show up especially often in social anxiety. Recognising your own versions of these is often the first moment things start to shift, simply because naming a distortion clearly tends to loosen its grip somewhat, even before you've done any active work to challenge it.</p>
+    <p><strong>Mind reading</strong> — assuming you know what others are thinking about you ("they think I'm boring") without any actual evidence, when in reality you have no direct access to another person's thoughts at all.</p>
+    <p><strong>Fortune telling</strong> — confidently predicting a negative outcome before a situation has even happened ("this is going to be awkward," "I'll have nothing to say"), treating the prediction as fact rather than as one anxious guess among many possible outcomes.</p>
+    <p><strong>Catastrophising</strong> — jumping straight to the worst-case interpretation of a fairly minor social stumble (a pause, an awkward joke, a forgotten name) and treating it as a much bigger deal than it would actually register as to anyone else.</p>
+    <p><strong>Discounting the positive</strong> — noticing and remembering the one slightly awkward moment in an otherwise fine interaction, while barely registering everything that went normally or well.</p>
+    <p><strong>Emotional reasoning</strong> — treating the intensity of the anxious feeling itself as evidence that something is actually wrong ("I feel this anxious, so something bad must be happening"), when feeling anxious and something actually being wrong are two entirely separate things.</p>
+
+    <h2>Why naming the distortion matters</h2>
+    <p>It's easy to underestimate how much simply identifying a distortion accurately can do on its own. When an anxious thought is experienced as an undifferentiated wave of "this is bad," it feels like an unquestionable fact. When the same thought is identified specifically as "that's mind reading — I don't actually have evidence for what they're thinking," it becomes something you can examine and question, rather than something you're simply swept along by. This shift — from an unexamined feeling to a nameable, examinable thought — is the entire mechanism behind the rethinking technique covered in the next lesson.</p>
+
+    <h2>Building your own distortion vocabulary</h2>
+    <p>Over the coming week, the goal isn't to eliminate these thoughts — that's not realistic, and trying to suppress a thought directly tends to backfire and make it more persistent, not less. The goal is simply to get better at noticing and naming them as they happen, treating it almost like a specific noticing practice rather than a fight against the thoughts themselves. Most people find that a small handful of distortions account for the large majority of their own anxious thinking, once they start paying attention — you'll likely notice your own repeating pattern within just a few days of paying attention.</p>
+
+    <h2>You'll likely find one or two dominant patterns</h2>
+    <p>Most people, once they start tracking this deliberately, find that one or two of the five distortions above account for the clear majority of their anxious social thinking, rather than all five showing up with equal frequency. Someone might find mind reading is their dominant pattern, showing up in almost every social prediction, while catastrophising rarely features. Someone else might find the reverse. Identifying your own personal dominant pattern is genuinely useful, because it means the rethinking work in the next lesson can focus disproportionately on your actual most-used distortion, rather than treating all five as equally relevant to your specific situation.</p>
+    <p>It's also common for the dominant pattern to shift somewhat depending on the type of situation — mind reading might dominate in one-on-one conversations, while fortune telling dominates before group events. Noting this kind of variation, rather than assuming a single uniform pattern across every context, will make the rethinking work considerably more precise and effective.</p>
+
+    <h2>These distortions aren't unique to social anxiety</h2>
+    <p>It's worth knowing that all five of these distortions show up broadly across many kinds of anxiety and low mood, not just social anxiety specifically — they're general patterns of unhelpful thinking that CBT addresses across a wide range of difficulties. Recognising them here, in the specific context of social situations, is a skill that tends to generalise usefully to other areas of life too, since the same distorted patterns often show up in worry about work, health, or other concerns in a similar form.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Over the next few days, whenever you notice social anxiety spike, pause and ask: what exact thought just went through my mind? Write it down, then match it to one of the five distortions above if it fits. Don't try to challenge it yet — for now, just build the habit of catching and naming it.</p>
+    </div>
+
+    <p>The next lesson gives you the actual technique for working with these thoughts once you've caught them — evidence-based ways to challenge anxious predictions rather than simply accepting them as fact.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/03-social-energy-your-baseline.html">← Lesson 3: Social Energy & Your Baseline</a>
+    <a href="/courses/confidence-blueprint/content/lessons/05-realistic-rethinking.html">Lesson 5: Realistic Rethinking →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Exposure Ladder — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 3 · Graded Exposure</span>
+    <span class="lesson-num-badge">Lesson 7 of 18</span>
+  </div>
+  <h1 class="lesson-title">The Exposure Ladder</h1>
+  <p class="lesson-sub">How to design a step-by-step anxiety hierarchy for your specific fears</p>
+  <div class="lesson-body">
+
+    <p>Understanding the fear-avoidance cycle and rethinking anxious predictions both weaken social anxiety's grip — but the step that actually breaks the cycle directly is exposure: deliberately, repeatedly facing the situations you'd normally avoid, structured carefully enough that it builds confidence rather than reinforcing the fear. This lesson is about building your personal exposure ladder — a graded sequence from least to most anxiety-provoking — using the trigger map you built back in Lesson 2.</p>
+
+    <h2>Why exposure works</h2>
+    <p>Recall from Lesson 1 that avoidance keeps the fear-avoidance cycle running by preventing you from ever discovering that the feared outcome usually doesn't happen. Exposure directly interrupts this: by actually entering a feared situation and staying in it without your usual safety behaviours, you give yourself the chance to gather real evidence — evidence that the anxious prediction was wrong, or at least far less catastrophic than predicted, and evidence that the anxiety itself, while uncomfortable, is tolerable and does eventually settle rather than spiralling indefinitely. This new evidence, repeated enough times, is what actually retrains the automatic prediction at its source — far more effectively than reasoning about it alone, though the rethinking skills from Module 2 make the exposures considerably easier to tolerate along the way.</p>
+
+    <h2>Why grading it matters</h2>
+    <p>Jumping straight to your most feared situation rarely works well — it's more likely to produce an overwhelming experience that reinforces the very avoidance you're trying to break, precisely because an experience that's too intense tends to get remembered as confirmation of danger rather than as useful new evidence. A graded ladder — starting with situations that produce manageable, moderate anxiety and working systematically upward — lets you build a track record of success at each level before moving to the next, so that by the time you reach the harder items, you're carrying real, earned confidence rather than facing them cold.</p>
+
+    <h2>Building your ladder</h2>
+    <p>Using your Lesson 2 trigger map, list out as many specific situations as you can — aim for at least eight to ten — that touch on your core social fears, at a range of difficulty levels. For each one, rate the anxiety you'd expect on a simple 0–10 scale. A useful ladder typically spans the full range:</p>
+    <ul>
+      <li><strong>Low rungs (2–4):</strong> small, low-stakes exposures — making brief small talk with a cashier, asking a stranger for the time, sending a text you've been putting off.</li>
+      <li><strong>Middle rungs (5–7):</strong> moderate exposures — attending a group event for a set amount of time, initiating a conversation with someone you don't know well, sharing an opinion in a small group setting.</li>
+      <li><strong>Top rungs (8–10):</strong> your core, most-avoided situations — the ones from your original trigger map that carry the most weight, whatever those specifically are for you.</li>
+    </ul>
+    <p>Order the full list from lowest to highest anxiety rating. That ordered list is your ladder, and it's the working material for the rest of this module and much of what follows.</p>
+
+    <h2>A few design principles</h2>
+    <p><strong>Specificity matters.</strong> "Be more social" isn't a usable exposure item; "say hello to one coworker I don't usually talk to" is. Vague items are hard to actually complete and hard to judge success on.</p>
+    <p><strong>Repeatability matters.</strong> Favour items you can do more than once, since repetition at each rung is what builds the confidence needed to move up — a single successful attempt is a good start, but several successful attempts at the same rung produce far more durable change.</p>
+    <p><strong>No safety behaviours during exposure.</strong> An exposure item completed while still rehearsing exit lines or avoiding eye contact doesn't fully interrupt the cycle — the point is to face the situation directly enough that you actually gather evidence, not to find a way to endure it while still protecting yourself.</p>
+
+    <h2>What to do if you're unsure how to rate something</h2>
+    <p>It's common to feel uncertain about exactly where a situation belongs on the 0–10 scale, especially for items you've been avoiding for so long that you don't have recent direct experience to calibrate against. In that case, a reasonable approach is to estimate based on how you'd expect to feel walking up to the situation right now, in this moment, rather than trying to predict the whole interaction from start to finish — the anticipatory anxiety right before an exposure is usually the most intense point anyway, and a reasonable proxy for the overall difficulty rating.</p>
+    <p>It's also fine, and expected, for your ratings to turn out somewhat inaccurate once you actually start attempting items — you might find a 6 was really more like a 4, or the reverse. This is useful information in itself, not a sign you did the ladder-building step wrong; simply adjust the rating and, if needed, the ordering, once you have real experience to draw on.</p>
+
+    <h2>Your ladder is a living document</h2>
+    <p>Expect to revise this ladder as you go — adding items you hadn't initially thought of, splitting an item that turns out to be harder than expected into smaller intermediate steps, or removing something once it stops producing meaningful anxiety at all. Treat the version you build now as a solid, genuinely useful starting draft rather than a fixed, final document; the ladder's value comes from actually using it and adjusting based on real experience, not from getting the initial version perfectly calibrated.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Build your own ladder now: at least eight items, rated 0–10, ordered from easiest to hardest, using your Lesson 2 trigger map as raw material. Keep it somewhere you'll return to regularly — this ladder is the backbone of the next two lessons and much of the rest of the course.</p>
+    </div>
+
+    <p>The next lesson turns your ladder into action — how to actually run your first experiments, starting at the bottom rungs, in a way that maximises what you learn from each one.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/06-the-spotlight-effect-other-traps.html">← Lesson 6: The Spotlight Effect & Other Traps</a>
+    <a href="/courses/confidence-blueprint/content/lessons/08-your-first-experiments.html">Lesson 8: Your First Experiments →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

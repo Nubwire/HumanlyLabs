@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Trigger Map — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 1 · Mapping Your Anxiety</span>
+    <span class="lesson-num-badge">Lesson 2 of 18</span>
+  </div>
+  <h1 class="lesson-title">Your Trigger Map</h1>
+  <p class="lesson-sub">Identifying your specific social situations and avoidance patterns</p>
+  <div class="lesson-body">
+
+    <p>Social anxiety rarely shows up identically in every situation — most people have a fairly specific pattern of triggers, rather than a uniform fear of all social contact. Someone might feel completely at ease one-on-one with a close friend but dread walking into a party alone. Someone else might handle groups fine but freeze up specifically when asked to speak in a meeting. Treating "social anxiety" as one undifferentiated thing makes it much harder to work on directly. This lesson is about building a specific, honest map of your own pattern, which the rest of the course will use as its working material.</p>
+
+    <h2>Situational triggers vs. general anxiety</h2>
+    <p>It helps to separate two related but distinct things: situational triggers (specific types of social contexts that reliably spike your anxiety — public speaking, group settings, one-on-one conversations with people you don't know well, authority figures, being the centre of attention) and the underlying anxious thought patterns that show up across many of those situations (fear of judgment, fear of saying something wrong, fear of visible physical anxiety symptoms). Mapping the specific situations first gives you something concrete to work with; the underlying thought patterns, which Module 2 covers directly, tend to become clearer once you can see them showing up repeatedly across your specific trigger list.</p>
+
+    <h2>The three components of an avoidance pattern</h2>
+    <p>For each trigger situation, it's worth noting three separate things, because they call for slightly different responses later in the course:</p>
+    <ul>
+      <li><strong>Full avoidance</strong> — situations you skip entirely: declining invitations, avoiding certain classes or events, staying home rather than risk it.</li>
+      <li><strong>Safety behaviours</strong> — ways you protect yourself while still attending: over-rehearsing what you'll say, staying near the exit, checking your phone to look occupied, avoiding eye contact, staying quiet and letting others lead.</li>
+      <li><strong>Post-event processing</strong> — the anxious replay afterward: mentally re-running the interaction, searching for evidence you embarrassed yourself, assuming the worst interpretation of anything ambiguous.</li>
+    </ul>
+    <p>All three keep the fear-avoidance cycle from Lesson 1 running, even though safety behaviours and post-event processing are much less visible than full avoidance — you might be attending plenty of social events and still be firmly stuck in the cycle, because the safety behaviours and the anxious replay afterward are doing the same maintaining work that skipping the event entirely would do.</p>
+
+    <h2>Building your map without judgment</h2>
+    <p>As you build this map, it's genuinely important to do it without self-criticism. The goal is accurate observation, not a list of personal failings. Every pattern you identify — even ones that feel embarrassing to admit, like rehearsing an entire conversation in the car beforehand, or leaving events early on a manufactured excuse — is completely ordinary anxious-mind behaviour, not evidence of some deeper flaw. The more honestly you can name these patterns now, without shame getting in the way, the more useful the rest of this course will be, because every later module builds directly on this map.</p>
+
+    <h2>Use the Social Anxiety Check to structure your map</h2>
+    <p>The Social Anxiety Check tool below runs a structured assessment of your specific triggers, safety behaviours, and typical anxiety intensity across common social situations, giving you a clear, organised starting profile rather than a vague sense of "I get anxious sometimes." Take it now, answering based on how things have actually been for you recently, not how you think they should be.</p>
+
+    <h2>A note on how detailed to get</h2>
+    <p>It's worth aiming for real specificity here rather than broad categories. "Parties" is too broad to be useful; "arriving at a party alone, after most people have already arrived and formed into small groups" is specific enough to actually work with later. The more precisely you can describe not just the situation but the exact moment or aspect of it that spikes your anxiety most, the more useful your map becomes for building the exposure ladder in Module 3 — vague categories produce vague, hard-to-execute exposure items, while specific descriptions translate directly into concrete, doable steps.</p>
+    <p>It also helps to note roughly how long you've been avoiding or managing each situation this way. Some patterns are relatively recent and may loosen relatively quickly; others have been reinforced for years and may reasonably take longer. Neither timeline is a problem — it's simply useful context for setting realistic expectations about your own specific process, rather than comparing your pace to some generic timeline that may not reflect how long your particular pattern has had to become established.</p>
+
+    <h2>Physical symptoms belong on the map too</h2>
+    <p>Alongside the situations themselves, it's worth noting the specific physical symptoms that show up for you — racing heart, blushing, shaky voice, sweating, a blank mind — since these often become their own secondary source of anxiety (fear of the symptoms being visible, on top of fear of the original situation). Module 2's cognitive work and Module 3's exposure work both apply directly to this secondary layer as well, but only if it's explicitly on your map rather than left as an unexamined, background worry running underneath everything else.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>After the assessment, pick your top three trigger situations and write, for each one, what you typically do to avoid or protect yourself. This specific list becomes the raw material for your exposure ladder in Module 3 — the more concrete it is now, the more useful it'll be then.</p>
+    </div>
+
+    <p>You now have a specific map instead of a vague, overwhelming sense of "I struggle socially." That specificity is genuinely powerful — it turns an abstract feeling into a concrete, workable list, which is exactly what the rest of this course is designed to work with.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🫁</div>
+    <div class="tool-copy"><strong>Use the Social Anxiety Check</strong>This lesson pairs with the Social Anxiety Check tool — use it now while the ideas are fresh.</div>
+    <a href="/social-anxiety">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/01-the-anatomy-of-social-anxiety.html">← Lesson 1: The Anatomy of Social Anxiety</a>
+    <a href="/courses/confidence-blueprint/content/lessons/03-social-energy-your-baseline.html">Lesson 3: Social Energy & Your Baseline →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

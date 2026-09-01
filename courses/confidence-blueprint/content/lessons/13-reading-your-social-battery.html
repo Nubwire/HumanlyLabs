@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Your Social Battery — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 5 · Managing Energy & Overwhelm</span>
+    <span class="lesson-num-badge">Lesson 13 of 18</span>
+  </div>
+  <h1 class="lesson-title">Reading Your Social Battery</h1>
+  <p class="lesson-sub">Learning to recognise your energy limits before they collapse</p>
+  <div class="lesson-body">
+
+    <p>By this stage in the course, you're likely doing considerably more active socialising and exposure work than when you started — which is real progress, but it also means energy management, first introduced back in Lesson 3, matters more now than it did at the beginning. This lesson is about learning to read your own limits accurately and proactively, rather than discovering them only after you've already gone past them.</p>
+
+    <h2>Why anxious socialising depletes faster</h2>
+    <p>As covered in Lesson 3, anxious social interactions carry a second layer of cognitive effort — self-monitoring, threat-scanning, managing safety behaviours — on top of the ordinary effort any interaction requires. As you're doing more exposure work, you're likely spending more time in situations that still carry at least some of this extra load, even as the intensity of the anxiety itself decreases with each successful exposure. This means your energy expenditure doesn't necessarily drop as fast as your anxiety does, especially in the middle stretch of this process — a genuinely common and easy-to-miss pattern that can make it feel like you're "still struggling" even as the underlying anxiety is measurably improving.</p>
+
+    <h2>The gap between capability and capacity</h2>
+    <p>It's worth distinguishing clearly between what you're now capable of and how much of it you can sustainably do. The exposure work in Module 3 has likely expanded what situations you're capable of handling — genuinely difficult evidence to argue with. But being capable of handling a situation doesn't mean doing five of them in a row, back to back, all week, is sustainable or necessary. Progress in this course is measured by capability expanding, not by maximising volume; pushing volume past what your energy can sustain tends to produce exhaustion that can look, from the inside, disconcertingly similar to relapse, even when the underlying anxiety work is genuinely holding.</p>
+
+    <h2>Learning your specific warning signs</h2>
+    <p>Social depletion tends to show up through a specific, fairly recognisable set of signals, worth learning to notice early rather than only in hindsight:</p>
+    <ul>
+      <li>Conversation starting to feel effortful in a way it didn't earlier in the day or week</li>
+      <li>Patience thinning — irritability with people or situations that wouldn't normally bother you</li>
+      <li>A pull toward cancelling plans that you were previously looking forward to</li>
+      <li>Anxiety symptoms that seem disproportionate to the specific situation, suggesting an already-depleted baseline rather than the situation itself being unusually hard</li>
+      <li>A flat, going-through-the-motions quality to interactions that would normally feel more engaged</li>
+    </ul>
+    <p>These are worth treating as genuine data, not as a sign the exposure work has failed — noticing them accurately and responding by pacing appropriately is itself part of doing this work well, not a departure from it.</p>
+
+    <h2>Building the check-in habit</h2>
+    <p>Rather than waiting for an obvious crash, it helps to build a brief, regular check-in — a quick, honest read of your current energy before committing to another social plan or exposure attempt, similar in spirit to the check-ins from your original Module 1 baseline. This isn't about avoiding difficulty; it's about choosing difficulty deliberately, from a place of actually having the capacity for it, rather than pushing through depletion in a way that risks turning a genuinely valuable exposure into an overwhelming, poorly-timed one.</p>
+
+    <h2>Use the Social Battery tool again, now with more data</h2>
+    <p>Return to the Social Battery tool now that you have several weeks of real exposure and social-skills practice behind you. Your patterns have likely shifted since your Lesson 3 baseline — many people find their capacity for previously anxiety-heavy situations has genuinely grown, even while their overall energy limits remain real and worth respecting.</p>
+
+    <h2>A common, confusing pattern worth naming</h2>
+    <p>Many people going through this process notice something that initially seems contradictory: their anxiety in a given situation has genuinely decreased, yet they still feel tired afterward, sometimes even more tired than they expected given how much less anxious the situation felt. This isn't a sign the anxiety work isn't real — it typically reflects that you're now doing more, and staying in situations longer, than you would have during the avoidance-heavy period before this course. More total social exposure, even at lower anxiety per interaction, can still add up to more total energy expenditure across a week. Recognising this pattern for what it is — a sign of expanded activity, not failed progress — prevents it from being misread as a setback.</p>
+
+    <h2>Energy management is a skill, not a character trait</h2>
+    <p>It's worth framing this the same way the rest of the course frames anxiety itself: reading and managing your social energy accurately is a learnable skill, not a fixed trait you either have or don't. Some people naturally track this more intuitively than others, but everyone can get considerably better at it with deliberate attention, the same way everyone can get better at recognising and rethinking automatic thoughts with practice. Don't assume poor energy awareness now means it'll always be difficult to read — it's simply an area that, like the others in this course, responds well to consistent, deliberate practice.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Before your next planned exposure or social commitment, do a brief, honest energy check using the warning-signs list above. If two or more are present, it's a reasonable, non-defeatist choice to either scale the plan down or reschedule — not a step backward in your progress.</p>
+    </div>
+
+    <p>The next lesson goes further into recovery specifically — how to actually recharge effectively, so social exertion doesn't leave you depleted for days at a time.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🔋</div>
+    <div class="tool-copy"><strong>Use the Social Battery</strong>This lesson pairs with the Social Battery tool — use it now while the ideas are fresh.</div>
+    <a href="/social-battery">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/12-the-art-of-follow-through.html">← Lesson 12: The Art of Follow-Through</a>
+    <a href="/courses/confidence-blueprint/content/lessons/14-recovery-rituals.html">Lesson 14: Recovery Rituals →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

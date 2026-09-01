@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Processing Outcomes — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 3 · Graded Exposure</span>
+    <span class="lesson-num-badge">Lesson 9 of 18</span>
+  </div>
+  <h1 class="lesson-title">Processing Outcomes</h1>
+  <p class="lesson-sub">How to interpret social interactions without the anxious post-mortem</p>
+  <div class="lesson-body">
+
+    <p>Recall from Lesson 2 that post-event processing — the anxious mental replay after a social interaction — is one of the three components that keeps the fear-avoidance cycle running, often just as powerfully as full avoidance or safety behaviours, even though it happens entirely after the fact and is invisible to anyone else. This lesson is about interrupting that replay specifically, since it can otherwise quietly undo a lot of the genuine progress an exposure just made.</p>
+
+    <h2>What the anxious post-mortem actually does</h2>
+    <p>After a social interaction, an anxious mind often runs an automatic, distorted review: scanning for anything that might have gone wrong, replaying any awkward moment repeatedly, and interpreting ambiguous responses (a shorter reply than expected, a pause, a neutral expression) in the worst possible light. This process typically applies the exact same distortions covered in Module 2 — mind reading, catastrophising, discounting the positive — but does so retroactively, which makes it feel like an objective review of what happened rather than another round of the same distorted thinking. The effect is that even a genuinely successful exposure can get quietly reframed, hours later, into evidence that things went badly, simply through this replay process.</p>
+
+    <h2>The specific mechanics of the replay trap</h2>
+    <p>The post-mortem tends to focus disproportionately on any single imperfect moment — a stumbled word, a pause, a joke that didn't quite land — while barely registering everything that went normally or well. This is the discounting-the-positive distortion from Lesson 4 operating at full strength, precisely because it has unlimited time and no real-time social pressure to interrupt it; alone with your thoughts afterward, there's nothing stopping the anxious mind from returning to that one moment over and over, magnifying it each time, until it dominates your memory of the entire interaction far more than it dominated the interaction itself.</p>
+
+    <h2>A structured alternative to the replay</h2>
+    <p>Rather than letting the review happen automatically and uncontrolled, it helps to run a deliberate, structured version instead — closely tied to the experiment structure from Lesson 8:</p>
+    <ul>
+      <li><strong>What actually happened, factually</strong> — described the way a neutral observer would describe it, not the way your anxious narration frames it.</li>
+      <li><strong>Compare to your prediction</strong> — go back to what you actually predicted beforehand and check the honest gap, the same comparison from Lesson 8.</li>
+      <li><strong>What went fine or well</strong> — deliberately list this, since it won't surface on its own; the anxious mind doesn't spontaneously catalogue what went right.</li>
+      <li><strong>One thing to adjust next time, if anything</strong> — genuinely useful feedback, if there is any, framed as calibration for next time rather than as evidence of failure.</li>
+    </ul>
+    <p>Doing this once, briefly, in writing, tends to be far more useful — and far less costly — than the unstructured, repeated mental replay it's meant to replace. It gives you the genuinely useful part of reflection (learning, calibration) without the distorted, repetitive part that just reinforces anxiety.</p>
+
+    <h2>Setting a time limit on reflection</h2>
+    <p>It's worth giving yourself an explicit, fairly short window for this structured review — ten minutes, once, shortly after the event — and treating anything beyond that as the replay trap reasserting itself rather than useful further reflection. If you notice yourself returning to the same interaction hours or days later, that's a good cue to consciously redirect: you've already done the useful review; anything further is the anxious cycle, not genuine learning.</p>
+
+    <h2>Involving someone else in the check, sparingly</h2>
+    <p>Occasionally, checking your factual account of an interaction against someone else's perspective — a trusted friend who was present, or simply someone you describe the situation to afterward — can help illustrate just how different the neutral, factual version sounds compared to your anxious internal narration. Use this sparingly rather than as a routine habit, though, to avoid drifting into the reassurance-seeking pattern discussed in Lesson 5; the goal is to build your own accurate internal reviewing process over time, with occasional outside perspective as a useful calibration check, not a dependency.</p>
+
+    <h2>Why this skill compounds over the rest of the course</h2>
+    <p>This processing skill becomes increasingly important as you move through more exposures in the coming weeks — each individual exposure is only as useful as the evidence you actually let yourself register from it, and an uncorrected anxious replay can quietly erode that evidence after the fact, even when the exposure itself went reasonably well in real time. Getting this skill solid now means every subsequent exposure in this course builds cleaner, more durable evidence against your anxious predictions.</p>
+
+    <h2>What to do with a genuinely awkward moment</h2>
+    <p>Sometimes the factual review does turn up a real, objectively awkward moment — everyone has these occasionally, anxious or not. When that happens, the goal isn't to pretend it wasn't awkward; it's to size it accurately rather than let it expand to dominate your memory of the whole interaction. A genuinely awkward ten-second moment in an otherwise ordinary twenty-minute conversation is a small, forgettable part of that conversation to anyone else present — worth acknowledging honestly, then filing away in proportion to how much space it actually occupied in the interaction, not the outsized space anxious memory tends to give it.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>After your next exposure or any social interaction that would normally trigger a replay, run the four-part structured review above within an hour of the event, in writing, and then deliberately set it aside. Notice whether doing this once, on purpose, reduces the pull toward revisiting it later.</p>
+    </div>
+
+    <p>You now have the complete exposure toolkit: building a ladder, running structured experiments, and processing outcomes without the anxious replay. Module 4 turns to a different but related area — the actual social skills that make conversations and interactions go more smoothly once the anxiety itself is less in the driver's seat.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/08-your-first-experiments.html">← Lesson 8: Your First Experiments</a>
+    <a href="/courses/confidence-blueprint/content/lessons/10-conversation-fundamentals.html">Lesson 10: Conversation Fundamentals →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintaining Progress — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 6 · Your Confident Life</span>
+    <span class="lesson-num-badge">Lesson 17 of 18</span>
+  </div>
+  <h1 class="lesson-title">Maintaining Progress</h1>
+  <p class="lesson-sub">How to sustain gains and handle setbacks without spiralling</p>
+  <div class="lesson-body">
+
+    <p>The structured part of this course is ending soon, but the underlying skills — cognitive rethinking, graded exposure, energy management — don't stop being relevant once the twelve weeks are over. This lesson is about what to actively carry forward, and specifically how to handle the inevitable difficult moments ahead without letting a single setback undo months of genuine progress.</p>
+
+    <h2>Setbacks are normal, not evidence of relapse</h2>
+    <p>It's worth setting this expectation clearly and directly: even after real, substantial progress, there will be future moments where anxiety spikes higher than expected, where you fall back into an old safety behaviour without quite noticing, or where you avoid something you'd normally handle fine. This is a completely normal part of any long-term change process, not evidence that the work didn't take or that you're back to where you started. The critical skill here is how you interpret a setback, not whether one happens — treating a single difficult moment as proof of total relapse is itself one of the cognitive distortions from Module 2 (catastrophising, discounting the positive) showing up in a new context.</p>
+
+    <h2>A structured approach to a setback</h2>
+    <p>When a setback happens, the same tools from earlier in the course apply directly:</p>
+    <ul>
+      <li><strong>Notice the automatic thought</strong> — likely something like "I'm back to square one" or "none of this actually worked." Name it specifically, the way you learned in Lesson 4.</li>
+      <li><strong>Check the evidence</strong> — run it through the Lesson 5 process. What's the actual evidence for "back to square one," versus the accumulated evidence of genuine progress over the past months?</li>
+      <li><strong>Treat it as one data point</strong> — a single difficult exposure or a single avoided situation is exactly that: one data point, not a trend, especially against a backdrop of many successful ones.</li>
+      <li><strong>Get back to the relevant exposure soon</strong> — rather than avoiding it going forward out of self-protection, which would simply restart the fear-avoidance cycle from Lesson 1 for that specific situation.</li>
+    </ul>
+
+    <h2>Which practices are worth keeping as ongoing habits</h2>
+    <p>Not everything from this course needs to continue in exactly its original form, but a few elements are worth deliberately maintaining, even in a lighter, less structured way than during the course itself:</p>
+    <ul>
+      <li><strong>Occasional exposure to harder situations</strong> — continuing to face genuinely difficult social situations periodically, rather than settling into a narrower comfort zone once the course structure is gone.</li>
+      <li><strong>Catching and rethinking automatic thoughts</strong> — this becomes faster and more automatic with continued use; letting the skill go unused entirely tends to let old patterns creep back gradually.</li>
+      <li><strong>Honest energy check-ins</strong> — your relationship to social energy will keep evolving as your life changes; periodically checking in with it, rather than assuming it's fixed, keeps your pacing accurate.</li>
+    </ul>
+
+    <h2>Building a light, ongoing maintenance rhythm</h2>
+    <p>Rather than either abandoning the structure entirely or rigidly maintaining the full twelve-week intensity forever, a light periodic check-in works well — every month or so, briefly ask yourself: has avoidance quietly crept back into any specific area? Am I still occasionally challenging myself, or has my world narrowed without my fully noticing? Is there a current stressor making things harder than usual that's worth accounting for? A few honest minutes, periodically, tends to catch drift long before it becomes a significant setback.</p>
+
+    <h2>Knowing when a setback is actually a signal to seek more support</h2>
+    <p>Most setbacks, handled with the process above, resolve on their own with continued practice. Occasionally, though, a setback is significant enough, or persistent enough, to be worth more than self-directed tools — a return of anxiety severe enough to significantly disrupt daily functioning again, or a stretch of avoidance that isn't responding to your own efforts to work through it using this course's methods. If that happens, it's worth taking seriously rather than pushing through indefinitely alone; reaching out to a therapist trained in CBT, per the note back in Lesson 1, is a reasonable and appropriate response, not a sign this course failed you or that you failed at using it.</p>
+
+    <h2>A permission slip for the future</h2>
+    <p>It's worth explicitly giving yourself permission, in advance, for a future setback to happen without treating it as a crisis. Anxiety patterns are rarely permanently and completely eliminated in a way that guarantees they'll never resurface under any future stress or circumstance. Knowing this ahead of time — rather than being caught off guard and reading a future setback as proof the work "didn't really work" — makes it considerably easier to respond calmly and effectively using the structured approach above, rather than spiralling into the same catastrophic interpretation the setback itself might otherwise trigger.</p>
+
+    <h2>Keeping the tools accessible</h2>
+    <p>It's genuinely worth keeping your written material from this course somewhere easy to find — your trigger map, your exposure ladder, your rethinking exercises — rather than letting it disappear into old notes you'd have to search for. A future setback is much easier to work through when you can quickly reread exactly how you approached similar difficulties before, in your own words, rather than having to reconstruct the whole process again from a vaguer memory of having done this work at some point.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Pick a recurring check-in date — monthly is reasonable — and set a brief reminder to run through the three maintenance questions above. Treat it as genuine, ongoing upkeep, the same way you'd think about maintaining any other skill or habit you've worked hard to build.</p>
+    </div>
+
+    <p>The final lesson looks at the bigger picture — designing an ongoing social life that actually fits who you are, rather than one built entirely around managing or working around anxiety.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/16-your-loneliness-profile-revisited.html">← Lesson 16: Your Loneliness Profile Revisited</a>
+    <a href="/courses/confidence-blueprint/content/lessons/18-building-a-life-that-feels-social.html">Lesson 18: Building a Life That Feels Social →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

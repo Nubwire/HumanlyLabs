@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a Life That Feels Social — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 6 · Your Confident Life</span>
+    <span class="lesson-num-badge">Lesson 18 of 18</span>
+  </div>
+  <h1 class="lesson-title">Building a Life That Feels Social</h1>
+  <p class="lesson-sub">Designing your ongoing social world around your real personality</p>
+  <div class="lesson-body">
+
+    <p>This final lesson closes the course by shifting the frame slightly: from actively managing and working on anxiety, toward simply building a social life that genuinely fits who you are. The goal was never to turn you into a different, more extroverted person, or to make you comfortable in every possible social situation regardless of whether you'd actually want to be there. It was to remove anxiety as the thing making that choice for you, so you can build a social life based on your actual preferences instead.</p>
+
+    <h2>Distinguishing anxiety from genuine preference</h2>
+    <p>After months of active anxiety work, it's worth pausing on an important distinction: not every instance of choosing quiet, low-key, or limited social contact is anxiety avoidance. Plenty of people, entirely independent of any anxiety, genuinely prefer smaller gatherings over large ones, or need significant solitude to feel their best, or would rather have two close friends than a wide circle of acquaintances. The goal of this course was never to eliminate these genuine preferences — it was to make sure they're actually genuine preferences, freely chosen, rather than anxiety wearing the disguise of a preference. A useful test: does the choice come with relief and a sense of "this is what I actually want," or does it come with a lingering, guilty sense of "I'm doing this because I'm scared of the alternative"? The first is a preference worth honouring; the second is worth continuing to examine using the tools from this course.</p>
+
+    <h2>Designing a social life around your real personality</h2>
+    <p>With anxiety less in the driver's seat, it's worth deliberately thinking through what kind of social life you actually want, rather than defaulting to either the anxious, avoidant version from before this course or an imagined "confident person" version that doesn't actually fit you either. Consider: what breadth versus depth of connection genuinely appeals to you? What kinds of social settings do you find yourself enjoying, now that the anxiety around them has eased, versus which ones you can now handle but still don't particularly enjoy and don't need to seek out? There's no requirement to seek out every kind of social situation just because you're now capable of it — capability and genuine desire are different things, and this course has primarily been about building the former, so you're free to choose the latter deliberately.</p>
+
+    <h2>Confidence as a foundation, not a destination</h2>
+    <p>It's worth closing with an honest reframe of what "confidence" actually means, in light of everything covered in this course. It isn't the absence of nervousness, and it isn't a permanent, unshakable state you arrive at and then keep forever without further effort. It's closer to a working relationship with your own anxiety — an ability to notice it, understand where it's coming from, and choose your actions based on your actual values and preferences rather than automatically deferring to what the anxiety demands. That relationship, built over these eighteen lessons, is genuinely durable, but it's also something you'll keep actively using, in smaller ways, for the rest of your life — the same way any well-learned skill needs occasional, ongoing use to stay sharp.</p>
+
+    <h2>A closing note</h2>
+    <p>Eighteen lessons ago, the situations on your original trigger map likely felt fixed and unchangeable — just how things were, and probably always would be. You've since built a genuine, evidence-based understanding of how the fear-avoidance cycle works, real tools for challenging anxious thoughts, direct experience facing situations that used to feel impossible, and a much clearer sense of your own actual social preferences underneath the anxiety. That's not a small thing. If avoidance ever starts creeping back into some part of your life in the future, you now genuinely know how to work through it again — you've already done it once.</p>
+
+    <h2>The tools you're keeping</h2>
+    <p>As a final, practical summary: you're carrying forward the fear-avoidance framework from Lesson 1, which helps you understand any new anxious pattern that arises; the cognitive rethinking skills from Module 2, for examining anxious predictions rather than accepting them automatically; the exposure and experiment structure from Module 3, for facing new difficult situations deliberately rather than avoiding them; the conversational and relational skills from Module 4; and the energy-management awareness from Module 5. None of these require this course's structure to keep using — they're skills now, not a program you've completed and set aside.</p>
+
+    <h2>If you're reading this at the start of a hard week</h2>
+    <p>If you're revisiting this lesson at some point in the future during a genuinely difficult stretch, it's worth remembering directly: the tools you built through these eighteen lessons are still yours, fully available, regardless of how long it's been since you actively used them or how far the current difficulty feels from where you left off. A gap in active practice doesn't erase the underlying skill — it simply means picking the tools back up, starting wherever feels most relevant right now, whether that's the fear-avoidance cycle from Lesson 1 or a specific technique from later in the course. You've done this work once already; that's real, durable evidence you can do it again.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Write a short, honest description of the social life you actually want going forward — not the anxious, avoidant version, and not an imagined "should" version, but the one that genuinely fits your real preferences now that anxiety has less control over the choice. Keep it somewhere you'll revisit occasionally.</p>
+    </div>
+
+    <p>That's the full course. You built this — carry it forward.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/17-maintaining-progress.html">← Lesson 17: Maintaining Progress</a>
+    <a href="/courses/confidence-blueprint/content/">Back to course overview →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

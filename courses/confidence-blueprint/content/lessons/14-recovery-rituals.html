@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recovery Rituals — The Confidence Blueprint — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-blue: #1C5DAF; --c-blue-l: #EBF2FB; --c-blue-b: #A3C0E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-blue); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-blue); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-blue); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .note-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 2rem 0; font-size: .9rem; color: var(--c-ink-2); }
+    .note-box strong { color: var(--c-ink); }
+    .tool-box { background: var(--c-blue-l); border: 1px solid var(--c-blue-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-blue); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-blue); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-blue); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🧠 The Confidence Blueprint</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/confidence-blueprint/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 5 · Managing Energy & Overwhelm</span>
+    <span class="lesson-num-badge">Lesson 14 of 18</span>
+  </div>
+  <h1 class="lesson-title">Recovery Rituals</h1>
+  <p class="lesson-sub">How to recharge effectively so social exertion doesn't deplete you for days</p>
+  <div class="lesson-body">
+
+    <p>Recognising depletion, covered in the last lesson, is only half of managing your energy well — the other half is actually recovering from it effectively, so that a demanding social stretch costs you a reasonable, bounded amount of time rather than bleeding into days of feeling flat and depleted. This lesson is about building genuinely effective recovery practices, since not everything that feels like rest actually functions as recovery.</p>
+
+    <h2>Not all rest is equally restorative</h2>
+    <p>It's a common and understandable mistake to assume that any downtime — scrolling a phone, half-watching something, lying on the couch without much intention — counts as recovery, simply because it isn't actively demanding. In practice, a lot of passive downtime doesn't actually restore social or cognitive capacity very effectively; it can leave you technically rested in terms of physical stillness while still cognitively depleted, particularly if the downtime itself involves low-grade social input (scrolling social media, for instance, is a surprisingly poor recovery activity for social depletion specifically, since it's still a form of social processing, just a passive and often comparison-heavy one).</p>
+
+    <h2>What tends to actually restore social capacity</h2>
+    <p>Genuinely restorative recovery tends to share a few features: minimal social processing demand, a sense of full permission to disengage (not multitasking or half-attending to something else), and some degree of active choice rather than passive drift. A few reliably effective options, though the specific mix that works best varies by person:</p>
+    <ul>
+      <li><strong>True solitude</strong> — time genuinely alone, without needing to perform or explain yourself to anyone, even briefly.</li>
+      <li><strong>Physical movement</strong> — a walk, exercise, anything that shifts attention into the body rather than continued cognitive/social processing.</li>
+      <li><strong>Low-effort contact with people who already know you well</strong> — time with someone where you don't need to manage self-presentation, which recharges for many people even though it's technically social.</li>
+      <li><strong>Absorbing, non-social activities</strong> — reading, a hobby, anything that occupies attention fully enough to genuinely displace the anxious replay processes from Lesson 9.</li>
+    </ul>
+    <p>It's worth experimenting deliberately with which of these actually leave you feeling recharged versus which just pass the time — the two aren't always the same, and the difference is worth learning about your own specific patterns rather than assuming.</p>
+
+    <h2>Building recovery in proactively, not reactively</h2>
+    <p>The most effective approach treats recovery as scheduled maintenance, built into your week in advance, rather than something you scramble for only after you've already noticed depletion. If you know a particular day or stretch will involve significant social exertion — several exposures, a demanding event, a full day of socially effortful interaction — pairing it with deliberately protected recovery time afterward, decided in advance, tends to prevent the multi-day bleed-over that unmanaged depletion can otherwise produce.</p>
+
+    <h2>Recovery isn't avoidance</h2>
+    <p>It's worth being clear about an important distinction: deliberate, planned recovery time is not the same thing as the avoidance covered back in Module 1, even though both involve stepping back from social demand. Avoidance is driven by anxious prediction and prevents you from gathering disconfirming evidence; recovery is driven by an accurate read of genuine depletion, planned in service of sustaining the broader effort, not escaping it. The test is roughly this: are you stepping back because a specific situation feels threatening, or because you're genuinely, measurably depleted and need to recharge before continuing? The first is worth examining and often gently pushing through, per Module 3; the second is worth honouring.</p>
+
+    <h2>Recovery needs vary by person, and that's fine</h2>
+    <p>It's worth resisting the temptation to adopt someone else's recovery routine wholesale just because it's commonly recommended. What restores one person — a long solo walk, say — might not do much for someone whose most restorative activity is actually quiet time with a close friend. The genuinely useful approach is treating your own recovery preferences as worth investigating directly, through honest observation of what actually leaves you feeling recharged versus what just occupies time, rather than assuming a generic list applies equally to everyone.</p>
+    <p>It also helps to notice that recovery needs can shift depending on the specific type of depletion. Recovering from an anxiety-heavy exposure might call for something different than recovering from simple social fatigue after a long, pleasant but tiring event. Paying attention to this distinction over time will sharpen your own personal recovery toolkit considerably.</p>
+
+    <h2>Recovery and exposure work together, not against each other</h2>
+    <p>It's worth being explicit that good recovery practice actively supports the exposure work from Module 3, rather than being a separate, unrelated concern. An exposure attempted from a well-recovered baseline tends to go better and produce cleaner, more convincing evidence than the same exposure attempted while already running on empty — where genuine depletion can make an ordinary level of anxiety feel more overwhelming than it would otherwise, muddying the useful comparison between prediction and outcome. Good recovery isn't separate from the anxiety work; it's part of what makes the anxiety work actually effective.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Identify your single most reliably restorative recovery activity from the list above, based on your own honest experience, and schedule it proactively after your next demanding social commitment — decided in advance, not left to chance.</p>
+    </div>
+
+    <p>The final lesson in this module brings recognition and recovery together into an overall sustainable pace — building a social rhythm that energises rather than exhausts you over the longer term.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/confidence-blueprint/content/lessons/13-reading-your-social-battery.html">← Lesson 13: Reading Your Social Battery</a>
+    <a href="/courses/confidence-blueprint/content/lessons/15-setting-the-right-pace.html">Lesson 15: Setting the Right Pace →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>
