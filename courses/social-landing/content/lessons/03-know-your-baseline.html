@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Know Your Baseline — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 1 · Preparing for Takeoff</span>
+    <span class="lesson-num-badge">Lesson 3 of 20</span>
+  </div>
+  <h1 class="lesson-title">Know Your Baseline</h1>
+  <p class="lesson-sub">Establish your social energy starting point</p>
+  <div class="lesson-body">
+
+    <p>Building a social life from scratch is, honestly, exhausting — even for people who are naturally outgoing. Every interaction with someone new carries a higher cognitive load than an interaction with someone you already know well: more small talk, more effort to find common ground, more uncertainty about how it's landing. If you don't plan around your actual energy capacity, it's very easy to either burn out hard in week three, or under-do it out of self-protection and stall your progress. This lesson is about knowing your starting point so you can pace the rest of the course sustainably.</p>
+
+    <h2>Social energy is a real, finite resource</h2>
+    <p>Whether you'd call yourself an introvert, an extrovert, or somewhere in between, socialising draws on a limited daily and weekly energy budget — and right now, in a new city, that budget is under more pressure than usual, because almost every social interaction you're having is a "new person" interaction rather than a low-effort "known person" one. This isn't a flaw to fix. It's a real constraint to plan around, the same way you'd plan around a physical training capacity if you were starting to run again after time off.</p>
+    <p>The mistake most people make isn't running out of social energy — it's not noticing they've run out until after they've already said something a bit flat, left an interaction early, or snapped at someone, and then quietly conclude "I'm bad at this," when really they were just past their limit for the day.</p>
+
+    <h2>What depletes you vs. what recharges you</h2>
+    <p>Two things are worth separating clearly:</p>
+    <ul>
+      <li><strong>Depleting activities</strong> — usually higher-stakes, higher-novelty, higher-effort interactions: meeting several new people at once, performing in a group setting, navigating unfamiliar social norms.</li>
+      <li><strong>Recharging activities</strong> — time alone, low-effort contact with people who already know you well, activities that don't require performing or explaining yourself.</li>
+    </ul>
+    <p>Notice that "recharging" doesn't necessarily mean "alone" — for some people, low-effort time with a close friend recharges more than solitude does. The goal of this lesson isn't to fit you into a category; it's to get you specific and honest about what actually restores you, so you can build it into your week deliberately instead of accidentally running your tank to empty.</p>
+
+    <h2>Why this matters specifically right now</h2>
+    <p>During the first few months in a new city, almost everything social falls into the "depleting" column, because almost everyone you meet is new. That means your usual balance of depleting-to-recharging activity is temporarily broken, even if your overall social energy capacity hasn't changed. If you don't account for this, you'll likely either overcommit and crash — skipping the gym, the sleep, the solo time that normally keeps you steady — or undercommit out of instinctive self-protection, which slows the whole rebuilding process down.</p>
+    <p>The fix isn't to push through regardless. It's to build recovery time as deliberately as you build social plans, especially in these early weeks.</p>
+
+    <h2>Use the Social Battery tool to map your baseline</h2>
+    <p>The Social Battery tool below runs a short check-in process to help you see your current energy patterns clearly — what's draining you, what's restoring you, and roughly how much social contact you can sustainably hold in a given week right now. Use it this week, and consider returning to it in Module 4 once you've got more of a social rhythm established — your capacity typically grows as connections become less effortful and more familiar.</p>
+
+    <h2>Building a weekly energy budget</h2>
+    <p>Once you have a rough sense of your baseline, it helps to translate it into something concrete rather than leaving it as a vague impression. Try sketching a simple weekly energy budget: a rough number of "social units" you can sustainably spend across the week, where a unit might be a couple of hours of new-connection interaction, and a rough sense of how many recharge units you need to balance each one out. This doesn't need to be a rigorous system — even a loose, approximate version is enough to catch the common pattern of unconsciously overcommitting in a good week and then being confused about the crash that follows a few days later.</p>
+    <p>It's also worth noticing that your baseline isn't static even week to week. Poor sleep, a stressful work stretch, or unrelated life stress all shrink your available social capacity temporarily, even if your underlying tolerance for socialising hasn't changed. Checking in with yourself briefly before committing to a full week of plans — not just at the start of the course, but as an ongoing habit — helps you catch these dips before they turn into a harder crash later on.</p>
+
+    <h2>A note for people who don't fully trust their own read</h2>
+    <p>Some people, especially after a stretch of loneliness, find it hard to accurately gauge their own energy levels — either consistently pushing through depletion because slowing down feels like giving up, or consistently avoiding social contact out of anticipated exhaustion that doesn't always materialise once they're actually there. If either of these sounds familiar, treat your own energy predictions as hypotheses to test rather than fixed facts. Try showing up to a plan you predicted would drain you, and honestly note afterward whether the prediction matched the reality. Over a few weeks, this builds a far more accurate internal model than assumption alone ever will.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Before your next social plan, name out loud (or write down) one thing you'll do afterward to recharge — even something small, like twenty minutes with no phone, or an early night. Committing to the recovery in advance makes it far more likely you'll actually protect it, instead of it quietly getting crowded out.</p>
+    </div>
+
+    <p>Pacing yourself isn't the opposite of making progress — it's what makes sustained progress possible. The people who build strong social lives after a move aren't usually the ones who pushed hardest in week one. They're the ones who kept showing up, steadily, for months, because they didn't burn themselves out early on.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🔋</div>
+    <div class="tool-copy"><strong>Use the Social Battery</strong>This lesson pairs with the Social Battery tool — use it now while the ideas are fresh.</div>
+    <a href="/social-battery">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/02-your-social-connection-profile.html">← Lesson 2: Your Social Connection Profile</a>
+    <a href="/courses/social-landing/content/lessons/04-setting-realistic-expectations.html">Lesson 4: Setting Realistic Expectations →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

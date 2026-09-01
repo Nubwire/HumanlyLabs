@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting Realistic Expectations — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 1 · Preparing for Takeoff</span>
+    <span class="lesson-num-badge">Lesson 4 of 20</span>
+  </div>
+  <h1 class="lesson-title">Setting Realistic Expectations</h1>
+  <p class="lesson-sub">The real timeline for friendship, celebrating small wins</p>
+  <div class="lesson-body">
+
+    <p>This is the last lesson before the course moves from groundwork into action, and it's arguably the one that prevents the most unnecessary discouragement over the next eleven weeks. Almost everyone underestimates how long real friendship actually takes to build — and that mismatch between expectation and reality is one of the biggest reasons people give up on a promising new connection right when it's about to turn a corner.</p>
+
+    <h2>Friendship has a real, slow timeline — and that's normal</h2>
+    <p>Communication researcher Jeffrey Hall's widely cited work on friendship formation estimated that it takes roughly 50 hours of shared time to move from acquaintance to casual friend, around 90 hours to become a real friend, and upward of 200 hours to become a close friend. The exact numbers matter less than the shape of the finding: meaningful friendship isn't a threshold you cross after one great conversation. It's accumulated through repeated contact, over weeks and months, well past the point where it starts to feel a bit effortful or repetitive.</p>
+    <p>This matters enormously for how you interpret your own progress. If you meet someone promising, have one genuinely good hangout, and then feel like the friendship has "gone quiet" for a few weeks, the honest read is usually not "that didn't work out." It's "we're at hour eight of ninety, right on schedule." Most people quietly give up on connections at exactly this stage — not because the connection failed, but because they expected the 90-hour outcome from the 8-hour input.</p>
+
+    <h2>What "on track" actually looks like week to week</h2>
+    <p>Progress in the early months rarely looks like a straight line toward a thriving social life. It looks like this:</p>
+    <ul>
+      <li>Weeks where you meet several new people and none of them go anywhere in particular — this is normal attrition, not failure.</li>
+      <li>One promising connection that fizzles for reasons that have nothing to do with you — schedules, life circumstances, mismatched needs.</li>
+      <li>Long stretches where nothing seems to be happening, followed by a sudden cluster of connection once a few relationships cross their own thresholds at once.</li>
+      <li>Acquaintances who become genuine friends only after four, five, six separate hangouts spread across two or three months.</li>
+    </ul>
+    <p>If your mental model expects a clean upward line, all of the above will register as discouraging. If your mental model expects this — messy, uneven, slower than you'd like, but cumulative — the exact same twelve weeks will feel like solid, visible progress.</p>
+
+    <h2>Redefining what counts as a win</h2>
+    <p>Because friendship takes so long to fully form, and because most of this course happens before that threshold is crossed, it's worth deliberately redefining what counts as progress during these twelve weeks. A win is not "I now have a close friend here." For most people, that's not a realistic twelve-week outcome, and holding yourself to it will feel like failure even while you're doing everything right. A more honest, motivating definition of a win over this course includes things like:</p>
+    <ul>
+      <li>Having three or four people whose names you know and who'd recognise you and say hello.</li>
+      <li>Making it a habit to initiate plans rather than only waiting to be invited.</li>
+      <li>Having one or two people you've hung out with one-on-one more than once.</li>
+      <li>Feeling less anxious walking into a room of strangers than you did in week one.</li>
+      <li>Having a rhythm — a class, a group, a regular spot — where you're becoming a familiar face.</li>
+    </ul>
+    <p>Every one of these is genuine, meaningful progress toward a real social life, and every one of these is realistically achievable in twelve weeks.</p>
+
+    <h2>What to do when comparison creeps in anyway</h2>
+    <p>Even with a realistic timeline in mind, it's very hard to fully avoid comparing your new social life to your old one, especially in quiet moments — a weekend with nothing planned, a holiday spent mostly alone, scrolling through old photos of a group that used to be effortless to gather. When that comparison shows up, it helps to name explicitly what's actually being compared: a social world that took years to build, against one that's a few weeks old. That's not a fair comparison, and noticing the unfairness out loud — even just to yourself — tends to take some of the sting out of it.</p>
+    <p>It also helps to remember that your old social world didn't stay static either. Relationships you now think of as effortless were, at some point, also new and a little effortful — you've simply forgotten that part, because it happened gradually enough not to register as a separate phase. The friendships you're building now will follow the same arc, even though it doesn't feel that way from inside the early weeks.</p>
+
+    <h2>Holding both things at once</h2>
+    <p>A realistic timeline doesn't mean lowering your ambitions for what your social life can eventually look like — it means being accurate about the path to get there. You can hold both a genuinely high bar for the kind of connection you want and a patient, realistic sense of how long it reasonably takes to build it, without those two things being in tension. The people who sustain effort over the full twelve weeks tend to be the ones who've internalised this combination early, rather than the ones expecting either instant results or no results at all.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Write down your own personal definition of a "win" for the end of this twelve-week course — using the list above as a starting point, not a ceiling. Make it something you could realistically hit even on an average, unremarkable week. You'll check back in against this in Module 6.</p>
+    </div>
+
+    <p>With your profile, your energy baseline, and a realistic timeline in place, you're done with groundwork. Module 2 moves into action: reading your new city, finding the specific places and communities where your people actually are, and building a plan you can follow without having to reinvent it from scratch every week.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/03-know-your-baseline.html">← Lesson 3: Know Your Baseline</a>
+    <a href="/courses/social-landing/content/lessons/05-decoding-your-new-city.html">Lesson 5: Decoding Your New City →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

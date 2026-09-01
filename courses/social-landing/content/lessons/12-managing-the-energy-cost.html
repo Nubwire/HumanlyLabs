@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managing the Energy Cost — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 4 · Building Bridges</span>
+    <span class="lesson-num-badge">Lesson 12 of 20</span>
+  </div>
+  <h1 class="lesson-title">Managing the Energy Cost</h1>
+  <p class="lesson-sub">Pace yourself so you don't burn out mid-process</p>
+  <div class="lesson-body">
+
+    <p>By this point in the course, most people have picked up real social momentum — which brings a new risk that wasn't as present in the earlier, slower weeks: burnout. It's a common and avoidable pattern to build up a promising social rhythm over several weeks, then quietly overextend, get exhausted, and pull back hard right when things were starting to compound. This lesson is about catching that pattern before it costs you the momentum you've built.</p>
+
+    <h2>Why burnout tends to hit around this stage specifically</h2>
+    <p>In the first few weeks, social plans often felt effortful and occasional, which naturally limited how much you were doing. By Module 4, many people have several active threads going at once — two anchor groups, an ambient hub, a couple of promising new connections all wanting follow-up — and it's easy to say yes to all of it, because after weeks of scarcity, having options feels good. But new connections are still higher-effort than established ones (see Lesson 3), and a full calendar of all-new-connection socialising can quietly drain you faster than it seems like it should, especially if you're also still managing all the normal logistics of a recent move.</p>
+
+    <h2>Recognising the early signs</h2>
+    <p>Burnout rarely arrives as a dramatic crash — it usually builds gradually, and the early signs are easy to miss or explain away:</p>
+    <ul>
+      <li>Dreading a plan you were genuinely looking forward to a week earlier</li>
+      <li>Feeling flat or going through the motions during interactions that used to feel energising</li>
+      <li>Cancelling plans last-minute more often than usual</li>
+      <li>Feeling relieved rather than disappointed when something gets cancelled</li>
+      <li>Irritability or shorter patience in unrelated parts of your day</li>
+    </ul>
+    <p>Any one of these, especially if it's a new pattern rather than how you normally feel, is worth treating as a signal to recalibrate — not as evidence you're bad at this or that the whole project isn't working.</p>
+
+    <h2>Recalibrating without losing momentum</h2>
+    <p><strong>Protect anchors, trim the rest.</strong> If you need to cut back, cut from the flexible or one-off layer first, and keep your two anchor commitments intact if at all possible — they're both your highest-value activity and the thing whose momentum is most costly to interrupt.</p>
+    <p><strong>Build in a genuinely low-effort week deliberately.</strong> Rather than waiting until you're depleted, consider scheduling an intentionally lighter week every few weeks — fewer new-connection interactions, more recharge time — as routine maintenance rather than a reactive retreat.</p>
+    <p><strong>Reconnect with your old social world on purpose.</strong> A call with an old friend is genuinely recharging in a way that a new interaction usually isn't, precisely because it requires no effort to be understood. Use it as fuel, not avoidance — the distinction from Lesson 1 still applies, but at a sustainable level, this kind of contact is a legitimate and valuable part of your recovery, not a substitute for local connection.</p>
+
+    <h2>Revisit your baseline</h2>
+    <p>Your social capacity from Lesson 3 was a starting estimate, taken before you'd built any local momentum. It's worth returning to the Social Battery tool now that you have a few weeks of real data — your actual capacity may have grown as new-connection interactions have become somewhat less effortful, or you may find you need more recovery time than you initially estimated. Either way, working from current, accurate information beats working from a three-week-old guess.</p>
+
+    <h2>Communicating a lighter week without over-explaining</h2>
+    <p>One thing that quietly makes burnout worse is the sense that pulling back requires a big explanation or apology to the people involved — which adds social pressure on top of the exhaustion itself. In most cases, it doesn't. "Can't make it this week, next one for sure" is a completely normal, low-friction thing to say to a group or a newer connection, and it very rarely needs to be more elaborate than that. Reserving detailed context for people you're already close to, and keeping it brief with newer connections, removes one more unnecessary source of friction during a week where you're already running low.</p>
+    <p>It's also worth noticing that consistently showing up, with the occasional honest, low-key skip, reads completely differently to a group than sporadic, unexplained absences do. The anchor-commitment consistency you've built over the past few weeks (Lesson 11) gives you real credit here — one lighter week against a backdrop of reliable attendance doesn't undo the familiarity you've built; it's simply read as normal, ordinary life.</p>
+
+    <h2>Burnout in one area can bleed into others</h2>
+    <p>It's worth noticing that social burnout rarely stays neatly contained to your social life. Left unaddressed, it tends to spill over into sleep, general mood, and performance at work, because the underlying resource being depleted — attention and emotional bandwidth — isn't specific to any one domain. Treating early signs of social burnout seriously isn't just about protecting your progress on this course; it's about protecting your overall wellbeing during what's already a demanding stretch of adjusting to a new city.</p>
+
+    <h2>A brief note on physical health</h2>
+    <p>Sleep, movement, and basic nutrition all directly affect how much social energy you have available, and all three are easy to let slide during a demanding stretch of relocating and rebuilding a social world at the same time. If you notice your capacity has dropped more than expected, it's worth checking these basics before assuming the drop is purely social in nature. Protecting them isn't separate from your social strategy — it's part of the same energy budget this lesson is about.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Run through the early-signs list above honestly. If two or more are showing up, deliberately lighten next week's plan before you're forced to by exhaustion — pick one thing to skip guilt-free, and protect one extra evening for recovery.</p>
+    </div>
+
+    <p>Pacing yourself protects the progress you've already made. The next lesson turns to the other side of building bridges — the specific mechanics of inviting people and being invited, which is where acquaintances actually start becoming friends.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🔋</div>
+    <div class="tool-copy"><strong>Use the Social Battery</strong>This lesson pairs with the Social Battery tool — use it now while the ideas are fresh.</div>
+    <a href="/social-battery">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/11-the-power-of-consistency.html">← Lesson 11: The Power of Consistency</a>
+    <a href="/courses/social-landing/content/lessons/13-inviting-being-invited.html">Lesson 13: Inviting & Being Invited →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inviting & Being Invited — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 4 · Building Bridges</span>
+    <span class="lesson-num-badge">Lesson 13 of 20</span>
+  </div>
+  <h1 class="lesson-title">Inviting & Being Invited</h1>
+  <p class="lesson-sub">Strategies for turning acquaintances into friends</p>
+  <div class="lesson-body">
+
+    <p>There's a specific transition that has to happen for an acquaintance to become a friend: the relationship has to move outside of whatever shared context first connected you. Two people who only ever interact at the same weekly class are, technically, acquaintances who see each other regularly — not yet friends. The shift happens when someone extends the relationship beyond that container: a coffee, a one-on-one hang, an invitation to something unrelated to the original context. This lesson is about becoming the person who makes that extension happen, rather than always waiting for someone else to.</p>
+
+    <h2>Why so few people extend the invitation first</h2>
+    <p>In almost every group — a class, a team, a friend group — there's a small number of people who consistently do the inviting, and a much larger number who wait to be invited. This isn't because the waiters don't want more connection; it's because extending an invitation carries a small, specific risk of rejection that waiting doesn't. But someone has to be the one to extend it, or the relationship stays locked inside its original container indefinitely. Being willing to be that person, even occasionally, disproportionately accelerates how quickly your social life develops — because you're not depending on someone else to take the risk first.</p>
+
+    <h2>Making the invitation genuinely easy to say yes to</h2>
+    <p>The biggest lever for a successful invitation isn't confidence — it's specificity. A vague invitation ("we should hang out sometime") requires the other person to do all the work of turning it into a real plan, and vague invitations very often just quietly die. A specific invitation removes that friction:</p>
+    <ul>
+      <li><strong>Vague:</strong> "We should get coffee sometime." <strong>Specific:</strong> "Want to grab coffee Thursday morning before work, that place near the office?"</li>
+      <li><strong>Vague:</strong> "We should hang out." <strong>Specific:</strong> "A few of us are doing trivia Tuesday, want to come?"</li>
+    </ul>
+    <p>Specific invitations are also lower-stakes to send, somewhat counterintuitively, because they're framed around a concrete activity rather than the relationship itself — you're proposing coffee, not proposing friendship, even though the second one is really what's happening.</p>
+
+    <h2>Being a good person to invite</h2>
+    <p>The flip side matters just as much: when someone does extend an invitation to you, how you respond shapes whether they'll do it again. A few things that make you easy — and rewarding — to invite:</p>
+    <ul>
+      <li><strong>Respond promptly</strong> — a slow or vague response reads as low interest, even when it's really just a busy inbox.</li>
+      <li><strong>If you can't make it, offer an alternative</strong> — "can't Thursday, but I'm free Saturday if that works" keeps the door open, rather than leaving a flat no as the last word.</li>
+      <li><strong>Show genuine enthusiasm when you say yes</strong> — a simple "yes, I'd love that" does more relational work than it seems like it should.</li>
+      <li><strong>Reciprocate over time</strong> — if someone has invited you a few times and you haven't yet initiated back, that's worth noticing. Reciprocity is part of what signals the relationship is mutual, not one-sided.</li>
+    </ul>
+
+    <h2>Handling the fear that you're being "too much"</h2>
+    <p>A common, quiet worry that stops people from extending invitations is the fear of coming across as overly eager, needy, or intense — especially early in a connection, and especially for people newer to actively initiating. It's worth naming this fear directly, because it's rarely calibrated to reality: one well-placed, specific, low-pressure invitation is a completely normal social move, not an intense one, and the large majority of people receive it exactly that way. The version of "too much" that actually damages a connection tends to involve a pattern — excessive frequency, disregard for a lack of response, pressure when someone says no — not a single, ordinary invitation extended in a reasonable way.</p>
+    <p>If you do send an invitation and it goes unanswered or gets a no, the appropriate response is simple: accept it gracefully, without over-apologising or withdrawing entirely from the relationship. A single unanswered invitation is not a verdict on the whole connection, and continuing to be a normal, friendly presence afterward — without immediately re-extending another invitation — tends to keep the door open far better than either repeated pursuit or a sudden cold withdrawal.</p>
+
+    <h2>Invitations get easier with repetition</h2>
+    <p>Like approaching a stranger in Module 3, extending an invitation tends to feel disproportionately difficult the first couple of times and then noticeably easier after that, once you have a small amount of direct evidence that it generally goes fine. The discomfort here is front-loaded, not constant — it's worth pushing through the first few instances specifically because of how quickly it tends to ease once you have a few real data points of your own to draw on, rather than relying on the anticipated version in your head.</p>
+
+    <h2>Invitations as a two-way audition</h2>
+    <p>It's worth remembering that extending an invitation isn't only you being evaluated — you're also finding out something real about whether this connection has mutual momentum. A warm, prompt yes is genuinely useful information, and so, in its own way, is a pattern of decline. Framing invitations as mutual information-gathering, rather than a one-sided test of your own worth, tends to make them feel considerably lower-stakes to send.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Pick one person from an anchor group or ambient hub who you'd genuinely like to know better, and send them a specific, low-pressure invitation this week — using the specific-vs-vague pattern above. If the idea of doing this makes you want to skip it, that's a strong sign it's exactly the rep worth doing.</p>
+    </div>
+
+    <p>Extending the first few invitations is often the hardest part of this whole course, and also one of the most directly effective. The next lesson looks at what happens after — understanding the stages a friendship actually moves through as it deepens.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/12-managing-the-energy-cost.html">← Lesson 12: Managing the Energy Cost</a>
+    <a href="/courses/social-landing/content/lessons/14-navigating-early-friendships.html">Lesson 14: Navigating Early Friendships →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

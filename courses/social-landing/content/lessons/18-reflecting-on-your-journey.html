@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflecting on Your Journey — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 6 · Your New Home</span>
+    <span class="lesson-num-badge">Lesson 18 of 20</span>
+  </div>
+  <h1 class="lesson-title">Reflecting on Your Journey</h1>
+  <p class="lesson-sub">Celebrating progress and recognising your growth over 90 days</p>
+  <div class="lesson-body">
+
+    <p>Twelve weeks ago, you started this course likely in the middle of the hardest stretch of the relocation loneliness arc from Lesson 1 — the dip, where the novelty has worn off and the absence of a social world feels loudest. This lesson is a deliberate pause to look back honestly at what's actually changed, before the final two lessons turn toward making it last.</p>
+
+    <h2>Why this reflection matters more than it seems</h2>
+    <p>Progress that happens gradually, week by week, is notoriously hard to feel in real time — the kind of change you only really notice when you stop and compare the start to now, rather than today to yesterday. Without a deliberate check-in, it's easy to keep operating from an outdated internal sense of "I don't really know anyone here" even after that's stopped being true, simply because the change happened too gradually to register on its own.</p>
+
+    <h2>Revisit your own definitions</h2>
+    <p>Go back to two specific things you wrote earlier in the course: your phase assessment from Lesson 1, and your personal definition of a win from Lesson 4. Read them again now, and answer honestly:</p>
+    <ul>
+      <li>Where are you now on the four-phase relocation arc, compared to where you were in week one?</li>
+      <li>Which parts of your own "win" definition from Lesson 4 have you actually hit — fully, partially, or not yet?</li>
+      <li>What's different about how you feel walking into a room of strangers now, compared to Module 3?</li>
+    </ul>
+    <p>Be specific and be honest in both directions — genuine progress deserves to be counted, and areas that are still a work in progress deserve to be named plainly rather than glossed over. Both are useful information for what comes next.</p>
+
+    <h2>Progress rarely looks like what you expected at the start</h2>
+    <p>It's worth naming directly: the social life you have now, twelve weeks in, is probably not identical to the one you pictured when you started — and that's completely normal, not a shortfall. Maybe the friendship you expected to form with one specific person didn't happen, but an unexpected one did, with someone from a group you almost didn't join. Maybe you don't yet have the deep, 200-hour close friendship from Lesson 4 — very few people do at the twelve-week mark — but you have real momentum with several people heading in that direction, which is exactly on schedule.</p>
+    <p>Comparing your actual results to your imagined ones, rather than to a realistic twelve-week timeline, is one of the most common ways people underrate real, solid progress.</p>
+
+    <h2>What you've actually built, even if it doesn't feel finished</h2>
+    <p>Regardless of exactly where you land on the reflection above, consider what's now true that wasn't true in week one: you have a working map of your city's social infrastructure, a set of communities you know how to navigate, real experience approaching strangers and having it go better than your anxiety predicted, and — very likely — at least a few real, ongoing connections that didn't exist twelve weeks ago. That's not nothing. That's the actual infrastructure a social life is built from, and unlike your old city's invisible infrastructure, you now know exactly how you built it — which means you can build it again if you ever need to.</p>
+
+    <h2>If the reflection is harder than expected</h2>
+    <p>Not everyone finishes twelve weeks with the same amount of visible progress, and that's worth acknowledging honestly rather than glossing over. Life circumstances vary — some people had far less spare capacity during these twelve weeks than others, some cities and life stages simply make this process slower, some started from a harder place than others. If your honest reflection shows real but modest progress rather than a dramatic transformation, that's still meaningful progress, and it doesn't mean the process failed. The skills and infrastructure covered in this course don't expire at week twelve; they continue working for as long as you keep applying them, and plenty of people see their most significant progress in months four through six, well after a course like this technically ends.</p>
+    <p>If the honest reflection reveals very little movement at all, it's worth a brief, non-judgmental look at which specific lessons or exercises got skipped along the way, rather than concluding the whole approach doesn't work for you. Often, a stalled twelve weeks traces back to one or two specific steps — the initial invitations from Lesson 13, the consistency from Lesson 11 — that never quite got attempted, rather than a fundamental mismatch between you and the process.</p>
+
+    <h2>Let the reflection be genuinely mixed</h2>
+    <p>An honest twelve-week reflection is rarely uniformly positive or uniformly disappointing — it's usually a mix: real wins alongside things that didn't pan out, growth in some areas alongside stagnation in others. Resist the urge to round this up into a tidy, all-good narrative or down into an all-bad one for the sake of a cleaner story. The genuinely mixed, specific version is both more accurate and more useful going forward than either polished extreme.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Write a short, honest paragraph comparing week one to now — specific names, specific plans, specific feelings, not just a general sense of "better" or "worse." Keep it. It's worth rereading on a future hard week, as concrete evidence of what you're capable of building.</p>
+    </div>
+
+    <p>The final two lessons are about what comes after this course ends — making the habits you've built sustainable for the long term, and knowing how to keep using the tools that got you here.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/17-handling-setbacks-rejection.html">← Lesson 17: Handling Setbacks & Rejection</a>
+    <a href="/courses/social-landing/content/lessons/19-long-term-connection-habits.html">Lesson 19: Long-Term Connection Habits →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

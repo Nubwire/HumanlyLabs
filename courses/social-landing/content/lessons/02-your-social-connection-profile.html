@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Social Connection Profile — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 1 · Preparing for Takeoff</span>
+    <span class="lesson-num-badge">Lesson 2 of 20</span>
+  </div>
+  <h1 class="lesson-title">Your Social Connection Profile</h1>
+  <p class="lesson-sub">Identify your unique needs and preferences</p>
+  <div class="lesson-body">
+
+    <p>Not all loneliness is the same, and not all social lives should look the same either. Before you start building yours back up, it's worth getting specific about what kind of connection you're actually missing — because the fix for "I don't have anyone to do things with" is different from the fix for "I don't have anyone who really knows me." Chasing the wrong kind of connection is one of the most common reasons people feel like they're doing "everything right" socially and still feel lonely.</p>
+
+    <h2>The two loneliness gaps</h2>
+    <p>Researchers who study loneliness generally distinguish between two related but distinct needs:</p>
+    <ul>
+      <li><strong>Social loneliness</strong> — a gap in your network of casual, everyday connection: people to grab coffee with, chat with at the gym, sit next to at a class. This is about quantity and texture of casual contact.</li>
+      <li><strong>Emotional loneliness</strong> — a gap in deep, trusted connection: someone who knows what's actually going on with you, who you'd call at 11pm with bad news. This is about depth, not headcount.</li>
+    </ul>
+    <p>Most people who relocate are missing both at first, but they usually don't recover at the same rate, and they don't require the same strategy. Social loneliness tends to close faster — it's largely a function of exposure and repetition. Emotional loneliness closes more slowly, because deep trust takes real time and vulnerability to build, and it can't be manufactured through volume alone. Knowing which gap is bothering you most right now helps you set expectations that match reality instead of quietly measuring yourself against a timeline you were never on.</p>
+
+    <h2>Your connection style</h2>
+    <p>Beyond the two gaps, people also differ in what kind of social life actually satisfies them, independent of how lonely they currently feel. It's worth being honest with yourself about a few dimensions:</p>
+    <p><strong>Breadth vs. depth.</strong> Some people feel resourced by a wide circle of lighter connections; others need two or three close people and find a large acquaintance network draining rather than fulfilling. Neither is more mature or more correct — but building toward the wrong one for you will leave you busy and still unsatisfied.</p>
+    <p><strong>Structured vs. organic.</strong> Some people connect best through recurring structured activities (a class, a league, a club) where the social contact is a byproduct of showing up. Others find structure stifling and connect more naturally through unplanned, looser contact. Most of the tactics in this course work for both, but you'll want to weight them differently.</p>
+    <p><strong>Group vs. one-on-one.</strong> Some people build trust fastest in group settings where the pressure is diffused across several people; others find one-on-one time far more bonding than group hangs, which can feel socially "thin" no matter how many of them you attend.</p>
+
+    <h2>Use the Loneliness Quiz to get a starting profile</h2>
+    <p>Rather than guessing at all of this in the abstract, take a few minutes now with the Loneliness Quiz tool linked below. It's built to identify which loneliness type best describes your current situation and gives you a personalised starting profile. Answer it honestly rather than aspirationally — based on how things actually feel right now, not how you wish they felt or think they should feel.</p>
+
+    <h2>Your profile isn't a permanent label</h2>
+    <p>It's worth holding this profile loosely rather than treating it as a fixed identity. People's connection needs shift with context — someone who was breadth-oriented in a busy college social scene might find themselves craving more depth a decade later, after a demanding job has already filled their week with plenty of casual contact. Relocation itself can temporarily shift what you need: even a naturally depth-oriented person often needs a wider net of looser contacts in the first few months, simply because depth takes time to build and the intervening months would otherwise be very quiet. Treat this lesson's profile as an honest read of where you are right now, not a permanent verdict on your personality.</p>
+    <p>It's also worth distinguishing your connection style from your current loneliness level. Someone can be a genuinely depth-oriented person and still benefit from a wider net of casual contacts during the rebuilding phase — not because their underlying preference has changed, but because casual contact is often the on-ramp to the deeper connections they actually want. Few close friendships start as close; almost all of them pass through a casual, low-stakes phase first, however briefly.</p>
+
+    <h2>A quick note on introversion and extroversion</h2>
+    <p>It's worth separating your connection profile from the introvert/extrovert label specifically, since the two get conflated often. Introversion and extroversion describe where you draw energy from — solitude versus stimulation — not what kind of connection you're seeking or how many people you want in your life. A introverted person can have a strong preference for a wide, breadth-oriented social circle; an extroverted person can be entirely depth-oriented. Use the quiz's actual dimensions rather than defaulting to whatever your general personality label seems to imply.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>After you take the quiz, write two or three sentences in your own words: which gap (social or emotional) feels bigger right now, and which connection style — breadth or depth, structured or organic, group or one-on-one — sounds most like the social life you actually want, not just the one you think you're "supposed" to want. Keep this note; you'll use it again in Module 2 when you start choosing where to actually spend your time.</p>
+    </div>
+
+    <p>There's no wrong profile here. The point of this lesson isn't to diagnose a problem — it's to stop you from spending the next twelve weeks building a social life that looks good from the outside but doesn't actually meet the specific kind of connection you need.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🧠</div>
+    <div class="tool-copy"><strong>Use the Loneliness Quiz</strong>This lesson pairs with the Loneliness Quiz tool — use it now while the ideas are fresh.</div>
+    <a href="/quiz">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/01-the-relocation-loneliness-landscape.html">← Lesson 1: The Relocation Loneliness Landscape</a>
+    <a href="/courses/social-landing/content/lessons/03-know-your-baseline.html">Lesson 3: Know Your Baseline →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

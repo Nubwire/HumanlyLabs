@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Humanly Labs Ecosystem — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 6 · Your New Home</span>
+    <span class="lesson-num-badge">Lesson 20 of 20</span>
+  </div>
+  <h1 class="lesson-title">The Humanly Labs Ecosystem</h1>
+  <p class="lesson-sub">Using Friendship Audit + Social Battery for continued growth</p>
+  <div class="lesson-body">
+
+    <p>This final lesson closes the course by connecting the tools you've used along the way into an ongoing system — one you can return to periodically, long after these twelve weeks are behind you, whenever your social life needs a check-up or a fresh push forward.</p>
+
+    <h2>A quick recap of the tools in this course</h2>
+    <ul>
+      <li><strong>Loneliness Quiz</strong> (Lesson 2) — for understanding your specific connection needs, useful to revisit any time your circumstances change significantly.</li>
+      <li><strong>Social Battery</strong> (Lessons 3 and 12) — for tracking your social energy and capacity, worth checking in with periodically as your life and rhythm evolve.</li>
+      <li><strong>Find Your People</strong> (Lesson 6) — for surfacing communities aligned with your interests, useful again any time you want to deliberately expand into a new area of interest.</li>
+      <li><strong>Conversation Starter</strong> (Lesson 9) — for generating openers, handy whenever you're heading into an unfamiliar social situation, not just during a relocation.</li>
+      <li><strong>Check-In Generator</strong> (Lesson 15) — for maintaining connections without the friction of figuring out what to say, relevant for the rest of your social life, not just these twelve weeks.</li>
+    </ul>
+
+    <h2>Introducing the Friendship Audit</h2>
+    <p>The Friendship Audit tool is the one built specifically for this stage — an ongoing check-up rather than a starting-point tool. It takes stock of your current social landscape as it actually is now: who you're connected to, how those relationships are doing, where there might be quiet gaps or connections that have drifted without you fully noticing. Where the Loneliness Quiz in Lesson 2 helped you understand what you needed at the very start, the Friendship Audit is designed to help you see, at any point going forward, what you've actually built and where it might need attention.</p>
+    <p>Consider running it now, as a real snapshot of where things stand at the end of this course — and then again every few months going forward, as part of the light periodic check-in rhythm from the last lesson.</p>
+
+    <h2>How the tools fit together as an ongoing system</h2>
+    <p>Used together, these tools cover the full cycle of an ongoing social life, not just the from-scratch relocation process:</p>
+    <ol>
+      <li><strong>Assess</strong> — Friendship Audit, periodically, to see the current state of your network honestly.</li>
+      <li><strong>Understand capacity</strong> — Social Battery, whenever your energy or rhythm shifts.</li>
+      <li><strong>Expand</strong> — Find Your People, whenever you want to deliberately grow into a new area or interest.</li>
+      <li><strong>Connect</strong> — Conversation Starter, whenever you're heading into a new or unfamiliar social situation.</li>
+      <li><strong>Maintain</strong> — Check-In Generator, on an ongoing basis, to keep what you've built alive.</li>
+    </ol>
+    <p>You don't need to use all five constantly. Think of them as a toolkit to reach for at the specific moment each one is useful — the same way you'd reach for different tools at different stages of any long-term project, rather than using all of them at once, all the time.</p>
+
+    <h2>Closing thought</h2>
+    <p>Twelve weeks ago, moving to a new city with no social world in place probably felt like one of the harder things you'd taken on. You've since built a working map of your city, real experience initiating with strangers, an honest understanding of your own social energy, and — most importantly — actual relationships that didn't exist when you started. That's the real outcome of this course: not a finished, permanent social life that never needs attention again, but a working system, and the direct experience of having used it successfully once already. If you ever need to do this again — a future move, a big life change, a long stretch of drift — you now genuinely know how.</p>
+
+    <h2>What to do if you need to relocate again someday</h2>
+    <p>It's worth pointing out directly: everything covered in this course — the reframe of loneliness as a signal, the mapping of a new city's social infrastructure, the approach and conversation skills, the consistency and maintenance habits — is fully transferable to any future move, not specific to this particular relocation. The specific city changes; the underlying process doesn't. If you ever face this again, you won't be starting from the same uncertainty you started with this time. You'll already know the shape of the dip, roughly how long it tends to last, and exactly which concrete steps shorten it — which, by itself, tends to make a second relocation meaningfully less daunting than the first.</p>
+    <p>The same is true even without a future move. The skills in this course apply just as directly to any major life transition that disrupts an existing social world — a career change, a new life stage like parenthood, an extended period of illness or caregiving, or simply a long stretch where an existing friend group has drifted apart. The underlying process of rebuilding a social world from a reduced starting point is the same one you've just practised directly.</p>
+
+    <h2>One last honest note</h2>
+    <p>Tools can meaningfully lower the friction of reaching out, expanding, or reflecting — but they're aids, not substitutes for the actual, sometimes uncomfortable human work of showing up, initiating, and following through that this entire course has walked you through. The real progress you've made over these twelve weeks came from you actually doing it, week after week, not from any single tool doing it for you. Keep that clear-eyed view of what these tools are for, and they'll keep being genuinely useful for as long as you need them.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Run the Friendship Audit now as your official end-of-course snapshot. Save or write down the result somewhere alongside your Lesson 18 reflection — together, they're a genuine record of what you built over these twelve weeks, worth having the next time you doubt your own progress.</p>
+    </div>
+
+    <p>That's the full course. Welcome to your new home.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🗺️</div>
+    <div class="tool-copy"><strong>Use the Friendship Audit</strong>This lesson pairs with the Friendship Audit tool — use it now while the ideas are fresh.</div>
+    <a href="/friendship-audit">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/19-long-term-connection-habits.html">← Lesson 19: Long-Term Connection Habits</a>
+    <a href="/courses/social-landing/content/">Back to course overview →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

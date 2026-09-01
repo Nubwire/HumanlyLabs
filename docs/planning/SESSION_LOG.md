@@ -6,6 +6,49 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-08-31 (3) — Built out The Social Landing course (20 lessons)
+
+**What was done:** wrote and published all 20 lesson pages for *The Social
+Landing* course (relocation loneliness / making friends after a move),
+covering all 6 modules end to end. Per the user's direction:
+- One standalone page per lesson (not inline on the curriculum page)
+- Full-length lessons (~900–1060 words each, averaging ~970) with a "Try
+  this" exercise box in every lesson
+- Each lesson that pairs with a Humanly Labs tool (Loneliness Quiz, Social
+  Battery ×2, Find Your People, Conversation Starter, Check-In Generator,
+  Friendship Audit) links out to it directly
+
+**How it's built:** content lives as structured data in
+`docs/scripts/build-social-landing-lessons.py` (a `LESSONS` list of dicts,
+one per lesson, each with its full HTML body) rendered through a shared
+template into `courses/social-landing/content/lessons/*.html`. To regenerate
+after editing lesson content, run that script from its own directory — it
+resolves the output path back to `courses/social-landing/content/lessons/`
+automatically. This keeps 20 lessons' worth of content maintainable from one
+file instead of hand-editing 20 near-identical HTML documents.
+
+**Wired into the site:**
+- `courses/social-landing/content/index.html` — all 20 "Coming soon" lesson
+  cards converted to real links (`<a class="lesson-card">`) pointing at the
+  new lesson pages, with a "Start →" status badge instead of "Coming soon"
+- `courses/social-landing/index.html` — fixed a pre-existing copy bug ("6
+  modules · 19 lessons" — the curriculum has always had 20)
+- Every lesson page has prev/next navigation, a breadcrumb back to the
+  course overview, `noindex, nofollow` (gated content, matches the pattern
+  used by the other course `content/` pages), and the same nav/analytics/
+  footer as the rest of the site
+
+**Verified:** ran the repo-wide link checker after every change — zero
+broken internal links or assets, including all 20 new pages and their
+prev/next chains. Confirmed no JS syntax errors anywhere in the site, and
+`target="_blank"` links all carry `rel="noopener noreferrer"`.
+
+**Not done yet:** Confidence Blueprint and Friendship Revival still show
+their full curriculum as "Coming soon" for every lesson — those two courses
+haven't been started. See `NEXT_STEPS.md`.
+
+---
+
 ## 2026-08-31 (2) — Site-wide bug sweep + fixes
 
 **What was done:** ran a systematic check across every HTML file — internal

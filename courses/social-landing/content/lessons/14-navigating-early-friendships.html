@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navigating Early Friendships — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 4 · Building Bridges</span>
+    <span class="lesson-num-badge">Lesson 14 of 20</span>
+  </div>
+  <h1 class="lesson-title">Navigating Early Friendships</h1>
+  <p class="lesson-sub">Understanding the stages of friendship development</p>
+  <div class="lesson-body">
+
+    <p>Once a connection has moved outside its original context — coffee's happened, plans are being made directly rather than only inside a group setting — it enters a genuinely new phase, with its own dynamics and its own common pitfalls. This lesson is a map of what typically happens next, so the normal bumps of early friendship don't get mistaken for signs that something's wrong.</p>
+
+    <h2>The rough stages of an emerging friendship</h2>
+    <p><strong>Stage one: testing the waters.</strong> Both people are still somewhat careful — conversation stays relatively light, plans are proposed tentatively, there's a bit of mutual politeness. This is completely normal and not a sign of low interest; it's how most friendships begin.</p>
+    <p><strong>Stage two: increasing disclosure.</strong> Conversation starts to include more personal material — opinions, minor vulnerabilities, references to other parts of each person's life. Psychologists call this reciprocal self-disclosure, and it tends to happen gradually and roughly in step: one person shares something a bit more personal, the other reciprocates at a similar depth, and trust builds through that back-and-forth rather than all at once.</p>
+    <p><strong>Stage three: testing reliability.</strong> Smaller moments start to test whether the relationship holds up under mild friction — a cancelled plan, a slow response, a minor disagreement. How both people handle these small tests matters more than it seems; handled with basic grace, they tend to build trust rather than damage it.</p>
+    <p><strong>Stage four: established friendship.</strong> The relationship no longer needs a specific occasion to continue — it has its own gravity, plans happen more easily, and the friendship extends into more of both people's lives.</p>
+    <p>This isn't a strict, linear checklist — real friendships move through these stages unevenly, sometimes skipping around, sometimes stalling at one stage for a while before moving forward. But recognising the general shape helps you correctly interpret where a specific connection currently sits.</p>
+
+    <h2>Common early-friendship worries — and why they're usually not signals</h2>
+    <p><strong>"They took a while to text back."</strong> Response time is a weak and unreliable signal of interest, especially early on, when neither person has yet built a rhythm of prioritising the other's messages. Read it charitably unless a clear pattern emerges over multiple interactions, not from a single instance.</p>
+    <p><strong>"The last hangout felt a bit flat."</strong> Not every hangout in an emerging friendship will feel electric — some will be genuinely unremarkable, and that's fine. Consistency over time matters far more than any single interaction's quality.</p>
+    <p><strong>"I always seem to be the one suggesting plans."</strong> Worth noticing, and worth naming honestly to yourself — but also worth remembering that some people are simply less likely to initiate regardless of their level of interest (see Lesson 13). Give it a few more data points before drawing a firm conclusion.</p>
+
+    <h2>Matching disclosure pace, not forcing it</h2>
+    <p>It's worth being mindful of the self-disclosure pattern from stage two specifically. Sharing something quite personal very early, before the other person has reciprocated at a similar depth, can occasionally feel like a mismatch in pace, even when it's well-intentioned. The generally reliable approach is to disclose slightly more than the other person has, rather than significantly more — inviting them to match rather than overshooting.</p>
+
+    <h2>When the pace mismatches</h2>
+    <p>Sometimes two people move through these stages at genuinely different speeds — one person feels ready for stage two disclosure while the other is still comfortably in stage one, or one person is initiating stage-three-level plans while the other still seems tentative. This isn't automatically a bad sign; people vary quite a bit in how quickly they open up, independent of how much they actually value the connection. A slower pace from the other side is often more about their general disposition or how many other close relationships they're currently managing than about how they feel about you specifically.</p>
+    <p>The practical response to a pace mismatch isn't to force the faster pace onto the relationship, nor to assume the slower pace means the connection isn't worth continuing. It's to keep showing up consistently, at a pace slightly ahead of theirs rather than dramatically ahead, and let the relationship find its own speed. Some of the strongest friendships take noticeably longer than average to move through these stages, and are no less real or lasting for it.</p>
+
+    <h2>Friendships don't all look the same shape</h2>
+    <p>It's worth adding that not every good, real friendship needs to progress all the way to stage four to be genuinely valuable. Some of the most enjoyable relationships in a person's life settle comfortably at stage two or three — reliable, warm, mutually enjoyed, without ever becoming an every-week, tell-them-everything kind of closeness. Treating stage four as the only "real" outcome can make perfectly good stage-two and stage-three relationships feel like they're falling short, when they're often exactly what they're meant to be.</p>
+
+    <h2>Trust your own read over the stage labels</h2>
+    <p>These stages are a useful general map, not a precise diagnostic tool to apply rigidly to every relationship. Some connections skip a stage almost entirely; others move through them in a different order. If a relationship feels genuinely good and is moving forward in its own way, don't force it to match this framework exactly. Use the stages as a way to interpret uncertainty and doubt, not as a checklist that overrides your own direct experience of how a specific friendship is actually going.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Think of one connection currently in progress and honestly place it on the four-stage map above. Write one sentence about what a natural next step would look like to move it forward — a slightly more personal conversation, a repeat hangout, an invitation to something a bit further outside the original context.</p>
+    </div>
+
+    <p>You now understand both how to build new connections and how they typically develop over time. Module 5 shifts focus to what comes after the early stage — sustaining and expanding a network that's starting to take real shape.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/13-inviting-being-invited.html">← Lesson 13: Inviting & Being Invited</a>
+    <a href="/courses/social-landing/content/lessons/15-the-friendship-check-in.html">Lesson 15: The Friendship Check-In →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

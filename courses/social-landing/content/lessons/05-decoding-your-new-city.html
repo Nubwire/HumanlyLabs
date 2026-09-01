@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decoding Your New City — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 2 · Navigation Systems</span>
+    <span class="lesson-num-badge">Lesson 5 of 20</span>
+  </div>
+  <h1 class="lesson-title">Decoding Your New City</h1>
+  <p class="lesson-sub">Identifying social hubs, community resources, interest-based groups</p>
+  <div class="lesson-body">
+
+    <p>Every city has a social infrastructure — the places, events, and institutions where connection actually happens — but almost none of it is visible from the outside. In your old city, you knew this infrastructure without thinking about it: which bar had the good trivia night, which park filled up on Sundays, which coworking space had the friendly regulars. In a new city, that map doesn't exist yet, and trying to build a social life without it means relying on luck instead of strategy. This lesson is about building that map deliberately.</p>
+
+    <h2>Three layers of social infrastructure</h2>
+    <p>It helps to think about a city's social opportunities in three layers, because they require different levels of commitment and produce different kinds of connection:</p>
+    <p><strong>Ambient hubs</strong> — places you visit repeatedly for a non-social reason (a gym, a coffee shop, a dog park, a library) where familiarity builds slowly just through showing up. Low effort, slow payoff, but very low-pressure.</p>
+    <p><strong>Structured groups</strong> — recurring, organised activities with a built-in reason to keep showing up: sports leagues, classes, clubs, volunteer groups, professional associations. Medium effort, more reliable payoff, because the structure does a lot of the social work for you.</p>
+    <p><strong>One-off events</strong> — meetups, mixers, festivals, pop-up events. Highest effort per interaction (you're always the new person), lowest reliability per single event, but useful for casting a wide net early on.</p>
+    <p>A strong early strategy usually leans most heavily on structured groups, uses ambient hubs as a steady low-effort background layer, and treats one-off events as reconnaissance rather than the main plan.</p>
+
+    <h2>Where to actually look</h2>
+    <p>Rather than waiting for a comprehensive answer to appear, start pulling from a handful of concrete sources this week:</p>
+    <ul>
+      <li><strong>Local event and community platforms</strong> — Meetup, Eventbrite, Facebook Groups, and city-specific community apps or forums usually surface far more than you'd expect once you search your actual interests plus your neighbourhood name.</li>
+      <li><strong>Reddit and local subreddits</strong> — most cities have an active subreddit, and searching it for terms like "new to the city" or "how to meet people" often surfaces threads full of specific, current recommendations from people who've done exactly what you're doing.</li>
+      <li><strong>Libraries, community centres, and rec departments</strong> — chronically under-used and often free or cheap, with classes and groups that skew toward people specifically looking to meet others.</li>
+      <li><strong>Your workplace, gym, or building</strong> — the people already in your daily radius are the lowest-friction starting point, because you don't need to manufacture an occasion to see them again.</li>
+      <li><strong>Anyone you already know, however loosely</strong> — a former coworker's friend, a college acquaintance who happens to live nearby, a distant connection your family mentioned. These are disproportionately valuable, because they come pre-vetted and often open doors to their own social circle.</li>
+    </ul>
+
+    <h2>Build a living list, not a perfect plan</h2>
+    <p>The goal this week isn't to find "the answer" — it's to build a working list of five to ten specific options across the three layers above, so that when you have energy to act (and Module 3 gives you the tools to act on it), you're not starting from a blank page. Treat this list as alive: some options will turn out to be duds, and that's fine. You're gathering options, not making commitments yet.</p>
+
+    <h2>Reading a place beyond the obvious search results</h2>
+    <p>Beyond the platforms above, a city's social texture often shows up in less obvious places: the noticeboard at a local café, the flyer wall at a community centre, a neighbourhood Facebook group that's more active than the official city page, a coworker mentioning an event in passing. These sources tend to surface smaller, more local, less algorithmically-optimised options — often exactly the kind of low-key, repeat-attendee groups that produce real connection, as opposed to the large one-off events that show up first in a generic search.</p>
+    <p>It's also worth paying attention to what a place is known for informally, not just officially. Almost every city has an unofficial reputation among locals — for outdoor culture, for a strong scene around a particular hobby, for a certain kind of nightlife or daytime rhythm. Tuning into that reputation, rather than only searching your own pre-existing interests, sometimes surfaces communities you wouldn't have thought to look for, but that turn out to be a genuinely good fit once you try them.</p>
+
+    <h2>Don't let research replace action</h2>
+    <p>It's worth naming a trap that's easy to fall into at this stage: turning the research itself into a comfortable substitute for actually showing up anywhere. Building a thorough list can feel productive — and it genuinely is a useful first step — but a long list that never turns into an actual visit produces exactly zero connection. Give yourself a firm limit on research time this week (fifteen to twenty minutes is plenty to get a workable starting list) and treat anything beyond that as avoidance dressed up as preparation.</p>
+
+    <h2>Reconciling online research with the physical city</h2>
+    <p>A search result is a starting hypothesis, not a guarantee — a group that looks active online can turn out to be dormant, and a poorly-designed listing can hide a genuinely thriving community. It's worth cross-checking anything promising against a second signal where possible: recent posts or comments suggesting real, current activity, a specific meeting time you can actually verify, or simply a willingness to show up once and see for yourself rather than over-researching from behind a screen. The map is useful, but the territory is where the actual connection happens.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Spend fifteen minutes right now searching one of the sources above for your specific interests and neighbourhood. Write down at least three concrete options — a class, a group, a regular spot — with enough detail (name, day, location) that you could show up without having to search again later.</p>
+    </div>
+
+    <p>Next lesson builds directly on this list, helping you filter it down to the communities most likely to actually fit — not just the ones that happen to be easiest to find.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/04-setting-realistic-expectations.html">← Lesson 4: Setting Realistic Expectations</a>
+    <a href="/courses/social-landing/content/lessons/06-the-community-compass.html">Lesson 6: The Community Compass →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

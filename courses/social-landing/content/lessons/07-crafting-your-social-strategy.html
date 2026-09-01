@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crafting Your Social Strategy — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 2 · Navigation Systems</span>
+    <span class="lesson-num-badge">Lesson 7 of 20</span>
+  </div>
+  <h1 class="lesson-title">Crafting Your Social Strategy</h1>
+  <p class="lesson-sub">Building a personalised plan for engaging with new people</p>
+  <div class="lesson-body">
+
+    <p>You now have a filtered list of communities and dates on the calendar. This lesson turns that into an actual weekly rhythm — something specific enough to follow on autopilot during weeks when motivation is low, which, over a twelve-week course, will happen more than once.</p>
+
+    <h2>Why a plan beats "seeing how I feel"</h2>
+    <p>Relying on daily motivation to drive your social life is a losing strategy, for a simple reason: the exact conditions that make you feel like skipping a plan — tiredness, low mood, social anxiety about walking into a room of strangers — are usually the same conditions where showing up would help most. If the plan only happens on days you feel like it, it will happen inconsistently, and inconsistency is precisely what prevents the repeated exposure that builds friendship. A concrete weekly structure removes the daily negotiation and makes showing up the default, not a decision you have to win every time.</p>
+
+    <h2>Building your weekly structure</h2>
+    <p>Using your Module 3 baseline and your Module 6 shortlist, sketch a realistic weekly rhythm with three components:</p>
+    <ul>
+      <li><strong>Anchor commitments</strong> — your two structured groups from last lesson, on fixed days, treated like an appointment you don't renegotiate week to week.</li>
+      <li><strong>One ambient touchpoint</strong> — a regular visit to your chosen low-pressure hub (the coffee shop, the gym, the dog park), aiming for familiarity rather than any specific outcome.</li>
+      <li><strong>One flexible slot</strong> — held open for whatever opportunity comes up organically: an invitation, a one-off event that looks promising, or simply a lower-energy week where you lean on the ambient touchpoint alone.</li>
+    </ul>
+    <p>This is deliberately modest. The goal isn't to fill every evening — it's to build a rhythm you can actually sustain through an ordinary busy week, not just an ideal one. A realistic plan you follow consistently outperforms an ambitious plan you abandon after two weeks, every time.</p>
+
+    <h2>Plan for resistance, not just the calendar</h2>
+    <p>It's worth deciding in advance how you'll handle the moment — and there will be a moment — when you don't feel like going. A few approaches that tend to work better than willpower alone:</p>
+    <ul>
+      <li><strong>The 20-minute rule.</strong> Commit to showing up for just twenty minutes, with full permission to leave after that if you want to. Most of the time, the hardest part is walking in the door; once you're there, you usually stay longer than planned.</li>
+      <li><strong>Lower the bar for "success."</strong> On a low-energy week, success might just mean showing up and saying hello to one person, not having a great time or making a new friend. That's still a rep, and reps are what count.</li>
+      <li><strong>Tie it to something you already do.</strong> Attaching a new social commitment to an existing habit (going straight from work, going straight after your usual gym time) reduces the number of separate decisions you have to make.</li>
+    </ul>
+
+    <h2>Adjusting the plan without abandoning it</h2>
+    <p>A weekly rhythm isn't meant to be rigid. Life will interrupt it — a busy work week, travel, illness, simple fatigue — and the goal is to adjust the plan rather than either forcing it through regardless or dropping it entirely the first time it gets disrupted. If a week genuinely can't accommodate the full rhythm, protect the anchor commitments first and let the flexible slot and ambient touchpoint flex around them, rather than the reverse. A rhythm that bends occasionally and gets picked back up is far more durable over twelve weeks than one that has to be followed perfectly or not at all.</p>
+    <p>It's also worth reviewing the rhythm itself every couple of weeks, not just following it blindly. If one of your anchor commitments consistently feels like a chore rather than something you're glad you did, it's worth swapping it for another option from your Module 5 shortlist rather than gritting your teeth through it out of a sense of obligation to the plan. The plan exists to serve the actual goal — building genuine connection — not the other way around.</p>
+
+    <h2>Keeping the plan visible</h2>
+    <p>A rhythm that only exists as a mental intention tends to lose out to whatever feels most urgent in a given moment — and after a full day, an evening on the couch will almost always feel more urgent than a plan made a week earlier for a version of you with more energy. Writing the rhythm somewhere you'll actually encounter it during the week — a recurring calendar block with a reminder, a note pinned somewhere visible — shifts the decision from "do I feel like this right now" to "this is already the plan," which is a meaningfully easier decision to follow through on.</p>
+
+    <h2>A plan is a starting point, not a contract</h2>
+    <p>It's worth explicitly giving yourself permission to revise this plan as you learn more about what actually works for you over the coming weeks. The version you write today is your best current guess, made with limited information about this specific city and these specific communities. Treat weeks two and three as a live test of the plan, not a final commitment — you'll likely swap out at least one component once you have real experience to draw on instead of best guesses.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Write your weekly rhythm out in plain terms — day, time, place, for each of the three components above. Put it somewhere you'll actually see it (a note on your phone, a calendar block) rather than just in your head. Plans that live only in your head are the easiest ones to quietly drop.</p>
+    </div>
+
+    <p>You now have a map of your city, a shortlist of communities, and a weekly rhythm to follow. Module 3 is where the strategy meets the moment — the actual skills for walking into a room of strangers, starting a conversation, and making it memorable enough to lead somewhere.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/06-the-community-compass.html">← Lesson 6: The Community Compass</a>
+    <a href="/courses/social-landing/content/lessons/08-overcoming-approach-anxiety.html">Lesson 8: Overcoming Approach Anxiety →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Community Compass — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 2 · Navigation Systems</span>
+    <span class="lesson-num-badge">Lesson 6 of 20</span>
+  </div>
+  <h1 class="lesson-title">The Community Compass</h1>
+  <p class="lesson-sub">Finding communities that align with your values and interests</p>
+  <div class="lesson-body">
+
+    <p>Not every option on the list you built last lesson deserves your limited social energy. Showing up to five different, unrelated one-off events a week feels productive, but it usually produces a wide spray of shallow contact rather than the repeated exposure that friendship actually requires. This lesson is about narrowing your list down to a smaller number of communities that are genuinely likely to fit — so the effort you do spend compounds instead of scattering.</p>
+
+    <h2>Alignment matters more than proximity</h2>
+    <p>It's tempting to prioritise whatever's closest or easiest, but the communities most likely to produce real friendship are the ones aligned with something that actually matters to you — a shared interest, a shared value, a shared identity, or a shared activity you'd do anyway even if no one else showed up. Alignment does two things at once: it gives you a natural, non-forced topic of conversation, and it filters for people who are more likely to become genuine friends rather than just familiar faces, because you already have something real in common.</p>
+    <p>A useful filter question for anything on your list: would I keep doing this even if it never led to a single friendship? If yes, it's a strong candidate — you'll show up consistently regardless of social payoff, which is exactly what builds familiarity over time. If the honest answer is no, it's more likely to fizzle within a few weeks once the novelty wears off.</p>
+
+    <h2>Depth over breadth, at this stage</h2>
+    <p>It's better to commit to two or three communities and show up consistently than to sample ten once each. Repeated exposure to the same group of people is what turns "the person I sat near at trivia" into "the person I sat near at trivia three weeks running who I now say hello to by name." A single visit rarely produces that; five visits over five weeks very often does.</p>
+    <p>As a starting target: pick two structured groups and one ambient hub from your list, commit to attending consistently for the next month, and treat everything else as optional exploration rather than obligation.</p>
+
+    <h2>Use Find Your People to widen and sharpen the search</h2>
+    <p>The Find Your People tool below takes your specific interests and gives you targeted community types, formats, and a concrete first step for each — often surfacing options you wouldn't have thought to search for directly. Use it to cross-check and expand the list you built last lesson, especially if you're finding it thin.</p>
+
+    <h2>What to do when nothing on your list feels quite right</h2>
+    <p>Sometimes the honest answer, after checking your list against the "would I do this anyway" filter, is that nothing on it clears the bar — everything feels like it's there mainly for the social payoff, not because you'd genuinely want to be doing it otherwise. If that's the case, it's worth widening your search rather than settling for a weak fit. Consider interests you've let lapse since before the move, or something you've always been mildly curious about but never had the occasion to try. A new city, inconveniently, is also a genuine opportunity to pick up something you wouldn't have started otherwise — and "genuinely interested, brand new to it" is often a better social starting point than "not that interested, doing it for the people," because everyone in a beginner group is on equal footing.</p>
+    <p>It's also fine for your answer to change over the following weeks. The point of the filter isn't to make a permanent decision now — it's to stop you from spreading your limited energy across ten weak options instead of concentrating it on two or three genuinely promising ones, at least for the next month.</p>
+
+    <h2>Give an option a fair trial before judging it</h2>
+    <p>First visits to a new group are almost always a little awkward, no matter how well-matched the group turns out to be — you don't know the norms yet, you don't recognise anyone, and the natural in-jokes and rhythms of an established group take a visit or two to pick up on. It's a common and understandable mistake to write off a genuinely promising community after one slightly stilted first visit. A fairer test is three visits before deciding: the first is almost always the most awkward one, and the difference between visit one and visit three is often larger than people expect. If it's still clearly not working by visit three, that's a legitimate signal to move on to something else from your list — but give it that fair a trial first.</p>
+
+    <h2>What "alignment" doesn't mean</h2>
+    <p>Alignment doesn't require finding people who are similar to you in every way, or even most ways. It means sharing one genuine point of connection substantial enough to build on — an interest, a value, an activity — while leaving plenty of room for real differences elsewhere. Some of the most durable friendships form between people who'd look, on paper, quite different from each other, held together by one strong shared thread rather than broad similarity. Don't rule out a community just because the people in it don't otherwise resemble your old friend group; the one thing you have in common may end up mattering more than everything you don't.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>From your list, circle the two or three options that pass the "would I do this anyway" test. Put a specific date and time next to each one for this coming week — not "sometime soon," an actual date on your calendar. Vague intentions rarely survive an ordinary busy week; scheduled ones usually do.</p>
+    </div>
+
+    <p>With a short, aligned list and real dates on the calendar, you're set up for the next module: actually showing up and making first contact, without the added pressure of also having to figure out where to be.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🧩</div>
+    <div class="tool-copy"><strong>Use the Find Your People</strong>This lesson pairs with the Find Your People tool — use it now while the ideas are fresh.</div>
+    <a href="/find-your-people">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/05-decoding-your-new-city.html">← Lesson 5: Decoding Your New City</a>
+    <a href="/courses/social-landing/content/lessons/07-crafting-your-social-strategy.html">Lesson 7: Crafting Your Social Strategy →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

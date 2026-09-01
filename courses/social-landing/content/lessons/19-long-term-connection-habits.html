@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Long-Term Connection Habits — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 6 · Your New Home</span>
+    <span class="lesson-num-badge">Lesson 19 of 20</span>
+  </div>
+  <h1 class="lesson-title">Long-Term Connection Habits</h1>
+  <p class="lesson-sub">Establishing sustainable practices for ongoing social wellbeing</p>
+  <div class="lesson-body">
+
+    <p>The structure of this course ends soon, but a social life doesn't run on a twelve-week course — it runs on ongoing habits. This lesson is about which parts of what you've built are worth carrying forward permanently, so the progress from the last twelve weeks continues compounding rather than quietly reverting once the structured plan is gone.</p>
+
+    <h2>What to keep from the course structure</h2>
+    <p>Not everything from these twelve weeks needs to continue exactly as it was — some of it was scaffolding, useful specifically because you were starting from zero. But a few elements are worth deliberately keeping as ongoing habits, not just course exercises:</p>
+    <ul>
+      <li><strong>The anchor-commitment model.</strong> Having one or two recurring, protected social commitments — not necessarily the exact ones from this course — remains one of the most reliable ways to maintain and keep building a social life indefinitely, well past the initial relocation period.</li>
+      <li><strong>Proactive check-ins.</strong> The habit from Lesson 15 of reaching out first, briefly and specifically, rather than waiting to be reached out to, is a durable skill that keeps any social network — new or old — from quietly thinning out over time.</li>
+      <li><strong>Being an inviter, not just an invitee.</strong> The willingness from Lesson 13 to extend the first invitation is worth keeping as a general disposition, not a course-specific exercise — it's disproportionately valuable in any social context, for the rest of your life, not just this relocation.</li>
+      <li><strong>Honest energy management.</strong> Your relationship with your own social capacity, from Lessons 3 and 12, doesn't stop mattering once you're settled. Pay attention to it on an ongoing basis, and adjust your social rhythm as your life and capacity change.</li>
+    </ul>
+
+    <h2>Letting go of the parts that were just scaffolding</h2>
+    <p>Some things were genuinely useful specifically because you were starting from zero, and don't need to continue in the same form: the wide net of one-off events from Module 2 was mainly reconnaissance, useful for a from-scratch situation, not something you need to keep doing indefinitely once you have an established social world. Similarly, the deliberate, effortful pacing from Lesson 12 can relax somewhat as your local connections become more established and, per the mere exposure principle, genuinely less effortful to maintain.</p>
+
+    <h2>Building a light long-term rhythm</h2>
+    <p>Rather than either abandoning structure entirely or rigidly maintaining the exact twelve-week plan forever, aim for something in between: a light, ongoing check-in with yourself every month or two. A few honest questions to revisit periodically:</p>
+    <ul>
+      <li>Am I still protecting my anchor commitments, or have they quietly slipped?</li>
+      <li>Is there anyone I've been meaning to check in with?</li>
+      <li>Has my social capacity or my needs changed since I last really thought about it?</li>
+      <li>Is there a new circle or interest worth exploring, the way I explored this city in Module 2?</li>
+    </ul>
+    <p>A social life, even a well-established one, benefits from this kind of light, occasional maintenance — it doesn't run entirely on autopilot indefinitely, but it needs far less deliberate effort once it has real momentum than it did at the very beginning.</p>
+
+    <h2>Guarding against slow reversion</h2>
+    <p>One realistic risk worth naming directly: without any structure at all, it's fairly common for the habits built over an intensive twelve-week period to erode slowly over the following months — not through any single decision to stop, but through the same kind of gradual neglect described in Lesson 15. A missed week here, a skipped check-in there, nothing dramatic enough to notice in the moment, until several months later the social rhythm has quietly thinned back out. This isn't a personal failing if it happens; it's simply what tends to occur when a effortful new habit loses its external structure all at once.</p>
+    <p>The light periodic check-in described below is specifically designed to catch this kind of drift early, while it's still a minor correction rather than a full rebuild. Treat it as genuinely non-negotiable, in the same spirit as the anchor commitments from earlier in the course — a small, protected practice specifically because its value compounds over a much longer timeframe than any single check-in reveals on its own.</p>
+
+    <h2>Habits that fit your actual life</h2>
+    <p>The most durable version of any of these habits is the one that requires the least willpower to sustain — which usually means attaching it to something already stable in your life rather than treating it as a freestanding new discipline. An anchor commitment on the same day as an existing errand, a check-in habit tied to your regular commute, a monthly review tied to a bill you already pay around the same date. Habits that piggyback on existing structure tend to survive busy stretches far better than ones that depend entirely on remembering to do them from a blank slate.</p>
+
+    <h2>A short permission slip</h2>
+    <p>It's fine, and normal, for your long-term social life to look a bit different in month six than it did at the end of week twelve — busier some months, quieter others, shaped by whatever else is happening in your life at the time. The goal was never to reach a fixed, permanent end state and then stop paying attention. It was to build the skills and the confidence to keep adjusting a real, living social life over time, the same way anyone tends and adjusts anything else that matters to them.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Pick a recurring date — the first of every month, for example — and set a brief, standing reminder to ask yourself the four questions above. Five minutes, a couple of times a year, is enough to catch drift before it becomes a real gap.</p>
+    </div>
+
+    <p>The final lesson brings everything together — how the Humanly Labs tools you've used throughout this course fit into your ongoing social life, well beyond the twelve weeks.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/18-reflecting-on-your-journey.html">← Lesson 18: Reflecting on Your Journey</a>
+    <a href="/courses/social-landing/content/lessons/20-the-humanly-labs-ecosystem.html">Lesson 20: The Humanly Labs Ecosystem →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

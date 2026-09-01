@@ -23,10 +23,14 @@ _Last updated: 2026-08-31_
   a live Cloudflare Pages deployment, **this fix should ship as soon as
   possible** — the homepage tool/course grid has likely been invisible to
   every visitor until now.
-- **Course build-out is next** — all three courses (`Confidence Blueprint`,
-  `Friendship Revival`, `Social Landing`) currently show a full 6-module
-  curriculum (18–21 lessons each) entirely marked "Coming soon." Actual
-  lesson content needs to be written. This is a large scope — see below.
+- **The Social Landing course is fully built out** — all 20 lessons across
+  6 modules are written, published, and linked from the curriculum page. See
+  `docs/scripts/build-social-landing-lessons.py` for how to edit/regenerate
+  lesson content.
+- **Confidence Blueprint and Friendship Revival are next** — both still show
+  their full curriculum (18–19 lessons each) as "Coming soon." Same process
+  as Social Landing: individual lesson pages, ~1000-word lessons with
+  exercises, linked from each course's `content/index.html`.
 
 ## Open questions (need answers before more work should land)
 
@@ -50,6 +54,9 @@ _Last updated: 2026-08-31_
 
 ## Suggested next steps (in rough priority order)
 
+- [ ] Build out Confidence Blueprint (18 lessons) using the same pattern and
+      generator script approach as Social Landing.
+- [ ] Build out Friendship Revival (19 lessons) — same pattern.
 - [ ] Confirm deployment target and, if not yet connected, connect this repo
       to Cloudflare Pages (or wherever it should live).
 - [ ] Resolve ADR-0003 (client-side API key exposure) — pick an approach and
@@ -60,7 +67,7 @@ _Last updated: 2026-08-31_
       previous version, so future exports can be diffed meaningfully instead
       of re-uploaded wholesale each time.
 - [ ] Consider whether shared UI (nav/footer/design tokens duplicated across
-      28 files) is worth extracting — see ADR-0002 consequences.
+      28+ files) is worth extracting — see ADR-0002 consequences.
 
 ## How to keep this useful across sessions
 

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Power of Consistency — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 4 · Building Bridges</span>
+    <span class="lesson-num-badge">Lesson 11 of 20</span>
+  </div>
+  <h1 class="lesson-title">The Power of Consistency</h1>
+  <p class="lesson-sub">Why showing up regularly matters and how to maintain momentum</p>
+  <div class="lesson-body">
+
+    <p>You're now roughly a third of the way through the course, past the initial groundwork and into real momentum-building. This module is about the specific mechanics of turning first contacts into something durable, and it starts with what's arguably the single highest-leverage factor in the entire process: showing up consistently, over time, to the same people and places.</p>
+
+    <h2>Mere exposure: why familiarity does most of the work</h2>
+    <p>One of the most robust, well-replicated findings in social psychology is the mere exposure effect: repeated, low-stakes exposure to a person, on its own, tends to increase how much you like them — independent of any particularly deep or meaningful interaction happening. This is a big part of why people so often become close with coworkers, classmates, or gym regulars despite nothing especially dramatic ever "happening" between them. Proximity plus repetition, sustained over time, is doing most of the work.</p>
+    <p>This has a very practical implication for your strategy: showing up to the same structured group or ambient hub week after week is, on its own, a genuinely effective social strategy — even on the weeks where the conversation feels unremarkable or you don't do anything you'd call "bonding." The familiarity is accumulating even when it doesn't feel like it.</p>
+
+    <h2>Why momentum is fragile in the early weeks</h2>
+    <p>Early-stage connections are disproportionately fragile, because neither person has yet built the kind of habit or trust that makes a relationship self-sustaining. A single missed week, a schedule conflict, or a bit of awkwardness can be enough to quietly derail a promising connection at this stage — not because the connection was weak, but because it hadn't yet accumulated the repetition needed to become resilient. This is exactly why consistency matters more in these early months than it will later, once relationships have their own inertia.</p>
+
+    <h2>Building momentum without forcing it</h2>
+    <p><strong>Protect your anchor commitments specifically.</strong> Of everything on your calendar, your two anchor groups from Module 7 deserve the most protection against being cancelled for something else, precisely because their value comes from repetition. A single missed one-off event costs you little; a pattern of missed anchor commitments resets your progress toward familiarity with that group.</p>
+    <p><strong>Show up even on unremarkable weeks.</strong> There's a strong temptation to skip a session when nothing exciting seems likely to happen — you're tired, the week's been ordinary, you don't feel like "performing." These are often exactly the weeks where showing up matters most, because the mere exposure effect doesn't require the interaction to be exciting to work.</p>
+    <p><strong>Track momentum, not just outcomes.</strong> Rather than only measuring "did I make a friend this week," track simpler momentum indicators: did I show up to my anchor commitments, did I recognise more faces than last time, do people seem to expect me now. These are the leading indicators; friendship is the lagging one.</p>
+
+    <h2>When to persist and when to let a connection go</h2>
+    <p>Consistency is powerful, but it's not unconditional — it's worth being honest about the difference between a connection that's slow-building and one that's genuinely not reciprocated. If you're consistently the only one initiating, consistently getting minimal engagement, or consistently sensing real disinterest rather than just early-stage reserve, that's useful information, not a reason to push harder out of principle. The value of consistency described in this lesson applies to relationships showing some sign of mutual investment, even a small one — not to relationships where the effort is entirely one-sided over an extended period.</p>
+    <p>A reasonable rule of thumb: give a promising-seeming connection real time and a few genuine attempts before drawing conclusions, in line with the timeline from Lesson 4 — but also trust a clear, consistent pattern once you actually see one, rather than explaining it away indefinitely. Redirecting the energy from a one-sided connection toward one with more mutual momentum is not giving up; it's allocating a limited resource where it's more likely to pay off.</p>
+
+    <h2>Consistency compounds quietly</h2>
+    <p>One reason consistency is easy to underrate is that its effects rarely show up as a single dramatic moment — there's no specific fourth visit where a group suddenly, visibly decides you belong. It shows up gradually, in small shifts you might not consciously register in the moment: someone using your name without being reminded, a seat that's implicitly become "yours," being included in a side conversation without having to insert yourself. These small shifts are the actual signal that consistency is working, even when nothing dramatic seems to be happening on any single visit.</p>
+
+    <h2>Consistency applies to yourself, too</h2>
+    <p>It's worth extending this same principle inward, not just toward the people and groups you're showing up for. Being consistent with the other habits from this course — your energy check-ins, your reflection exercises, your weekly rhythm — compounds in exactly the same quiet way. None of these individual pieces feel dramatic week to week, and that's precisely why they're easy to let slide. Treat your own follow-through on the course itself with the same consistency you're building toward your new social world.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Look at your calendar for the next two weeks and identify anywhere an anchor commitment might get quietly dropped in favour of something that feels easier in the moment. Decide now — before you're tired or unmotivated — that you'll protect it. Precommitting when your motivation is high is far more effective than relying on motivation in the moment.</p>
+    </div>
+
+    <p>Consistency lays the foundation, but it isn't the whole picture — it needs to be paired with sustainable pacing, which is what the next lesson addresses directly.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/10-active-listening-follow-up.html">← Lesson 10: Active Listening & Follow-Up</a>
+    <a href="/courses/social-landing/content/lessons/12-managing-the-energy-cost.html">Lesson 12: Managing the Energy Cost →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handling Setbacks & Rejection — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 5 · Sustaining Your Network</span>
+    <span class="lesson-num-badge">Lesson 17 of 20</span>
+  </div>
+  <h1 class="lesson-title">Handling Setbacks & Rejection</h1>
+  <p class="lesson-sub">Developing resilience and learning from less successful interactions</p>
+  <div class="lesson-body">
+
+    <p>Not everything in this process will go well, and by this point in the course, you've likely had at least one experience that stung a bit — an invitation that got a lukewarm response, a connection that fizzled despite real effort, a plan that fell through more than once. This is a completely normal part of building a social life from scratch, not evidence that your approach is flawed. This lesson is about processing setbacks in a way that keeps you moving forward rather than pulling back.</p>
+
+    <h2>Most setbacks aren't personal, even when they feel personal</h2>
+    <p>A rejected invitation, a slow response, a connection that quietly fades — the honest base rate is that most of these have far more to do with the other person's circumstances, bandwidth, or life stage than with anything about you specifically. People are dealing with their own version of a full, complicated life: existing friendships that already take up their social bandwidth, work stress, family demands, or simply a different pace of building new relationships than you're on. None of that is visible to you in the moment, which makes it very easy to default to a personal explanation ("they just don't like me") when a circumstantial one is usually more accurate and more useful.</p>
+
+    <h2>The difference between a setback and a pattern</h2>
+    <p>A single setback is data, not a verdict — but it's also worth being honest with yourself about genuine patterns, rather than dismissing everything as bad luck. If the same specific issue shows up repeatedly across several different connections, it's worth a closer, non-judgmental look: are you consistently the one who has to initiate? Is there a particular part of conversation you tend to avoid? Are you unintentionally cancelling plans more often than you realise? The goal isn't self-criticism — it's useful information you can actually act on, which is a very different thing from a vague, global sense that "I'm bad at this."</p>
+
+    <h2>Practical resilience tools</h2>
+    <p><strong>Separate the outcome from your effort.</strong> You have real control over whether you approach, invite, and follow up. You don't have control over how someone else responds. Evaluating yourself on the things you actually control — did I make the attempt — rather than on outcomes you don't fully control keeps setbacks from feeling like personal failures.</p>
+    <p><strong>Give yourself a short, deliberate reset.</strong> After a setback that stings, it's fine to take a day or two before your next attempt rather than forcing yourself back out immediately. The goal is a brief, intentional reset — not an indefinite retreat that quietly becomes avoidance.</p>
+    <p><strong>Return to your win list.</strong> Revisit the realistic definition of progress you wrote in Lesson 4. A single setback rarely erases the real progress that's accumulated — it just feels, in the moment, like it does.</p>
+    <p><strong>Remember the numbers game.</strong> Not every approach, invitation, or connection is meant to turn into a close friendship, and that's fine — you only need a handful of real connections to have a genuinely good social life. Treating each individual setback as expected, ordinary attrition, rather than a special failure, keeps the process from feeling more fragile than it actually is.</p>
+
+    <h2>Processing the sting without dwelling in it</h2>
+    <p>There's a difference between briefly feeling a setback and ruminating on it for days, replaying the interaction and searching for what you did wrong. A small amount of the former is normal and even useful — it's your brain flagging something worth paying attention to. Extended rumination, on the other hand, tends to produce more distorted, self-critical conclusions the longer it continues, without actually generating any more useful information than the first few minutes of reflection already provided. If you notice a setback is still occupying significant mental space after a day or two, it's often more productive to deliberately redirect — back to a scheduled anchor commitment, a check-in with an existing connection, anything that generates a small, positive counter-experience — rather than continuing to analyse the same setback from every angle.</p>
+    <p>It also helps to talk it through with someone, whether an old friend from before the move or a newer local connection you trust. Saying a setback out loud to another person often reveals, almost immediately, how much smaller and more ordinary it sounds spoken than it felt while turning it over privately in your own head.</p>
+
+    <h2>Resilience is a skill you're actively building</h2>
+    <p>Every setback handled reasonably well — processed without spiralling, without abandoning the whole effort, without treating it as unique evidence of a personal flaw — is itself a form of practice, the same way approaching a stranger is practice for approaching. By the later weeks of this course, most people find setbacks sting noticeably less than they did in week one, not because fewer of them happen, but because the skill of processing them well has been building the entire time, mostly without being named as its own skill until now.</p>
+
+    <h2>Setbacks tend to cluster near effort, not near failure</h2>
+    <p>It's worth noticing, if you track it honestly, that setbacks often show up precisely during the periods you're putting in the most effort — more invitations sent, more approaches made, more attempts overall. That's not a sign the effort is backfiring; it's simple exposure. More attempts mean more chances for any single one not to land, in exactly the same way more at-bats mean more strikeouts even for a genuinely good hitter. Rising setback count alongside rising effort is closer to a sign you're doing this right than a sign something's going wrong.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Think of your most recent setback and write two short lists: what was genuinely in your control (and how you handled it), and what wasn't in your control at all. Notice how much of what stung actually falls into the second list.</p>
+    </div>
+
+    <p>You're nearing the end of the twelve weeks. The final module looks back at how far you've actually come, and forward at how to keep this going well past the end of the course.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/16-expanding-your-circles.html">← Lesson 16: Expanding Your Circles</a>
+    <a href="/courses/social-landing/content/lessons/18-reflecting-on-your-journey.html">Lesson 18: Reflecting on Your Journey →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

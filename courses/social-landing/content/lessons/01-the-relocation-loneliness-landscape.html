@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Relocation Loneliness Landscape — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 1 · Preparing for Takeoff</span>
+    <span class="lesson-num-badge">Lesson 1 of 20</span>
+  </div>
+  <h1 class="lesson-title">The Relocation Loneliness Landscape</h1>
+  <p class="lesson-sub">What to expect, common pitfalls, reframing loneliness as a signal</p>
+  <div class="lesson-body">
+
+    <p>If you've relocated recently and the loneliness has hit harder than you expected, you are not doing this wrong. Relocation loneliness is one of the most common — and most under-discussed — experiences adults go through. It shows up whether you moved for a dream job, a relationship, or just a fresh start, and it shows up whether you moved across the country or across the world. This lesson sets the foundation for the next twelve weeks: what's actually happening when you feel this way, why it isn't a sign that something is wrong with you or your decision, and how to start treating it as useful information instead of a verdict.</p>
+
+    <h2>Why this feels so much harder than you expected</h2>
+    <p>Before you moved, your social world was probably invisible to you — in the way that infrastructure is invisible until it breaks. You had people who knew your coffee order, your work stress, your family's names, your Sunday routine. None of that had to be built or maintained consciously anymore; it just existed, accumulated over years. Moving doesn't just relocate your body. It quietly deletes that entire invisible support structure at once, and then asks you to rebuild it from nothing, usually while also handling a new job, a new apartment, and a hundred logistical details that leave little energy for anything else.</p>
+    <p>That combination — total social reset plus high logistical load — is why relocation loneliness often feels more acute than loneliness from other causes. It's not that you're less resilient or less socially capable than you were before. It's that you're doing one of the most socially demanding things a person can do, at the exact moment you have the fewest resources to do it with.</p>
+
+    <h2>Loneliness is a signal, not a diagnosis</h2>
+    <p>Psychologists who study loneliness often describe it the same way they describe hunger or thirst: as a biological signal that something needs attention, not as evidence of a personal flaw. Hunger doesn't mean you're bad at eating. Loneliness doesn't mean you're bad at connecting. It means your brain has correctly detected a gap between the social contact you need and the social contact you currently have — and it's motivating you to close that gap.</p>
+    <p>This reframe matters because of what people typically do with loneliness instead: they treat it as proof. Proof that the move was a mistake. Proof that they're somehow harder to connect with than other people. Proof that this is just how their life is going to be now. None of that follows from the feeling itself. The feeling is just information — accurate information, worth listening to, but not a life sentence and not a character assessment.</p>
+
+    <h2>The typical shape of relocation loneliness</h2>
+    <p>Most people who move go through a fairly predictable arc, even though it doesn't feel predictable while you're in it:</p>
+    <ul>
+      <li><strong>Weeks 1–2, the novelty phase.</strong> There's enough new-city adrenaline and logistical busyness that loneliness hasn't fully landed yet.</li>
+      <li><strong>Weeks 3–8, the dip.</strong> The novelty wears off, the logistics settle down, and the absence of a social world becomes the loudest thing in the room. This is usually the hardest stretch, and it's also exactly where most people are when they start a course like this one.</li>
+      <li><strong>Weeks 8–16, the slow rebuild.</strong> The first acquaintances turn into the first real connections. Progress is uneven and often invisible week to week, but it compounds.</li>
+      <li><strong>Months 4–12+, consolidation.</strong> A genuine social life exists — not identical to the one you left, but real, and often surprisingly solid in its own right.</li>
+    </ul>
+    <p>If you're currently in the dip, this course is built to shorten it. But it helps enormously just to know the dip is a normal, time-limited phase of a well-understood process — not evidence that this is permanent.</p>
+
+    <h2>Three pitfalls that quietly extend the dip</h2>
+    <p><strong>Over-relying on your old social world.</strong> Long calls with old friends can be a lifeline, and you should keep them. But if video calls with people from your old city are your only source of connection, they can also become a way of avoiding the harder, more awkward work of building something new locally — because it feels safer to talk to people who already know you.</p>
+    <p><strong>Waiting to be invited.</strong> In an established social world, invitations flow in both directions without much thought. In a new city, nobody has you in their rotation yet — not because they don't like you, but because you're not yet on their mental list of people to think of. Waiting for that to happen on its own can take a very long time. Initiating is the actual unlock, and later lessons will make it much less daunting.</p>
+    <p><strong>Comparing week 3 in the new city to year 5 in the old one.</strong> This comparison is almost never fair, and it's almost always what makes people conclude "I'm just not connecting here" far too early. A more honest comparison is: how did your old social world look in its own third week, if you could rewind ten years?</p>
+
+    <h2>What this course won't ask you to do</h2>
+    <p>This isn't a course about forcing yourself to become a different, more extroverted person, or about treating every waking hour as a networking opportunity. It's about applying a small number of well-understood, learnable skills consistently enough that they compound — the same way a modest, consistent savings habit compounds into something substantial over time, even though no single deposit feels significant on its own. You'll keep your own pace, your own style, and your own definition of what a good social life looks like throughout.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Take two minutes and write down, honestly, where you think you currently are in the four-phase arc above. Then write one sentence about what would need to be true for you to feel like you'd moved into the next phase. You'll come back to this note at the end of the course.</p>
+    </div>
+
+    <p>The rest of this module builds your starting map: your specific social needs, your energy baseline, and a realistic timeline you can actually hold yourself to. From Module 2 onward, we get concrete — decoding your city, finding your people, and making first contact. For now, the only job is to let this reframe land: what you're feeling is common, temporary, and responsive to action. That's the whole premise of the next twelve weeks.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <span class="nav-placeholder">← Start of course</span>
+    <a href="/courses/social-landing/content/lessons/02-your-social-connection-profile.html">Lesson 2: Your Social Connection Profile →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

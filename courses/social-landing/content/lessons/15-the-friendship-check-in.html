@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Friendship Check-In — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 5 · Sustaining Your Network</span>
+    <span class="lesson-num-badge">Lesson 15 of 20</span>
+  </div>
+  <h1 class="lesson-title">The Friendship Check-In</h1>
+  <p class="lesson-sub">Proactive ways to maintain connections and show appreciation</p>
+  <div class="lesson-body">
+
+    <p>By this stage of the course, you likely have several connections in progress at once — some solidly established, some still emerging, a few that have gone quiet without any real falling-out. This module is about maintenance: the ongoing, mostly unglamorous work of keeping a growing social world actually alive, rather than letting new connections quietly compete with each other for attention until several fade at once.</p>
+
+    <h2>Why connections go quiet without anything going wrong</h2>
+    <p>Most friendships that fade don't fade because of conflict — they fade from simple neglect, usually on both sides at once, with neither person deciding to end things so much as both quietly deprioritising a connection that isn't yet on autopilot. This is especially common with connections still in stage one or two of the friendship arc from Lesson 14, before the relationship has built its own momentum. A single unreturned message, an uncommented life update, a missed catch-up — none of it fatal individually, but the pattern adds up.</p>
+    <p>The fix isn't complicated, but it does require being proactive rather than assuming things will maintain themselves. A short, well-timed check-in message is disproportionately effective at keeping a connection alive relative to how little effort it takes to send.</p>
+
+    <h2>What makes a check-in land well</h2>
+    <p>The best check-ins share a few features: they reference something specific rather than being generic, they don't require an elaborate response, and they show genuine interest rather than reading as an obligation being discharged. "Hey, thinking of you, hope you're well" is well-intentioned but easy to leave unanswered, because it doesn't invite a specific response. "Hey, how did that work presentation go, the one you were stressed about?" is easy to reply to, because it references something concrete and shows you actually remembered.</p>
+    <p>Timing matters too. A check-in doesn't need a special occasion — in fact, unprompted check-ins ("no particular reason, just thought of you") often land better than ones that feel obligatory, because they read as genuine rather than dutiful.</p>
+
+    <h2>Building a light maintenance habit</h2>
+    <p>Rather than relying on memory alone, it helps to build a small, low-effort system: a short mental or written list of the people you want to stay in touch with, and a loose rhythm for checking in — not rigid scheduling, but enough structure that connections don't slip through the cracks simply because you got busy. Even reaching out to one or two people a week, briefly, keeps a growing network genuinely alive rather than slowly thinning out.</p>
+
+    <h2>Use the Check-In Generator when the words don't come easily</h2>
+    <p>It's a very common experience to want to reach out to someone and then get stuck on exactly how to phrase it — worried about sounding random, needy, or out of nowhere. The Check-In Generator tool below takes who you want to reach out to and how long it's been, and produces a few natural, low-pressure message options, so the blank page doesn't become the reason the message never gets sent.</p>
+
+    <h2>Check-ins work in both directions</h2>
+    <p>It's worth remembering that maintenance isn't only about the messages you send — noticing and responding well to check-ins you receive matters just as much. A friend or new connection who reaches out deserves the same specificity and genuine engagement you're aiming for in your own messages: replying with real content rather than a bare "good, you?", and occasionally being the one to suggest turning the check-in into an actual plan rather than letting it stay purely conversational. A pattern of check-ins that never turn into plans can, over time, start to feel like the relationship is stuck at a surface level — worth noticing if it becomes a repeated pattern.</p>
+    <p>It also helps to vary the kind of check-in you send rather than defaulting to the same message every time. A specific question about something ongoing in their life, a relevant article or recommendation that made you think of them, an actual invitation rather than just a conversational check-in — mixing these up keeps the relationship feeling attentive rather than routine, and gives you more natural ways to stay present in someone's life beyond a repeating script.</p>
+
+    <h2>Maintenance matters most for the connections that aren't fully established yet</h2>
+    <p>It's worth prioritising your check-in effort deliberately rather than spreading it evenly. Established, stage-four friendships (see Lesson 14) tend to have their own resilience and can usually survive a quiet stretch without much damage. Newer, stage-one or stage-two connections are far more fragile, and are exactly where a well-timed check-in does the most good — helping a promising but not-yet-solid connection survive the vulnerable early period rather than quietly fading before it's had the chance to become established.</p>
+
+    <h2>Don't wait for a "big" reason</h2>
+    <p>Many people implicitly wait for a significant occasion — a birthday, a major life update, a special event — before reaching out, which drastically limits how often anyone actually does it. The most sustainable maintenance habit treats an ordinary Tuesday as reason enough. In fact, an unprompted check-in with no special occasion attached often lands as more thoughtful, precisely because it signals you were thinking of someone without needing an external excuse to do so.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Think of one connection that's gone a bit quiet — not through any conflict, just drift. Send a specific, low-pressure check-in this week, referencing something real from your last interaction. Notice how much of the hesitation was really about the sending, not about the relationship itself.</p>
+    </div>
+
+    <p>Maintaining what you've built is only half the picture at this stage — the next lesson looks at deliberately expanding your circle further, using the connections you already have as a bridge to more.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">✉️</div>
+    <div class="tool-copy"><strong>Use the Check-In Generator</strong>This lesson pairs with the Check-In Generator tool — use it now while the ideas are fresh.</div>
+    <a href="/checkin-generator">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/14-navigating-early-friendships.html">← Lesson 14: Navigating Early Friendships</a>
+    <a href="/courses/social-landing/content/lessons/16-expanding-your-circles.html">Lesson 16: Expanding Your Circles →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

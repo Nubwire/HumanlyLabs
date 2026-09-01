@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expanding Your Circles — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 5 · Sustaining Your Network</span>
+    <span class="lesson-num-badge">Lesson 16 of 20</span>
+  </div>
+  <h1 class="lesson-title">Expanding Your Circles</h1>
+  <p class="lesson-sub">How to leverage existing connections to meet even more people</p>
+  <div class="lesson-body">
+
+    <p>Once you have even a few real local connections, the work of expanding your social world gets noticeably easier — the connections you've already built become a bridge to more, rather than everything continuing to require the higher-effort work of meeting complete strangers. This lesson is about deliberately using that bridge rather than leaving it to chance.</p>
+
+    <h2>Weak ties are more valuable than they seem</h2>
+    <p>There's a well-known finding from sociology, often summarised as "the strength of weak ties": your close friends tend to know a lot of the same people you already know, because close social circles overlap heavily. Your looser acquaintances — the friendly coworker, the person from your class you don't know that well yet — are actually more likely to introduce you to genuinely new people, because their social circles don't overlap as much with yours. In practice, this means your growing list of newer, lighter local connections is a real and underused resource for expanding further, even though it doesn't feel as significant as your closer friendships.</p>
+
+    <h2>Practical ways to leverage your existing network</h2>
+    <p><strong>Ask directly, without overthinking it.</strong> "You mentioned a hiking group you're part of — would it be weird if I came along sometime?" is a completely normal, low-stakes request. Most people are glad to bring someone along to something they already enjoy; it rarely feels like an imposition unless you frame it as one.</p>
+    <p><strong>Say yes to plus-one invitations.</strong> If someone invites you to something where you'll mostly know just them — a party, a group dinner, an event with their other friends — treat it as a genuine opportunity rather than a reason for anxiety. You already have one person in the room who wants you there, which is a significant head start compared to walking into a room alone.</p>
+    <p><strong>Host something small yourself.</strong> Hosting flips the social dynamic in your favour — you become the connective node bringing people together rather than always being the one integrating into someone else's existing circle. It doesn't need to be elaborate: a casual dinner, a game night, a group trip to a low-key event. Even a modest gathering of four or five people, some of whom don't know each other yet, can meaningfully expand your network in a single evening.</p>
+    <p><strong>Introduce people to each other.</strong> Actively connecting two people you know who might get along is a generous, low-cost act that tends to come back around — both because it strengthens your relationship with each of them, and because people who make good connectors tend to get included in more things themselves.</p>
+
+    <h2>Balancing expansion with depth</h2>
+    <p>It's worth being intentional here rather than treating expansion as an end in itself. A wider network is genuinely valuable — more resilience, more variety, more chances for a close friendship to emerge from an unexpected direction — but it shouldn't come at the direct expense of the deeper connections you're already building from Module 4. If your calendar is full of new, wide contact and nothing narrow and repeated, revisit Lesson 3's energy management and make sure your anchor relationships are still getting protected time.</p>
+
+    <h2>Hosting without overthinking it</h2>
+    <p>Hosting tends to carry an outsized intimidation factor relative to how simple it actually needs to be. It's easy to imagine hosting as requiring an impressive space, an elaborate meal, or a fully-formed friend group to invite — none of which is actually necessary. A genuinely effective first hosting attempt might be as simple as suggesting a casual potluck, inviting a few people from different parts of your still-forming network to a low-key game night, or organising a group outing to something you were going to do anyway, like a hike or a trivia night, and opening it up to a few extra people.</p>
+    <p>The social value of hosting comes less from the polish of the event and more from the structural role you're taking on: you become the person who brought these specific people together, which tends to be remembered and appreciated well beyond the event itself. Even a modest, slightly imperfect gathering accomplishes this. Waiting for the "right" occasion or a fully-formed friend group to host tends to delay this disproportionately valuable move for far longer than necessary.</p>
+
+    <h2>Quality still matters more than headcount</h2>
+    <p>None of this is about maximising the raw number of people you know for its own sake. A larger, more varied network is valuable mainly because of what it enables — more paths to a genuine close friendship, more resilience if one relationship fades, more variety in your week. If expansion starts to feel like collecting contacts rather than genuinely getting to know people, it's worth returning to your Lesson 2 profile and recentring on the depth of connection you actually want, not just the width of your network.</p>
+
+    <h2>Expansion works alongside everything else in this module</h2>
+    <p>Notice how this lesson connects back to the maintenance habits from Lesson 15 — the check-ins you're sending to keep connections alive are also, indirectly, what keeps those connections willing and available to introduce you further into their world. A network that's well-maintained tends to open up more readily than one that's been left to go quiet, which is one more reason the two practices work best together rather than as separate, unrelated tasks.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Pick one existing connection and ask them directly to bring you along to something they're already part of — a group, an event, a regular hangout. If nothing comes to mind, consider hosting something small yourself in the next few weeks instead.</p>
+    </div>
+
+    <p>Expansion will occasionally come with setbacks — a plan that falls through, an invitation that doesn't lead anywhere, a connection that quietly fades despite your effort. The next lesson is about handling that resilience directly.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/15-the-friendship-check-in.html">← Lesson 15: The Friendship Check-In</a>
+    <a href="/courses/social-landing/content/lessons/17-handling-setbacks-rejection.html">Lesson 17: Handling Setbacks & Rejection →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

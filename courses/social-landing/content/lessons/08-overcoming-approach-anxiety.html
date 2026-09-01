@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overcoming Approach Anxiety — The Social Landing — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-green: #3A6B49; --c-green-l: #E8F2EC; --c-green-b: #A8CEAF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-green); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-green); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-green); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-green); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-green); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-green-l); border: 1px solid var(--c-green-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-green); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-green); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-green); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-green); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">✈️ The Social Landing</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/social-landing/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 3 · First Contact</span>
+    <span class="lesson-num-badge">Lesson 8 of 20</span>
+  </div>
+  <h1 class="lesson-title">Overcoming Approach Anxiety</h1>
+  <p class="lesson-sub">Practical techniques for managing nerves and initiating conversations</p>
+  <div class="lesson-body">
+
+    <p>Almost everyone feels some version of nerves before approaching a stranger or a group they don't know — including people who look completely at ease doing it. Approach anxiety isn't a sign you're bad at this; it's a near-universal response to genuine social uncertainty. This lesson isn't about eliminating that feeling. It's about understanding where it comes from and having a few concrete tools to act despite it, because waiting for the nerves to disappear before you approach someone usually means waiting indefinitely.</p>
+
+    <h2>Where approach anxiety actually comes from</h2>
+    <p>Approach anxiety is largely driven by two overlapping fears: the fear of rejection, and the fear of an awkward, effortful interaction. Both fears tend to get inflated by a very reliable cognitive bias — we consistently overestimate both how badly things will go and how much other people will judge us if they do. Researchers who study this call it the "spotlight effect": we assume we're being watched and evaluated far more closely than we actually are, because we're the centre of our own experience, so it feels like we must be the centre of everyone else's too.</p>
+    <p>In practice, this means the gap between how bad an approach feels in your head beforehand and how it actually goes is usually much larger than it seems in the moment. Most people, most of the time, are perfectly friendly to a polite stranger who approaches them — mildly flattered, if anything, that someone made the effort.</p>
+
+    <h2>The liking gap</h2>
+    <p>There's a related, well-documented finding sometimes called the "liking gap": after a conversation with someone new, people systematically underestimate how much the other person enjoyed talking to them and how much the other person liked them. If your internal read of a conversation is "that was fine, but I don't think they were that into it," the honest statistical bet is that the other person's internal read was more positive than yours — not less. This is worth remembering specifically because approach anxiety often survives a genuinely good interaction, simply by reinterpreting it after the fact as more awkward than it actually was.</p>
+
+    <h2>Techniques that make approaching easier</h2>
+    <p><strong>Lower the stakes deliberately.</strong> You're not trying to make a friend for life in the next ninety seconds — you're trying to have one small, pleasant exchange. Reducing the goal to something that small makes the approach feel far less consequential, because it is far less consequential.</p>
+    <p><strong>Use the environment as your opener.</strong> A comment about something shared and present — the event, the food, the weather, the activity — is almost always easier to deliver and easier to receive than an opener that requires more social courage, because it doesn't require any personal disclosure to start.</p>
+    <p><strong>Approach groups at a natural gap.</strong> Joining a circle of people mid-conversation feels intrusive; joining right after a natural pause, a laugh, or when someone glances your way is much lower-friction and rarely reads as interruption.</p>
+    <p><strong>Give yourself a physical count-in.</strong> If you're standing at the edge of a room working up the nerve, give yourself a literal countdown — "I will walk over by the time I count to five" — rather than an open-ended wait for the fear to subside on its own. The fear rarely fully subsides before you act; it mostly subsides after.</p>
+
+    <h2>Reframing rejection</h2>
+    <p>Even accounting for the biases above, some approaches genuinely won't land — someone's in a rush, mid-conversation, or just not in the mood. That's not a referendum on you. Treat each approach as a rep, not a test. The people who build strong social lives quickly aren't the ones with a 100% success rate on approaches; they're the ones who did enough reps that the average outcome, not any single interaction, is what shaped their social life.</p>
+
+    <h2>What confident-looking people are actually doing differently</h2>
+    <p>It's worth debunking a common assumption directly: people who seem to approach strangers effortlessly are, in the large majority of cases, not free of the nerves described above — they've simply built a higher tolerance for acting despite them, usually through sheer repetition rather than some innate advantage. Approach anxiety doesn't disappear through confidence arriving first; confidence tends to arrive after repeated evidence that approaching went better than predicted, which only accumulates through actually doing it while still nervous. In other words, the order most people expect — get confident, then approach — usually runs backwards from how it actually works in practice.</p>
+    <p>This reframe matters practically: waiting to feel ready before you approach someone is, for most people, waiting for a precondition that arrives after the behaviour, not before it. The workable strategy is closer to acting slightly ahead of your confidence, on purpose, and letting the confidence catch up over the following weeks as the evidence accumulates.</p>
+
+    <h2>A note on social anxiety specifically</h2>
+    <p>If what you experience goes meaningfully beyond ordinary nerves — a persistent, intense fear of judgment that interferes significantly with daily life, not just new-city approaches — that's worth distinguishing from the general approach anxiety this lesson addresses. The techniques here are genuinely useful for everyday nervousness, but they're not a substitute for professional support if anxiety is a significant, ongoing burden for you. There's no shame in that being true, and getting support for it is entirely compatible with everything else in this course.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>At your next scheduled social plan, set yourself a small, specific target: approach or speak first to one person you don't already know. Not five. One. Notice afterward whether the interaction actually went as badly as it felt beforehand — write down what really happened, in plain terms, and compare it to what you predicted.</p>
+    </div>
+
+    <p>Next lesson gives you the actual language for what to say once you've made the approach — moving past small talk into openers that spark real interest rather than a polite dead end.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/social-landing/content/lessons/07-crafting-your-social-strategy.html">← Lesson 7: Crafting Your Social Strategy</a>
+    <a href="/courses/social-landing/content/lessons/09-the-art-of-the-open-ended-opener.html">Lesson 9: The Art of the Open-Ended Opener →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>
