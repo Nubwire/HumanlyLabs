@@ -6,6 +6,70 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-08-31 (7) — Built out the 4 "Coming Soon" mini-app tools
+
+**What was done:** built and shipped all four tools that were previously
+`status: 'soon'` on the homepage: New In Town Planner ($4.99),
+Core Values Mapper ($3.99), Solo Evening Ritual Builder ($3.99), and
+Self-Compassion Reset ($3.99). Each is a standalone page
+(`new-in-town.html`, `values-mapper.html`, `evening-ritual.html`,
+`self-compassion.html`) matching the existing tool-page pattern: a
+multi-screen quiz/interaction flow, a Stripe paywall gate with
+`sessionStorage` + `?paid=true` handling, and a results screen.
+
+**Deliberate architecture choice — no client-side API calls.** Given
+ADR-0003 (the existing 7 tools call `api.anthropic.com` directly from the
+browser with no key, which doesn't work in production), these four new
+tools were built as fully deterministic, client-side generators instead —
+local JS logic against curated content banks, keyed off the user's
+answers. No external network dependency at all, so no broken-in-production
+risk. Documented as an update to `adr/0003-client-side-anthropic-api-calls.md`
+and recommended as the default pattern for any future new tool.
+
+**What each tool actually does:**
+- **New In Town Planner** — quiz (current phase, biggest blocker, weekly
+  time budget, social style, up to 3 interests) → a personalised 4-week
+  plan, week by week, with tasks pulled from an interest-keyed activity
+  bank and tactics matched to the stated blocker.
+- **Core Values Mapper** — a 3-round elimination process (24 values → ~10
+  → 8 → 5) followed by a per-value life-alignment check (rarely/sometimes/
+  often), producing a ranked top-5 with alignment badges and a concrete
+  suggested action for anything not well-aligned.
+- **Solo Evening Ritual Builder** — mood, energy level, what's needed
+  tonight (comfort/stimulation/quiet/connection/accomplishment/rest), and
+  available time (15-90 min) → a scaled sequence of 3-5 steps pulled from a
+  need-keyed activity bank, opening/closing text matched to the stated
+  mood.
+- **Self-Compassion Reset** — situation select (loneliness/rejection/
+  failure/bad day/self-criticism/other) → a guided ~10-minute, 6-step
+  sequential practice (arrival, naming, common humanity, self-kindness
+  phrase, sitting with it, close), each step with a suggested-time
+  countdown and an optional **read-aloud toggle using the browser's
+  built-in `speechSynthesis` API** — genuinely delivers on the "guided
+  audio + text practice" feature claim with zero external dependency.
+
+**Bug caught before shipping:** the Stripe link I initially wrote into
+`self-compassion.html` didn't match the real one already configured in
+`index.html`'s `APPS` array for that tool — cross-checked all four
+pages' `STRIPE_LINK` constants against the array via script before wiring
+anything up, and fixed the mismatch. A wrong Stripe link would have sent
+buyers to the wrong checkout.
+
+**Wired into the site:** flipped all four apps from `status: 'soon'` to
+`status: 'live'` in `index.html`'s `APPS` array (their `page` and
+`stripeUrl` fields were already correctly pre-configured, matching the
+filenames and Stripe links used above) — the homepage cards now show
+"Try it →" instead of "Coming Soon" automatically, no further homepage
+changes needed. Added all 4 new URLs to `sitemap.xml`.
+
+**Verified:** full repo-wide link check (zero broken links/assets), JS
+syntax check across every HTML file including the 4 new ones, no duplicate
+IDs, consistent analytics ID and Ahrefs key, all 4 pages correctly set
+`robots: index, follow` (unlike the gated course content, these are public
+marketing/product pages), sitemap.xml validated as well-formed XML.
+
+---
+
 ## 2026-08-31 (6) — Deployment confirmed live, 3 more small bugs found and fixed
 
 **What was done:** confirmed via user + direct verification that this repo

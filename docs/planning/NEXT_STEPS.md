@@ -46,6 +46,12 @@ _Last updated: 2026-08-31_
   See `DEPLOYMENT.md` for details. One thing still worth a manual check:
   the gated `/content/` and lesson pages themselves weren't directly
   verifiable from this session (noindex pages can't be reached via search).
+- **The 4 previously "Coming Soon" mini-app tools are now built and live**
+  in the codebase: New In Town Planner, Core Values Mapper, Solo Evening
+  Ritual Builder, Self-Compassion Reset. All deterministic/client-side (no
+  external API dependency — see `adr/0003` update). Once this session's
+  commit is pushed, they'll go live in production the same way past pushes
+  have.
 
 ## Open questions (need answers before more work should land)
 
@@ -70,20 +76,23 @@ _Last updated: 2026-08-31_
 
 ## Suggested next steps (in rough priority order)
 
+- [ ] After pushing, spot-check the 4 new tools live in production
+      (new-in-town, values-mapper, evening-ritual, self-compassion) — since
+      they're deterministic/client-side only, they should work identically
+      to how they behaved in this session, but worth a real confirmation.
 - [ ] Manually spot-check a gated lesson page in production (see open
       question 1 above).
-- [ ] Resolve ADR-0003 (client-side API key exposure) — pick an approach and
-      implement it, or explicitly mark it out of scope.
+- [ ] Resolve ADR-0003 for the *original 7* tools (client-side API key
+      exposure) — pick an approach and implement it, or explicitly mark it
+      out of scope. The 4 new tools sidestep this entirely; the original 7
+      still have it open.
 - [ ] Document (or vendor) the payment/checkout integration referenced by
       `_redirects`.
 - [ ] Establish what actually changed in the "new-email" export vs. the
       previous version, so future exports can be diffed meaningfully instead
       of re-uploaded wholesale each time.
 - [ ] Consider whether shared UI (nav/footer/design tokens duplicated across
-      28+ files, now 84+ once the 56 lesson pages are counted) is worth
-      extracting — see ADR-0002 consequences. With three full courses now
-      sharing the same per-course template pattern, this is more worth
-      revisiting than it was at the start of the project.
+      many files) is worth extracting — see ADR-0002 consequences.
 - [ ] Consider a lighter-weight review pass on the 56 published lessons —
       they were written and expanded across several sessions to hit a
       ~900+ word target per lesson; a read-through for tone consistency

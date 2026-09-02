@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Core Values Mapper — Find Your Top 5 Values & Life Alignment</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Core Values Mapper — Humanly Labs" />
+  <meta name="twitter:description" content="Identify your top 5 core values and see where your current life is misaligned with what actually matters to you." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="A structured process that helps you identify your top 5 core values and shows you exactly where your current life is misaligned with them — often the hidden root of feeling empty or unfulfilled." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://humanlylabs.org/values-mapper" />
+  <meta property="og:title" content="Core Values Mapper — Humanly Labs" />
+  <meta property="og:description" content="Identify your top 5 core values and see where your life is misaligned with them." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/values-mapper" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Core Values Mapper — Humanly Labs",
+    "url": "https://humanlylabs.org/values-mapper",
+    "description": "Core Values Mapper — Humanly Labs",
+    "isPartOf": { "@type": "WebSite", "name": "Humanly Labs", "url": "https://humanlylabs.org" },
+    "publisher": { "@type": "Organization", "name": "Humanly Labs", "url": "https://humanlylabs.org" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are core values?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Core values are the small set of principles that matter most to you personally — things like connection, freedom, growth, or security. They shape what feels meaningful versus what feels hollow, even when you can't immediately articulate why." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do I feel empty even when things are going well?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A common but under-discussed cause is a gap between your actual core values and how your day-to-day life is structured. Life can look objectively fine on paper while still feeling hollow if it consistently doesn't reflect what you value most." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Core Values Mapper free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It's a one-time $3.99 purchase that gives you your top 5 values, an alignment score for each, and unlimited retakes." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12);--border-strong:rgba(28,25,23,.25);
+      --purple:#5B3A8A;--purple-light:#F0EBFB;--purple-border:#CDB8EC;
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --amber:#B5530A;--amber-light:#FEF3E2;--amber-border:#F0C990;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:620px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--purple)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:580px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--purple);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--purple)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .btn-purple{display:block;width:100%;padding:14px;text-align:center;background:var(--purple);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem;text-decoration:none}
+    .btn-purple:hover{background:#452C6B;transform:translateY(-1px)}
+    .btn-purple:disabled{opacity:.35;cursor:default;transform:none}
+    .btn-outline{width:100%;padding:12px;text-align:center;background:none;color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s;display:block;margin-bottom:.5rem}
+    .btn-outline:hover{background:var(--cream)}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+    .feature-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem;padding:1.25rem;background:var(--purple-light);border-radius:var(--radius-md);border:1px solid var(--purple-border)}
+    .feature-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3A2557;line-height:1.5}
+    .feature-dot{width:6px;height:6px;border-radius:50%;background:var(--purple);flex-shrink:0;margin-top:7px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+
+    /* VALUE CARD PICKER */
+    .round-progress{font-size:12px;color:var(--ink-muted);text-align:center;margin-bottom:1rem}
+    .round-progress strong{color:var(--purple)}
+    .value-pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.5rem}
+    .value-card{border:1.5px solid var(--border);border-radius:var(--radius-md);padding:1rem .9rem;background:var(--cream);cursor:pointer;transition:all .15s;text-align:center}
+    .value-card:hover{border-color:var(--purple);background:var(--purple-light);transform:translateY(-1px)}
+    .value-card .vc-name{font-size:14px;font-weight:500;color:var(--ink)}
+    .value-instruction{font-size:14px;color:var(--ink-soft);text-align:center;margin-bottom:1.25rem;line-height:1.6}
+
+    /* ALIGNMENT */
+    .align-row{border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 1.1rem;background:var(--cream);margin-bottom:.85rem}
+    .align-name{font-family:'Fraunces',serif;font-size:16px;color:var(--ink);margin-bottom:.6rem}
+    .align-pills{display:flex;gap:.4rem}
+    .align-pill{flex:1;padding:8px 4px;text-align:center;border:1px solid var(--border);border-radius:999px;background:var(--warm-white);font-size:12px;color:var(--ink-soft);cursor:pointer;transition:all .15s}
+    .align-pill:hover{border-color:var(--border-strong)}
+    .align-pill.selected{border-color:var(--purple);background:var(--purple-light);color:var(--purple);font-weight:500;border-width:1.5px}
+
+    .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--purple);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .gen-wrap{text-align:center;padding:2rem 0}
+    .gen-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+    .gen-sub{font-size:14px;color:var(--ink-muted);line-height:1.6}
+
+    /* RESULTS */
+    .result-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em}
+    .result-title em{font-style:italic;color:var(--purple)}
+    .result-sub{font-size:14px;color:var(--ink-muted);margin-bottom:1.75rem;line-height:1.6}
+    .value-result-card{border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;background:var(--cream);margin-bottom:.85rem}
+    .vr-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+    .vr-rank{display:flex;align-items:center;gap:.6rem}
+    .vr-num{width:24px;height:24px;border-radius:50%;background:var(--purple);color:white;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .vr-name{font-family:'Fraunces',serif;font-size:17px;color:var(--ink)}
+    .vr-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px}
+    .vr-badge.high{background:var(--sage-light);color:var(--sage);border:1px solid var(--sage-border)}
+    .vr-badge.mid{background:var(--amber-light);color:var(--amber);border:1px solid var(--amber-border)}
+    .vr-badge.low{background:#FCEEF0;color:#9B2D3F;border:1px solid #F4B8C6}
+    .vr-desc{font-size:13px;color:var(--ink-soft);line-height:1.6;margin-bottom:.5rem}
+    .vr-action{font-size:12.5px;color:var(--ink-soft);line-height:1.6;background:var(--warm-white);border-left:2.5px solid var(--purple);padding:.5rem .75rem;border-radius:0 6px 6px 0}
+    .result-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+    .result-actions .btn-outline{flex:1;margin-bottom:0;min-width:120px}
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    footer{max-width:580px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem;flex-wrap:wrap}
+    @media(max-width:600px){.card{padding:1.75rem 1.25rem}.headline{font-size:26px}.value-pick-grid{grid-template-columns:1fr 1fr}}
+
+    a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--purple);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      nav, footer, .result-actions, .toast, .btn-outline { display: none !important; }
+      body { background: white; padding: 0; }
+      .card { box-shadow: none; border: none; max-width: 100%; }
+    }
+  </style>
+  <script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">Core Values Mapper</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- LANDING -->
+  <div id="screen-landing" class="screen active">
+    <div class="eyebrow">Structured process · instant · $3.99</div>
+    <h1 class="headline">Find your <em>top 5</em><br>core values</h1>
+    <p class="body-text">A lot of quiet dissatisfaction traces back to one thing: your life not reflecting what actually matters to you. This tool narrows down 24 values to your real top 5, then checks how well your current life actually lines up with each one.</p>
+
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-dot"></div>Identifies your top 5 core values through elimination rounds</div>
+      <div class="feature-item"><div class="feature-dot"></div>Values vs. life alignment score for each one</div>
+      <div class="feature-item"><div class="feature-dot"></div>Practical, specific suggestions for closing the gap</div>
+      <div class="feature-item"><div class="feature-dot"></div>Printable values card to keep</div>
+    </div>
+
+    <div class="price-row">
+      <div class="price">$3.99</div>
+      <div class="price-note">one-time · unlimited retakes</div>
+    </div>
+    <button class="btn-purple" onclick="handlePurchase()">Find my top 5 values → $3.99</button>
+    <div class="guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't resonate</div>
+    <button onclick="startRounds()" style="margin-top:1rem;width:100%;padding:10px;border:1px dashed var(--border-strong);border-radius:999px;background:none;font-size:12px;color:var(--ink-muted);cursor:pointer;font-family:inherit">[Dev] Skip payment</button>
+  </div>
+
+  <!-- ROUND 1: pick 12 of 24 -->
+  <div id="screen-round1" class="screen">
+    <div class="round-progress">Round 1 of 3 — <strong id="r1-count">0</strong> selected</div>
+    <div class="value-instruction">Click every value below that genuinely matters to you — aim for at least 10. Don't overthink it, go with your gut.</div>
+    <div class="value-pick-grid" id="round1-grid"></div>
+    <button class="btn-purple" id="r1-next" onclick="goRound2()" disabled>Continue →</button>
+  </div>
+
+  <!-- ROUND 2: narrow to 8 -->
+  <div id="screen-round2" class="screen">
+    <div class="round-progress">Round 2 of 3 — pick your top <strong id="r2-target">8</strong></div>
+    <div class="value-instruction">Down to your shortlist. Pick the ones that would still matter even if no one else valued them.</div>
+    <div class="value-pick-grid" id="round2-grid"></div>
+    <button class="btn-purple" id="r2-next" onclick="goRound3()" disabled>Continue →</button>
+  </div>
+
+  <!-- ROUND 3: narrow to 5 -->
+  <div id="screen-round3" class="screen">
+    <div class="round-progress">Final round — pick your top <strong>5</strong></div>
+    <div class="value-instruction">This is the hard part. Your final 5 — the ones you'd keep if you could only keep five.</div>
+    <div class="value-pick-grid" id="round3-grid"></div>
+    <button class="btn-purple" id="r3-next" onclick="goAlignment()" disabled>Continue →</button>
+  </div>
+
+  <!-- ALIGNMENT -->
+  <div id="screen-alignment" class="screen">
+    <div class="eyebrow">Almost done</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em">How well does your <em style="font-style:italic;color:var(--purple)">life</em> reflect these?</h2>
+    <p class="body-text" style="margin-bottom:1.25rem">For each value, be honest about how well your actual day-to-day life reflects it right now — not how much you wish it did.</p>
+    <div id="alignment-container"></div>
+    <button class="btn-purple" id="align-next" onclick="generate()" disabled style="margin-top:.5rem">See my results →</button>
+  </div>
+
+  <!-- GENERATING -->
+  <div id="screen-generating" class="screen">
+    <div class="gen-wrap">
+      <div class="spinner"></div>
+      <div class="gen-title">Mapping your values…</div>
+      <div class="gen-sub">Building your results based on your picks and alignment scores.</div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="screen-results" class="screen">
+    <div class="result-title">Your <em>top 5</em> values</div>
+    <div class="result-sub" id="result-sub"></div>
+    <div id="values-results-container"></div>
+    <div class="result-actions">
+      <button class="btn-outline" onclick="window.print()">🖨 Save / print my values card</button>
+      <button class="btn-outline" onclick="restart()">↻ Retake</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/social-anxiety">Social Anxiety Check</a>
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/confidence-blueprint/">Confidence Blueprint</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE ── */
+const STRIPE_LINK = 'https://buy.stripe.com/7sY5kD9vi2iu9WG4W24AU09';
+// $3.99 — Success URL: https://humanlylabs.org/values-mapper?paid=true
+
+/* ── VALUES BANK (24) ── */
+const VALUES = [
+  { key: 'connection', name: 'Connection', desc: 'Feeling genuinely close to and known by other people.', action: 'Block time weekly for the specific people who matter most, before your calendar fills with everything else.' },
+  { key: 'freedom', name: 'Freedom', desc: 'Having real choice and control over how you spend your time.', action: "Audit one recurring commitment that feels obligatory rather than chosen, and consider what it would take to change it." },
+  { key: 'achievement', name: 'Achievement', desc: 'Working toward and reaching meaningful goals.', action: 'Set one concrete, trackable goal for the next month rather than a vague ongoing ambition.' },
+  { key: 'security', name: 'Security', desc: 'Feeling stable, safe, and able to plan for the future.', action: 'Identify the single biggest source of instability in your life right now and take one small step to address it.' },
+  { key: 'creativity', name: 'Creativity', desc: 'Making, expressing, or building something original.', action: 'Protect one small, regular block of time purely for creating, with no productivity goal attached.' },
+  { key: 'adventure', name: 'Adventure', desc: 'Seeking out new experiences and stepping outside routine.', action: 'Plan one genuinely new experience in the next month — doesn\'t need to be big, just new to you.' },
+  { key: 'family', name: 'Family', desc: 'Investing in and being present for the people you consider family.', action: 'Reach out to one family member you\'ve been meaning to check in on, specifically and soon.' },
+  { key: 'growth', name: 'Growth', desc: 'Continually learning, developing, and becoming more capable.', action: 'Pick one skill or area you want to grow in over the next few months, and take the first concrete step.' },
+  { key: 'honesty', name: 'Honesty', desc: 'Being truthful with yourself and others, even when it\'s hard.', action: 'Notice one place you\'ve been avoiding a hard truth — with yourself or someone else — and name it plainly.' },
+  { key: 'community', name: 'Community', desc: 'Being part of and contributing to a group larger than yourself.', action: 'Show up to one community, group, or gathering this month that you\'ve been meaning to engage with more.' },
+  { key: 'independence', name: 'Independence', desc: 'Being self-reliant and capable on your own terms.', action: 'Identify one area where you\'ve been relying on others out of habit rather than necessity, and try it solo.' },
+  { key: 'health', name: 'Health', desc: 'Caring for your physical and mental wellbeing.', action: 'Pick the one health habit you know matters most and make it non-negotiable for the next two weeks.' },
+  { key: 'spirituality', name: 'Spirituality', desc: 'Connecting to something larger than the everyday and material.', action: 'Set aside regular quiet time for whatever this means to you — reflection, practice, or stillness.' },
+  { key: 'recognition', name: 'Recognition', desc: 'Being seen and acknowledged for what you do and contribute.', action: 'Notice where you\'re doing meaningful work that\'s going unseen, and consider making it more visible.' },
+  { key: 'service', name: 'Service', desc: 'Helping and contributing to others in a genuine way.', action: 'Find one concrete, regular way to contribute to something beyond yourself, even in a small way.' },
+  { key: 'stability', name: 'Stability', desc: 'Consistency and predictability in your daily life.', action: 'Identify the most chaotic recurring part of your week and build one small routine around it.' },
+  { key: 'fun', name: 'Fun', desc: 'Genuine enjoyment, play, and lightness.', action: 'Schedule something purely enjoyable this week with zero productive justification needed.' },
+  { key: 'justice', name: 'Justice', desc: 'Fairness, and standing up for what\'s right.', action: 'Identify one cause or issue you care about and take one concrete action toward it this month.' },
+  { key: 'knowledge', name: 'Knowledge', desc: 'Understanding, learning, and intellectual depth.', action: 'Pick one topic you\'re genuinely curious about and commit real time to exploring it, not just skimming.' },
+  { key: 'beauty', name: 'Beauty', desc: 'Appreciating and surrounding yourself with what you find beautiful.', action: 'Notice one part of your daily environment that feels neglected, and make one small change to it.' },
+  { key: 'tradition', name: 'Tradition', desc: 'Honouring practices, rituals, and connection to the past.', action: 'Revive one meaningful tradition or ritual that\'s quietly lapsed in your life.' },
+  { key: 'autonomy', name: 'Autonomy', desc: 'Making your own decisions, on your own terms.', action: 'Identify one decision you\'ve been deferring to someone else that\'s genuinely yours to make.' },
+  { key: 'contribution', name: 'Contribution', desc: 'Making a real, tangible difference through your efforts.', action: 'Get specific about what "making a difference" actually looks like for you, and take one step toward it.' },
+  { key: 'balance', name: 'Balance', desc: 'A sustainable, well-rounded rhythm across the different parts of your life.', action: 'Name the one area of life currently crowding out the others, and set one boundary around it.' },
+];
+
+/* ── STATE ── */
+let hasPaid = sessionStorage.getItem('hly_values_paid') === '1';
+let round1Selected = [];
+let round2Selected = [];
+let round3Selected = [];
+let alignmentScores = {};
+
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    hasPaid = true;
+    sessionStorage.setItem('hly_values_paid', '1');
+    startRounds();
+  }
+});
+
+function handlePurchase() { window.location.href = STRIPE_LINK; }
+
+/* ── ROUND 1 ── */
+function startRounds() {
+  round1Selected = []; round2Selected = []; round3Selected = []; alignmentScores = {};
+  renderRound1();
+  goTo('screen-round1');
+}
+
+function renderRound1() {
+  document.getElementById('round1-grid').innerHTML = VALUES.map(v => `
+    <div class="value-card" data-key="${v.key}" onclick="toggleRound1(this,'${v.key}')"><div class="vc-name">${v.name}</div></div>
+  `).join('');
+}
+
+function toggleRound1(el, key) {
+  const i = round1Selected.indexOf(key);
+  if (i > -1) { round1Selected.splice(i,1); el.style.borderColor=''; el.style.background=''; }
+  else {
+    if (round1Selected.length >= 16) { showToast('Pick your top 16 or fewer'); return; }
+    round1Selected.push(key); el.style.borderColor='var(--purple)'; el.style.background='var(--purple-light)';
+  }
+  document.getElementById('r1-count').textContent = round1Selected.length;
+  document.getElementById('r1-next').disabled = round1Selected.length < 10;
+}
+
+function goRound2() {
+  round2Selected = [];
+  const target = Math.min(8, round1Selected.length);
+  document.getElementById('r2-target').textContent = target;
+  document.getElementById('round2-grid').innerHTML = round1Selected.map(key => {
+    const v = VALUES.find(x => x.key === key);
+    return `<div class="value-card" data-key="${key}" onclick="toggleRound(this,'${key}',2)"><div class="vc-name">${v.name}</div></div>`;
+  }).join('');
+  document.getElementById('r2-next').disabled = true;
+  goTo('screen-round2');
+}
+
+function toggleRound(el, key, roundNum) {
+  const arr = roundNum === 2 ? round2Selected : round3Selected;
+  const cap = roundNum === 2 ? Math.min(8, round1Selected.length) : 5;
+  const i = arr.indexOf(key);
+  if (i > -1) { arr.splice(i,1); el.style.borderColor=''; el.style.background=''; }
+  else {
+    if (arr.length >= cap) { showToast(`Pick your top ${cap}`); return; }
+    arr.push(key); el.style.borderColor='var(--purple)'; el.style.background='var(--purple-light)';
+  }
+  const btn = document.getElementById(roundNum === 2 ? 'r2-next' : 'r3-next');
+  btn.disabled = arr.length < cap;
+}
+
+function goRound3() {
+  round3Selected = [];
+  document.getElementById('round3-grid').innerHTML = round2Selected.map(key => {
+    const v = VALUES.find(x => x.key === key);
+    return `<div class="value-card" data-key="${key}" onclick="toggleRound(this,'${key}',3)"><div class="vc-name">${v.name}</div></div>`;
+  }).join('');
+  document.getElementById('r3-next').disabled = true;
+  goTo('screen-round3');
+}
+
+/* ── ALIGNMENT ── */
+function goAlignment() {
+  document.getElementById('alignment-container').innerHTML = round3Selected.map(key => {
+    const v = VALUES.find(x => x.key === key);
+    return `
+    <div class="align-row">
+      <div class="align-name">${v.name}</div>
+      <div class="align-pills" id="align-${key}">
+        <div class="align-pill" onclick="setAlign('${key}','rarely',this)">Rarely</div>
+        <div class="align-pill" onclick="setAlign('${key}','sometimes',this)">Sometimes</div>
+        <div class="align-pill" onclick="setAlign('${key}','often',this)">Often</div>
+      </div>
+    </div>`;
+  }).join('');
+  goTo('screen-alignment');
+}
+
+function setAlign(key, val, el) {
+  alignmentScores[key] = val;
+  el.parentElement.querySelectorAll('.align-pill').forEach(p => p.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('align-next').disabled = Object.keys(alignmentScores).length < round3Selected.length;
+}
+
+/* ── GENERATE ── */
+function generate() {
+  goTo('screen-generating');
+  setTimeout(renderResults, 1400);
+}
+
+function badgeFor(score) {
+  if (score === 'often') return { cls: 'high', label: 'Well aligned' };
+  if (score === 'sometimes') return { cls: 'mid', label: 'Partially aligned' };
+  return { cls: 'low', label: 'Misaligned' };
+}
+
+function renderResults() {
+  const misaligned = round3Selected.filter(k => alignmentScores[k] !== 'often');
+  document.getElementById('result-sub').textContent = misaligned.length === 0
+    ? 'Your life looks well aligned with all 5 of your top values right now — genuinely rare, and worth noticing.'
+    : `${misaligned.length} of your top 5 values ${misaligned.length === 1 ? 'is' : 'are'} currently under-reflected in your day-to-day life. That gap is often exactly where quiet dissatisfaction comes from.`;
+
+  document.getElementById('values-results-container').innerHTML = round3Selected.map((key, i) => {
+    const v = VALUES.find(x => x.key === key);
+    const b = badgeFor(alignmentScores[key]);
+    return `
+    <div class="value-result-card">
+      <div class="vr-head">
+        <div class="vr-rank"><div class="vr-num">${i+1}</div><div class="vr-name">${v.name}</div></div>
+        <div class="vr-badge ${b.cls}">${b.label}</div>
+      </div>
+      <div class="vr-desc">${v.desc}</div>
+      ${b.cls !== 'high' ? `<div class="vr-action">Try this: ${v.action}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  goTo('screen-results');
+}
+
+function restart() { startRounds(); }
+
+/* ── NAV ── */
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+</script>
+
+<!-- SEO cross-links -->
+<div style="max-width:580px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/deep-dive" style="font-size:13px;color:#555;text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Loneliness Deep Dive</a><a href="/friendship-audit" style="font-size:13px;color:#555;text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Friendship Audit</a></div>
+  <p style="font-size:13px;color:#888;margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KMFL61V2FD');
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

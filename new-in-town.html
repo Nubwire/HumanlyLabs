@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New In Town Planner — 4-Week Plan for Building a Social Life After Moving</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="New In Town Planner — Humanly Labs" />
+  <meta name="twitter:description" content="A personalised 4-week plan for building real connection in a new city — from finding places to go to making your first friend." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Get a personalised 4-week plan for building a social life after moving to a new city — step by step, tailored to your interests, schedule, and what's actually holding you back." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://humanlylabs.org/new-in-town" />
+  <meta property="og:title" content="New In Town Planner — Humanly Labs" />
+  <meta property="og:description" content="A personalised 4-week plan for building real connection in a new city." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/new-in-town" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "New In Town Planner — Humanly Labs",
+    "url": "https://humanlylabs.org/new-in-town",
+    "description": "New In Town Planner — Humanly Labs",
+    "isPartOf": { "@type": "WebSite", "name": "Humanly Labs", "url": "https://humanlylabs.org" },
+    "publisher": { "@type": "Organization", "name": "Humanly Labs", "url": "https://humanlylabs.org" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to make friends after moving to a new city?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most people start forming real friendships within 2-3 months of consistent effort, though it varies. The first few weeks are usually about finding the right places and people, not instant connection." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the fastest way to meet people in a new city?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Repeated, low-pressure contact with the same group of people works faster than one-off events. Recurring classes, clubs, or activities tied to your actual interests tend to outperform generic 'meet people' events." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the New In Town Planner free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The planner is a one-time $4.99 purchase that gives you a full personalised 4-week plan and unlimited regenerations." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12);--border-strong:rgba(28,25,23,.25);
+      --amber:#B5530A;--amber-light:#FEF3E2;--amber-border:#F0C990;
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:680px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--amber)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:620px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--amber)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .btn-amber{display:block;width:100%;padding:14px;text-align:center;background:var(--amber);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem;text-decoration:none}
+    .btn-amber:hover{background:#8F4008;transform:translateY(-1px)}
+    .btn-amber:disabled{opacity:.35;cursor:default;transform:none}
+    .btn-outline{width:100%;padding:12px;text-align:center;background:none;color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s;display:block;margin-bottom:.5rem}
+    .btn-outline:hover{background:var(--cream)}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+    .divider{height:1px;background:var(--border);margin:1.75rem 0}
+    .form-label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:.4rem;display:block}
+    .form-hint{font-size:12px;color:var(--ink-muted);margin-bottom:.65rem}
+    .form-input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .15s}
+    .form-input:focus{border-color:var(--amber)}
+    .form-input::placeholder{color:var(--ink-muted)}
+    .form-section{margin-bottom:1.5rem}
+
+    .feature-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius-md);border:1px solid var(--amber-border)}
+    .feature-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#6B3305;line-height:1.5}
+    .feature-dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:7px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+
+    .pill-grid{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:0}
+    .pill-btn{padding:8px 14px;border:1px solid var(--border);border-radius:999px;background:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-soft);cursor:pointer;transition:all .15s;white-space:nowrap}
+    .pill-btn:hover{background:var(--warm-white);border-color:var(--border-strong)}
+    .pill-btn.selected{border-color:var(--amber);background:var(--amber-light);color:var(--amber);border-width:1.5px;font-weight:500}
+    .pill-btn.tag{white-space:normal}
+
+    input[type=range]{width:100%;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--border);outline:none;cursor:pointer;margin:8px 0}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--amber);border:3px solid white;box-shadow:0 1px 4px rgba(181,83,10,.3);cursor:pointer}
+    input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--amber);border:3px solid white;cursor:pointer}
+    .gap-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-muted);margin-top:4px}
+
+    .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--amber);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .gen-wrap{text-align:center;padding:2rem 0}
+    .gen-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+    .gen-sub{font-size:14px;color:var(--ink-muted);line-height:1.6}
+    .gen-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;text-align:left}
+    .gen-step{font-size:13px;color:var(--ink-muted);display:flex;align-items:center;gap:.75rem;transition:color .3s}
+    .gen-step.done{color:var(--amber)} .gen-step.active{color:var(--ink)}
+    .gen-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .3s}
+    .gen-step.done .gen-dot{background:var(--amber)}
+    .gen-step.active .gen-dot{background:var(--ink);animation:pulse .8s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+    .result-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+    .meta-pill{padding:4px 12px;border-radius:999px;font-size:12px;font-weight:500;background:var(--amber-light);color:var(--amber);border:1px solid var(--amber-border)}
+    .result-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em}
+    .result-title em{font-style:italic;color:var(--amber)}
+    .result-sub{font-size:14px;color:var(--ink-muted);margin-bottom:1.75rem;line-height:1.6}
+    .week-block{border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem 1.25rem 1rem;background:var(--cream);margin-bottom:1rem}
+    .week-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+    .week-num{width:26px;height:26px;border-radius:50%;background:var(--amber);color:white;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .week-title{font-family:'Fraunces',serif;font-size:17px;font-weight:400;color:var(--ink)}
+    .week-focus{font-size:12px;color:var(--ink-muted);margin-bottom:.85rem;margin-left:36px}
+    .task-list{display:flex;flex-direction:column;gap:.6rem}
+    .task-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-soft);line-height:1.55}
+    .task-check{width:16px;height:16px;border-radius:5px;border:1.5px solid var(--border-strong);flex-shrink:0;margin-top:2px}
+    .tips-box{background:var(--sage-light);border:1px solid var(--sage-border);border-radius:var(--radius-md);padding:1.25rem;margin-bottom:1.5rem}
+    .tips-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);font-weight:500;margin-bottom:.75rem}
+    .tip-item{font-size:13px;color:#2D5A3D;line-height:1.6;margin-bottom:.5rem;display:flex;align-items:flex-start;gap:8px}
+    .tip-item:last-child{margin-bottom:0}
+    .tip-dot{width:4px;height:4px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:8px}
+    .result-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+    .result-actions .btn-outline{flex:1;margin-bottom:0;min-width:120px}
+
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    footer{max-width:620px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem;flex-wrap:wrap}
+    @media(max-width:600px){.card{padding:1.75rem 1.25rem}.headline{font-size:26px}}
+
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      nav, footer, .result-actions, .toast, .btn-outline { display: none !important; }
+      body { background: white; padding: 0; }
+      .card { box-shadow: none; border: none; max-width: 100%; }
+    }
+  </style>
+  <script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">New In Town Planner</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- LANDING -->
+  <div id="screen-landing" class="screen active">
+    <div class="eyebrow">Personalised plan · instant · $4.99</div>
+    <h1 class="headline">Moved to a new city?<br>Here's your <em>4-week plan</em></h1>
+    <p class="body-text">Building a social life from scratch is genuinely hard — and most advice is too generic to actually follow. This tool builds a specific, week-by-week plan around your interests, your schedule, and whatever's actually been holding you back.</p>
+
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-dot"></div>4-week guided action plan, built around your answers</div>
+      <div class="feature-item"><div class="feature-dot"></div>Comfort-level personalisation — starts wherever you are</div>
+      <div class="feature-item"><div class="feature-dot"></div>Local exploration prompts tied to your actual interests</div>
+      <div class="feature-item"><div class="feature-dot"></div>Weekly check-in questions to keep you on track</div>
+      <div class="feature-item"><div class="feature-dot"></div>Unlimited regenerations — adjust as your situation changes</div>
+    </div>
+
+    <div class="price-row">
+      <div class="price">$4.99</div>
+      <div class="price-note">one-time · unlimited uses</div>
+    </div>
+    <button class="btn-amber" onclick="handlePurchase()">Build my 4-week plan → $4.99</button>
+    <div class="guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't help</div>
+    <button onclick="goTo('screen-form')" style="margin-top:1rem;width:100%;padding:10px;border:1px dashed var(--border-strong);border-radius:999px;background:none;font-size:12px;color:var(--ink-muted);cursor:pointer;font-family:inherit">[Dev] Skip payment</button>
+  </div>
+
+  <!-- FORM -->
+  <div id="screen-form" class="screen">
+    <div class="eyebrow">A few quick questions</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-.01em">Let's build <em style="font-style:italic;color:var(--amber)">your</em> plan</h2>
+
+    <div class="form-section">
+      <label class="form-label">Where are you right now?</label>
+      <div class="pill-grid" id="phase-grid">
+        <button class="pill-btn" data-val="just moved this week" onclick="selectPill(this,'phase')">Just moved (this week)</button>
+        <button class="pill-btn" data-val="a few weeks in" onclick="selectPill(this,'phase')">A few weeks in</button>
+        <button class="pill-btn" data-val="one to three months in" onclick="selectPill(this,'phase')">1-3 months in</button>
+        <button class="pill-btn" data-val="three or more months in, still feeling stuck" onclick="selectPill(this,'phase')">3+ months, still stuck</button>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <label class="form-label">What's the biggest thing holding you back?</label>
+      <div class="form-hint">Pick the one that fits most</div>
+      <div class="pill-grid" id="blocker-grid">
+        <button class="pill-btn" data-val="venues" onclick="selectPill(this,'blocker')">I don't know where to go</button>
+        <button class="pill-btn" data-val="anxious" onclick="selectPill(this,'blocker')">I get anxious approaching people</button>
+        <button class="pill-btn" data-val="time" onclick="selectPill(this,'blocker')">I don't have much time</button>
+        <button class="pill-btn" data-val="flaking" onclick="selectPill(this,'blocker')">I keep flaking on my own plans</button>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <label class="form-label">How much time can you realistically give this per week?</label>
+      <input type="range" id="time-slider" min="1" max="10" value="4" oninput="updateTimeLabel(this.value)" />
+      <div class="gap-labels"><span>1 hr</span><span>10+ hrs</span></div>
+      <div style="text-align:center;margin-top:.75rem;font-size:14px;color:var(--ink-soft)">
+        <span id="time-label" style="font-weight:500;color:var(--amber)">4 hours a week</span>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <label class="form-label">Which fits your social style better?</label>
+      <div class="pill-grid" id="style-grid">
+        <button class="pill-btn" data-val="depth" onclick="selectPill(this,'style')">One spot, go deep</button>
+        <button class="pill-btn" data-val="breadth" onclick="selectPill(this,'style')">Wide net, meet lots of people</button>
+      </div>
+    </div>
+
+    <div class="form-section" style="margin-bottom:0">
+      <label class="form-label">Pick 1-3 interests to build your plan around</label>
+      <div class="form-hint">These shape where the plan sends you</div>
+      <div class="pill-grid" id="interest-grid">
+        <button class="pill-btn tag" data-val="outdoors" onclick="selectTag(this)">Outdoors & fitness</button>
+        <button class="pill-btn tag" data-val="food" onclick="selectTag(this)">Food & drink</button>
+        <button class="pill-btn tag" data-val="arts" onclick="selectTag(this)">Arts & creativity</button>
+        <button class="pill-btn tag" data-val="games" onclick="selectTag(this)">Games & nerdy stuff</button>
+        <button class="pill-btn tag" data-val="volunteering" onclick="selectTag(this)">Volunteering & causes</button>
+        <button class="pill-btn tag" data-val="sports" onclick="selectTag(this)">Sports leagues</button>
+        <button class="pill-btn tag" data-val="wellness" onclick="selectTag(this)">Wellness & mindfulness</button>
+        <button class="pill-btn tag" data-val="books" onclick="selectTag(this)">Books & learning</button>
+        <button class="pill-btn tag" data-val="music" onclick="selectTag(this)">Music & nightlife</button>
+        <button class="pill-btn tag" data-val="pets" onclick="selectTag(this)">Pets & animals</button>
+      </div>
+    </div>
+
+    <div style="height:1.5rem"></div>
+    <button class="btn-amber" id="generate-btn" onclick="generate()" disabled>Build my plan →</button>
+    <p style="text-align:center;margin-top:.75rem">
+      <button onclick="goTo('screen-landing')" style="background:none;border:none;font-family:inherit;font-size:12px;color:var(--ink-muted);cursor:pointer;text-decoration:underline;text-underline-offset:2px">← Back</button>
+    </p>
+  </div>
+
+  <!-- GENERATING -->
+  <div id="screen-generating" class="screen">
+    <div class="gen-wrap">
+      <div class="spinner"></div>
+      <div class="gen-title">Building your plan…</div>
+      <div class="gen-sub">Putting together a 4-week plan tailored to your answers.</div>
+      <div class="gen-steps">
+        <div class="gen-step active" id="gs1"><div class="gen-dot"></div>Reading your current situation</div>
+        <div class="gen-step" id="gs2"><div class="gen-dot"></div>Matching your interests to local activities</div>
+        <div class="gen-step" id="gs3"><div class="gen-dot"></div>Pacing the plan to your time budget</div>
+        <div class="gen-step" id="gs4"><div class="gen-dot"></div>Finalising your 4 weeks</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="screen-results" class="screen">
+    <div class="result-meta">
+      <span class="meta-pill" id="meta-phase"></span>
+      <span class="meta-pill" id="meta-time"></span>
+      <span class="meta-pill" id="meta-style"></span>
+    </div>
+    <div class="result-title">Your <em>4-week</em> plan</div>
+    <div class="result-sub" id="result-sub"></div>
+
+    <div id="weeks-container"></div>
+
+    <div class="tips-box" id="tips-box">
+      <div class="tips-title">Before you start</div>
+      <div id="tips-content"></div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-outline" onclick="window.print()">🖨 Save / print my plan</button>
+      <button class="btn-outline" onclick="goTo('screen-form')">Adjust answers</button>
+    </div>
+    <div style="font-size:11px;color:var(--ink-muted);text-align:center;margin-top:1.25rem;line-height:1.6">
+      Your purchase gives unlimited regenerations — come back anytime your situation changes.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/how-to-make-friends-in-your-30s">Making friends in your 30s</a>
+    <a href="/mini-course">Free course</a>
+    <a href="/courses/social-landing/">The Social Landing</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE ── */
+const STRIPE_LINK = 'https://buy.stripe.com/eVq7sL9vi5uG5Gqdsy4AU08';
+// $4.99 — Success URL: https://humanlylabs.org/new-in-town?paid=true
+
+/* ── STATE ── */
+let selectedPhase   = '';
+let selectedBlocker = '';
+let selectedStyle   = '';
+let selectedTags    = [];
+let hasPaid          = sessionStorage.getItem('hly_newintown_paid') === '1';
+
+const TIME_LABELS = { 1:'1 hour a week',2:'2 hours a week',3:'3 hours a week',4:'4 hours a week',5:'5 hours a week',6:'6 hours a week',7:'7 hours a week',8:'8 hours a week',9:'9 hours a week',10:'10+ hours a week' };
+
+/* ── INIT ── */
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    hasPaid = true;
+    sessionStorage.setItem('hly_newintown_paid', '1');
+    goTo('screen-form');
+  }
+  updateTimeLabel(4);
+});
+
+/* ── PURCHASE ── */
+function handlePurchase() {
+  window.location.href = STRIPE_LINK;
+}
+
+/* ── FORM HELPERS ── */
+function selectPill(btn, group) {
+  const grid = btn.parentElement;
+  grid.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  if (group === 'phase') selectedPhase = btn.dataset.val;
+  if (group === 'blocker') selectedBlocker = btn.dataset.val;
+  if (group === 'style') selectedStyle = btn.dataset.val;
+  updateFormBtn();
+}
+
+function selectTag(btn) {
+  const val = btn.dataset.val;
+  const i = selectedTags.indexOf(val);
+  if (i > -1) {
+    selectedTags.splice(i, 1);
+    btn.classList.remove('selected');
+  } else {
+    if (selectedTags.length >= 3) { showToast('Pick up to 3 interests'); return; }
+    selectedTags.push(val);
+    btn.classList.add('selected');
+  }
+  updateFormBtn();
+}
+
+function updateTimeLabel(v) {
+  document.getElementById('time-label').textContent = TIME_LABELS[v];
+}
+
+function updateFormBtn() {
+  const ok = selectedPhase && selectedBlocker && selectedStyle && selectedTags.length > 0;
+  document.getElementById('generate-btn').disabled = !ok;
+}
+
+/* ── CONTENT BANK ── */
+const INTEREST_ACTIVITIES = {
+  outdoors: ['a local hiking or run club', 'a climbing gym intro session', 'a community garden or weekend park cleanup'],
+  food: ['a food-focused meetup or supper club', 'a hands-on cooking class', 'your local food market at the same time each week'],
+  arts: ['a pottery, drawing, or paint night class', 'an open mic or local gallery opening', 'a maker space or craft group'],
+  games: ["a board game café's regular game night", 'a local trivia night', 'a tabletop or D&D meetup group'],
+  volunteering: ['a regular volunteering shift (shelter, food bank, park cleanup)', 'a local community organising meeting', 'a cause-based group tied to something you care about'],
+  sports: ['a rec league (soccer, volleyball, kickball)', 'a pickup sports game at a local court or field', 'a running or cycling club'],
+  wellness: ["a yoga or meditation studio's drop-in class", 'a breathwork or wellness circle', 'a walking meditation or nature group'],
+  books: ["a local bookstore's book club", 'a library talk or lecture series', 'a language exchange meetup'],
+  music: ['a local open mic or jam session', "a venue's regular show night", 'a community choir or music group'],
+  pets: ['a dog park at a consistent time of day', 'a local pet meetup group', 'a shelter volunteer shift'],
+};
+
+const BLOCKER_TACTIC = {
+  venues: "Since not knowing where to go is your main blocker, Week 1 below is entirely about building a real list — don't worry about showing up to anything yet.",
+  anxious: "Since approach anxiety is your main blocker, this plan starts lower-stakes than you'd expect: showing up and just being present counts as a full win in Week 1.",
+  time: "Since time is tight, this plan is built around one weekly anchor commitment rather than a packed schedule — quality over quantity.",
+  flaking: "Since follow-through is the sticking point, every week below includes a concrete way to make the plan harder to skip (calendar blocks, telling someone, a 2-minute start rule).",
+};
+
+const BLOCKER_TIP = {
+  venues: 'Give yourself a strict 15-minute timer for research each time — a long list beats a perfect one, and over-researching is its own form of avoidance.',
+  anxious: "Try the 20-minute rule: commit to staying for just 20 minutes, with full permission to leave after. Most of the time, showing up is the hardest part.",
+  time: 'Protect your one weekly anchor commitment like an unmovable appointment — everything else in this plan can flex around it.',
+  flaking: 'Put every task below directly into your calendar as you read this, not as a mental note. A scheduled plan survives a busy week; a remembered one rarely does.',
+};
+
+function styleLine(style) {
+  return style === 'depth'
+    ? 'Since you\'re going for depth, this plan has you return to the same one or two spots repeatedly rather than sampling lots of different things.'
+    : 'Since you want a wide net, this plan has you try a few different options across the month to see what actually clicks.';
+}
+
+function pick(arr, seed) { return arr[seed % arr.length]; }
+
+function generatePlan(phase, blocker, style, tags, timeHrs) {
+  const acts = tags.flatMap(t => INTEREST_ACTIVITIES[t] || []);
+  const a1 = pick(acts, 0), a2 = pick(acts, 1 % acts.length), a3 = pick(acts, 2 % acts.length), a4 = pick(acts, 3 % acts.length);
+  const anchor = style === 'depth' ? a1 : a1;
+
+  const weeks = [
+    {
+      title: 'Groundwork', focus: 'Building your map, not forcing anything yet',
+      tasks: [
+        `Search for and write down at least 3 concrete options tied to your interests — start with ${a1} and ${a2}.`,
+        `Pick one as your "anchor" for the month — the one you'll commit to returning to, ideally ${anchor}.`,
+        `Put a specific date and time on your calendar for your first visit this week.`,
+        timeHrs <= 3 ? 'Keep this week to one single outing — you\'re working with a tight time budget, so make it count.' : 'If you have the time, scout a second option too, so you have a backup on weeks it\'s needed.',
+      ],
+    },
+    {
+      title: 'Show Up & Explore', focus: 'Getting comfortable being the new person',
+      tasks: [
+        `Attend your anchor activity (${anchor}) at least once this week — the goal is just showing up, nothing more.`,
+        blocker === 'anxious' ? 'Give yourself full permission to just observe the first time — you don\'t need to talk to anyone yet.' : `Try ${a3} as a second, lower-commitment option this week.`,
+        'Notice one or two familiar faces you might recognise next time — you\'re not trying to make friends yet, just building familiarity.',
+        'Log how it actually went afterward, and compare it honestly to how daunting it felt beforehand.',
+      ],
+    },
+    {
+      title: 'First Contact', focus: 'Making the first move toward an actual conversation',
+      tasks: [
+        `Return to ${anchor} again — repetition is what starts making you a familiar face.`,
+        'Say hello to, or start a short conversation with, at least one person you\'ve seen before.',
+        style === 'breadth' ? `Also try ${a4} this week to widen your net.` : 'Stay focused on your one or two anchor spots rather than spreading thin.',
+        'If a conversation goes well, mention you\'re fairly new here — most people are generous with a new arrival.',
+      ],
+    },
+    {
+      title: 'Consistency', focus: 'Turning familiarity into an actual connection',
+      tasks: [
+        `Keep showing up to ${anchor} — this is the week familiarity starts turning into real recognition.`,
+        'If you\'ve had a good conversation with someone, extend a small, specific invitation beyond the original setting (a coffee, a plan) — even if it feels like a big step.',
+        'Review this month honestly: what worked, what didn\'t, what you\'d keep doing next month.',
+        'Plan your next month using whatever worked best here as the new anchor going forward.',
+      ],
+    },
+  ];
+
+  return weeks;
+}
+
+/* ── GENERATE (deterministic, no external calls) ── */
+function generate() {
+  goTo('screen-generating');
+  animateGenSteps();
+  setTimeout(() => {
+    const weeks = generatePlan(selectedPhase, selectedBlocker, selectedStyle, selectedTags, Number(document.getElementById('time-slider').value));
+    renderResults(weeks);
+  }, 2600);
+}
+
+function animateGenSteps() {
+  const steps = ['gs1','gs2','gs3','gs4'];
+  let i = 0;
+  const iv = setInterval(() => {
+    if (i > 0) { document.getElementById(steps[i-1]).classList.remove('active'); document.getElementById(steps[i-1]).classList.add('done'); }
+    if (i < steps.length) { document.getElementById(steps[i]).classList.add('active'); i++; }
+    else clearInterval(iv);
+  }, 600);
+}
+
+function renderResults(weeks) {
+  document.getElementById('meta-phase').textContent = document.querySelector('#phase-grid .selected')?.textContent || '';
+  document.getElementById('meta-time').textContent = TIME_LABELS[document.getElementById('time-slider').value];
+  document.getElementById('meta-style').textContent = document.querySelector('#style-grid .selected')?.textContent || '';
+
+  document.getElementById('result-sub').textContent = BLOCKER_TACTIC[selectedBlocker] + ' ' + styleLine(selectedStyle);
+
+  document.getElementById('weeks-container').innerHTML = weeks.map((w, i) => `
+    <div class="week-block">
+      <div class="week-head"><div class="week-num">${i+1}</div><div class="week-title">Week ${i+1}: ${w.title}</div></div>
+      <div class="week-focus">${w.focus}</div>
+      <div class="task-list">
+        ${w.tasks.map(t => `<div class="task-item"><div class="task-check"></div><span>${t}</span></div>`).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('tips-content').innerHTML = `
+    <div class="tip-item"><div class="tip-dot"></div><span>${BLOCKER_TIP[selectedBlocker]}</span></div>
+    <div class="tip-item"><div class="tip-dot"></div><span>Progress here is rarely a straight line — some weeks will feel like nothing happened, and that's normal, not a sign it's not working.</span></div>
+    <div class="tip-item"><div class="tip-dot"></div><span>You can print or save this plan using the button below, and come back to regenerate a fresh one anytime.</span></div>
+  `;
+
+  goTo('screen-results');
+}
+
+/* ── NAV ── */
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+</script>
+
+<!-- SEO cross-links -->
+<div style="max-width:620px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/find-your-people" style="font-size:13px;color:#555;text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Find Your People</a><a href="/social-battery" style="font-size:13px;color:#555;text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Social Battery</a><a href="/conversation-starter" style="font-size:13px;color:#555;text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Conversation Starter</a></div>
+  <p style="font-size:13px;color:#888;margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KMFL61V2FD');
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>

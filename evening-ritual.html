@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solo Evening Ritual Builder — Personalised Nights-In Routine Generator</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Solo Evening Ritual Builder — Humanly Labs" />
+  <meta name="twitter:description" content="A personalised evening routine built around your mood, energy level, and what you actually need tonight — for people living alone." />
+  <meta name="twitter:image" content="https://humanlylabs.org/og-image.png" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Get a personalised evening ritual built around your current mood, energy level, and what you actually need tonight — designed for people living alone who want their nights to feel intentional instead of empty." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://humanlylabs.org/evening-ritual" />
+  <meta property="og:title" content="Solo Evening Ritual Builder — Humanly Labs" />
+  <meta property="og:description" content="A personalised evening routine built around your mood, energy, and what you need tonight." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://humanlylabs.org/evening-ritual" />
+  <meta property="og:image" content="https://humanlylabs.org/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Solo Evening Ritual Builder — Humanly Labs",
+    "url": "https://humanlylabs.org/evening-ritual",
+    "description": "Solo Evening Ritual Builder — Humanly Labs",
+    "isPartOf": { "@type": "WebSite", "name": "Humanly Labs", "url": "https://humanlylabs.org" },
+    "publisher": { "@type": "Organization", "name": "Humanly Labs", "url": "https://humanlylabs.org" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I make evenings alone feel less empty?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A structured, intentional routine — even a short one — tends to make solo evenings feel purposeful rather than just time passing. Matching the routine to your actual mood and energy that night, rather than a generic checklist, makes a real difference." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good evening routine for living alone?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A good solo evening routine matches what you actually need that specific night — comfort, stimulation, quiet, or rest — rather than following the same fixed routine regardless of how you're feeling." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Solo Evening Ritual Builder free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It's a one-time $3.99 purchase with unlimited use, generating a new personalised routine any evening you want one." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#F5F0E8;--warm-white:#FDFCF9;--ink:#1C1917;--ink-soft:#57534E;--ink-muted:#A8A29E;
+      --border:rgba(28,25,23,.12);--border-strong:rgba(28,25,23,.25);
+      --teal:#1A7070;--teal-light:#E5F4F4;--teal-border:#A8D8D8;
+      --sage:#4A7C59;--sage-light:#EAF2EC;--sage-border:#B8D9C2;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
+      --shadow-md:0 4px 16px rgba(28,25,23,.10);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 1rem}
+    nav{width:100%;max-width:620px;padding:1.5rem 0 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
+    .wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--ink);letter-spacing:-.02em;text-decoration:none}
+    .wordmark span{font-style:italic;color:var(--teal)}
+    .nav-tag{font-size:12px;color:var(--ink-muted);border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--warm-white)}
+    .card{width:100%;max-width:580px;background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);padding:2.5rem 2.25rem;margin-bottom:1.5rem}
+    .screen{display:none}
+    .screen.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);font-weight:500;margin-bottom:1rem}
+    .headline{font-family:'Fraunces',serif;font-size:30px;font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:1rem;letter-spacing:-.02em}
+    .headline em{font-style:italic;color:var(--teal)}
+    .body-text{font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:1.75rem}
+    .btn-teal{display:block;width:100%;padding:14px;text-align:center;background:var(--teal);color:white;border-radius:999px;font-size:15px;font-weight:500;font-family:inherit;border:none;cursor:pointer;transition:all .2s;margin-bottom:.75rem;text-decoration:none}
+    .btn-teal:hover{background:#125555;transform:translateY(-1px)}
+    .btn-teal:disabled{opacity:.35;cursor:default;transform:none}
+    .btn-outline{width:100%;padding:12px;text-align:center;background:none;color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s;display:block;margin-bottom:.5rem}
+    .btn-outline:hover{background:var(--cream)}
+    .guarantee{font-size:12px;color:var(--ink-muted);text-align:center;line-height:1.5}
+    .form-label{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:.4rem;display:block}
+    .form-hint{font-size:12px;color:var(--ink-muted);margin-bottom:.65rem}
+    .form-section{margin-bottom:1.5rem}
+
+    .feature-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem;padding:1.25rem;background:var(--teal-light);border-radius:var(--radius-md);border:1px solid var(--teal-border)}
+    .feature-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#0D3F3F;line-height:1.5}
+    .feature-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px}
+    .price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:1.25rem}
+    .price{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:var(--ink)}
+    .price-note{font-size:13px;color:var(--ink-muted)}
+
+    .pill-grid{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:0}
+    .pill-btn{padding:8px 14px;border:1px solid var(--border);border-radius:999px;background:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-soft);cursor:pointer;transition:all .15s;white-space:nowrap}
+    .pill-btn:hover{background:var(--warm-white);border-color:var(--border-strong)}
+    .pill-btn.selected{border-color:var(--teal);background:var(--teal-light);color:var(--teal);border-width:1.5px;font-weight:500}
+
+    input[type=range]{width:100%;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--border);outline:none;cursor:pointer;margin:8px 0}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--teal);border:3px solid white;box-shadow:0 1px 4px rgba(26,112,112,.3);cursor:pointer}
+    input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--teal);border:3px solid white;cursor:pointer}
+    .gap-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-muted);margin-top:4px}
+
+    .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--teal);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.25rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .gen-wrap{text-align:center;padding:2rem 0}
+    .gen-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+    .gen-sub{font-size:14px;color:var(--ink-muted);line-height:1.6}
+
+    .result-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+    .meta-pill{padding:4px 12px;border-radius:999px;font-size:12px;font-weight:500;background:var(--teal-light);color:var(--teal);border:1px solid var(--teal-border)}
+    .result-title{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em}
+    .result-title em{font-style:italic;color:var(--teal)}
+    .result-sub{font-size:14px;color:var(--ink-muted);margin-bottom:1.75rem;line-height:1.6}
+    .step-item{display:flex;gap:1rem;margin-bottom:1.1rem;align-items:flex-start}
+    .step-num{width:28px;height:28px;border-radius:50%;background:var(--teal);color:white;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .step-body{flex:1;border:1px solid var(--border);border-radius:var(--radius-md);padding:.9rem 1.1rem;background:var(--cream)}
+    .step-title{font-family:'Fraunces',serif;font-size:15.5px;color:var(--ink);margin-bottom:.25rem}
+    .step-time{font-size:11px;color:var(--teal);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.4rem}
+    .step-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+    .tips-box{background:var(--sage-light);border:1px solid var(--sage-border);border-radius:var(--radius-md);padding:1.25rem;margin:1.5rem 0}
+    .tips-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);font-weight:500;margin-bottom:.75rem}
+    .tip-item{font-size:13px;color:#2D5A3D;line-height:1.6;margin-bottom:.5rem;display:flex;align-items:flex-start;gap:8px}
+    .tip-item:last-child{margin-bottom:0}
+    .tip-dot{width:4px;height:4px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:8px}
+    .result-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+    .result-actions .btn-outline{flex:1;margin-bottom:0;min-width:120px}
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);padding:10px 20px;border-radius:999px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    footer{max-width:580px;width:100%;padding-bottom:2rem;text-align:center;font-size:12px;color:var(--ink-muted)}
+    footer a{color:var(--ink-muted)}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-top:.5rem;flex-wrap:wrap}
+    @media(max-width:600px){.card{padding:1.75rem 1.25rem}.headline{font-size:26px}}
+
+    a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      nav, footer, .result-actions, .toast, .btn-outline { display: none !important; }
+      body { background: white; padding: 0; }
+      .card { box-shadow: none; border: none; max-width: 100%; }
+    }
+  </style>
+  <script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="/">human<span>ly</span>
+    <sup style="font-family:'DM Sans',sans-serif;font-size:9px;font-style:normal;color:#9B948A;letter-spacing:.06em;text-transform:uppercase;vertical-align:super;">labs</sup>
+  </a>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="/" style="font-size:13px;color:var(--ink-soft);text-decoration:none">← All tools</a>
+    <div class="nav-tag">Evening Ritual Builder</div>
+  </div>
+</nav>
+
+<main class="card">
+
+  <!-- LANDING -->
+  <div id="screen-landing" class="screen active">
+    <div class="eyebrow">Personalised routine · instant · $3.99</div>
+    <h1 class="headline">Make tonight feel<br><em>intentional</em>, not empty</h1>
+    <p class="body-text">Evenings alone can drift into scrolling and go nowhere, or they can feel genuinely restorative — the difference is usually structure. This builds a short routine tailored to your actual mood, energy, and what you need tonight specifically.</p>
+
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-dot"></div>Mood-responsive routine, different every time</div>
+      <div class="feature-item"><div class="feature-dot"></div>Cozy, active, or reflective modes depending on what you need</div>
+      <div class="feature-item"><div class="feature-dot"></div>Fits the actual time you have — 15 to 90 minutes</div>
+      <div class="feature-item"><div class="feature-dot"></div>Printable nightly planner</div>
+      <div class="feature-item"><div class="feature-dot"></div>Unlimited uses — generate a fresh one any evening</div>
+    </div>
+
+    <div class="price-row">
+      <div class="price">$3.99</div>
+      <div class="price-note">one-time · unlimited uses</div>
+    </div>
+    <button class="btn-teal" onclick="handlePurchase()">Build tonight's ritual → $3.99</button>
+    <div class="guarantee">🔒 Secure payment via Stripe · 7-day refund if it doesn't help</div>
+    <button onclick="goTo('screen-form')" style="margin-top:1rem;width:100%;padding:10px;border:1px dashed var(--border-strong);border-radius:999px;background:none;font-size:12px;color:var(--ink-muted);cursor:pointer;font-family:inherit">[Dev] Skip payment</button>
+  </div>
+
+  <!-- FORM -->
+  <div id="screen-form" class="screen">
+    <div class="eyebrow">Quick check-in</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-.01em">How are you <em style="font-style:italic;color:var(--teal)">actually</em> feeling?</h2>
+
+    <div class="form-section">
+      <label class="form-label">Your mood right now</label>
+      <div class="pill-grid" id="mood-grid">
+        <button class="pill-btn" data-val="flat" onclick="selectPill(this,'mood')">Flat / numb</button>
+        <button class="pill-btn" data-val="anxious" onclick="selectPill(this,'mood')">Anxious</button>
+        <button class="pill-btn" data-val="lonely" onclick="selectPill(this,'mood')">Lonely</button>
+        <button class="pill-btn" data-val="restless" onclick="selectPill(this,'mood')">Restless</button>
+        <button class="pill-btn" data-val="content" onclick="selectPill(this,'mood')">Content</button>
+        <button class="pill-btn" data-val="sad" onclick="selectPill(this,'mood')">A bit sad</button>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <label class="form-label">Your energy level</label>
+      <input type="range" id="energy-slider" min="1" max="5" value="3" oninput="updateEnergyLabel(this.value)" />
+      <div class="gap-labels"><span>Running on empty</span><span>Wired</span></div>
+      <div style="text-align:center;margin-top:.75rem;font-size:14px;color:var(--ink-soft)">
+        <span id="energy-label" style="font-weight:500;color:var(--teal)">Moderate energy</span>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <label class="form-label">What do you need most tonight?</label>
+      <div class="pill-grid" id="need-grid">
+        <button class="pill-btn" data-val="comfort" onclick="selectPill(this,'need')">Comfort</button>
+        <button class="pill-btn" data-val="stimulation" onclick="selectPill(this,'need')">Stimulation</button>
+        <button class="pill-btn" data-val="quiet" onclick="selectPill(this,'need')">Quiet</button>
+        <button class="pill-btn" data-val="connection" onclick="selectPill(this,'need')">Connection</button>
+        <button class="pill-btn" data-val="accomplishment" onclick="selectPill(this,'need')">A sense of accomplishment</button>
+        <button class="pill-btn" data-val="rest" onclick="selectPill(this,'need')">Real rest</button>
+      </div>
+    </div>
+
+    <div class="form-section" style="margin-bottom:0">
+      <label class="form-label">Time available tonight</label>
+      <input type="range" id="time-slider" min="15" max="90" step="15" value="45" oninput="updateTimeLabel(this.value)" />
+      <div class="gap-labels"><span>15 min</span><span>90 min</span></div>
+      <div style="text-align:center;margin-top:.75rem;font-size:14px;color:var(--ink-soft)">
+        <span id="time-label" style="font-weight:500;color:var(--teal)">45 minutes</span>
+      </div>
+    </div>
+
+    <div style="height:1.5rem"></div>
+    <button class="btn-teal" id="generate-btn" onclick="generate()" disabled>Build my ritual →</button>
+    <p style="text-align:center;margin-top:.75rem">
+      <button onclick="goTo('screen-landing')" style="background:none;border:none;font-family:inherit;font-size:12px;color:var(--ink-muted);cursor:pointer;text-decoration:underline;text-underline-offset:2px">← Back</button>
+    </p>
+  </div>
+
+  <!-- GENERATING -->
+  <div id="screen-generating" class="screen">
+    <div class="gen-wrap">
+      <div class="spinner"></div>
+      <div class="gen-title">Building tonight's ritual…</div>
+      <div class="gen-sub">Matching a routine to your mood, energy, and time.</div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="screen-results" class="screen">
+    <div class="result-meta">
+      <span class="meta-pill" id="meta-mood"></span>
+      <span class="meta-pill" id="meta-need"></span>
+      <span class="meta-pill" id="meta-time"></span>
+    </div>
+    <div class="result-title">Tonight's <em>ritual</em></div>
+    <div class="result-sub" id="result-sub"></div>
+
+    <div id="steps-container"></div>
+
+    <div class="tips-box">
+      <div class="tips-title">One thing to remember</div>
+      <div class="tip-item"><div class="tip-dot"></div><span id="closing-tip"></span></div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-outline" onclick="window.print()">🖨 Save / print tonight's plan</button>
+      <button class="btn-outline" onclick="goTo('screen-form')">Adjust & rebuild</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Humanly Labs · <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/">All tools</a>
+  </div>
+  <div class="footer-links" style="margin-top:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/why-socialising-drains-you">Why socialising drains you</a>
+    <a href="/mini-course">Free course</a>
+    <a href="/social-battery">Social Battery</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── STRIPE ── */
+const STRIPE_LINK = 'https://buy.stripe.com/8x25kDbDq4qCgl49ci4AU0a';
+// $3.99 — Success URL: https://humanlylabs.org/evening-ritual?paid=true
+
+/* ── STATE ── */
+let selectedMood = '';
+let selectedNeed = '';
+let hasPaid = sessionStorage.getItem('hly_evening_paid') === '1';
+
+const ENERGY_LABELS = { 1:'Running on empty', 2:'Low energy', 3:'Moderate energy', 4:'Good energy', 5:'Wired / can\'t settle' };
+
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    hasPaid = true;
+    sessionStorage.setItem('hly_evening_paid', '1');
+    goTo('screen-form');
+  }
+  updateEnergyLabel(3);
+  updateTimeLabel(45);
+});
+
+function handlePurchase() { window.location.href = STRIPE_LINK; }
+
+function selectPill(btn, group) {
+  const grid = btn.parentElement;
+  grid.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  if (group === 'mood') selectedMood = btn.dataset.val;
+  if (group === 'need') selectedNeed = btn.dataset.val;
+  updateFormBtn();
+}
+
+function updateEnergyLabel(v) { document.getElementById('energy-label').textContent = ENERGY_LABELS[v]; }
+function updateTimeLabel(v) { document.getElementById('time-label').textContent = v + ' minutes'; }
+function updateFormBtn() { document.getElementById('generate-btn').disabled = !(selectedMood && selectedNeed); }
+
+/* ── ACTIVITY BANK, keyed by need ── */
+const ACTIVITY_BANK = {
+  comfort: [
+    { title: 'Warm reset', desc: 'A hot shower or bath, comfortable clothes, and dimmer lighting than usual — signal to your body that the day is over.' },
+    { title: 'A comfort ritual', desc: 'Your favourite warm drink, a blanket, and something familiar to watch or read — nothing new or demanding tonight.' },
+    { title: 'Slow, simple food', desc: 'Something warm and easy to make, eaten without a screen — even 10 minutes of just eating, undistracted.' },
+  ],
+  stimulation: [
+    { title: 'Something genuinely engaging', desc: 'A book, show, game, or hobby that actually holds your attention — not background noise, something that pulls you in.' },
+    { title: 'A small project', desc: 'Pick up something creative or hands-on you\'ve been meaning to get back to, even for a short stretch.' },
+    { title: 'Learn something new', desc: 'A short video, article, or tutorial on something you\'re genuinely curious about.' },
+  ],
+  quiet: [
+    { title: 'Phone away', desc: 'Put your phone in another room for this stretch — even 20 minutes of genuine quiet resets things.' },
+    { title: 'Slow breathing or stillness', desc: 'Sit somewhere comfortable and just breathe slowly for a few minutes — no goal, no app required.' },
+    { title: 'A quiet, undemanding task', desc: 'Tidying one small area, watering plants, or another low-stimulation task done slowly and without rushing.' },
+  ],
+  connection: [
+    { title: 'Reach out to one person', desc: 'Send a genuine, low-pressure message to someone you\'ve been meaning to check in on — doesn\'t need to be a big conversation.' },
+    { title: 'A call, not just a text', desc: 'If you have someone you can call, even briefly, a real voice tends to land differently than a message thread.' },
+    { title: 'Parasocial connection, briefly', desc: 'If reaching out feels like too much tonight, a favourite creator, community, or online space can be a lighter first step.' },
+  ],
+  accomplishment: [
+    { title: 'One small, finishable task', desc: 'Pick one concrete thing you can actually finish tonight — small enough to complete, not an open-ended project.' },
+    { title: 'Tidy one space', desc: 'A single surface, drawer, or small area — visible progress in a short window.' },
+    { title: 'Plan tomorrow', desc: 'Spend a few minutes setting up tomorrow to go well — laying out what you need, writing a short plan.' },
+  ],
+  rest: [
+    { title: 'Wind-down, no screens', desc: 'The last stretch before bed with no screens at all — reading, stretching, or just lying still.' },
+    { title: 'A proper transition to sleep', desc: 'Dim the lights, put devices away, and give yourself more buffer time before bed than usual.' },
+    { title: 'Gentle movement', desc: 'A short stretch or slow walk — not exercise for performance, just movement that helps your body settle.' },
+  ],
+};
+
+const MOOD_OPENER = {
+  flat: 'When things feel flat, a gentle structure — not a demanding one — tends to help more than forcing yourself to feel differently.',
+  anxious: 'When you\'re anxious, this routine leans toward calming, low-stimulation activities rather than anything that adds more input.',
+  lonely: 'Loneliness in the evening is common and doesn\'t mean anything is wrong with you — tonight\'s routine leans toward genuine connection where it fits.',
+  restless: 'When you\'re restless, channelling the energy into something specific tends to work better than trying to sit still through it.',
+  content: 'You\'re in a decent place tonight — this routine is about protecting that, not fixing anything.',
+  sad: 'On a harder day, be gentle with tonight\'s plan — the goal is getting through it kindly, not being productive.',
+};
+
+const CLOSING_TIPS = {
+  comfort: 'You don\'t need to earn comfort tonight — it\'s a completely legitimate thing to need.',
+  stimulation: 'If nothing feels engaging enough at first, give it 10 minutes before switching — the pull often builds once you start.',
+  quiet: 'Quiet can feel uncomfortable at first if you\'re used to constant input — that discomfort usually settles within a few minutes.',
+  connection: 'Reaching out first, even briefly, is worth more than it feels like in the moment — most people are glad to hear from you.',
+  accomplishment: 'Pick something genuinely small — the point tonight is finishing something, not doing a lot.',
+  rest: 'Real rest sometimes takes longer to feel restful than expected — give the wind-down its full time rather than cutting it short.',
+};
+
+function pick(arr, seed) { return arr[seed % arr.length]; }
+
+function buildSteps(mood, need, minutes) {
+  const primary = ACTIVITY_BANK[need];
+  const secondaryKey = need === 'rest' ? 'quiet' : (need === 'comfort' ? 'quiet' : 'comfort');
+  const secondary = ACTIVITY_BANK[secondaryKey];
+  const seed = (mood.length + need.length);
+
+  const steps = [];
+  steps.push({ title: 'Close out the day', time: '5 min', desc: 'Change out of whatever you\'ve been in, put your work/errands away, and mark the day as officially done — even a small physical shift helps signal the transition.' });
+
+  const mainCount = minutes <= 30 ? 1 : (minutes <= 60 ? 2 : 3);
+  for (let i = 0; i < mainCount; i++) {
+    const act = pick(primary, seed + i);
+    steps.push({ title: act.title, time: Math.round(minutes * (mainCount === 1 ? 0.7 : 0.55 / mainCount) ) + ' min', desc: act.desc });
+  }
+
+  if (minutes > 30) {
+    const act2 = pick(secondary, seed + 7);
+    steps.push({ title: act2.title, time: Math.round(minutes * 0.2) + ' min', desc: act2.desc });
+  }
+
+  steps.push({ title: 'Wind down', time: '5-10 min', desc: 'Whatever comes next tonight, give yourself a real transition rather than an abrupt stop — a few minutes of settling before moving on.' });
+
+  return steps;
+}
+
+function generate() {
+  goTo('screen-generating');
+  setTimeout(() => {
+    const minutes = Number(document.getElementById('time-slider').value);
+    const steps = buildSteps(selectedMood, selectedNeed, minutes);
+    renderResults(steps, minutes);
+  }, 1500);
+}
+
+function renderResults(steps, minutes) {
+  document.getElementById('meta-mood').textContent = document.querySelector('#mood-grid .selected')?.textContent || '';
+  document.getElementById('meta-need').textContent = document.querySelector('#need-grid .selected')?.textContent || '';
+  document.getElementById('meta-time').textContent = minutes + ' min';
+  document.getElementById('result-sub').textContent = MOOD_OPENER[selectedMood];
+  document.getElementById('closing-tip').textContent = CLOSING_TIPS[selectedNeed];
+
+  document.getElementById('steps-container').innerHTML = steps.map((s, i) => `
+    <div class="step-item">
+      <div class="step-num">${i+1}</div>
+      <div class="step-body">
+        <div class="step-time">${s.time}</div>
+        <div class="step-title">${s.title}</div>
+        <div class="step-desc">${s.desc}</div>
+      </div>
+    </div>
+  `).join('');
+
+  goTo('screen-results');
+}
+
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+</script>
+
+<!-- SEO cross-links -->
+<div style="max-width:580px;margin:48px auto 0;padding:32px 24px;border-top:1px solid rgba(0,0,0,0.08);text-align:center">
+  <p style="font-size:12px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px">Related Tools</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"><a href="/social-battery" style="font-size:13px;color:#555;text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Social Battery</a><a href="/self-compassion" style="font-size:13px;color:#555;text-decoration:none;padding:6px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:20px;">Self-Compassion Reset</a></div>
+  <p style="font-size:13px;color:#888;margin:20px 0 0"><a href="/" style="color:inherit">← All Humanly Labs tools</a></p>
+</div>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KMFL61V2FD');
+</script>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="buy.stripe.com"], button[data-stripe]');
+  if (a && window.gtag) gtag('event', 'begin_checkout', { item_page: location.pathname });
+});
+</script>
+</body>
+</html>
