@@ -6,6 +6,50 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-08-31 (5) — Built out The Friendship Revival course (18 lessons) — all three courses now complete
+
+**What was done:** wrote and published all 18 lesson pages for *The
+Friendship Revival* course (adult friendship maintenance, attachment styles,
+reviving dormant ties, deepening and forming friendships), covering all 6
+modules end to end. Same pattern as the other two courses:
+- One standalone page per lesson, ~811–944 words each (avg ~865), with a
+  "Try this" exercise box in every lesson
+- Lessons pairing with a tool (Friendship Audit ×2, Attachment Style Quiz,
+  Check-In Generator ×2) link out to it directly
+- Terracotta/brown theme (`#7A3B19`) matching this course's existing
+  branding
+
+**Content note:** this course covers attachment theory (anxious/avoidant/
+secure patterns) as a descriptive framework for relational tendencies, not
+as clinical diagnosis — Lesson 4 explicitly frames it this way. No
+diagnostic claims are made about the reader anywhere in the lesson content.
+
+**Correction to a prior note:** earlier session notes in this file said
+Friendship Revival had 19 lessons — that was wrong (based on a stale
+grep-count early in the project). It has 18, matching what the landing page
+already correctly stated. No landing-page copy bug here, unlike Social
+Landing's earlier "19 lessons" typo.
+
+**How it's built:** same generator pattern as the other two courses —
+`docs/scripts/build-friendship-revival-lessons.py`.
+
+**Wired into the site:** `courses/friendship-revival/content/index.html` —
+all 18 "Coming soon" cards converted to real links with a "Start →" badge.
+
+**Verified:** full repo-wide link check (zero broken links/assets across
+the entire site — all three courses, 56 lesson pages total, plus every
+other page), JS syntax check across every HTML file, `noindex` coverage,
+and `target="_blank"` + `noopener` coverage — all clean.
+
+**Course build-out is now complete.** All three Humanly Labs courses
+(Social Landing — 20 lessons, Confidence Blueprint — 18 lessons, Friendship
+Revival — 18 lessons; 56 lessons total) are fully written, published, and
+linked. See `NEXT_STEPS.md` for what's left on the site more broadly:
+deployment confirmation, the payment provider integration, and ADR-0003
+(client-side API key exposure).
+
+---
+
 ## 2026-08-31 (4) — Built out The Confidence Blueprint course (18 lessons)
 
 **What was done:** wrote and published all 18 lesson pages for *The

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Intimacy Gap — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 1 · The Friendship Audit</span>
+    <span class="lesson-num-badge">Lesson 3 of 18</span>
+  </div>
+  <h1 class="lesson-title">The Intimacy Gap</h1>
+  <p class="lesson-sub">Identifying which relationships have depth potential vs true acquaintances</p>
+  <div class="lesson-body">
+
+    <p>Not every relationship in your social world is meant to become, or capable of becoming, a deep friendship — and recognising this distinction clearly is genuinely useful, because it prevents you from either neglecting relationships with real depth potential or over-investing in ones that are unlikely to go there regardless of effort. This lesson is about identifying the difference, using a framework that will keep showing up throughout the rest of the course.</p>
+
+    <h2>The intimacy gap defined</h2>
+    <p>Every relationship carries some gap between its current level of depth and its potential depth — how close it could plausibly become if both people invested in it. A workplace acquaintance you enjoy talking to but have never seen outside work might have real, unexplored potential; a friendly neighbour you exchange pleasantries with might have already reached close to their realistic ceiling of depth given the nature of the relationship. Neither is a problem — the issue only arises when you're investing effort as though a relationship has more potential than it realistically does, or neglecting one that has real, untapped potential simply because it hasn't been actively pursued yet.</p>
+
+    <h2>Signals of genuine depth potential</h2>
+    <p>A few signals are worth weighing when assessing a specific relationship's potential, though none is decisive on its own:</p>
+    <ul>
+      <li><strong>Reciprocal curiosity</strong> — do they ask about your life, follow up on things you've mentioned, seem genuinely interested rather than just polite?</li>
+      <li><strong>Comfortable silence or informality</strong> — can the interaction relax into something less performed, or does it stay consistently surface-level and formal no matter how many times you interact?</li>
+      <li><strong>Shared values or genuine overlap</strong> — beyond the specific context you know them from (work, a class, a mutual friend), is there a real point of connection that could sustain a relationship outside that context?</li>
+      <li><strong>Willingness to extend beyond the original context</strong> — have they shown any interest in interacting outside the setting where you originally met, even in small ways?</li>
+    </ul>
+    <p>A relationship showing several of these signals is usually worth deliberate investment; one showing few of them, despite pleasant regular contact, may simply be a well-functioning acquaintance-level relationship, which is a genuinely fine thing for a relationship to be — not everything needs to become a close friendship to have value.</p>
+
+    <h2>True acquaintances have real value too</h2>
+    <p>It's worth pushing back directly on the implicit idea that only close friendships count as worthwhile connection. A wide network of pleasant acquaintances contributes meaningfully to a sense of belonging and community, provides the kind of casual social contact covered in the concept of social loneliness elsewhere on this platform, and, per weak-tie research, is often more useful than close friends for practical things like introductions, recommendations, and general life texture. This course focuses heavily on deepening relationships with real potential, but that doesn't mean acquaintance-level relationships are lesser or in need of "fixing" — they're simply a different, equally legitimate category.</p>
+
+    <h2>Applying this to your Lesson 2 map</h2>
+    <p>Go back through the relationships you mapped in Lesson 2, particularly anything you marked as nourishing or dormant, and apply the intimacy-gap lens: which ones show real signals of unexplored depth potential, worth the deliberate investment covered in Modules 3 and 4? Which ones are functioning well exactly as they are, at their current level, with no particular need to push further? Being honest about this distinction now will make the rest of the course's advice land much more precisely, since deepening techniques work best applied to relationships that genuinely have room to deepen.</p>
+
+    <h2>Potential can be misjudged in both directions</h2>
+    <p>It's worth being aware that this assessment is genuinely fallible in both directions. Sometimes a relationship that seems purely surface-level turns out to have real depth potential once someone actually tests it with a slightly more personal question or a genuine invitation — the surface quality was simply a function of neither person having tried yet, not a fixed ceiling. Conversely, a relationship that seems to have obvious potential on paper (shared interests, pleasant regular contact) can sometimes plateau despite real effort, for reasons that have more to do with the other person's current capacity or life circumstances than anything about the relationship's inherent potential. Treat your initial assessment as a reasonable starting hypothesis, worth testing through actual effort in the modules ahead, rather than a fixed and final verdict.</p>
+
+    <h2>Context can mask or reveal potential</h2>
+    <p>It's worth noting that the specific context you know someone from can sometimes obscure real potential rather than reveal it — a work relationship, for instance, often stays within a narrower professional register regardless of genuine underlying compatibility, simply because the context doesn't naturally invite anything more personal. This means context alone is a weak signal on its own; the more reliable signals are the ones listed above, which can show up even within a fairly formal or narrow original context, hinting at potential the setting itself hasn't yet allowed to surface.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Pick two relationships from your Lesson 2 map — one you suspect has real depth potential, one you suspect is comfortably at its ceiling as an acquaintance. Write one sentence for each explaining your read, using the signals above. You'll return to this distinction directly in Module 4.</p>
+    </div>
+
+    <p>You now have a full, honest map of your social world and a framework for where real depth potential exists. Module 2 turns inward — looking at your own relational patterns, specifically your attachment style, and how it shapes the way you form and sustain friendships.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/02-your-social-world-map.html">← Lesson 2: Your Social World Map</a>
+    <a href="/courses/friendship-revival/content/lessons/04-your-attachment-style.html">Lesson 4: Your Attachment Style →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

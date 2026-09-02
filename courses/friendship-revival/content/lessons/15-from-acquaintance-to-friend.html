@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Acquaintance to Friend — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 5 · Building New Friendships as an Adult</span>
+    <span class="lesson-num-badge">Lesson 15 of 18</span>
+  </div>
+  <h1 class="lesson-title">From Acquaintance to Friend</h1>
+  <p class="lesson-sub">The specific moves that transform casual contacts into real friendships</p>
+  <div class="lesson-body">
+
+    <p>With proximity sources identified in Lesson 14, this lesson covers the specific, concrete moves that actually convert a pleasant acquaintance — someone you see regularly and enjoy talking to within a specific context — into a genuine friendship that exists outside that original context. This transition doesn't happen automatically through repeated proximity alone; it requires a deliberate, specific set of actions.</p>
+
+    <h2>The context-extension move</h2>
+    <p>The single most important move here is extending the relationship beyond its original container. Two people who only ever interact at the gym, or only at work, or only at a weekly class, are — however friendly and familiar — still technically contained within that original context, not yet a friendship in the fuller sense. The extension happens when someone proposes interaction outside that container: a coffee, a specific plan, an invitation to something unrelated to the original setting. As covered elsewhere on this platform regarding invitations, someone has to be the one to make this move, and being willing to be that person, even occasionally, disproportionately accelerates new friendship formation.</p>
+
+    <h2>Reading the signals before extending</h2>
+    <p>Before proposing an extension beyond the original context, it's worth reading for a few encouraging signals from your repeated proximity contact: do they seem genuinely engaged rather than just polite during your regular interactions? Do they ever bring up topics or details from outside the shared context, suggesting some interest in knowing you more broadly? Is there some genuine rapport or humour that's developed over repeated contact? None of these need to be dramatic — even modest positive signals are usually enough grounds for a low-stakes extension attempt.</p>
+
+    <h2>Making the extension low-stakes</h2>
+    <p>The extension itself works best kept specific and low-pressure, following the same pattern covered for invitations elsewhere on this platform: a concrete, easy-to-accept suggestion ("want to grab coffee sometime before/after our usual class?") rather than something vague or heavy. Framing it around a shared interest already established through the proximity context makes it feel like a natural continuation rather than an abrupt shift — "I always enjoy our conversations at trivia, would love to actually catch up properly sometime" references the existing context while still proposing something new.</p>
+
+    <h2>Consistency after the first extension</h2>
+    <p>A single successful extension — one coffee, one hangout outside the original context — is a genuinely good sign, but it's still early. The same consistency principle that applies to any new relationship applies here: following up again, extending a second and third invitation over the following weeks, and continuing the original proximity contact alongside the new, extended contact. This combination — ongoing proximity plus periodic extension beyond it — tends to build toward genuine friendship considerably faster than either alone.</p>
+
+    <h2>Use the Check-In Generator for extension messages too</h2>
+    <p>The Check-In Generator tool, already introduced for reviving dormant ties in Module 3, works just as well here — describe the person and the context you know them from, and it can help draft a natural, specific extension message if you're finding the wording harder to land on your own.</p>
+
+    <h2>What if the extension doesn't lead anywhere?</h2>
+    <p>As with dormant tie revival in Lesson 9, not every promising acquaintance will turn into a genuine friendship, even with a well-executed extension. That's a normal part of the process, not a failure — treat each attempt as a reasonable, low-cost bet rather than a guaranteed outcome, and continue applying the same approach across your other proximity sources from Lesson 14 rather than reading a single non-conversion as broader evidence about your ability to make friends.</p>
+
+    <h2>This is where all the earlier modules converge</h2>
+    <p>It's worth noticing that this final skill draws directly on nearly everything covered earlier in the course: reading signals accurately connects to the intimacy-gap assessment from Lesson 3, extending an invitation draws on the same courage covered in the dormant-tie outreach in Module 3, and building genuine depth once the extension succeeds relies directly on the depth-gradient and vulnerability skills from Module 4. Adult friendship formation isn't really a separate skill set from everything else in this course — it's the same underlying skills, applied to a person you're meeting for the first time rather than one you already have history with.</p>
+
+    <h2>It's fine to be the one who initiates repeatedly at first</h2>
+    <p>Especially in the early stages of a forming friendship, it's genuinely common for one person to be doing more of the initiating than the other, without that imbalance meaning much about the other person's actual interest. New friendships haven't yet built the mutual habit and momentum that make initiating feel equally natural for both people — that habit develops over time, through repeated positive experience, not immediately. Being willing to initiate more than half the time in these early stages, without reading too much into the imbalance, is often simply part of what it takes to get a new friendship established.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>From one of your Lesson 14 proximity sources, identify one person showing genuine positive signals, and extend a specific, low-pressure invitation beyond the original context this week.</p>
+    </div>
+
+    <p>You now have a complete framework for forming new adult friendships: understanding the structural reality, leveraging proximity, and making the deliberate moves that extend acquaintance into friendship. The final module brings everything in this course together into an ongoing, sustainable maintenance system.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">✉️</div>
+    <div class="tool-copy"><strong>Use the Check-In Generator</strong>This lesson pairs with the Check-In Generator tool — use it now while the ideas are fresh.</div>
+    <a href="/checkin-generator">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/14-the-proximity-principle.html">← Lesson 14: The Proximity Principle</a>
+    <a href="/courses/friendship-revival/content/lessons/16-the-re-audit.html">Lesson 16: The Re-Audit →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

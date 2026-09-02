@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Attachment Style — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 2 · Understanding Your Pattern</span>
+    <span class="lesson-num-badge">Lesson 4 of 18</span>
+  </div>
+  <h1 class="lesson-title">Your Attachment Style</h1>
+  <p class="lesson-sub">How early relational patterns shape how you form friendships today</p>
+  <div class="lesson-body">
+
+    <p>Attachment theory was originally developed to describe the bond between infants and caregivers, but decades of subsequent research have shown that the same underlying patterns — how comfortable we are with closeness, how we handle uncertainty in a relationship, how we respond to distance or conflict — show up throughout adult relationships, friendships very much included, not just romantic partnerships. This lesson introduces the framework, since it'll be genuinely useful context for the rest of this module and much of what follows.</p>
+
+    <h2>A brief note on how to use this framework</h2>
+    <p>Before going further, it's worth being clear about what attachment style is and isn't. It's a descriptive framework for a general pattern of tendencies, not a fixed, permanent label or a clinical diagnosis. Most people show some blend of tendencies rather than fitting neatly into one pure category, and — importantly, and covered directly in Lesson 6 — attachment patterns are not fixed for life. They're shaped by early experience but remain genuinely responsive to new experience throughout adulthood, which is the entire premise behind this module being useful at all.</p>
+
+    <h2>The three broad patterns</h2>
+    <p><strong>Secure attachment</strong> generally involves relative comfort with both closeness and independence — reasonably confident that relationships are stable, able to communicate needs directly, not overly anxious about a friend pulling back and not automatically avoidant of getting close. This is the pattern most associated with straightforward, low-friction friendship formation and maintenance.</p>
+    <p><strong>Anxious attachment</strong> tends to involve a heightened sensitivity to signs of distance or rejection, a stronger need for reassurance and consistent contact, and sometimes a tendency to read ambiguous signals (a slow reply, a cancelled plan) in a more threatening light than the situation necessarily warrants.</p>
+    <p><strong>Avoidant attachment</strong> tends to involve more discomfort with closeness and vulnerability, a stronger pull toward independence and self-reliance even when connection is genuinely wanted, and sometimes a tendency to create distance — consciously or not — when a relationship starts feeling too close or demanding.</p>
+    <p>The next lesson goes into much more depth on how each of these specifically shows up in adult friendship, and where each tends to get stuck.</p>
+
+    <h2>Why this matters for the rest of the course</h2>
+    <p>Understanding your own general pattern helps make sense of specific difficulties you might already recognise in your friendship history — a recurring tendency to pull away once a friendship starts feeling significant, a recurring pattern of anxiety when a friend goes quiet, or a general sense of unease around vulnerability that keeps relationships comfortably shallow. None of these patterns are character flaws; they're learned tendencies, shaped by early relational experience, and — like the other patterns covered throughout this course — genuinely responsive to deliberate, informed effort.</p>
+
+    <h2>Use the Attachment Style Quiz for a structured read</h2>
+    <p>The Attachment Style Quiz tool below gives you a structured assessment of your own general tendencies, rather than relying on self-diagnosis from a brief lesson description. Take it now, answering based on your general pattern across relationships (not just one specific friendship), and hold the result loosely — as a useful starting lens, not a fixed identity.</p>
+
+    <h2>Where these patterns originally come from</h2>
+    <p>Without going too deep into developmental theory, it's worth knowing the general origin story: these patterns are thought to develop through early, repeated experiences of how reliably a caregiver responded to a child's needs for closeness and comfort. Consistent, attuned responsiveness tends to produce a more secure baseline; inconsistent or unpredictable responsiveness tends to produce a more anxious baseline; consistently dismissive or unavailable responsiveness tends to produce a more avoidant baseline. None of this is about blame — caregiving happens under real constraints, and the resulting pattern is simply an adaptive response to whatever conditions were actually present, not a reflection of anyone's failure, including your own as an adult navigating the pattern you inherited.</p>
+
+    <h2>Attachment style and social anxiety are related but distinct</h2>
+    <p>If you're familiar with the social-anxiety-focused course material elsewhere on this platform, it's worth distinguishing attachment style from social anxiety directly, since they can sometimes look similar from the outside. Social anxiety is primarily about fear of judgment and evaluation in social performance situations; attachment style is primarily about comfort with closeness and vulnerability specifically within ongoing relationships. It's entirely possible to have low social anxiety (comfortable meeting new people, fine speaking in groups) while still carrying a more anxious or avoidant attachment pattern once a relationship starts requiring genuine emotional closeness, and vice versa. They can compound each other, but they're separate systems worth understanding on their own terms.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Before taking the quiz, jot down your own guess at your dominant pattern, based on the three descriptions above. After taking it, compare your guess to the result — noting any surprise is itself useful information about blind spots in your own self-perception.</p>
+    </div>
+
+    <p>The next lesson goes deeper into how each of these three patterns specifically plays out in adult friendship — not just in the abstract, but in the concrete moments and decisions that shape how a friendship develops or stalls.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🌱</div>
+    <div class="tool-copy"><strong>Use the Attachment Style Quiz</strong>This lesson pairs with the Attachment Style Quiz tool — use it now while the ideas are fresh.</div>
+    <a href="/attachment-quiz">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/03-the-intimacy-gap.html">← Lesson 3: The Intimacy Gap</a>
+    <a href="/courses/friendship-revival/content/lessons/05-anxious-avoidant-secure.html">Lesson 5: Anxious, Avoidant & Secure →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

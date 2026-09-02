@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Dormant Tie Opportunity — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 3 · Reviving Dormant Connections</span>
+    <span class="lesson-num-badge">Lesson 7 of 18</span>
+  </div>
+  <h1 class="lesson-title">The Dormant Tie Opportunity</h1>
+  <p class="lesson-sub">Why reconnecting with old friends is often easier than forming new ones</p>
+  <div class="lesson-body">
+
+    <p>Of everything in your Lesson 2 social world map, the dormant category is arguably the most underused resource most people have available to them — and this lesson makes the case, directly and specifically, for why reviving an old friendship is often genuinely easier and faster than building a new one from nothing, even though it can feel more daunting at first.</p>
+
+    <h2>What actually stays intact during dormancy</h2>
+    <p>When a friendship goes quiet through the structural drift covered in Lesson 1, a lot of what made it valuable doesn't actually disappear — it goes dormant, not extinct. Shared history, established trust, inside knowledge of each other's personality and life, a track record of enjoying each other's company: all of this remains largely intact, simply unused for a stretch of time. This is fundamentally different from starting a new friendship from zero, which requires building all of this from scratch, typically over the "50 to 200 hours" timeline that friendship formation research commonly cites.</p>
+
+    <h2>Research on dormant ties</h2>
+    <p>Organisational psychology research on "dormant ties" — a term originally used to describe professional networks, but with clear parallels to personal friendship — has found something worth knowing directly: people often significantly underestimate how valuable and how receptive dormant connections are, and correspondingly underestimate how well a re-connection will be received. The awkwardness anticipated before reaching out to a long-silent friend is, in study after study, consistently rated as far higher beforehand than it's rated as having actually been, after the fact, by the people who do the reaching out.</p>
+
+    <h2>Why the anticipation feels so much worse than the reality</h2>
+    <p>A few specific anxious predictions tend to drive the hesitation around reaching out to a dormant tie: "too much time has passed, it'll be awkward," "they've probably moved on and don't think about me," "reaching out after so long will seem strange or out of nowhere." Each of these deserves scrutiny. Time alone rarely erodes genuine past closeness as much as it feels like it should — the shared history doesn't expire. Most people, when reflecting honestly, still think fondly of former close friends even after years of silence, simply because the drift wasn't a conscious rejection (per Lesson 1) but a structural, mutual lapse. And an unprompted, warm reach-out after time apart is, for most people, a pleasant surprise rather than a strange intrusion — it's far more common to be flattered that someone thought of you after time apart than to be bothered by it.</p>
+
+    <h2>Which dormant ties are worth prioritising</h2>
+    <p>Not every dormant tie is equally worth reviving — the same intimacy-gap thinking from Lesson 3 applies here. The strongest candidates tend to be relationships that had genuine depth before going quiet (not just proximity-based acquaintances who happened to fade, per the natural course of things), relationships that ended through structural drift rather than genuine conflict or incompatibility, and relationships you find yourself still thinking about occasionally, which is often a reliable signal of real remaining value even after years of no contact.</p>
+
+    <h2>Setting realistic expectations for the revival itself</h2>
+    <p>It's worth noting that reviving a dormant tie doesn't necessarily mean picking up exactly where you left off immediately — there's often a brief re-acclimation period, catching each other up on years of life change, before the relationship settles back into something comfortable. This is normal and expected, not a sign the revival isn't working. The underlying trust and history tend to make this re-acclimation considerably faster than building trust from zero, but it's rarely instantaneous.</p>
+
+    <h2>A specific example worth holding onto</h2>
+    <p>It can help to picture a concrete version of this: someone you were genuinely close to years ago — maybe from an earlier job, an earlier city, an earlier life stage — who you haven't spoken to in a long stretch, not because anything went wrong, but because life simply pulled you in different directions. The version of that person who knew you well, laughed at the same things, understood context about your life that newer acquaintances don't have — that version hasn't disappeared. It's simply been waiting, largely intact, for renewed contact. This is worth holding onto specifically because it's easy to unconsciously picture a dormant tie as something that has decayed or expired, when the more accurate picture is closer to something paused, fully available to pick back up.</p>
+
+    <h2>Dormant ties as an underused resource in general</h2>
+    <p>It's worth zooming out briefly: across an average adult life, most people accumulate a genuinely large number of dormant ties — friendships from school, earlier jobs, earlier cities, earlier life stages — far more than the small number of active friendships they currently maintain. This means the dormant category isn't just one or two names; for most people, it's a substantial, largely untapped reservoir of relationships with real accumulated history, available to draw on well beyond just the single most obvious candidate.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>From your Lesson 2 dormant list, pick the one relationship you find yourself thinking about most, or feel the strongest pull to reconnect with. Write down what specifically drew you to them originally — this becomes useful material for the actual message in the next lesson.</p>
+    </div>
+
+    <p>The next lesson gets practical: exactly how to write and send that first message after a long silence, in a way that feels natural rather than strange.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/06-changing-the-pattern.html">← Lesson 6: Changing the Pattern</a>
+    <a href="/courses/friendship-revival/content/lessons/08-the-first-message.html">Lesson 8: The First Message →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

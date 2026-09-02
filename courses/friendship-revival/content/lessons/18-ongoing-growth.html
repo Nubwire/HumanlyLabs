@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ongoing Growth — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 6 · Your Friendship Maintenance System</span>
+    <span class="lesson-num-badge">Lesson 18 of 18</span>
+  </div>
+  <h1 class="lesson-title">Ongoing Growth</h1>
+  <p class="lesson-sub">How to keep your social world expanding naturally as your life evolves</p>
+  <div class="lesson-body">
+
+    <p>This final lesson closes the course by looking beyond the maintenance rhythm from Lesson 17 toward something equally important: keeping your social world genuinely growing and evolving over time, rather than treating this course as a one-time fix that produces a fixed, permanent social world requiring no further active development.</p>
+
+    <h2>Your social needs will keep changing</h2>
+    <p>It's worth anticipating directly that your social needs, and the shape of your ideal social world, will continue to shift as your life does — a career change, a move, a new relationship, children, ageing, all reliably reshape what kind of connection you need and have capacity for. The skills covered throughout this course — auditing your social world, reviving dormant ties, deepening existing relationships, forming new ones — aren't a one-time fix for a static problem; they're durable, reusable skills for navigating an ongoing, evolving process that continues for the rest of your life.</p>
+
+    <h2>Periodically returning to the audit</h2>
+    <p>Beyond the monthly maintenance check-in from Lesson 17, it's worth periodically — perhaps once or twice a year — running through a fuller version of the Lesson 2 and Lesson 16 audit process again, since your social world's composition will keep shifting even with good maintenance habits in place. New nourishing relationships will emerge; some current ones may naturally drift toward warm or dormant status as circumstances change; new dormant ties worth reviving will accumulate over time the same way your original Lesson 2 list did. Treating this as a periodic, ongoing practice rather than a one-time course exercise keeps your social world responsive to your actual current life rather than anchored to a single snapshot from this course.</p>
+
+    <h2>Staying open to new proximity sources</h2>
+    <p>As your life circumstances change, your Module 5 proximity sources will naturally shift too — a job change alters your workplace proximity, a move alters your neighbourhood proximity, a new life stage (parenthood, retirement, a new hobby) opens up entirely new proximity sources you may not have had before. Staying alert to these shifts, and applying the same deliberate leveraging covered in Lessons 14 and 15, keeps new-friendship formation an ongoing, natural part of your life rather than something that only happened once, during this course.</p>
+
+    <h2>The skills, not the schedule, are what you're keeping</h2>
+    <p>As this course's structured, weekly format ends, it's worth being clear about what actually carries forward: not the specific twelve-week schedule, but the underlying skills — reading your social world honestly, understanding your own relational patterns, knowing how to revive a dormant tie, how to deepen an existing relationship, how to form a new one, and how to maintain what you've built without requiring a formal structure to do so. These are genuinely durable, reusable across whatever life changes come next.</p>
+
+    <h2>A closing note</h2>
+    <p>Eighteen lessons ago, your social world may have felt like something that had simply happened to you — thinned out gradually, without any clear sense of how to reverse it or whether it even could be. You've since built a genuine, structured understanding of why friendship drifts, direct experience reviving connections that had gone quiet, real progress deepening relationships that had settled at the surface, and concrete tools for forming new ones despite the genuine structural challenges of adult life. Your social world is not a fixed thing that happens to you — it's something you now know how to actively build and maintain, for as long as you keep using these tools.</p>
+
+    <h2>If you're revisiting this during a harder stretch</h2>
+    <p>If you're rereading this lesson at some future point, during a period where your social world feels thin again — after a move, a major life change, or simply a period of drift despite your best maintenance efforts — it's worth remembering directly: you've already done this once. The specific skills covered across these eighteen lessons don't expire or require this course's structure to use again. Auditing your social world, reviving what's gone dormant, deepening what's grown surface-level, and forming what's genuinely new are all skills you now have real, practiced experience with, not abstract ideas you're encountering for the first time. Whatever stage of drift or difficulty you find yourself in, the same process that got you here once can get you there again.</p>
+
+    <h2>The tools you're carrying forward</h2>
+    <p>As a practical summary: you're keeping the structural understanding of friendship drift from Lesson 1, which removes unnecessary shame from any future lapse; the self-knowledge about your own relational patterns from Module 2, which helps you recognise and work with your own tendencies as they show up in future relationships; the specific mechanics of reviving, deepening, and forming friendships from Modules 3 through 5; and the maintenance system from this final module, which keeps all of it sustainable without requiring a formal course structure to continue. None of this is time-limited to these twelve weeks — it's a durable set of skills for a lifelong, ongoing part of a good life.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Set a recurring reminder, six months from now, to run a fuller re-audit of your social world using the Friendship Audit tool — treating this not as the end of the process, but as the first of many ongoing check-ins over the years ahead.</p>
+    </div>
+
+    <p>That's the full course. Your friendships are worth the ongoing effort — keep at it.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/17-your-personal-maintenance-rhythm.html">← Lesson 17: Your Personal Maintenance Rhythm</a>
+    <a href="/courses/friendship-revival/content/">Back to course overview →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

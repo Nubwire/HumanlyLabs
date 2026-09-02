@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Depth Gradient — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 4 · Deepening Existing Relationships</span>
+    <span class="lesson-num-badge">Lesson 10 of 18</span>
+  </div>
+  <h1 class="lesson-title">The Depth Gradient</h1>
+  <p class="lesson-sub">How to move conversations and relationships from surface to substance</p>
+  <div class="lesson-body">
+
+    <p>Many adult friendships settle into a comfortable but fairly surface-level rhythm — logistics, light updates, shared activities — without much genuine depth, even after years of regular contact. This isn't a failure; plenty of relationships are fine staying there, per the acquaintance-value point from Lesson 3. But for relationships you identified as having real depth potential, this lesson introduces a framework for deliberately moving them further along what's often called the depth gradient — the spectrum from surface small talk to genuine substance.</p>
+
+    <h2>The gradient itself</h2>
+    <p>It helps to think of conversational and relational depth as a rough gradient rather than a binary: <strong>facts</strong> (logistics, updates, surface information) → <strong>opinions</strong> (what you think about things, revealing more of your actual perspective) → <strong>feelings</strong> (how you actually feel about your circumstances, not just what's happening in them) → <strong>needs</strong> (what you actually want or are struggling with, the deepest and most vulnerable layer). Most surface-level friendships stay comfortably in the facts and light-opinions range; genuine closeness tends to require at least occasional movement into feelings and, in the closest friendships, needs.</p>
+
+    <h2>Why relationships get stuck at the fact level</h2>
+    <p>A few common patterns keep otherwise promising relationships stuck at the surface: both people defaulting to logistics and updates because it's comfortable and low-risk; a mutual, unspoken assumption that moving deeper would be awkward or inappropriate for this particular relationship, even when there's no real reason it would be; simply never having the occasion or the conversational opening to move further, since depth rarely happens automatically without at least one person nudging the conversation there.</p>
+
+    <h2>Moving one level deeper, deliberately</h2>
+    <p>The practical technique here is straightforward in concept, if it requires a bit of intentionality in practice: in a conversation currently sitting at the facts level, ask a question or make a comment that invites the opinion level ("what did you actually think about that, though?" rather than just accepting a factual update at face value). In a conversation at the opinion level, invite the feelings level ("how has that actually been feeling for you?" rather than just discussing the logistics or your shared opinion on it). This doesn't require an abrupt, heavy shift — often a single well-placed follow-up question is enough to open the door, and the other person will frequently step through it if the relationship has real depth potential, per the Lesson 3 signals.</p>
+
+    <h2>Reciprocity matters here too</h2>
+    <p>Moving a conversation deeper works best as a two-way process — offering some of your own opinion or feeling alongside inviting theirs, rather than only asking probing questions of the other person while staying guarded yourself. This connects directly to the reciprocal self-disclosure principle covered in the next lesson: depth tends to build through a back-and-forth exchange at roughly matched levels, not through one person doing all the revealing while the other stays at the surface.</p>
+
+    <h2>Not every relationship needs to reach "needs"</h2>
+    <p>It's worth being clear that the goal isn't to push every relationship all the way to the deepest level — that would be neither realistic nor appropriate for most friendships. The goal is simply to notice when a relationship with real depth potential is stuck at a shallower level than it's capable of, and to deliberately, gently invite it further, rather than assuming the current level is a fixed ceiling simply because it's where things have always been.</p>
+
+    <h2>A quick way to notice when you're stuck at facts</h2>
+    <p>A useful, quick diagnostic: think back over your last several conversations with a specific friend and ask whether you could summarise most of them as "catching up on what's been happening" versus "actually discussing how something feels or what someone genuinely thinks about it." If the honest answer skews heavily toward the former, that's a reasonably clear sign the relationship has settled at the facts level, regardless of how warm or frequent the contact has been — warmth and frequency don't automatically produce depth on their own; they simply create the opportunity for it.</p>
+
+    <h2>Depth doesn't require heaviness</h2>
+    <p>It's worth being clear that moving deeper along this gradient doesn't mean every conversation needs to become serious or emotionally weighty. Plenty of genuinely deep friendships are also light, funny, and easygoing most of the time — depth here refers to a willingness to occasionally move past the surface when it's relevant, not a requirement to constantly probe for emotional significance in every exchange. The goal is having the depth available within the relationship when it matters, not making every single conversation heavier than it needs to be.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>In your next conversation with someone you identified as having depth potential in Lesson 3, deliberately ask one question that moves one level deeper than where the conversation naturally sits — from facts toward opinion, or opinion toward feeling. Notice how it's received.</p>
+    </div>
+
+    <p>The next lesson goes deeper into the mechanics of appropriate vulnerability specifically — since moving toward the feelings and needs levels of the gradient requires some genuine self-disclosure, and getting the pacing right matters.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/09-reviving-vs-releasing.html">← Lesson 9: Reviving vs Releasing</a>
+    <a href="/courses/friendship-revival/content/lessons/11-vulnerability-without-oversharing.html">Lesson 11: Vulnerability Without Oversharing →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anxious, Avoidant & Secure — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 2 · Understanding Your Pattern</span>
+    <span class="lesson-num-badge">Lesson 5 of 18</span>
+  </div>
+  <h1 class="lesson-title">Anxious, Avoidant & Secure</h1>
+  <p class="lesson-sub">What each style looks like in adult friendship and where it gets stuck</p>
+  <div class="lesson-body">
+
+    <p>Now that you have a working sense of your own general pattern from Lesson 4, this lesson gets specific about how each attachment style actually shows up in the day-to-day reality of adult friendship — the concrete moments, decisions, and sticking points, rather than the abstract description. Recognising your own specific patterns in these examples tends to be far more useful than the general framework alone.</p>
+
+    <h2>Anxious patterns in friendship</h2>
+    <p>In practice, an anxious pattern in friendship often looks like: reading a delayed reply as a sign of waning interest rather than simple busyness; feeling a strong pull to reach out repeatedly for reassurance when a friendship feels uncertain; over-analysing a friend's tone or wording for hidden meaning; feeling disproportionately hurt by a cancelled plan; or sometimes overextending yourself for a friend's approval in a way that isn't sustainable. The underlying difficulty here isn't caring too much — caring about friendships is a strength — it's a heightened, often inaccurate threat-detection system around connection, similar in structure to the social-anxiety patterns covered elsewhere on this platform, but specifically triggered by relational uncertainty rather than social performance.</p>
+    <p>The specific sticking point for this pattern tends to be: genuine closeness is available, but it's accompanied by enough anxiety and need for reassurance that it can, ironically, strain the very relationships it's trying hardest to protect.</p>
+
+    <h2>Avoidant patterns in friendship</h2>
+    <p>An avoidant pattern often looks like: pulling back or creating distance once a friendship starts feeling significant or demanding; strong discomfort with vulnerability or emotional conversation, often redirecting toward lighter or more practical topics; a tendency to let friendships lapse rather than actively working through a moment of friction; genuinely valuing friendship while still finding consistent closeness effortful or slightly threatening to a sense of independence. This isn't the same as simply being introverted or preferring less social contact — plenty of people with avoidant patterns want closeness and connection, but something in the pattern makes sustained closeness feel effortful or even risky, leading to a kind of unconscious self-sabotage of relationships they do genuinely value.</p>
+    <p>The specific sticking point here tends to be: friendships plateau at a comfortable, moderate depth and rarely progress further, not because the other person isn't interested in going deeper, but because the avoidant pattern quietly resists the vulnerability that deeper connection requires.</p>
+
+    <h2>Secure patterns in friendship</h2>
+    <p>A secure pattern tends to look like: reasonable comfort with both closeness and independence; a default assumption that ambiguous signals (a slow reply, a quiet stretch) don't mean something is wrong, absent clearer evidence; a willingness to communicate directly about a friendship issue rather than either anxious escalation or avoidant withdrawal; general resilience in the face of normal relationship friction. It's worth being clear that secure attachment isn't the absence of relational difficulty — securely attached people still navigate real friendship challenges — it's more that the underlying interpretive lens tends to be more accurate and less threat-oriented by default.</p>
+
+    <h2>Most people show a mix</h2>
+    <p>It's genuinely common to show a more secure pattern in some relationships and a more anxious or avoidant pattern in others, depending on the specific history and dynamics with that particular person — your pattern with an old childhood friend might look quite different from your pattern with a newer connection still being established. This variability is normal and worth noting as you go through the rest of this module, rather than assuming a single fixed pattern applies uniformly across your entire social world.</p>
+
+    <h2>Why naming your pattern accurately matters</h2>
+    <p>It's worth being honest that recognising your own pattern in these descriptions can occasionally feel uncomfortable, or even a bit like a diagnosis of a personal flaw. It's worth resisting that framing directly. Every one of these patterns represents an understandable, once-adaptive response to real early circumstances, and every one of them is genuinely workable, per the next lesson. Accurate recognition is the necessary first step toward change — a pattern that stays unnamed and unexamined tends to keep running on autopilot indefinitely, while a clearly named pattern becomes something you can actually work with deliberately.</p>
+
+    <h2>How each pattern experiences the other</h2>
+    <p>It's worth noting a specific, common dynamic: an anxious and an avoidant pattern paired together in a friendship can inadvertently reinforce each other's difficulties, since the anxious person's pursuit of reassurance can feel overwhelming to the avoidant person, prompting more withdrawal, which in turn heightens the anxious person's alarm, prompting more pursuit. Recognising this specific dynamic, if it applies to a friendship in your own life, is useful precisely because it explains a frustrating pattern that can otherwise feel confusing or seem like evidence the relationship simply isn't working, when it's really just two understandable patterns interacting in a predictable, nameable way.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Pick one friendship where you notice a clear pattern — anxious, avoidant, or otherwise — and write down one specific recent moment where that pattern showed up concretely (a message you over-analysed, a conversation you steered away from something vulnerable, a plan you avoided making). Specificity here will make the next lesson's techniques far more directly applicable.</p>
+    </div>
+
+    <p>The final lesson in this module addresses the genuinely important question this naturally raises: can these patterns actually change, and if so, how? The evidence-based answer is yes, and the next lesson covers exactly how.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/04-your-attachment-style.html">← Lesson 4: Your Attachment Style</a>
+    <a href="/courses/friendship-revival/content/lessons/06-changing-the-pattern.html">Lesson 6: Changing the Pattern →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

@@ -34,10 +34,14 @@ _Last updated: 2026-08-31_
   existing "not a substitute for therapy" disclaimer from the landing
   page's FAQ is echoed in Lesson 1, and Lesson 17 addresses when to seek
   professional support.
-- **Friendship Revival is the last course left** — still shows its full
-  curriculum (19 lessons) as "Coming soon." Same process: individual lesson
-  pages, ~900–1000-word lessons with exercises, linked from
-  `content/index.html`, generator script in `docs/scripts/`.
+- **The Friendship Revival course is fully built out** — all 18 lessons
+  across 6 modules are written, published, and linked from the curriculum
+  page. See `docs/scripts/build-friendship-revival-lessons.py`. Covers
+  attachment theory as a descriptive framework, not diagnosis.
+- **All three courses are now content-complete: 56 lessons total.** Course
+  build-out, the main task this project has been focused on, is done. What
+  remains is site-level infrastructure — see open questions and next steps
+  below.
 
 ## Open questions (need answers before more work should land)
 
@@ -61,10 +65,9 @@ _Last updated: 2026-08-31_
 
 ## Suggested next steps (in rough priority order)
 
-- [ ] Build out Friendship Revival (19 lessons) — same pattern as the other
-      two courses.
 - [ ] Confirm deployment target and, if not yet connected, connect this repo
-      to Cloudflare Pages (or wherever it should live).
+      to Cloudflare Pages (or wherever it should live). This is now the top
+      priority — all course content is written and ready to ship.
 - [ ] Resolve ADR-0003 (client-side API key exposure) — pick an approach and
       implement it, or explicitly mark it out of scope.
 - [ ] Document (or vendor) the payment/checkout integration referenced by
@@ -73,7 +76,14 @@ _Last updated: 2026-08-31_
       previous version, so future exports can be diffed meaningfully instead
       of re-uploaded wholesale each time.
 - [ ] Consider whether shared UI (nav/footer/design tokens duplicated across
-      28+ files) is worth extracting — see ADR-0002 consequences.
+      28+ files, now 84+ once the 56 lesson pages are counted) is worth
+      extracting — see ADR-0002 consequences. With three full courses now
+      sharing the same per-course template pattern, this is more worth
+      revisiting than it was at the start of the project.
+- [ ] Consider a lighter-weight review pass on the 56 published lessons —
+      they were written and expanded across several sessions to hit a
+      ~900+ word target per lesson; a read-through for tone consistency
+      across the three courses could be worthwhile before heavy traffic.
 
 ## How to keep this useful across sessions
 

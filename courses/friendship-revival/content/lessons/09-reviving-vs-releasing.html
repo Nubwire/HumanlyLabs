@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviving vs Releasing — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 3 · Reviving Dormant Connections</span>
+    <span class="lesson-num-badge">Lesson 9 of 18</span>
+  </div>
+  <h1 class="lesson-title">Reviving vs Releasing</h1>
+  <p class="lesson-sub">How to tell which dormant friendships are worth pursuing</p>
+  <div class="lesson-body">
+
+    <p>Not every dormant tie you reach out to will turn out to be worth actively reviving, and that's a completely normal, expected outcome rather than a failure of the process covered in the last two lessons. This closing lesson of Module 3 is about reading the early signals honestly, so you invest your limited time and energy in the revivals that genuinely have momentum, while gracefully letting go of the ones that don't.</p>
+
+    <h2>Signals worth reviving</h2>
+    <p>A few things tend to indicate genuine mutual momentum after that first message: a warm, reasonably prompt response that shows genuine engagement, not just politeness; the other person asking questions back, showing real curiosity about your life now; some willingness on their part to actually make plans, not just exchange pleasant messages indefinitely; a conversation that, once it gets going, still has some of the old ease or humour that characterised the original friendship. None of these need to be perfect or immediate — some re-acclimation, as noted in Lesson 7, is normal — but genuine warmth and reciprocal effort are worth taking as encouraging signals to continue investing.</p>
+
+    <h2>Signals it may be better released</h2>
+    <p>On the other side, a few patterns are worth reading honestly rather than explaining away indefinitely: a consistently slow, minimal, or purely polite response with no real engagement or follow-up questions; repeated difficulty actually landing on a plan despite several attempts; a conversation that, once resumed, reveals the two of you have simply grown in different directions with less genuine overlap than the shared history originally provided. None of this means the original friendship wasn't real or valuable — people and circumstances change, and it's entirely possible for a friendship to have been genuinely great in its original context while no longer being a strong fit now. Recognising this isn't a failure of the revival attempt; it's accurate, useful information.</p>
+
+    <h2>The value of attempting, regardless of outcome</h2>
+    <p>It's worth naming directly that reaching out is worthwhile even for relationships that don't end up reviving into an active friendship. At minimum, it closes a loop that may have been sitting unresolved, often provides a genuinely pleasant, low-stakes exchange even if it doesn't lead further, and occasionally plants a seed that resurfaces again later, even after this specific attempt doesn't lead anywhere immediate. Treating each outreach as valuable in itself — not solely contingent on producing an actively revived friendship — makes the whole process considerably lower-stakes and easier to actually follow through on.</p>
+
+    <h2>Giving a promising revival real time to develop</h2>
+    <p>For the connections that do show genuine early momentum, it's worth applying the same patience covered in other Humanly Labs material on friendship formation: a promising first exchange is a good start, not a finished revival. Give it a few more rounds of contact — a follow-up plan, an actual hangout if geography allows, continued low-effort check-ins — before either fully committing significant energy or concluding it's run its course. The genuine advantage of a dormant tie over a brand-new connection is a faster path back to real closeness, not an instant one.</p>
+
+    <h2>Releasing gracefully, without a formal goodbye</h2>
+    <p>If a revival attempt does turn out to be worth releasing, it's worth knowing that this rarely requires any explicit, formal closure — no need for a message explaining that you've decided not to pursue things further. Simply allowing the exchange to remain a pleasant, low-key one-off, without continued pursuit, is a completely normal and low-conflict way to let a revival attempt settle back into dormancy, this time with the loop consciously closed on your end rather than left as an open question you keep wondering about.</p>
+
+    <h2>Don't judge too quickly from a single exchange</h2>
+    <p>It's worth being cautious about drawing firm conclusions from just one exchange, however it goes. A slow or lukewarm first response might reflect the other person genuinely being caught off guard, busy, or simply needing a bit more time to warm back up to the idea of reconnecting, rather than a clear signal of disinterest. Similarly, one warm exchange doesn't guarantee a genuinely revived friendship if it isn't followed up with real, continued reciprocal effort. Give a promising or ambiguous signal at least a second round of contact before settling on a firm read either way.</p>
+
+    <h2>What this teaches you about your other relationships</h2>
+    <p>Beyond the specific dormant tie you're assessing, running through this reviving-versus-releasing process tends to sharpen your judgment for the intimacy-gap assessment from Lesson 3 more broadly. Learning to read genuine reciprocal engagement versus polite but limited response is a transferable skill, useful for evaluating any relationship's real potential — not just the dormant ones you're actively working to revive through this specific module.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>If you've already sent your Lesson 8 message and received a response, assess it honestly against the signals above. If it's promising, suggest a specific, low-pressure next step (a call, a coffee if geography allows) this week. If it's not, it's completely fine to let it rest there without pressure or guilt.</p>
+    </div>
+
+    <p>You now have a complete process for identifying and reviving dormant connections. Module 4 shifts focus to relationships you're already actively maintaining — how to deepen them from comfortable but surface-level into something with real substance.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/08-the-first-message.html">← Lesson 8: The First Message</a>
+    <a href="/courses/friendship-revival/content/lessons/10-the-depth-gradient.html">Lesson 10: The Depth Gradient →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

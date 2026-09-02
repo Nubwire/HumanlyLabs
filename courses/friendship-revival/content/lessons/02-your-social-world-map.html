@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Social World Map — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 1 · The Friendship Audit</span>
+    <span class="lesson-num-badge">Lesson 2 of 18</span>
+  </div>
+  <h1 class="lesson-title">Your Social World Map</h1>
+  <p class="lesson-sub">Audit your current relationships: who nourishes, who drains, who's been lost</p>
+  <div class="lesson-body">
+
+    <p>With the structural picture from Lesson 1 in mind, this lesson is about building an honest, specific map of your current social world — not a vague sense of "I don't have enough friends," but a concrete inventory you can actually work with for the rest of this course. Most people carry around an impression of their social life that's considerably less accurate than they assume, usually skewed toward either overestimating how connected they are (based on a large but shallow contact list) or underestimating it (based on how few people they've seen recently, ignoring dormant but real relationships).</p>
+
+    <h2>Three categories worth mapping</h2>
+    <p>As you build your map, it's useful to sort your current and past relationships into three categories, since each calls for a different kind of attention in the modules ahead:</p>
+    <ul>
+      <li><strong>Nourishing relationships</strong> — people who leave you feeling energised, supported, or genuinely glad you spent time with them, whether you see them often or rarely.</li>
+      <li><strong>Draining relationships</strong> — people you maintain contact with more out of habit or obligation than genuine desire, where interactions leave you feeling depleted rather than restored.</li>
+      <li><strong>Dormant relationships</strong> — people you were once genuinely close to, where the connection has simply gone quiet through the structural drift covered in Lesson 1, rather than through any conflict or genuine falling-out.</li>
+    </ul>
+    <p>Most people's honest social maps contain a mix of all three, often in surprising proportions — it's common to discover more dormant, genuinely revivable relationships than expected, and to notice one or two draining relationships that have simply been running on autopilot far longer than they've actually been enjoyable.</p>
+
+    <h2>Why nourishing vs. draining matters for this course</h2>
+    <p>It's worth being honest about the draining category specifically, since a lot of people carry some guilt around even acknowledging it. Not every relationship needs equal ongoing investment, and recognising that a specific relationship has become more obligation than genuine connection isn't a character flaw — it's useful, accurate information. This course isn't about maximising the total number of relationships you maintain; it's about deliberately investing more in the ones worth investing in, which requires being honest about which ones those actually are.</p>
+
+    <h2>Don't rush past the dormant category</h2>
+    <p>The dormant category deserves particular attention, because it's usually the most underrated resource in most people's social world. A friendship that was once genuinely close but has gone quiet for years still carries real accumulated history and trust — the "200 hours" or more of shared time that built the original closeness doesn't fully disappear just because contact has lapsed. Module 3 of this course is built entirely around this category, because reviving a dormant tie is often, counterintuitively, considerably easier than building a brand-new friendship from nothing.</p>
+
+    <h2>Use the Friendship Audit for a structured version of this map</h2>
+    <p>The Friendship Audit tool below runs a more structured, thorough version of this mapping process than you can easily do from memory alone — helping you systematically categorise your current relationships and surface people, especially in the dormant category, who might not have come to mind unprompted. Take it now, and be honest rather than aspirational about where each relationship currently sits.</p>
+
+    <h2>Common surprises when people actually do this exercise</h2>
+    <p>A few patterns show up often enough to be worth naming in advance. People frequently discover they have more nourishing relationships than their day-to-day mood suggests, simply because the most recent or most vivid interactions (which might have been mildly draining) skew the overall impression more than the quieter, steadier nourishing ones do. People also often discover a genuine surprise in the dormant category — a name they hadn't consciously thought about in a while, but who, once written down, clearly still carries real weight and warmth. And it's common to find one or two long-standing relationships in the draining category that have simply never been questioned, purely out of habit or a sense of obligation built up over years.</p>
+    <p>None of these discoveries require immediate action — the point of this lesson is accurate mapping, not immediate restructuring of your entire social world. The action comes in later modules, once you have a genuinely honest map to work from.</p>
+
+    <h2>Keep the map private and honest</h2>
+    <p>Since this map involves being genuinely honest about relationships, including uncomfortable admissions like a long-standing friendship having become more draining than nourishing, it's worth keeping this particular exercise private rather than something you'd share directly with the people involved. The value here is in your own clear-eyed understanding, which then informs how you choose to invest your time and energy going forward — not in delivering blunt feedback to anyone about where they currently sit in your assessment.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>After completing the audit, pick three names total — one nourishing relationship you'd like to invest more in, one draining relationship worth reconsidering, and one dormant relationship you'd genuinely like to revive. Keep this list; it becomes working material for the rest of the course.</p>
+    </div>
+
+    <p>The next lesson refines this map further, looking specifically at which relationships have real depth potential versus which are likely to stay comfortably surface-level — a distinction that will shape where you focus your energy in the modules ahead.</p>
+    
+  </div>
+  <div class="tool-box">
+    <div class="tool-emoji">🗺️</div>
+    <div class="tool-copy"><strong>Use the Friendship Audit</strong>This lesson pairs with the Friendship Audit tool — use it now while the ideas are fresh.</div>
+    <a href="/friendship-audit">Open tool →</a>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/01-why-adult-friendships-fade.html">← Lesson 1: Why Adult Friendships Fade</a>
+    <a href="/courses/friendship-revival/content/lessons/03-the-intimacy-gap.html">Lesson 3: The Intimacy Gap →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

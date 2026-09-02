@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changing the Pattern — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 2 · Understanding Your Pattern</span>
+    <span class="lesson-num-badge">Lesson 6 of 18</span>
+  </div>
+  <h1 class="lesson-title">Changing the Pattern</h1>
+  <p class="lesson-sub">Evidence-based strategies for earned security in adult relationships</p>
+  <div class="lesson-body">
+
+    <p>Attachment patterns, formed largely through early experience, can feel like fixed facts about who you are — but a substantial body of research on what's often called "earned security" shows clearly that these patterns remain genuinely changeable throughout adulthood, through consistent new relational experience and deliberate effort. This closing lesson of Module 2 is about the practical mechanics of that change, since understanding your pattern (Lessons 4 and 5) is only useful if paired with an actual path toward working with it differently.</p>
+
+    <h2>What "earned security" actually means</h2>
+    <p>Earned security describes the process by which someone with a more anxious or avoidant baseline pattern develops meaningfully more secure functioning over time, typically through some combination of consistent, trustworthy relational experiences (friendships, partnerships, or therapeutic relationships that repeatedly disconfirm the old anxious or avoidant predictions) and deliberate, conscious effort to notice and interrupt the old pattern in real time. This isn't a quick process, and it isn't about erasing the original pattern entirely — it's closer to building a more secure pattern alongside the old one, which gradually becomes the more dominant, default response with enough consistent practice and reinforcement.</p>
+
+    <h2>Practical strategies for an anxious pattern</h2>
+    <p>If Lesson 5's anxious pattern resonated, a few concrete practices tend to help: deliberately pausing before acting on an anxious interpretation of an ambiguous signal (a slow reply, a quiet stretch) and considering at least one alternative, more benign explanation before responding; communicating a need directly rather than through indirect signals or repeated reassurance-seeking ("I've noticed I get a bit anxious when plans are vague — could we set a specific time?" tends to land far better than passive-aggressive hints or repeated check-ins); and practising tolerating some genuine uncertainty in a relationship without needing it immediately resolved, building the evidence over time that uncertainty doesn't automatically mean something is wrong.</p>
+
+    <h2>Practical strategies for an avoidant pattern</h2>
+    <p>If Lesson 5's avoidant pattern resonated more, useful practices include: deliberately staying present in a conversation that's starting to feel too vulnerable or close, rather than automatically redirecting to lighter territory, even when it feels uncomfortable; practising small, low-stakes moments of genuine disclosure rather than either full avoidance or overwhelming oversharing (Lesson 11 covers this specific skill in depth); and noticing the urge to create distance when a friendship starts feeling significant, and experimenting with staying engaged instead, even briefly, as a way of building new evidence against the underlying belief that closeness is inherently threatening or overwhelming.</p>
+
+    <h2>This is gradual, evidence-based work, not a mindset shift</h2>
+    <p>It's worth being realistic about the timeline here: attachment patterns built over years or decades don't shift after a single conscious effort or a single good conversation. Like the exposure-based work covered in other Humanly Labs courses, earned security tends to build through repeated, consistent practice and repeated disconfirming evidence, not through insight alone. Understanding your pattern intellectually, from Lessons 4 and 5, is a genuinely useful start, but the actual change comes from applying these practical strategies repeatedly, in real relationships, over an extended period.</p>
+
+    <h2>A note on relationships that reinforce the old pattern</h2>
+    <p>It's worth being honest that not every relationship supports this kind of growth equally well. A friendship with someone who's reliably dismissive of vulnerability, or reliably inconsistent in a way that reinforces anxious hypervigilance, makes earned security considerably harder to build within that specific relationship, regardless of your own effort. This is part of why Lesson 3's intimacy-gap assessment matters — investing your growth-oriented effort in relationships that are genuinely capable of supporting it tends to produce far better results than trying to force change within a relationship that structurally works against it.</p>
+
+    <h2>Progress here is measured in reduced frequency, not elimination</h2>
+    <p>It's worth setting a realistic marker of progress for this specific work: you're unlikely to eliminate an anxious or avoidant pattern entirely, and that's not actually the goal. A more realistic and genuinely meaningful marker of progress is noticing the old pattern activate less often, catching it more quickly when it does, and having a wider range of alternative responses available in the moment, rather than defaulting automatically to the old pattern every time. Over months of consistent practice, per the earned-security research, this gradual shift compounds into a genuinely different default way of relating, even without ever reaching some final, permanent state of pure security.</p>
+
+    <h2>A note on when outside support helps this work</h2>
+    <p>For patterns that feel especially entrenched, or that trace back to more significant early relational difficulty, working through this specifically with a therapist — particularly one experienced in attachment-focused approaches — can meaningfully accelerate the earned-security process beyond what self-directed practice alone typically achieves. This isn't a sign the self-directed approach in this lesson doesn't work; it's simply that a skilled outside perspective can sometimes see patterns and offer real-time practice that's harder to access working entirely on your own.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Using the specific moment you identified in Lesson 5's exercise, write one sentence describing what you'd do differently next time using the strategies above — a specific, concrete alternative response, not a general intention to "be more secure."</p>
+    </div>
+
+    <p>You now understand your own relational patterns and have concrete strategies for working with them. Module 3 puts this self-understanding into direct action — reviving the dormant connections you identified back in Lesson 2.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/05-anxious-avoidant-secure.html">← Lesson 5: Anxious, Avoidant & Secure</a>
+    <a href="/courses/friendship-revival/content/lessons/07-the-dormant-tie-opportunity.html">Lesson 7: The Dormant Tie Opportunity →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>

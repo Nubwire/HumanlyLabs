@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Personal Maintenance Rhythm — The Friendship Revival — Humanly Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #F7F3EC; --c-surface: #FDFCF9;
+      --c-ink: #1A1714; --c-ink-2: #4A453F; --c-ink-3: #9B948A;
+      --c-border: rgba(26,23,20,.10); --shadow: 0 2px 12px rgba(26,23,20,.07);
+      --c-brown: #7A3B19; --c-brown-l: #FEF0E6; --c-brown-b: #E8B48A;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); line-height: 1.65; }
+    nav { background: rgba(247,243,236,.95); border-bottom: 1px solid var(--c-border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 760px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--c-ink); text-decoration: none; }
+    .logo em { font-style: italic; color: var(--c-brown); }
+    .logo sup { font-size: 9px; color: var(--c-ink-3); vertical-align: super; margin-left: 2px; }
+    .main { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .breadcrumb { font-size: .8rem; color: var(--c-ink-3); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--c-brown); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .lesson-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .module-badge { background: var(--c-brown); color: #fff; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .lesson-num-badge { font-size: 11px; font-weight: 600; color: var(--c-ink-3); }
+    h1.lesson-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; line-height: 1.25; margin-bottom: .6rem; }
+    .lesson-sub { font-size: 1rem; color: var(--c-ink-2); margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-border); }
+    .lesson-body h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 500; margin: 2.25rem 0 .9rem; color: var(--c-ink); }
+    .lesson-body p { margin-bottom: 1.1rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body ul, .lesson-body ol { margin: 0 0 1.1rem 1.3rem; color: var(--c-ink-2); font-size: .98rem; }
+    .lesson-body li { margin-bottom: .5rem; }
+    .lesson-body strong { color: var(--c-ink); }
+    .exercise-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-brown); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .exercise-box .exercise-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-brown); margin-bottom: .6rem; }
+    .exercise-box p:last-child { margin-bottom: 0; }
+    .tool-box { background: var(--c-brown-l); border: 1px solid var(--c-brown-b); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    .tool-box .tool-emoji { font-size: 1.75rem; flex-shrink: 0; }
+    .tool-box .tool-copy { flex: 1; font-size: .9rem; color: var(--c-ink-2); }
+    .tool-box .tool-copy strong { color: var(--c-ink); display: block; margin-bottom: 2px; }
+    .tool-box a { background: var(--c-brown); color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; padding: 8px 16px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
+    .lesson-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-border); }
+    .lesson-nav a { font-size: .875rem; color: var(--c-brown); text-decoration: none; font-weight: 500; }
+    .lesson-nav a:hover { text-decoration: underline; }
+    .lesson-nav .nav-placeholder { color: var(--c-ink-3); font-size: .875rem; }
+    .support-box { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; padding: 1.5rem; margin-top: 3rem; text-align: center; }
+    .support-box p { font-size: .875rem; color: var(--c-ink-2); }
+    .support-box a { color: var(--c-brown); }
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--c-ink-3); border-top: 1px solid var(--c-border); }
+    footer a { color: var(--c-ink-3); text-decoration: none; }
+    @media (max-width: 600px) { .main { padding: 2rem 1.25rem 4rem; } h1.lesson-title { font-size: 1.6rem; } .tool-box { flex-direction: column; align-items: flex-start; } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+<script>if(location.hostname.endsWith(".pages.dev"))location.replace("https://humanlylabs.org"+location.pathname+location.search+location.hash);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFL61V2FD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMFL61V2FD');
+  </script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><em>humanly</em><sup>labs</sup></a>
+    <span style="font-size:13px;color:var(--c-ink-3)">🌱 The Friendship Revival</span>
+  </div>
+</nav>
+<main class="main">
+  <div class="breadcrumb"><a href="/courses/friendship-revival/content/">← Back to course overview</a></div>
+  <div class="lesson-meta">
+    <span class="module-badge">Module 6 · Your Friendship Maintenance System</span>
+    <span class="lesson-num-badge">Lesson 17 of 18</span>
+  </div>
+  <h1 class="lesson-title">Your Personal Maintenance Rhythm</h1>
+  <p class="lesson-sub">A simple, sustainable system for staying close to the people who matter</p>
+  <div class="lesson-body">
+
+    <p>Everything covered in this course — reviving dormant ties, deepening existing relationships, forming new ones — requires ongoing maintenance to actually stick over the long term. Without some kind of system, it's genuinely easy to let the same structural drift covered in Lesson 1 quietly reassert itself once this course's structure is gone. This lesson is about building a light, sustainable maintenance rhythm you can actually keep up long-term, not just during an intensive twelve-week push.</p>
+
+    <h2>Why maintenance needs to be deliberate for adults specifically</h2>
+    <p>Recall the core argument from Lesson 1: adult life removes the structural scaffolding that made friendship maintenance largely automatic earlier in life. This means ongoing maintenance, unlike in earlier life stages, generally can't be left to happen on its own — it needs some degree of deliberate, if light, structure to survive the same competing demands that caused the original drift. This isn't a sign of anything being wrong; it's simply the accurate operating reality of adult friendship.</p>
+
+    <h2>A simple three-tier system</h2>
+    <p>A workable, low-effort maintenance system typically sorts your key relationships into a few tiers with different natural contact rhythms, rather than trying to maintain uniform, high-frequency contact with everyone:</p>
+    <ul>
+      <li><strong>Close tier</strong> — your closest few friendships, worth more frequent, higher-effort contact: regular calls, in-person time when possible, genuine ongoing investment.</li>
+      <li><strong>Valued tier</strong> — good friendships worth maintaining but not requiring the same frequency: periodic check-ins, occasional hangouts, a rhythm of contact every month or two rather than weekly.</li>
+      <li><strong>Warm tier</strong> — relationships worth keeping warm without much active effort: occasional messages, engagement on social updates, contact a few times a year, enough to prevent full dormancy without requiring significant ongoing investment.</li>
+    </ul>
+    <p>Sorting your key relationships into these tiers, honestly and based on your Lesson 16 re-audit, makes ongoing maintenance considerably more manageable than trying to apply the same high-effort standard to every relationship in your social world.</p>
+
+    <h2>Building in a simple, recurring check-in habit</h2>
+    <p>Beyond the tiering, it helps to build a small, recurring habit — a specific day or time, even just once a month, where you briefly review your key relationships and note anyone who's gone quieter than intended, using the Check-In Generator tool from earlier modules if the actual message feels hard to start. This doesn't need to be elaborate; five or ten minutes, done consistently, does far more for long-term maintenance than an occasional, larger effort undertaken only when guilt about a lapsed friendship finally catches up with you.</p>
+
+    <h2>Letting go of the all-or-nothing trap</h2>
+    <p>A common failure mode in friendship maintenance is treating any lapse — a missed birthday, a message that went unanswered for weeks, a longer-than-intended gap — as evidence the whole relationship has failed, which can trigger avoidance rather than simple, low-key repair. In reality, per the structural, non-personal understanding of drift from Lesson 1, an occasional lapse is completely normal and easily repaired with a simple, low-pressure reach-out, not a crisis requiring an elaborate apology or explanation.</p>
+
+    <h2>Tiers aren't permanent assignments</h2>
+    <p>It's worth treating these tiers as fluid rather than fixed — a valued-tier relationship can naturally move into the close tier as circumstances allow more contact, or a close-tier relationship might temporarily shift toward valued during an especially demanding life stretch, on either side. Revisiting the tiering occasionally, rather than setting it once and leaving it static indefinitely, keeps the system responsive to how your relationships and life actually evolve, rather than becoming its own rigid obligation to maintain.</p>
+
+    <h2>Keeping the system itself low-effort</h2>
+    <p>The system described in this lesson is deliberately lightweight by design — a simple three-way sort and a brief monthly review, not an elaborate tracking spreadsheet or a rigid schedule of mandatory contact. An overly complicated maintenance system tends to collapse under its own weight fairly quickly, the same way an overly ambitious exercise or diet plan often does; a simple system you'll actually keep up with consistently beats a sophisticated one you abandon after a few weeks.</p>
+
+    <h2>What to do when the monthly review reveals a gap</h2>
+    <p>When your review surfaces someone who's gone quieter than intended for their tier, the response doesn't need to be elaborate — a brief, warm, specific message, following the same pattern covered in Lesson 8, is usually enough to close the gap before it turns into genuine dormancy. Treating this as routine, low-stakes upkeep, rather than an overdue debt requiring a big gesture to repay, keeps the whole system feeling sustainable rather than like an accumulating source of guilt.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-label">Try this</div>
+      <p>Sort your key relationships from the Lesson 16 re-audit into the three tiers above, and pick one specific recurring day or time each month to briefly review them and reach out to anyone who's gone quieter than intended for their tier.</p>
+    </div>
+
+    <p>The final lesson closes out the course by looking beyond maintenance toward ongoing growth — keeping your social world naturally expanding as your life continues to evolve, rather than treating this course as a one-time fix to a permanent, static social world.</p>
+    
+  </div>
+
+  <div class="lesson-nav">
+    <a href="/courses/friendship-revival/content/lessons/16-the-re-audit.html">← Lesson 16: The Re-Audit</a>
+    <a href="/courses/friendship-revival/content/lessons/18-ongoing-growth.html">Lesson 18: Ongoing Growth →</a>
+  </div>
+  <div class="support-box">
+    <p>🔒 &nbsp;This page is private — please don't share the URL.<br>
+    Questions or issues? <a href="mailto:hello@humanlylabs.org">hello@humanlylabs.org</a></p>
+  </div>
+</main>
+<footer>
+  <a href="/">Humanly Labs</a> &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/contact">Contact</a>
+</footer>
+</body>
+</html>
