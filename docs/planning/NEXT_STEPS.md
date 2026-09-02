@@ -39,15 +39,20 @@ _Last updated: 2026-08-31_
   page. See `docs/scripts/build-friendship-revival-lessons.py`. Covers
   attachment theory as a descriptive framework, not diagnosis.
 - **All three courses are now content-complete: 56 lessons total.** Course
-  build-out, the main task this project has been focused on, is done. What
-  remains is site-level infrastructure — see open questions and next steps
-  below.
+  build-out, the main task this project has been focused on, is done.
+- **Deployment is confirmed live** at humanlylabs.org / www.humanlylabs.org,
+  auto-deploying from `main` via Cloudflare Pages. Verified the critical
+  homepage bug fix and the course build-out are both live in production.
+  See `DEPLOYMENT.md` for details. One thing still worth a manual check:
+  the gated `/content/` and lesson pages themselves weren't directly
+  verifiable from this session (noindex pages can't be reached via search).
 
 ## Open questions (need answers before more work should land)
 
-1. **Is this repo actually connected to a live Cloudflare Pages (or Netlify)
-   deployment?** If yes — what's the project name / URL, and is `main`
-   already the deploy branch? If no — deployment setup is itself a next step.
+1. **Manually spot-check the gated `/content/` and lesson pages in
+   production** — confirm at least one lesson page per course renders
+   correctly, since this couldn't be verified via search/fetch (noindex
+   pages don't surface in search, and there was no direct link available).
 2. **Payment provider** — `_redirects` references `/quiz/success` and
    `/courses/*/success` paths, implying a checkout flow (Stripe? Gumroad?
    something else?) that isn't in this repo. Where does that live, and does
@@ -65,9 +70,8 @@ _Last updated: 2026-08-31_
 
 ## Suggested next steps (in rough priority order)
 
-- [ ] Confirm deployment target and, if not yet connected, connect this repo
-      to Cloudflare Pages (or wherever it should live). This is now the top
-      priority — all course content is written and ready to ship.
+- [ ] Manually spot-check a gated lesson page in production (see open
+      question 1 above).
 - [ ] Resolve ADR-0003 (client-side API key exposure) — pick an approach and
       implement it, or explicitly mark it out of scope.
 - [ ] Document (or vendor) the payment/checkout integration referenced by

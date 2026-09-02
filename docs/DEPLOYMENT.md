@@ -30,6 +30,22 @@ changes).
 3. Cloudflare Pages picks up `_headers` and `_redirects` automatically from
    the root of the deployed output.
 
-**Not yet confirmed / not in this repo:** which Cloudflare Pages project this
-maps to, custom domain config, and the payment provider that redirects to the
-`/success` paths referenced in `_redirects`. See `planning/NEXT_STEPS.md`.
+## Confirmed live (2026-08-31)
+
+This repo is confirmed connected to a live Cloudflare Pages deployment at
+**humanlylabs.org** (canonical) / **www.humanlylabs.org**, auto-deploying
+from `main`. Verified by fetching the live site and cross-checking against
+the repo:
+- The homepage tools grid renders correctly (confirms the `apps.sort` →
+  `APPS.sort` critical bug fix from an earlier session is live)
+- The Social Landing course landing page reflects course-build-out commits
+  (its "20 lessons" hero copy only exists from commit `34e1878` onward)
+- Fetching the gated `/content/` pages and individual lesson pages directly
+  wasn't possible in that session (they're `noindex`, so they don't surface
+  via search, and there was no direct link to fetch from) — worth a manual
+  spot-check to fully confirm those render correctly in production.
+
+Cross-checking the live site against the repo also surfaced 3 small stat/
+copy bugs on the Social Landing landing page (stray "19"/"4" stats that
+hadn't been updated when the course lesson count was fixed) — see
+`SESSION_LOG.md` for details.

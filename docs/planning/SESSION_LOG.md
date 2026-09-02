@@ -6,6 +6,41 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-08-31 (6) — Deployment confirmed live, 3 more small bugs found and fixed
+
+**What was done:** confirmed via user + direct verification that this repo
+is connected to a live Cloudflare Pages deployment at
+**humanlylabs.org** / **www.humanlylabs.org**, auto-deploying from `main`.
+Fetched the live homepage and the Social Landing course landing page and
+cross-checked against the repo:
+- Homepage tools grid renders correctly in production — confirms the
+  critical `apps.sort` → `APPS.sort` bug fix (from an earlier session) is
+  live and working.
+- The live Social Landing landing page's "20 lessons" hero copy confirms
+  the site is serving from commit `34e1878` or later (that copy only exists
+  from that commit onward) — solid evidence Cloudflare Pages is genuinely
+  auto-deploying from `main`, not serving something stale or disconnected.
+
+**Bugs found by comparing live vs. repo, then fixed:** the live/repo
+Social Landing landing page (`courses/social-landing/index.html`) had two
+more stale "19" references that an earlier session's "19→20 lessons" fix
+had missed (a stat-counter box and a "19 in-depth lessons" list item), plus
+a separate, unrelated inconsistency: descriptive copy said "Four of our
+science-backed tools" and a stat box said "4" for tools included, while the
+page actually lists and links six tool pills, and the "What's included"
+section correctly says "6 Humanly Labs tools". Fixed all of these to `20`
+lessons / `6` tools consistently. Cross-checked Confidence Blueprint and
+Friendship Revival landing pages for the same pattern — both were already
+internally consistent (3 tools, 18 lessons each, matching their tool-pill
+lists), so no changes needed there.
+
+**Not verified this session:** the gated `/courses/*/content/` pages and
+individual lesson pages couldn't be fetched directly (they're `noindex`,
+don't surface via web search, and no direct link was available to fetch
+from) — worth a manual spot-check by the user to fully close this out.
+
+---
+
 ## 2026-08-31 (5) — Built out The Friendship Revival course (18 lessons) — all three courses now complete
 
 **What was done:** wrote and published all 18 lesson pages for *The
