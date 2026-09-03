@@ -52,6 +52,14 @@ _Last updated: 2026-08-31_
   external API dependency — see `adr/0003` update). Once this session's
   commit is pushed, they'll go live in production the same way past pushes
   have.
+- **Course content pages now have a lightweight access gate** (see
+  `adr/0004`). Bare content/lesson links no longer work — access requires
+  `?paid=true` on the URL, which the Stripe success redirect adds
+  automatically. This is friction, not real security (documented
+  honestly in the ADR); a real fix needs server-side verification.
+  **Important:** the full Stripe purchase → unlock flow should be tested
+  end-to-end once this is deployed, since the Payment Link success-URL
+  configuration wasn't independently verified from this environment.
 
 ## Open questions (need answers before more work should land)
 
@@ -76,6 +84,10 @@ _Last updated: 2026-08-31_
 
 ## Suggested next steps (in rough priority order)
 
+- [ ] After pushing, test the full Stripe purchase flow end-to-end for at
+      least one course — click a real (or coupon-comped) checkout through
+      to completion and confirm it lands unlocked on the content page, not
+      bounced back to the landing page by the new gate.
 - [ ] After pushing, spot-check the 4 new tools live in production
       (new-in-town, values-mapper, evening-ritual, self-compassion) — since
       they're deterministic/client-side only, they should work identically

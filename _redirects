@@ -5,10 +5,10 @@
 /cmd_sco/  /  301
 
 # Post-purchase redirects to course content pages
-/quiz/success                          /quiz?paid=true                        302
-/courses/social-landing/success        /courses/social-landing/content/       302
-/courses/confidence-blueprint/success  /courses/confidence-blueprint/content/ 302
-/courses/friendship-revival/success    /courses/friendship-revival/content/   302
+/quiz/success                          /quiz?paid=true                                    302
+/courses/social-landing/success        /courses/social-landing/content/?paid=true         302
+/courses/confidence-blueprint/success  /courses/confidence-blueprint/content/?paid=true   302
+/courses/friendship-revival/success    /courses/friendship-revival/content/?paid=true     302
 
 # Legacy root-level course pages -> clean course URLs (301 permanent)
 /course-social-landing         /courses/social-landing/         301

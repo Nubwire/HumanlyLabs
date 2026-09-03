@@ -6,6 +6,54 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-09-03 — Added a client-side access gate to all 3 courses' content
+
+**What prompted this:** working through a real support scenario (comping a
+customer, "old mate," free access to The Social Landing) surfaced that the
+gated `/courses/*/content/` pages had **zero access control** — any bare
+link worked permanently for anyone, since access was only ever "protected"
+by not being publicly linked. Also worked through creating a 100%-off
+Stripe coupon for comps along the way — see the conversation for the full
+troubleshooting trail (test/live mode mismatch ruled out, wrong-account
+theory ruled out, ultimately traced to the promotion code being
+customer-email-restricted).
+
+**What was done:** added a small inline gate script — first thing in
+`<head>`, before anything else — to all 59 gated files (3 course
+`content/index.html` pages + all 56 individual lesson pages):
+`?paid=true` in the URL sets a per-course `localStorage` flag and strips
+the param; otherwise, if the flag isn't set, the page redirects
+immediately to the course's public landing page before rendering.
+Deliberately used `localStorage`, not the `sessionStorage` the mini-tools
+use — a course gets revisited over weeks, and `sessionStorage` would have
+locked out a paying customer every time they closed their browser.
+
+Updated `_redirects` so the three course success redirects
+(`/courses/<slug>/success` → `.../content/`) append `?paid=true`, so a
+real Stripe purchase still unlocks automatically exactly as before — no
+change needed on the Stripe side.
+
+**Documented as `adr/0004-client-side-course-access-gate.md`**, including
+the honest limitations: this is friction, not real protection (anyone who
+adds `?paid=true` manually still gets in); switching devices/browsers
+breaks access and requires re-sending the `?paid=true` link; and the
+Stripe Payment Link success-URL assumption wasn't independently verified
+against the live dashboard (no Stripe access from this environment) —
+worth testing the full purchase flow end-to-end once deployed.
+
+**Verified:** JS syntax clean across all 59 modified files (and the whole
+repo), zero broken links/assets repo-wide, spot-checked the gate script's
+placement and logic by hand.
+
+**Not done / worth knowing:** comping a customer now requires sending
+`.../content/?paid=true` specifically, not the bare link — the earlier
+guidance in this session log and conversation history about "just send
+the link" is now out of date for that reason. The Stripe-coupon comp path
+(a real $0 checkout) is unaffected, since Stripe's success redirect
+already appends the parameter.
+
+---
+
 ## 2026-08-31 (7) — Built out the 4 "Coming Soon" mini-app tools
 
 **What was done:** built and shipped all four tools that were previously

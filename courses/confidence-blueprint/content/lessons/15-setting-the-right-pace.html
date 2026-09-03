@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+(function(){
+  var KEY = 'hly_course_confidence_blueprint_unlocked';
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    try { localStorage.setItem(KEY, '1'); } catch(e) {}
+    if (window.history && window.history.replaceState) {
+      var url = new URL(window.location.href);
+      url.searchParams.delete('paid');
+      window.history.replaceState({}, '', url.toString());
+    }
+  }
+  var unlocked = false;
+  try { unlocked = localStorage.getItem(KEY) === '1'; } catch(e) {}
+  if (!unlocked) {
+    window.location.replace('/courses/confidence-blueprint/');
+  }
+})();
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setting the Right Pace — The Confidence Blueprint — Humanly Labs</title>
