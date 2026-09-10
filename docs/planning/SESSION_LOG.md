@@ -6,6 +6,58 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-09-10 — Built the "5-Day Reconnection Challenge" lead-magnet landing page
+
+**Context:** Brad is building a TikTok channel for Humanly Labs and wanted
+a genuine lead-magnet landing page (email required to unlock something
+specific) — a gap identified in an earlier conversation, since everywhere
+else on the site that asks for an email (the quiz forms, the mini-course,
+the newsletter box) makes it optional/skippable, so nothing on the site
+was a real lead magnet in the strict sense.
+
+**What was done:** wrote the full copy deck for a new free offer, "The
+5-Day Reconnection Challenge" (5-day email mini-course, one lesson + one
+small challenge per day, escalating from awareness → dormant-tie outreach
+→ deeper conversation → a small stranger interaction → a sustainable
+weekly ritual) — landing page copy, all 5 emails in full, a Day 6 bridge
+email, and 5 SEO blog post titles targeting "how to deal with loneliness."
+Delivered as a standalone markdown file (not part of this repo — it's
+copy for use in an email tool, not site code).
+
+Then built `reconnection-challenge.html` as an actual page on the site,
+matching the existing free-offer template family (Fraunces + DM Sans,
+same pattern as `mini-course.html`) — hero with the opt-in form front and
+center, "what you get" section, a day-by-day preview of the 5-day arc,
+a "who this is for" section including the same kind of light
+crisis-resource note used elsewhere on the site for sensitive content,
+and a second opt-in form near the bottom for anyone who scrolls past the
+first.
+
+**Left deliberately unfinished, and clearly marked as such:** the actual
+email capture. There's no Stripe-link equivalent here — Brad hasn't set
+up a Tally form or System.io opt-in for this specific challenge yet, and
+without real credentials for either, wiring up a fake integration would
+be worse than being upfront about it. The form currently just shows a
+local "check your inbox" success state via JS with **no real backend** —
+clearly flagged both in an HTML comment above the form and in a comment
+on the JS handler. Whoever wires this up needs to point it at either a
+**new** Tally form (not the existing newsletter one, `yPRK9X` — this
+needs its own list so it can trigger the 5-day drip sequence specifically)
+or a System.io opt-in embed, matching the tool stack mentioned in Brad's
+own planning materials.
+
+**Verified:** JS syntax and JSON-LD valid, zero broken links repo-wide,
+sitemap.xml updated and validated as well-formed XML, no real duplicate
+IDs (one grep false-positive from a mention of `id="optin-form"` inside
+an HTML comment, not an actual second element — checked directly).
+
+**Next step, once the form backend is picked:** swap the placeholder
+`handleOptin()` JS out for the real Tally/System.io integration, and set
+up the actual 5-day drip automation using the email copy already
+delivered.
+
+---
+
 ## 2026-09-03 — Added a client-side access gate to all 3 courses' content
 
 **What prompted this:** working through a real support scenario (comping a

@@ -60,6 +60,14 @@ _Last updated: 2026-08-31_
   **Important:** the full Stripe purchase → unlock flow should be tested
   end-to-end once this is deployed, since the Payment Link success-URL
   configuration wasn't independently verified from this environment.
+- **A real lead-magnet landing page now exists:** `reconnection-challenge.html`
+  ("The 5-Day Reconnection Challenge") — built for a planned TikTok
+  traffic push. **Not fully wired up yet** — the opt-in form has no real
+  backend, clearly marked with comments in the file. Needs either a new
+  Tally form or a System.io opt-in embed connected before it can actually
+  capture emails and trigger the 5-day drip sequence. The full email copy
+  for the 5-day sequence + Day 6 bridge email was delivered separately as
+  a markdown file (not in this repo).
 
 ## Open questions (need answers before more work should land)
 
@@ -84,6 +92,10 @@ _Last updated: 2026-08-31_
 
 ## Suggested next steps (in rough priority order)
 
+- [ ] Wire up the actual email capture on `reconnection-challenge.html` —
+      decide Tally (new form, separate from the newsletter's `yPRK9X`) vs.
+      System.io, then set up the 5-day drip automation using the email
+      copy already written.
 - [ ] After pushing, test the full Stripe purchase flow end-to-end for at
       least one course — click a real (or coupon-comped) checkout through
       to completion and confirm it lands unlocked on the content page, not
