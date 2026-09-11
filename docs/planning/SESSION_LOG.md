@@ -6,6 +6,52 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-09-11 — Wired real Tally forms: swapped signup roles between the two lists
+
+**What happened:** the reconnection challenge page needed its own email
+list, separate from the general newsletter, so a dedicated 5-day
+automation could trigger off it specifically. Rather than create a brand
+new list from scratch, Brad's call was to **swap roles** between the two
+existing Tally forms:
+- **`yPRK9X`** (the original form, already connected to Brevo) is now the
+  **5-Day Reconnection Challenge signup** — real automation plumbing
+  already exists behind it via Brevo, which just needs a 5-day drip
+  sequence built using the email copy delivered earlier.
+- **`D4jqvR`** (newly created) is now the **general newsletter signup**,
+  replacing `yPRK9X` in that role. Brad still needs to update this form's
+  actual fields/copy in the Tally dashboard to reflect its new purpose —
+  noted as an explicit follow-up on his end, not something done here.
+
+**What was done in the repo:**
+- `index.html` — homepage newsletter embed's `data-tally-src` changed from
+  `yPRK9X` to `D4jqvR`. The existing `Tally.FormSubmitted` postMessage
+  tracking script needed no changes — it listens generically, not tied to
+  a specific form ID.
+- `reconnection-challenge.html` — replaced the placeholder JS-only form
+  (no real backend, added last session) with real Tally iframe embeds
+  pointing at `yPRK9X`, in both the hero and the bottom CTA section. Added
+  the same Tally embed-loader script and submission-tracking script used
+  on the homepage, adapted to fire a `generate_lead` GA event instead of
+  `newsletter_signup`. Removed the now-dead CSS that only existed to style
+  the placeholder form and its fake success message.
+
+**Verified:** JS syntax valid on both modified files, zero broken links
+repo-wide, confirmed via grep that `yPRK9X` now appears only on the
+challenge page and `D4jqvR` only on the homepage — no leftover references
+to the old arrangement anywhere.
+
+**Still outstanding (on Brad's side, not this repo):**
+- Update `D4jqvR`'s actual fields/labels in the Tally dashboard to read as
+  a newsletter signup (it was created as a duplicate of the old form, so
+  it may still show challenge-oriented copy/fields until edited).
+- Build the actual 5-day drip sequence in Brevo, triggered by new
+  `yPRK9X` submissions, using the 5 emails + Day 6 bridge email delivered
+  as a separate markdown file earlier.
+- Confirm `yPRK9X`'s own fields ask for both email and first name — the
+  email copy uses `{{first_name}}` personalization throughout.
+
+---
+
 ## 2026-09-10 — Built the "5-Day Reconnection Challenge" lead-magnet landing page
 
 **Context:** Brad is building a TikTok channel for Humanly Labs and wanted

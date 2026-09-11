@@ -60,14 +60,17 @@ _Last updated: 2026-08-31_
   **Important:** the full Stripe purchase → unlock flow should be tested
   end-to-end once this is deployed, since the Payment Link success-URL
   configuration wasn't independently verified from this environment.
-- **A real lead-magnet landing page now exists:** `reconnection-challenge.html`
-  ("The 5-Day Reconnection Challenge") — built for a planned TikTok
-  traffic push. **Not fully wired up yet** — the opt-in form has no real
-  backend, clearly marked with comments in the file. Needs either a new
-  Tally form or a System.io opt-in embed connected before it can actually
-  capture emails and trigger the 5-day drip sequence. The full email copy
-  for the 5-day sequence + Day 6 bridge email was delivered separately as
-  a markdown file (not in this repo).
+- **A real lead-magnet landing page now exists and is fully wired up:**
+  `reconnection-challenge.html` ("The 5-Day Reconnection Challenge"). Its
+  signup form is now a real Tally embed (`yPRK9X`, already connected to
+  Brevo) — no longer a placeholder. The homepage's general newsletter
+  signup was moved to a new form (`D4jqvR`) to keep the two lists
+  separate. **Still needed, on Brad's side, not in this repo:** finish
+  updating `D4jqvR`'s fields/copy in the Tally dashboard (it started as a
+  duplicate of the challenge form), confirm `yPRK9X` collects first name
+  as well as email (the 5 emails use `{{first_name}}` personalization),
+  and build the actual 5-day Brevo automation using the email copy
+  delivered separately as a markdown file.
 
 ## Open questions (need answers before more work should land)
 
@@ -92,10 +95,13 @@ _Last updated: 2026-08-31_
 
 ## Suggested next steps (in rough priority order)
 
-- [ ] Wire up the actual email capture on `reconnection-challenge.html` —
-      decide Tally (new form, separate from the newsletter's `yPRK9X`) vs.
-      System.io, then set up the 5-day drip automation using the email
-      copy already written.
+- [ ] Finish updating the `D4jqvR` Tally form's fields/copy so it reads as
+      a general newsletter signup rather than a duplicate of the
+      challenge form.
+- [ ] Confirm `yPRK9X` collects a first-name field, not just email — the
+      5-day email copy personalizes with `{{first_name}}` throughout.
+- [ ] Build the actual 5-day drip automation in Brevo, triggered by new
+      `yPRK9X` submissions, using the email copy already written.
 - [ ] After pushing, test the full Stripe purchase flow end-to-end for at
       least one course — click a real (or coupon-comped) checkout through
       to completion and confirm it lands unlocked on the content page, not

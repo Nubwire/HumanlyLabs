@@ -73,18 +73,7 @@
 
     /* OPT-IN FORM CARD */
     .optin-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); padding: 2rem 2rem 1.75rem; max-width: 460px; margin: 0 auto; }
-    .optin-form { display: flex; flex-direction: column; gap: .75rem; }
-    .optin-input { width: 100%; padding: 14px 16px; border: 1px solid var(--border-strong); border-radius: 999px; background: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--ink); outline: none; transition: border-color .15s; text-align: center; }
-    .optin-input:focus { border-color: var(--sage); }
-    .optin-input::placeholder { color: var(--ink-muted); }
-    .btn-start { display: inline-block; width: 100%; padding: 14px 32px; background: var(--sage); color: white; border: none; border-radius: 999px; font-size: 16px; font-weight: 500; font-family: inherit; text-decoration: none; cursor: pointer; transition: all .2s; }
-    .btn-start:hover { background: #3D6B4A; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74,124,89,.25); }
     .optin-microcopy { font-size: 12px; color: var(--ink-muted); margin-top: .85rem; text-align: center; line-height: 1.5; }
-    .optin-success { display: none; text-align: center; padding: 1rem 0; }
-    .optin-success.show { display: block; }
-    .optin-success .check { font-size: 32px; margin-bottom: .75rem; }
-    .optin-success p { font-size: 15px; color: var(--ink-soft); line-height: 1.6; }
-    .optin-success strong { color: var(--ink); }
 
     /* WHAT YOU GET */
     .get-section { background: var(--warm-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3.5rem 2rem; }
@@ -163,27 +152,7 @@
   </div>
 
   <div class="optin-card">
-    <!--
-      FORM WIRING NOTE (for whoever's deploying this):
-      This form currently just shows a local success state — it is NOT
-      connected to an email platform yet. Before this goes live, wire the
-      <form id="optin-form"> below up to either:
-        (a) a new Tally.so form (same pattern as the sitewide newsletter
-            embed in index.html, form id yPRK9X) -- fastest to set up, or
-        (b) your System.io opt-in form's embed/action, if the 5-day
-            sequence automation is being built there instead.
-      Whichever you use, this should be a SEPARATE form/list from the
-      general newsletter, so subscribers here trigger the 5-day drip
-      sequence specifically, not just the regular newsletter.
-    -->
-    <form class="optin-form" id="optin-form" onsubmit="handleOptin(event)">
-      <input class="optin-input" type="email" id="optin-email" name="email" placeholder="you@example.com" required />
-      <button class="btn-start" type="submit">Start My Free 5-Day Challenge →</button>
-    </form>
-    <div class="optin-success" id="optin-success">
-      <div class="check">✅</div>
-      <p><strong>Check your inbox.</strong><br>Day 1 is on its way — it should land within a few minutes.</p>
-    </div>
+    <iframe data-tally-src="https://tally.so/embed/yPRK9X?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="220" frameborder="0" marginheight="0" marginwidth="0" title="5-Day Reconnection Challenge Signup"></iframe>
     <p class="optin-microcopy">One email a day. Unsubscribe anytime. No spam, ever.</p>
   </div>
 </section>
@@ -276,14 +245,7 @@
   <h2 class="final-cta-title">Five days. <em>Ten minutes a day.</em></h2>
   <p class="final-cta-sub">Nothing you'll hate doing. Nothing that requires becoming a different person first.</p>
   <div class="optin-card">
-    <form class="optin-form" id="optin-form-2" onsubmit="handleOptin(event, 'optin-success-2')">
-      <input class="optin-input" type="email" id="optin-email-2" name="email" placeholder="you@example.com" required />
-      <button class="btn-start" type="submit">Start My Free 5-Day Challenge →</button>
-    </form>
-    <div class="optin-success" id="optin-success-2">
-      <div class="check">✅</div>
-      <p><strong>Check your inbox.</strong><br>Day 1 is on its way — it should land within a few minutes.</p>
-    </div>
+    <iframe data-tally-src="https://tally.so/embed/yPRK9X?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="220" frameborder="0" marginheight="0" marginwidth="0" title="5-Day Reconnection Challenge Signup"></iframe>
     <p class="optin-microcopy">One email a day. Unsubscribe anytime. No spam, ever.</p>
   </div>
 </section>
@@ -302,21 +264,18 @@
   </div>
 </footer>
 
+<!-- Tally.so challenge signup embed -->
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 <script>
-/*
-  Placeholder submit handler — shows a local success state so the page is
-  demoable/testable before the real form backend is wired up. This does
-  NOT currently send the email anywhere. Replace with a real Tally or
-  System.io integration before driving traffic here. See the HTML comment
-  above the first form for details.
-*/
-function handleOptin(e, successId) {
-  e.preventDefault();
-  var formId = successId === 'optin-success-2' ? 'optin-form-2' : 'optin-form';
-  document.getElementById(formId).style.display = 'none';
-  document.getElementById(successId || 'optin-success').classList.add('show');
-  if (window.gtag) gtag('event', 'generate_lead', { item_page: location.pathname });
-}
+  // Track challenge signups via Tally's postMessage event
+  window.addEventListener('message', function(e) {
+    try {
+      var data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+      if (data && data.event === 'Tally.FormSubmitted' && window.gtag) {
+        gtag('event', 'generate_lead', { item_page: location.pathname });
+      }
+    } catch (err) {}
+  });
 </script>
 
 <!-- Google Analytics -->
