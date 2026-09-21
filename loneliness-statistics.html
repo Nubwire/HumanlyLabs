@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Loneliness Statistics: The Global Data | Humanly Labs</title>
+
+  <meta
+    name="description"
+    content="Current global loneliness statistics from WHO, OECD, and national surveys. Prevalence rates, health impacts, economic costs, and demographic breakdowns."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <link
+    rel="canonical"
+    href="https://humanlylabs.org/statistics/loneliness/"
+  >
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Loneliness Statistics: The Global Data">
+  <meta
+    property="og:description"
+    content="Current global loneliness statistics from WHO, OECD, and national surveys."
+  >
+  <meta
+    property="og:url"
+    content="https://humanlylabs.org/statistics/loneliness/"
+  >
+
+  <style>
+    :root {
+      --bg: #f7f5f1;
+      --surface: #ffffff;
+      --text: #232a33;
+      --muted: #68717c;
+      --accent: #b23a2e;
+      --accent-dark: #8f2d24;
+      --gold: #d9b776;
+      --border: #e5e0d8;
+      --soft: #efeae0;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      background: #232a33;
+      color: white;
+      padding: 18px 0;
+    }
+
+    .site-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1.15rem;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .header-link {
+      color: white;
+      text-decoration: none;
+      font-size: 0.92rem;
+      opacity: 0.9;
+    }
+
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 70px 0 60px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0 0 20px;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-intro {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.2rem;
+    }
+
+    .updated {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    main {
+      padding: 55px 0 80px;
+    }
+
+    section {
+      margin-bottom: 70px;
+    }
+
+    h2 {
+      margin: 0 0 28px;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      margin: 34px 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    p {
+      max-width: 820px;
+    }
+
+    .source-note {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .source-note a {
+      text-decoration: none;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 30px 0;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 3px 12px rgba(35, 42, 51, 0.04);
+    }
+
+    .stat-number {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 2.25rem;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: -0.04em;
+    }
+
+    .stat-label {
+      font-weight: 700;
+    }
+
+    .stat-description {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .callout {
+      margin: 30px 0;
+      padding: 28px 30px;
+      background: var(--soft);
+      border-left: 5px solid var(--gold);
+      border-radius: 0 14px 14px 0;
+    }
+
+    .callout strong {
+      font-size: 1.15rem;
+    }
+
+    .table-wrap {
+      margin: 25px 0;
+      overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--soft);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td strong {
+      color: var(--accent);
+    }
+
+    .health-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .health-list li {
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .health-list strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .cite-box {
+      background: #232a33;
+      color: white;
+      padding: 32px;
+      border-radius: 18px;
+      margin-top: 30px;
+    }
+
+    .cite-box h3 {
+      margin-top: 0;
+    }
+
+    .citation {
+      padding: 20px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      overflow-wrap: anywhere;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    button,
+    .button {
+      display: inline-block;
+      border: 0;
+      border-radius: 8px;
+      padding: 11px 17px;
+      background: var(--accent);
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    button:hover,
+    .button:hover {
+      background: var(--accent-dark);
+      color: white;
+    }
+
+    .secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .secondary:hover {
+      background: var(--soft);
+      color: var(--text);
+    }
+
+    .sources {
+      display: grid;
+      gap: 20px;
+    }
+
+    .source-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 23px;
+    }
+
+    .source-card h3 {
+      margin-top: 0;
+    }
+
+    .source-card p {
+      margin-bottom: 8px;
+    }
+
+    .methodology {
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    footer {
+      padding: 40px 0;
+      background: #232a33;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.88rem;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .health-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 50px 0 45px;
+      }
+
+      section {
+        margin-bottom: 55px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(calc(100% - 28px), var(--max-width));
+      }
+
+      .site-header-inner {
+        align-items: flex-start;
+      }
+
+      .header-link {
+        display: none;
+      }
+
+      h1 {
+        font-size: 2.65rem;
+      }
+
+      .stat-card {
+        padding: 22px;
+      }
+    }
+
+    @media print {
+      .site-header,
+      .button-row,
+      footer {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .hero {
+        padding-top: 20px;
+      }
+    }
+  </style>
+
+  <!-- Article structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Loneliness Statistics: The Global Data",
+    "description": "Current global loneliness statistics from WHO, OECD, and national surveys.",
+    "datePublished": "2026-09-21",
+    "dateModified": "2026-09-21",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Humanly Labs",
+      "url": "https://humanlylabs.org/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://humanlylabs.org/statistics/loneliness/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a class="brand" href="/">Humanly <span>Labs</span></a>
+
+    <a class="header-link" href="/">
+      Human connection, made practical
+    </a>
+  </div>
+</header>
+
+
+<div class="hero">
+  <div class="container">
+
+    <span class="eyebrow">Research &amp; Statistics</span>
+
+    <h1>Loneliness Statistics: The Global Data</h1>
+
+    <p class="hero-intro">
+      Current global loneliness statistics from the World Health Organization,
+      OECD, national surveys and research organisations — covering prevalence,
+      demographics, health impacts and economic costs.
+    </p>
+
+    <p class="updated">
+      <strong>Last updated:</strong> 21 September 2026
+    </p>
+
+  </div>
+</div>
+
+
+<main>
+  <div class="container">
+
+
+    <!-- GLOBAL PREVALENCE -->
+
+    <section id="global-prevalence">
+
+      <h2>Global Prevalence</h2>
+
+      <div class="stat-grid">
+
+        <div class="stat-card">
+          <span class="stat-number">15.8%</span>
+          <div class="stat-label">
+            of people worldwide report experiencing loneliness
+          </div>
+          <div class="stat-description">
+            Approximately 1 in 6 people globally.
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number">871,000</span>
+          <div class="stat-label">
+            deaths associated with loneliness each year
+          </div>
+          <div class="stat-description">
+            WHO estimates this is equivalent to around 100 deaths per hour.
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number">20.9%</span>
+          <div class="stat-label">
+            of adolescents aged 13–17 experience loneliness
+          </div>
+          <div class="stat-description">
+            The highest estimated prevalence among the WHO age groups.
+          </div>
+        </div>
+
+      </div>
+
+      <h3>One in Six People Worldwide Experience Loneliness</h3>
+
+      <p>
+        The World Health Organization's Commission on Social Connection
+        estimated that <strong>15.8% of people globally</strong> experienced
+        loneliness during the 2014–2023 period — approximately
+        <strong>one person in six</strong>.
+      </p>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.who.int/publications/i/item/9789240112360"
+          target="_blank"
+          rel="noopener"
+        >
+          WHO Commission on Social Connection, 2025
+        </a>.
+      </p>
+
+
+      <h3>Loneliness Is Associated With More Than 871,000 Deaths Annually</h3>
+
+      <p>
+        WHO reports that loneliness was associated with more than
+        <strong>871,000 deaths annually</strong>, based on evidence covering
+        2014–2019. WHO describes this as approximately
+        <strong>100 deaths every hour</strong>.
+      </p>
+
+      <p class="source-note">
+        This is an association reported by WHO, not a claim that every death
+        was directly caused by loneliness.
+      </p>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.who.int/news-room/commentaries/detail/loneliness-and-isolation-the-hidden-threat-to-global-health-we-can-no-longer-ignore"
+          target="_blank"
+          rel="noopener"
+        >
+          WHO, Loneliness and isolation – the hidden threat to global health
+        </a>.
+      </p>
+
+
+      <h3>Social Isolation Affects Vulnerable Populations</h3>
+
+      <p>
+        Loneliness and social isolation are related but different concepts.
+        Loneliness describes a subjective feeling of insufficient connection,
+        while social isolation concerns the objective availability or frequency
+        of social relationships.
+      </p>
+
+      <div class="callout">
+        <strong>WHO estimates that social isolation affects up to one-third
+        of older adults and one in four adolescents.</strong>
+      </div>
+
+    </section>
+
+
+    <!-- REGIONAL -->
+
+    <section id="regional">
+
+      <h2>Regional and Income Disparities</h2>
+
+      <h3>Low-Income Countries Report More Than Twice the Rate of High-Income Countries</h3>
+
+      <p>
+        WHO estimates that loneliness is more common in countries with lower
+        income levels. The estimated prevalence is <strong>24.3%</strong> in
+        low-income countries compared with <strong>10.6%</strong> in
+        high-income countries.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Country income group</th>
+              <th>Estimated loneliness prevalence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Low-income countries</td>
+              <td><strong>24.3%</strong></td>
+            </tr>
+            <tr>
+              <td>Lower-middle-income countries</td>
+              <td><strong>19.3%</strong></td>
+            </tr>
+            <tr>
+              <td>Upper-middle-income countries</td>
+              <td><strong>12.1%</strong></td>
+            </tr>
+            <tr>
+              <td>High-income countries</td>
+              <td><strong>10.6%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.who.int/news-room/questions-and-answers/item/social-connection"
+          target="_blank"
+          rel="noopener"
+        >
+          WHO, Social connection
+        </a>.
+      </p>
+
+
+      <h3>OECD Countries: 8% Have No Close Friends</h3>
+
+      <p>
+        The OECD's 2025 international report found that, across
+        <strong>22 European OECD countries</strong>, 8% of respondents reported
+        having no close friends.
+      </p>
+
+      <p>
+        Across <strong>23 OECD countries</strong>, 6% of respondents reported
+        feeling lonely most or all of the time during the previous four weeks.
+      </p>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.oecd.org/en/publications/social-connections-and-loneliness-in-oecd-countries_6df2d6a0-en.html"
+          target="_blank"
+          rel="noopener"
+        >
+          OECD, Social Connections and Loneliness in OECD Countries, 2025
+        </a>.
+      </p>
+
+    </section>
+
+
+    <!-- WHO REGIONAL DATA -->
+
+    <section id="who-regions">
+
+      <h2>Loneliness by WHO Region</h2>
+
+      <p>
+        WHO's 2025 global estimates also show substantial differences between
+        WHO regions.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>WHO region</th>
+              <th>Estimated prevalence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>African Region</td>
+              <td><strong>24.3%</strong></td>
+            </tr>
+            <tr>
+              <td>Eastern Mediterranean Region</td>
+              <td><strong>21.0%</strong></td>
+            </tr>
+            <tr>
+              <td>South-East Asia Region</td>
+              <td><strong>18.3%</strong></td>
+            </tr>
+            <tr>
+              <td>Region of the Americas</td>
+              <td><strong>13.6%</strong></td>
+            </tr>
+            <tr>
+              <td>Western Pacific Region</td>
+              <td><strong>11.0%</strong></td>
+            </tr>
+            <tr>
+              <td>European Region</td>
+              <td><strong>10.1%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.who.int/publications/i/item/9789240112360"
+          target="_blank"
+          rel="noopener"
+        >
+          WHO Commission on Social Connection, 2025
+        </a>.
+      </p>
+
+    </section>
+
+
+    <!-- WHO AGE -->
+
+    <section id="age">
+
+      <h2>Who Is Most Affected?</h2>
+
+      <h3>Adolescents and Young Adults Have the Highest Estimated Rates</h3>
+
+      <p>
+        WHO's global analysis found that loneliness is most prevalent among
+        adolescents and young adults, rather than being concentrated only among
+        older adults.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Age group</th>
+              <th>Estimated loneliness prevalence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>13–17 years</td>
+              <td><strong>20.9%</strong></td>
+            </tr>
+            <tr>
+              <td>18–29 years</td>
+              <td><strong>17.4%</strong></td>
+            </tr>
+            <tr>
+              <td>30–59 years</td>
+              <td><strong>15.1%</strong></td>
+            </tr>
+            <tr>
+              <td>60+ years</td>
+              <td><strong>11.8%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.who.int/publications/i/item/9789240112360"
+          target="_blank"
+          rel="noopener"
+        >
+          WHO Commission on Social Connection, 2025
+        </a>.
+      </p>
+
+
+      <h3>Young People Have Experienced Deteriorating Social Connection</h3>
+
+      <p>
+        OECD analysis found that people aged <strong>16–24</strong> experienced
+        the largest increase in reported loneliness between 2018 and 2022.
+        Many of the deteriorations in social support and relationship quality
+        were driven by younger men.
+      </p>
+
+      <p>
+        The OECD also reports that, across its available countries, young
+        people experienced changes in social support and relationship
+        satisfaction during this period that warrant continued monitoring.
+      </p>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.oecd.org/en/publications/social-connections-and-loneliness-in-oecd-countries_6df2d6a0-en.html"
+          target="_blank"
+          rel="noopener"
+        >
+          OECD, Social Connections and Loneliness in OECD Countries, 2025
+        </a>.
+      </p>
+
+
+      <h3>Men Are an Emerging At-Risk Group in OECD Data</h3>
+
+      <p>
+        WHO estimates that overall loneliness prevalence is broadly similar
+        between females and males. However, OECD trend data show that men
+        experienced larger deteriorations in some measures of relationship
+        quality and social support between 2018 and 2022, with many of these
+        changes driven by younger men.
+      </p>
+
+      <p class="source-note">
+        Sources:
+        <a
+          href="https://www.who.int/news-room/questions-and-answers/item/social-connection"
+          target="_blank"
+          rel="noopener"
+        >
+          WHO
+        </a>
+        and
+        <a
+          href="https://www.oecd.org/en/publications/social-connections-and-loneliness-in-oecd-countries_6df2d6a0-en.html"
+          target="_blank"
+          rel="noopener"
+        >
+          OECD
+        </a>.
+      </p>
+
+
+      <h3>Living Alone Is Associated With Greater Social Disconnection</h3>
+
+      <p>
+        OECD data show that people living alone are
+        <strong>3.9 times more likely</strong> than people living with others
+        to report feeling lonely most or all of the time over the previous
+        four weeks (14% versus 4%).
+      </p>
+
+      <p>
+        They are also <strong>1.8 times more likely</strong> to be dissatisfied
+        with their personal relationships (6% versus 3%).
+      </p>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.oecd.org/en/publications/social-connections-and-loneliness-in-oecd-countries_6df2d6a0-en/full-report/inequalities-in-social-connections-who-is-least-connected_46895541.html"
+          target="_blank"
+          rel="noopener"
+        >
+          OECD, 2025
+        </a>.
+      </p>
+
+    </section>
+
+
+    <!-- HEALTH -->
+
+    <section id="health">
+
+      <h2>Health Impacts</h2>
+
+      <h3>Loneliness and Social Isolation Are Associated With Major Health Risks</h3>
+
+      <p>
+        WHO's review of the evidence links loneliness and social isolation with
+        increased risks across physical and mental health.
+      </p>
+
+      <ul class="health-list">
+
+        <li>
+          <strong>Stroke</strong>
+          Loneliness and social isolation are associated with increased stroke
+          risk.
+        </li>
+
+        <li>
+          <strong>Heart disease</strong>
+          Social disconnection is associated with cardiovascular health risks.
+        </li>
+
+        <li>
+          <strong>Diabetes</strong>
+          Loneliness and social isolation are associated with increased risk.
+        </li>
+
+        <li>
+          <strong>Cognitive decline</strong>
+          Social disconnection is associated with poorer cognitive outcomes.
+        </li>
+
+        <li>
+          <strong>Depression</strong>
+          Lonely people are estimated to be about twice as likely to develop
+          depression.
+        </li>
+
+        <li>
+          <strong>Premature death</strong>
+          Loneliness and social isolation are associated with increased
+          mortality risk.
+        </li>
+
+      </ul>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.who.int/publications/i/item/9789240112360"
+          target="_blank"
+          rel="noopener"
+        >
+          WHO Commission on Social Connection, 2025
+        </a>.
+      </p>
+
+
+      <h3>Mental Health: Approximately Double the Depression Risk</h3>
+
+      <p>
+        WHO reports that people experiencing loneliness are approximately
+        <strong>twice as likely to develop depression</strong>. Loneliness is
+        also associated with anxiety and thoughts of suicide or self-harm.
+      </p>
+
+
+      <h3>Educational and Employment Consequences</h3>
+
+      <p>
+        The effects of loneliness extend beyond health. WHO reports that
+        teenagers who felt lonely were <strong>22% more likely</strong> to
+        obtain lower grades or qualifications.
+      </p>
+
+      <p>
+        WHO also notes that adults experiencing loneliness or social isolation
+        may have greater difficulty finding or maintaining employment and may
+        earn less over time.
+      </p>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.who.int/news/item/30-06-2025-social-connection-linked-to-improved-heath-and-reduced-risk-of-early-death"
+          target="_blank"
+          rel="noopener"
+        >
+          WHO, Social connection linked to improved health and reduced risk of
+          early death, 2025
+        </a>.
+      </p>
+
+    </section>
+
+
+    <!-- ECONOMIC -->
+
+    <section id="economic">
+
+      <h2>Economic Costs</h2>
+
+      <h3>Spain: Approximately €14 Billion Per Year</h3>
+
+      <p>
+        Research cited by WHO estimates that loneliness in Spain costs around
+        <strong>€14 billion per year</strong>, equivalent to approximately
+        <strong>1.17% of GDP</strong> in 2021. The estimate includes health
+        costs and productivity losses.
+      </p>
+
+      <p>
+        WHO's 2025 report presents this figure as approximately
+        <strong>US$15.2 billion</strong> using the exchange rate applicable to
+        its analysis.
+      </p>
+
+      <p class="source-note">
+        Sources:
+        <a
+          href="https://www.who.int/publications/i/item/9789240112360"
+          target="_blank"
+          rel="noopener"
+        >
+          WHO Commission on Social Connection
+        </a>
+        and the underlying Spanish cost study.
+      </p>
+
+
+      <h3>Australia: 24% Reported Feeling Very Lonely in 2024</h3>
+
+      <p>
+        Relationships Australia's 2024 research found that
+        <strong>24% of Australians</strong>, equivalent to approximately
+        <strong>5.1 million people</strong>, reported often feeling very lonely.
+      </p>
+
+      <p>
+        The survey also found that <strong>37.7%</strong> of Australians
+        reported social loneliness and <strong>22.7%</strong> reported
+        emotional loneliness.
+      </p>
+
+      <p class="source-note">
+        Source:
+        <a
+          href="https://www.relationships.org.au/wp-content/uploads/Relationship-Indicators-2024-Report-Final.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Relationships Australia, Relationship Indicators 2024
+        </a>.
+      </p>
+
+    </section>
+
+
+    <!-- SUMMARY -->
+
+    <section id="summary">
+
+      <h2>Key Statistics Summary</h2>
+
+      <div class="table-wrap">
+        <table id="statistics-table">
+
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Figure</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>Global loneliness prevalence</td>
+              <td><strong>15.8%</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>People globally experiencing loneliness</td>
+              <td><strong>1 in 6</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>Annual deaths associated with loneliness</td>
+              <td><strong>871,000+</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>Low-income country loneliness rate</td>
+              <td><strong>24.3%</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>High-income country loneliness rate</td>
+              <td><strong>10.6%</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>Adolescents aged 13–17</td>
+              <td><strong>20.9%</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>Young adults aged 18–29</td>
+              <td><strong>17.4%</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>Adults aged 30–59</td>
+              <td><strong>15.1%</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>Older adults aged 60+</td>
+              <td><strong>11.8%</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>OECD respondents with no close friends</td>
+              <td><strong>8%</strong></td>
+              <td>OECD (2025)</td>
+            </tr>
+
+            <tr>
+              <td>OECD respondents lonely most/all of the time</td>
+              <td><strong>6%</strong></td>
+              <td>OECD (2025)</td>
+            </tr>
+
+            <tr>
+              <td>Loneliness and depression</td>
+              <td><strong>~2× risk</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>Lonely teenagers and lower grades/qualifications</td>
+              <td><strong>+22%</strong></td>
+              <td>WHO (2025)</td>
+            </tr>
+
+            <tr>
+              <td>Australians often feeling very lonely</td>
+              <td><strong>24%</strong></td>
+              <td>Relationships Australia (2024)</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+
+      <div class="button-row">
+        <button id="downloadCsv" type="button">
+          Download statistics as CSV
+        </button>
+
+        <button
+          id="copyCitation"
+          type="button"
+          class="secondary"
+        >
+          Copy citation
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- CITE THIS PAGE -->
+
+    <section id="cite">
+
+      <h2>Cite This Page</h2>
+
+      <p>
+        If you use these statistics in an article, report, presentation or
+        research project, you can cite this page as follows:
+      </p>
+
+      <div class="cite-box">
+
+        <h3>Suggested citation</h3>
+
+        <div class="citation" id="citationText">
+          Humanly Labs (2026), “Loneliness Statistics: The Global Data,”
+          Humanly Labs, updated 21 September 2026,
+          https://humanlylabs.org/statistics/loneliness/
+        </div>
+
+        <div class="button-row">
+          <button id="copyCitationDark" type="button">
+            Copy citation
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SOURCES -->
+
+    <section id="sources">
+
+      <h2>Sources</h2>
+
+      <div class="sources">
+
+        <div class="source-card">
+
+          <h3>World Health Organization</h3>
+
+          <p>
+            <strong>
+              From Loneliness to Social Connection: Charting a Path to
+              Healthier Societies
+            </strong>
+          </p>
+
+          <p>
+            Report of the WHO Commission on Social Connection, June 2025.
+          </p>
+
+          <a
+            href="https://www.who.int/publications/i/item/9789240112360"
+            target="_blank"
+            rel="noopener"
+          >
+            View the WHO report →
+          </a>
+
+        </div>
+
+
+        <div class="source-card">
+
+          <h3>World Health Organization</h3>
+
+          <p>
+            <strong>
+              Social connection linked to improved health and reduced risk of
+              early death
+            </strong>
+          </p>
+
+          <p>
+            WHO news release, 30 June 2025.
+          </p>
+
+          <a
+            href="https://www.who.int/news/item/30-06-2025-social-connection-linked-to-improved-heath-and-reduced-risk-of-early-death"
+            target="_blank"
+            rel="noopener"
+          >
+            View the WHO article →
+          </a>
+
+        </div>
+
+
+        <div class="source-card">
+
+          <h3>OECD</h3>
+
+          <p>
+            <strong>
+              Social Connections and Loneliness in OECD Countries
+            </strong>
+          </p>
+
+          <p>
+            OECD Publishing, October 2025.
+          </p>
+
+          <a
+            href="https://www.oecd.org/en/publications/social-connections-and-loneliness-in-oecd-countries_6df2d6a0-en.html"
+            target="_blank"
+            rel="noopener"
+          >
+            View the OECD report →
+          </a>
+
+        </div>
+
+
+        <div class="source-card">
+
+          <h3>Relationships Australia</h3>
+
+          <p>
+            <strong>
+              Relationship Indicators 2024
+            </strong>
+          </p>
+
+          <p>
+            National Australian survey examining relationships, loneliness,
+            social connection and wellbeing.
+          </p>
+
+          <a
+            href="https://www.relationships.org.au/relationship-indicators/"
+            target="_blank"
+            rel="noopener"
+          >
+            View the Relationships Australia research →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- METHODOLOGY -->
+
+    <section id="methodology">
+
+      <h2>How to Read These Statistics</h2>
+
+      <div class="methodology">
+
+        <p>
+          Loneliness is a subjective experience and is not the same thing as
+          social isolation. Different studies use different questions,
+          measurement scales, age ranges, countries and survey periods.
+        </p>
+
+        <p>
+          For that reason, figures on this page should not automatically be
+          compared as though they came from the same survey. The WHO global
+          estimates cover data from <strong>2014–2023</strong>, while many OECD
+          indicators are based primarily on data collected in
+          <strong>2022–2023</strong>. The Australian figures come from
+          Relationships Australia's 2024 survey.
+        </p>
+
+        <p>
+          Where a statistic represents an association rather than a causal
+          relationship, it is described as an association. This distinction is
+          important when interpreting health, education and mortality findings.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section>
+
+      <h2>Why These Numbers Matter</h2>
+
+      <p>
+        Loneliness is not restricted to a single age group, country or
+        demographic. The latest international evidence shows substantial
+        variation by age, income and living circumstances, while also showing
+        that social connection is relevant to physical health, mental health,
+        education, employment and wellbeing.
+      </p>
+
+      <p>
+        This page brings together major recent datasets and reports in one
+        place so that journalists, researchers, students, organisations and
+        writers can quickly find the underlying evidence.
+      </p>
+
+    </section>
+
+  </div>
+</main>
+
+
+<footer>
+  <div class="container">
+
+    <p>
+      <strong>Humanly Labs</strong>
+    </p>
+
+    <p>
+      Research and practical resources for building stronger human connection.
+    </p>
+
+    <p>
+      Statistics are provided for educational and research purposes.
+      Always consult the original source for methodology, definitions and
+      the most current data.
+    </p>
+
+    <p>
+      © 2026 Humanly Labs
+    </p>
+
+  </div>
+</footer>
+
+
+<script>
+  const citation =
+    'Humanly Labs (2026), “Loneliness Statistics: The Global Data,” Humanly Labs, updated 21 September 2026, https://humanlylabs.org/statistics/loneliness/';
+
+  async function copyCitation() {
+    try {
+      await navigator.clipboard.writeText(citation);
+      alert('Citation copied.');
+    } catch (error) {
+      alert(citation);
+    }
+  }
+
+  document
+    .getElementById('copyCitation')
+    .addEventListener('click', copyCitation);
+
+  document
+    .getElementById('copyCitationDark')
+    .addEventListener('click', copyCitation);
+
+
+  document
+    .getElementById('downloadCsv')
+    .addEventListener('click', function () {
+
+      const rows = [
+        ['Metric', 'Figure', 'Source'],
+
+        ['Global loneliness prevalence', '15.8%', 'WHO (2025)'],
+        ['People globally experiencing loneliness', '1 in 6', 'WHO (2025)'],
+        ['Annual deaths associated with loneliness', '871,000+', 'WHO (2025)'],
+        ['Low-income country loneliness rate', '24.3%', 'WHO (2025)'],
+        ['High-income country loneliness rate', '10.6%', 'WHO (2025)'],
+        ['Adolescents aged 13–17', '20.9%', 'WHO (2025)'],
+        ['Young adults aged 18–29', '17.4%', 'WHO (2025)'],
+        ['Adults aged 30–59', '15.1%', 'WHO (2025)'],
+        ['Older adults aged 60+', '11.8%', 'WHO (2025)'],
+        ['OECD respondents with no close friends', '8%', 'OECD (2025)'],
+        ['OECD respondents lonely most/all of the time', '6%', 'OECD (2025)'],
+        ['Loneliness and depression', '~2x risk', 'WHO (2025)'],
+        ['Lonely teenagers and lower grades/qualifications', '+22%', 'WHO (2025)'],
+        ['Australians often feeling very lonely', '24%', 'Relationships Australia (2024)']
+      ];
+
+      const csv = rows
+        .map(row =>
+          row
+            .map(value =>
+              '"' + String(value).replace(/"/g, '""') + '"'
+            )
+            .join(',')
+        )
+        .join('\n');
+
+      const blob = new Blob(
+        [csv],
+        { type: 'text/csv;charset=utf-8;' }
+      );
+
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+
+      link.href = url;
+      link.download = 'humanly-labs-loneliness-statistics.csv';
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      URL.revokeObjectURL(url);
+    });
+</script>
+
+</body>
+</html>
