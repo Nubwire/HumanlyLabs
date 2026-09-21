@@ -153,10 +153,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+    <url>
     <loc>https://humanlylabs.org/social-battery-meaning</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://humanlylabs.org/loneliness-statistics/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
