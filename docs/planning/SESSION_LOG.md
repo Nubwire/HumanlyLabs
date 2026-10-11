@@ -6,6 +6,14 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-10-11 — Updated Ahrefs Web Analytics tracking
+
+- Replaced the previous Ahrefs tracking key with the user-provided key throughout existing HTML pages and lesson generators.
+- Added the same asynchronous snippet to the statistics page, which had no Ahrefs tracker.
+- Verified each changed HTML page has one Ahrefs snippet and the old key is absent from tracked text files. Live event delivery remains to be verified after deployment.
+
+---
+
 ## 2026-10-11 — Prepared focused SEO routing and quiz fixes
 
 - Statistics URL variants now point directly to the canonical `/loneliness-statistics`; removed the trailing-slash proxy and opposing HTML redirect.
