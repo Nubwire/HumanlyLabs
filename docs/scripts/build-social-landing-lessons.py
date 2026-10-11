@@ -88,7 +88,7 @@ TEMPLATE = """<!DOCTYPE html>
     gtag('js', new Date());
     gtag('config', 'G-KMFL61V2FD');
   </script>
-  <script src="https://analytics.ahrefs.com/analytics.js" data-key="t8y/ixuqB+gg+9ePJ5VDUA" async></script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="YWRoB4I+c7fUtPjeVsL0IA" async></script>
 </head>
 <body>
 <nav>
