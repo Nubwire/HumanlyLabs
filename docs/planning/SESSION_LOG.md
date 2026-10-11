@@ -6,6 +6,19 @@ sessions with no shared memory — read this before starting new work.
 
 ---
 
+## 2026-10-11 — Prepared focused SEO routing and quiz fixes
+
+- Statistics URL variants now point directly to the canonical `/loneliness-statistics`; removed the trailing-slash proxy and opposing HTML redirect.
+- Quiz title, metadata and introduction describe the free nine-question self-reflection exercise. Removed the introductory clinical-research claim and added visible FAQs matching the JSON-LD and actual four result profiles.
+- Updated only the quiz sitemap lastmod to reflect its content change. Quiz scoring, checkout and email behavior are unchanged.
+- Repository audit: five priority pages permit indexing; sitemap targets and local page links exist. Course content retains intentional noindex directives.
+- Live fetches returned 403 from this environment; Googlebot access and the cause of the traffic decline remain unconfirmed. Search Console position and period-comparison data are still needed.
+- Validation: inline JavaScript parses, JSON-LD parses and FAQ answers match visible HTML, sitemap XML parses, redirect targets match canonical, and quiz logic is byte-for-byte unchanged. Browser rendering was not verified because no browser executable is installed.
+- Initial GitHub branch creation returned 403 Resource not accessible by integration. Re-authentication resolved the blocker; the fixes are prepared on a review branch, with production deployment pending merge.
+- Separate follow-up: quiz email promise lacks a delivery integration; current code stores email and profile in browser localStorage.
+
+---
+
 ## 2026-09-11 — Wired real Tally forms: swapped signup roles between the two lists
 
 **What happened:** the reconnection challenge page needed its own email

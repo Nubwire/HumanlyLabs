@@ -17,5 +17,6 @@
 /course-confidence-blueprint.html    /courses/confidence-blueprint/   301
 /course-friendship-revival         /courses/friendship-revival/     301
 /course-friendship-revival.html    /courses/friendship-revival/     301
-/loneliness-statistics/    /loneliness-statistics.html    200
-/loneliness-statistics.html    /loneliness-statistics/    301
+# Consolidate statistics URL variants on the canonical extension-less URL.
+/loneliness-statistics/        /loneliness-statistics    301
+/loneliness-statistics.html    /loneliness-statistics    301

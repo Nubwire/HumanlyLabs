@@ -5,7 +5,7 @@ file (don't just append to the session log) whenever priorities change, so
 it always reflects current reality — the session log below is the history,
 this section is the plan.
 
-_Last updated: 2026-08-31_
+_Last updated: 2026-10-11_
 
 ## Current state
 
@@ -94,6 +94,11 @@ _Last updated: 2026-08-31_
    read of the files.
 
 ## Suggested next steps (in rough priority order)
+
+- [ ] Review the SEO routing and quiz pull request, then verify statistics URL variants resolve to `/loneliness-statistics` after deployment.
+- [ ] In Search Console, collect average positions for the five priority pages and compare the last 28 days with the previous 28 days; no traffic-drop cause is established yet.
+- [ ] Inspect the live homepage and quiz in Search Console to confirm crawl access. Requests from this work environment returned 403, which does not establish Googlebot is blocked.
+- [ ] Review the quiz email feature: it promises emailed results but only saves email and result type to browser localStorage; no delivery integration was found in this page.
 
 - [ ] Finish updating the `D4jqvR` Tally form's fields/copy so it reads as
       a general newsletter signup rather than a duplicate of the
